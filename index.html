@@ -14,11 +14,13 @@
       font-size: 1.1em; font-weight: bold; transition: background 0.3s;
     }
     nav button:hover, nav button.active { background-color: #f54b23; }
-    .tab-content { display: none; padding: 2em; max-width: 800px; margin: auto; background: white; }
+    .tab-content { display: none; padding: 2em; max-width: 1000px; margin: auto; background: white; }
     .tab-content.active { display: block; }
     h1 { color: #ba3326; }
     .service { margin-bottom: 2em; padding: 1em; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
     .paypal-btn { margin-top: 1em; }
+    .bio-section { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 2em; }
+    .bio-section img { width: 200px; border-radius: 8px; }
   </style>
 </head>
 <body>
@@ -26,11 +28,15 @@
 <nav>
   <ul>
     <li><button class="tablink active" onclick="openTab(event, 'services')">Services</button></li>
+    <li><button class="tablink" onclick="openTab(event, 'drills')">Drills</button></li>
+    <li><button class="tablink" onclick="openTab(event, 'workouts')">Workouts</button></li>
+    <li><button class="tablink" onclick="openTab(event, 'about')">About</button></li>
+    <li><button class="tablink" onclick="openTab(event, 'contact')">Contact</button></li>
   </ul>
 </nav>
 
 <div id="services" class="tab-content active">
-  <h1>Defy Elite Athletics Services & Payment</h1>
+  <h1>Elite Training & Coaching Services</h1>
 
   <div class="service">
     <h2>One-on-One Live Golf Lesson (1hr) – $50 (₱2,700)</h2>
@@ -115,7 +121,7 @@
   </div>
 
   <div class="service">
-    <h2>Website Access to Workouts/Drills – $30/month (₱1,650)</h2>
+    <h2>Website Access – $30/month (₱1,650)</h2>
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
       <input type="hidden" name="business" value="defyeliteathletics@yahoo.com">
       <input type="hidden" name="cmd" value="_xclick-subscriptions">
@@ -128,6 +134,33 @@
       <input type="submit" value="Subscribe via PayPal" class="paypal-btn">
     </form>
   </div>
+</div>
+
+<div id="drills" class="tab-content">
+  <h1>Drills</h1>
+  <p>Coming soon: a full breakdown of athletic drills, swing development routines, and mobility exercises categorized by sport and goal.</p>
+</div>
+
+<div id="workouts" class="tab-content">
+  <h1>Workout Programs</h1>
+  <p>Structured programs will be displayed here soon for strength, hypertrophy, fat loss, golf performance, and athletic development.</p>
+</div>
+
+<div id="about" class="tab-content">
+  <h1>About Steven Kittinger Jr.</h1>
+  <div class="bio-section">
+    <img src="499407090_10006568012698243_8780208516133082159_n.webp" alt="Steven Kittinger Jr">
+    <div>
+      <p>Steven Kittinger Jr is the founder and head trainer of Defy Elite Athletics. With a Bachelor's degree in Sports and Recreation Management and certification from the American College of Sports Medicine, he brings over 8 years of expertise in fitness, sports, and youth athletic development.</p>
+      <p>Steven has worked in diverse roles—from CrossFit trainer and U.S. Army recreation assistant to competitive golf coach and program director for youth leagues. He is driven by a passion for performance, progress, and truth, and he's dedicated to helping others unlock their physical potential.</p>
+    </div>
+  </div>
+</div>
+
+<div id="contact" class="tab-content">
+  <h1>Contact</h1>
+  <p>Email: <a href="mailto:defyeliteathletics@yahoo.com">defyeliteathletics@yahoo.com</a></p>
+  <p>Location: Davao City, Philippines</p>
 </div>
 
 <script>
