@@ -4,132 +4,65 @@
   <meta charset="UTF-8">
   <title>Defy Elite Athletics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <<style>
-  body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #181818;
-    color: #fff;
-    margin: 0;
-  }
-  nav {
-    background: #111;
-    box-shadow: 0 3px 10px #0004;
-    z-index: 100;
-    position: sticky;
-    top: 0;
-    width: 100%;
-  }
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: stretch;
-    border-bottom: 2px solid #e10600;
-  }
-  nav li {
-    flex: 1;
-    min-width: 120px;
-  }
-  nav button {
-    width: 100%;
-    background: none;
-    border: none;
-    color: #fff;
-    padding: 1.1em 0;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    letter-spacing: 1px;
-  }
-  nav button.active, nav button:hover {
-    background: #e10600;
-    color: #fff;
-    box-shadow: 0 2px 8px #e1060044;
-  }
-  .tab-content {
-    display: none;
-    padding: 2em 1em;
-    max-width: 1100px;
-    margin: auto;
-    background: #222;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px #0004;
-  }
-  .tab-content.active { display: block; }
-  h1 { font-size: 2.2em; color: #e10600; margin-bottom: .6em; }
-  h2 { margin-top: 1.4em; color: #e10600; }
-  table { width: 100%; border-collapse: collapse; margin-top: 1em; background: #191919; color: #fff; }
-  th, td { padding: .75em; border-bottom: 1px solid #292929; }
-  th { background: #e10600; color: #fff; }
-  tr:hover { background: #2b2b2b; }
-  .card {
-    background: #191919;
-    padding: 1.2em;
-    margin: 1em 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px #e1060022;
-    border-left: 5px solid #e10600;
-  }
-  .filter-group label { color: #e10600; margin-right: 1.2em; font-weight: 600; }
-  .contact-form input, .contact-form textarea {
-    display: block;
-    width: 100%;
-    margin: 0.5em 0 1em 0;
-    padding: 0.8em;
-    border: 1px solid #e10600;
-    border-radius: 5px;
-    font-size: 1em;
-    background: #111;
-    color: #fff;
-  }
-  .contact-form button {
-    background: #e10600;
-    color: #fff;
-    border: none;
-    padding: 0.9em 2em;
-    border-radius: 5px;
-    font-size: 1em;
-    font-weight: bold;
-    transition: background 0.2s;
-  }
-  .contact-form button:hover { background: #b30000; }
-  a { color: #e10600; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  @media (max-width: 900px) {
-    nav ul { flex-direction: column; }
-    nav li { min-width: 80px; }
-  }
-  @media (max-width: 700px) {
-    .tab-content { padding: 1em 0.3em; }
-    h1 { font-size: 1.2em; }
-    nav button { font-size: 1em; }
-  }
-</style>
-
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f6f8fa; margin: 0; color: #20232a; }
+    nav { background: #1a1a1a; }
+    nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
+    nav li { flex: 1; }
+    nav button {
+      width: 100%; background: none; border: none; color: #fff;
+      padding: 1.1em 0; font-size: 1.08em; cursor: pointer; transition: background 0.2s;
+    }
+    nav button.active, nav button:hover { background: #f54b23; color: #fff; }
+    .tab-content { display: none; padding: 2em 1em; max-width: 1100px; margin: auto; }
+    .tab-content.active { display: block; }
+    h1 { font-size: 2.1em; color: #222; margin-bottom: .6em; }
+    h2 { color: #ba3326; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1.2em; background: #fff; }
+    th, td { padding: .8em; border-bottom: 1px solid #eee; }
+    th { background: #ba3326; color: #fff; }
+    tr:hover { background: #f6f2ef; }
+    .card { background: #fff; padding: 1.1em; margin: 1em 0; border-radius: 8px; box-shadow: 0 2px 8px #0002; }
+    .contact-form input, .contact-form textarea {
+      display: block; width: 100%; margin: 0.6em 0 1.2em 0; padding: 0.8em;
+      border: 1px solid #ccc; border-radius: 6px; font-size: 1em;
+    }
+    .contact-form button { background: #ba3326; color: #fff; border: none; padding: 1em 2em; border-radius: 5px; font-size: 1em; }
+    .contact-form button:hover { background: #f54b23; color: #fff; }
+    @media (max-width: 700px) {
+      nav ul { flex-direction: column; }
+      .tab-content { padding: 1em 0.5em; }
+      h1 { font-size: 1.4em; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><button class="tablink active" onclick="openTab(event, 'home')">Home</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'workouts')">Workouts</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'drills')">Drills</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'services')">Services</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'payment')">Payment/Join</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'about')">About</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'contact')">Contact</button></li>
+    </ul>
+  </nav>
   
   <!-- Home Tab -->
   <div id="home" class="tab-content active">
     <h1>Defy Elite Athletics</h1>
-    <p>Welcome to Defy Elite Athletics – the training hub for athletes who want to excel, compete, and become their best. Explore our curated libraries of elite workouts and skill-specific drills, or learn more about our specialized services, philosophy, and how you can join our growing community.</p>
+    <p>Welcome to Defy Elite Athletics. Explore our elite workouts and sport-specific drills, and learn more about our training philosophy and community!</p>
     <div class="card">
       <h2>Our Mission</h2>
-      <p>To empower athletes of all backgrounds to defy their limits and achieve excellence through world-class programming, coaching, and a culture of continuous improvement.</p>
+      <p>Empowering athletes to defy their limits through smart training, discipline, and innovation. Join us to unleash your potential!</p>
     </div>
   </div>
   
   <!-- Workouts Tab -->
   <div id="workouts" class="tab-content">
     <h1>Workout Library</h1>
-    <!-- Placeholder: Replace the below sample table with dynamic data import (CSV/JS) if desired -->
-    <div class="filter-group">
-      <label>Sport: <input id="filter-sport" oninput="filterTable('workout-table')" placeholder="e.g. Golf"></label>
-      <label>Modality: <input id="filter-modality" oninput="filterTable('workout-table')" placeholder="e.g. Strength"></label>
-      <label>Training Focus: <input id="filter-focus" oninput="filterTable('workout-table')" placeholder="e.g. Power"></label>
-    </div>
-    <table id="workout-table">
+    <table>
       <thead>
         <tr>
           <th>Sport</th>
@@ -140,34 +73,29 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Add data rows here (or load from CSV/JSON for large sets) -->
         <tr>
           <td>Golf</td>
           <td>Strength</td>
           <td>Core Stability</td>
           <td>Pallof Press</td>
-          <td>Anti-rotation core exercise, great for golfers</td>
+          <td>Anti-rotation exercise for core strength</td>
         </tr>
         <tr>
           <td>Basketball</td>
           <td>Power</td>
           <td>Explosiveness</td>
           <td>Box Jumps</td>
-          <td>Build lower-body explosiveness and vertical jump</td>
+          <td>Develop vertical jump and leg drive</td>
         </tr>
-        <!-- (Add more rows from your spreadsheet!) -->
+        <!-- Add more rows as needed from your spreadsheet -->
       </tbody>
     </table>
-    <p style="font-size:0.98em; color:#777;">(Use the filters above or scroll to explore all workouts. To update, simply edit this table or use a CSV-to-HTML tool for bulk data.)</p>
   </div>
   
   <!-- Drills Tab -->
   <div id="drills" class="tab-content">
     <h1>Drills Library</h1>
-    <div class="filter-group">
-      <label>Swing Fault: <input id="filter-swing" oninput="filterTable('drill-table')" placeholder="e.g. Casting"></label>
-    </div>
-    <table id="drill-table">
+    <table>
       <thead>
         <tr>
           <th>Swing Fault</th>
@@ -179,109 +107,76 @@
         <tr>
           <td>Early Extension</td>
           <td>Wall Drill</td>
-          <td>Trains proper hip motion and prevents thrusting towards the ball</td>
+          <td>Train proper hip motion and avoid thrusting</td>
         </tr>
         <tr>
           <td>Sway</td>
           <td>Alignment Stick Drill</td>
-          <td>Improves weight transfer and lateral movement control</td>
+          <td>Improve lateral movement control</td>
         </tr>
-        <!-- (Add more rows from your spreadsheet!) -->
+        <!-- Add more rows as needed from your spreadsheet -->
       </tbody>
     </table>
-    <p style="font-size:0.98em; color:#777;">(Filter or scroll to view drills. Update this table as needed.)</p>
   </div>
   
   <!-- Services Tab -->
   <div id="services" class="tab-content">
     <h1>Services Offered</h1>
     <ul>
-      <li>One-on-one coaching (in-person & virtual)</li>
-      <li>Customized sport-specific programming</li>
-      <li>Golf fitness and performance assessments</li>
-      <li>Youth athletic development</li>
-      <li>Online video analysis and feedback</li>
-      <li>Team training & consulting</li>
-      <!-- (Add or edit your own services here) -->
+      <li>Private & Online Coaching</li>
+      <li>Sport-specific Programming</li>
+      <li>Golf Performance Assessments</li>
+      <li>Youth Athletic Training</li>
+      <li>Video Analysis & Feedback</li>
+      <li>Team Consulting</li>
     </ul>
   </div>
   
   <!-- Payment Tab -->
   <div id="payment" class="tab-content">
     <h1>Join / Payment Portal</h1>
-    <p>Secure your spot in our programs or book services here:</p>
     <ul>
-      <li><b>Monthly Membership:</b> <a href="#">Subscribe now</a></li>
-      <li><b>Book a session:</b> <a href="#">Schedule one-on-one</a></li>
-      <li><b>Gift certificates:</b> <a href="#">Purchase for others</a></li>
-      <!-- (Connect to your payment system or provide instructions) -->
+      <li><b>Monthly Membership:</b> <a href="#">Subscribe</a></li>
+      <li><b>Book a Session:</b> <a href="#">Schedule Now</a></li>
+      <li><b>Gift Certificate:</b> <a href="#">Buy Gift</a></li>
     </ul>
-    <p>For alternative payment or custom requests, please <a href="#" onclick="openTab(event, 'contact')">contact us</a>.</p>
+    <p>For other payment options or questions, please <a href="#" onclick="openTab(event, 'contact')">contact us</a>.</p>
   </div>
   
   <!-- About Tab -->
-<div id="about" class="tab-content">
-  <h1>About Defy Elite Athletics</h1>
-  <img src="499407090_10006568012698243_8780208516133082159_n.webp" alt="Steven E. Kittinger Jr." style="width:130px; border-radius:50px; float:left; margin:0 18px 6px 0; box-shadow:0 2px 8px #0002;">
-  <p>
-    <b>Steven Edward Kittinger Jr.</b><br>
-    ACSM-Certified Personal Trainer | Golf Instructor | Educator
-  </p>
-  <p>
-   I’m Steven Edward Kittinger Jr., a certified personal trainer, golf instructor, and educator committed to helping people grow stronger—physically, mentally, and personally.
-
-With over seven years of experience in the fitness industry—including positions with the military, CrossFit, commercial gyms, and youth athletic programs—I bring a balance of grit, strategy, and practical expertise to every client and athlete I coach.
-
-I hold a certification from the American College of Sports Medicine (ACSM) and a Bachelor’s degree in Sports and Recreation Management. My background includes personal training in commercial gyms, leading CrossFit classes, and working with military personnel. I have four years of experience running youth leagues, as well as two years coaching my daughters in competitive junior golf, and I specialize in designing customized fitness plans for all ages and abilities..
-  </p>
-  <div class="card">
-    <b>Our Mission:</b><br>
-    Our mission is to elevate every athlete’s performance through evidence-based training, individualized coaching, and a commitment to continuous growth.
+  <div id="about" class="tab-content">
+    <h1>About Defy Elite Athletics</h1>
+    <p>
+      Founded by Steven Kittinger Jr, ACSM-certified personal trainer and sports educator. With 8+ years of industry experience, Steven is dedicated to building champions through holistic, evidence-based athletic programming.
+    </p>
+    <div class="card">
+      <b>Philosophy:</b>
+      <ul>
+        <li>Individualized programs</li>
+        <li>Smart progressions</li>
+        <li>Truth, discipline, and work ethic</li>
+      </ul>
+    </div>
   </div>
-</div>
-
   
- <!-- Contact Tab -->
-<div id="contact" class="tab-content">
-  <h1>Contact</h1>
-  <img src="499407090_10006568012698243_8780208516133082159_n.webp" alt="Steven E. Kittinger Jr." style="width:80px; border-radius:40px; margin-bottom:14px;">
-  <p><b>Email:</b> <a href="mailto:defyinc@yahoo.com">defyinc@yahoo.com</a></p>
-  <form class="contact-form" action="mailto:defyinc@yahoo.com" method="POST" enctype="text/plain">
-    <label>Your Name:<br><input type="text" name="name" required></label>
-    <label>Email:<br><input type="email" name="email" required></label>
-    <label>Message:<br><textarea name="message" rows="5" required></textarea></label>
-    <button type="submit">Send Message</button>
-  </form>
-</div>
-
+  <!-- Contact Tab -->
+  <div id="contact" class="tab-content">
+    <h1>Contact</h1>
+    <form class="contact-form" action="mailto:your@email.com" method="POST" enctype="text/plain">
+      <label>Your Name:<br><input type="text" name="name" required></label>
+      <label>Email:<br><input type="email" name="email" required></label>
+      <label>Message:<br><textarea name="message" rows="5" required></textarea></label>
+      <button type="submit">Send Message</button>
+    </form>
+    <p style="font-size:0.98em; color:#777;">Or email: <a href="mailto:your@email.com">your@email.com</a></p>
+  </div>
   
   <script>
-    // Tab navigation
     function openTab(evt, tabId) {
       document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
       document.querySelectorAll('.tablink').forEach(btn => btn.classList.remove('active'));
       evt.currentTarget.classList.add('active');
-    }
-    // Simple table filtering
-    function filterTable(tableId) {
-      let sport = (document.getElementById('filter-sport')||{value:''}).value.toLowerCase();
-      let modality = (document.getElementById('filter-modality')||{value:''}).value.toLowerCase();
-      let focus = (document.getElementById('filter-focus')||{value:''}).value.toLowerCase();
-      let swing = (document.getElementById('filter-swing')||{value:''}).value.toLowerCase();
-      document.querySelectorAll('#'+tableId+' tbody tr').forEach(row => {
-        let txt = row.innerText.toLowerCase();
-        let show = true;
-        if(tableId==='workout-table') {
-          if(sport && !row.cells[0].innerText.toLowerCase().includes(sport)) show = false;
-          if(modality && !row.cells[1].innerText.toLowerCase().includes(modality)) show = false;
-          if(focus && !row.cells[2].innerText.toLowerCase().includes(focus)) show = false;
-        }
-        if(tableId==='drill-table') {
-          if(swing && !row.cells[0].innerText.toLowerCase().includes(swing)) show = false;
-        }
-        row.style.display = show ? '' : 'none';
-      });
     }
   </script>
 </body>
