@@ -4,52 +4,111 @@
   <meta charset="UTF-8">
   <title>Defy Elite Athletics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #fafbfc; color: #20232a; margin: 0; }
-    nav { background: #20232a; color: #fff; padding: 0; }
-    nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
-    nav li { flex: 1; }
-    nav button {
-      width: 100%; background: none; border: none; color: #fff;
-      padding: 1em; font-size: 1.1em; cursor: pointer; transition: background 0.2s;
-    }
-    nav button.active, nav button:hover { background: #61dafb; color: #20232a; }
-    .tab-content { display: none; padding: 2em 1em; max-width: 1100px; margin: auto; }
-    .tab-content.active { display: block; }
-    h1 { font-size: 2.3em; color: #111; margin-bottom: .5em; }
-    h2 { margin-top: 1.5em; color: #214c8d; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1em; background: #fff; }
-    th, td { padding: .7em; border-bottom: 1px solid #eee; }
-    th { background: #214c8d; color: #fff; }
-    tr:hover { background: #f5faff; }
-    .card { background: #fff; padding: 1.2em; margin: 1em 0; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
-    .filter-group { margin: 1em 0; }
-    .filter-group label { margin-right: 0.7em; font-weight: 500; }
-    .contact-form input, .contact-form textarea {
-      display: block; width: 100%; margin: 0.5em 0 1em 0; padding: 0.7em;
-      border: 1px solid #ccc; border-radius: 5px; font-size: 1em;
-    }
-    .contact-form button { background: #214c8d; color: #fff; border: none; padding: 0.9em 2em; border-radius: 5px; font-size: 1em; }
-    .contact-form button:hover { background: #61dafb; color: #20232a; }
-    @media (max-width: 700px) {
-      nav ul { flex-direction: column; }
-      .tab-content { padding: 1em 0.3em; }
-      h1 { font-size: 1.4em; }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <ul>
-      <li><button class="tablink active" onclick="openTab(event, 'home')">Home</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'workouts')">Workouts</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'drills')">Drills</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'services')">Services</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'payment')">Payment/Join</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'about')">About</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'contact')">Contact</button></li>
-    </ul>
-  </nav>
+  <<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181818;
+    color: #fff;
+    margin: 0;
+  }
+  nav {
+    background: #111;
+    box-shadow: 0 3px 10px #0004;
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: stretch;
+    border-bottom: 2px solid #e10600;
+  }
+  nav li {
+    flex: 1;
+    min-width: 120px;
+  }
+  nav button {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 1.1em 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 1px;
+  }
+  nav button.active, nav button:hover {
+    background: #e10600;
+    color: #fff;
+    box-shadow: 0 2px 8px #e1060044;
+  }
+  .tab-content {
+    display: none;
+    padding: 2em 1em;
+    max-width: 1100px;
+    margin: auto;
+    background: #222;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px #0004;
+  }
+  .tab-content.active { display: block; }
+  h1 { font-size: 2.2em; color: #e10600; margin-bottom: .6em; }
+  h2 { margin-top: 1.4em; color: #e10600; }
+  table { width: 100%; border-collapse: collapse; margin-top: 1em; background: #191919; color: #fff; }
+  th, td { padding: .75em; border-bottom: 1px solid #292929; }
+  th { background: #e10600; color: #fff; }
+  tr:hover { background: #2b2b2b; }
+  .card {
+    background: #191919;
+    padding: 1.2em;
+    margin: 1em 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #e1060022;
+    border-left: 5px solid #e10600;
+  }
+  .filter-group label { color: #e10600; margin-right: 1.2em; font-weight: 600; }
+  .contact-form input, .contact-form textarea {
+    display: block;
+    width: 100%;
+    margin: 0.5em 0 1em 0;
+    padding: 0.8em;
+    border: 1px solid #e10600;
+    border-radius: 5px;
+    font-size: 1em;
+    background: #111;
+    color: #fff;
+  }
+  .contact-form button {
+    background: #e10600;
+    color: #fff;
+    border: none;
+    padding: 0.9em 2em;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  .contact-form button:hover { background: #b30000; }
+  a { color: #e10600; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media (max-width: 900px) {
+    nav ul { flex-direction: column; }
+    nav li { min-width: 80px; }
+  }
+  @media (max-width: 700px) {
+    .tab-content { padding: 1em 0.3em; }
+    h1 { font-size: 1.2em; }
+    nav button { font-size: 1em; }
+  }
+</style>
+
   
   <!-- Home Tab -->
   <div id="home" class="tab-content active">
