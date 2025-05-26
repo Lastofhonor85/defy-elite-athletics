@@ -5,34 +5,148 @@
   <title>Defy Elite Athletics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f6f8fa; margin: 0; color: #20232a; }
-    nav { background: #1a1a1a; }
-    nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
-    nav li { flex: 1; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      color: #222;
+    }
+    nav {
+      background: #181818;
+      box-shadow: 0 2px 8px #0002;
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      margin: 0 6px;
+    }
     nav button {
-      width: 100%; background: none; border: none; color: #fff;
-      padding: 1.1em 0; font-size: 1.08em; cursor: pointer; transition: background 0.2s;
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 1.2em 2em;
+      font-size: 1.1em;
+      cursor: pointer;
+      border-radius: 20px 20px 0 0;
+      transition: background 0.23s, color 0.18s, font-weight 0.2s;
+      letter-spacing: 1px;
+      font-weight: 500;
     }
-    nav button.active, nav button:hover { background: #f54b23; color: #fff; }
-    .tab-content { display: none; padding: 2em 1em; max-width: 1100px; margin: auto; }
-    .tab-content.active { display: block; }
-    h1 { font-size: 2.1em; color: #222; margin-bottom: .6em; }
-    h2 { color: #ba3326; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1.2em; background: #fff; }
-    th, td { padding: .8em; border-bottom: 1px solid #eee; }
-    th { background: #ba3326; color: #fff; }
-    tr:hover { background: #f6f2ef; }
-    .card { background: #fff; padding: 1.1em; margin: 1em 0; border-radius: 8px; box-shadow: 0 2px 8px #0002; }
+    nav button.active, nav button:hover {
+      background: #f54b23;
+      color: #fff;
+      font-weight: 700;
+    }
+    .tab-content {
+      display: none;
+      padding: 2.1em 1em 1em 1em;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadein 0.25s;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadein { from { opacity: 0;} to { opacity: 1; } }
+    h1 { font-size: 2.3em; color: #e74523; margin-bottom: 0.5em; }
+    h2 { color: #1a1a1a; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.4em;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px #0001;
+    }
+    th, td {
+      padding: 1em;
+      border-bottom: 1px solid #ececec;
+      text-align: left;
+    }
+    th {
+      background: #f54b23;
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: .5px;
+    }
+    tr:hover { background: #f9ebe5; }
+    .card {
+      background: #fff;
+      padding: 1.3em;
+      margin: 1.2em 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px #0001;
+    }
     .contact-form input, .contact-form textarea {
-      display: block; width: 100%; margin: 0.6em 0 1.2em 0; padding: 0.8em;
-      border: 1px solid #ccc; border-radius: 6px; font-size: 1em;
+      display: block;
+      width: 100%;
+      margin: 0.6em 0 1.2em 0;
+      padding: 0.8em;
+      border: 1px solid #d8d8d8;
+      border-radius: 7px;
+      font-size: 1em;
+      background: #fafafa;
     }
-    .contact-form button { background: #ba3326; color: #fff; border: none; padding: 1em 2em; border-radius: 5px; font-size: 1em; }
-    .contact-form button:hover { background: #f54b23; color: #fff; }
+    .contact-form button {
+      background: #f54b23;
+      color: #fff;
+      border: none;
+      padding: 1em 2.2em;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .contact-form button:hover { background: #1a1a1a; color: #fff; }
+    .payment-section {
+      background: #fff5ef;
+      padding: 2em 1em;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0001;
+      margin: 2em 0;
+    }
+    .payment-section h2 { margin-top: 0; color: #d03c1a; }
+    .payment-option {
+      background: #fff;
+      margin: 1.2em 0;
+      padding: 1.1em;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px #0001;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .payment-option b { font-size: 1.06em; }
+    .payment-option a, .payment-option button {
+      background: #f54b23;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.7em 1.6em;
+      border-radius: 5px;
+      border: none;
+      font-size: 1em;
+      font-weight: 500;
+      transition: background 0.2s;
+      cursor: pointer;
+      margin-left: 1em;
+    }
+    .payment-option a:hover, .payment-option button:hover { background: #1a1a1a; }
     @media (max-width: 700px) {
       nav ul { flex-direction: column; }
-      .tab-content { padding: 1em 0.5em; }
-      h1 { font-size: 1.4em; }
+      nav button { border-radius: 0; width: 100%; }
+      .tab-content { padding: 1em 0.2em; }
+      h1 { font-size: 1.3em; }
+      .payment-option { flex-direction: column; gap: 0.7em; }
     }
   </style>
 </head>
@@ -134,13 +248,33 @@
   
   <!-- Payment Tab -->
   <div id="payment" class="tab-content">
-    <h1>Join / Payment Portal</h1>
-    <ul>
-      <li><b>Monthly Membership:</b> <a href="#">Subscribe</a></li>
-      <li><b>Book a Session:</b> <a href="#">Schedule Now</a></li>
-      <li><b>Gift Certificate:</b> <a href="#">Buy Gift</a></li>
-    </ul>
-    <p>For other payment options or questions, please <a href="#" onclick="openTab(event, 'contact')">contact us</a>.</p>
+    <div class="payment-section">
+      <h2>Join / Payment Portal</h2>
+      <div class="payment-option">
+        <b>Monthly Membership</b>
+        <!-- Replace # with your real payment link, e.g. PayPal or Stripe -->
+        <a href="#" target="_blank">Subscribe via PayPal</a>
+      </div>
+      <div class="payment-option">
+        <b>Book a Session</b>
+        <a href="#" target="_blank">Schedule & Pay</a>
+      </div>
+      <div class="payment-option">
+        <b>Gift Certificate</b>
+        <a href="#" target="_blank">Buy Gift</a>
+      </div>
+      <p style="margin-top:2em; color:#b8381e;">
+        For other payment options or questions, please <a href="#" onclick="openTab(event, 'contact')" style="color:#d03c1a; text-decoration:underline;">contact us</a>.
+      </p>
+    </div>
+    <div style="font-size:.95em; margin-top:1.7em; color:#888;">
+      <b>How to accept payments?</b> <br>
+      <ul>
+        <li><b>PayPal:</b> Replace the <code>#</code> link with your PayPal.me, PayPal button, or checkout link.</li>
+        <li><b>Stripe:</b> Use <a href="https://stripe.com/payments/checkout" target="_blank">Stripe Checkout</a> to generate links for your offers.</li>
+        <li><b>Other:</b> You can embed payment forms or links from <a href="https://squareup.com" target="_blank">Square</a>, <a href="https://buy.stripe.com/" target="_blank">Stripe</a>, or other processors.</li>
+      </ul>
+    </div>
   </div>
   
   <!-- About Tab -->
