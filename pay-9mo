@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pay Now – 9-Month Plan</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://www.paypal.com/sdk/js?client-id=AX8tNpeyEgJBHprAUsolwvqv1oGUeOMRTx74YxU1WniGxMybjVKT-cj8yTkf3F8OiTu6K8a5XgEJ5MAE"></script>
+  <style>.service-logo { width: 120px; margin: 24px auto 20px; display: block; border-radius: 18px; box-shadow: 0 2px 18px rgba(0,0,0,0.15);} .pay-section { max-width: 450px; margin: 0 auto; background: #181818; padding: 32px 24px; border-radius: 16px; box-shadow: 0 6px 24px rgba(30, 144, 255, 0.10); text-align: center;} .currency-label { font-weight: bold; color: #1e90ff; margin: 22px 0 6px; font-size: 1.14em;} .back-link { display: inline-block; color: #1e90ff; margin: 20px 0 0; text-decoration: underline;}</style>
+</head>
+<body>
+  <header><img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo"></header>
+  <nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="contact.html">Contact</a></nav>
+  <section class="pay-section">
+    <img src="assets/9 Month Periodization Logo.png" alt="9-Month Plan" class="service-logo" />
+    <h2>Pay for 9-Month Periodization Plan</h2>
+    <div class="currency-label">USD $550</div>
+    <div id="paypal-9mo-usd"></div>
+    <div class="currency-label">PHP ₱30,512</div>
+    <div id="paypal-9mo-php"></div>
+    <a class="back-link" href="services.html">&larr; Back to Services</a>
+  </section>
+  <footer>&copy; 2025 Defy Elite Athletics</footer>
+  <script>
+    function renderPayBtn(selector, currency, amount) {
+      paypal.Buttons({
+        style: { shape: 'pill', color: 'blue', layout: 'vertical', label: 'paypal', },
+        createOrder: (data, actions) =>
+          actions.order.create({ purchase_units: [{ amount: { currency_code: currency, value: amount } }] }),
+        onApprove: (data, actions) =>
+          actions.order.capture().then(() => {
+            alert('Thank you for your payment!');
+            window.location.href = 'services.html';
+          })
+      }).render(selector);
+    }
+    renderPayBtn('#paypal-9mo-usd', 'USD', '550.00');
+    renderPayBtn('#paypal-9mo-php', 'PHP', '30511.80');
+  </script>
+</body>
+</html>
