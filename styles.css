@@ -4,7 +4,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #111;
+  background-color: #000; /* Matches logo background for seamless blend */
   color: #fff;
 }
 
@@ -16,7 +16,8 @@ header {
 
 .logo {
   max-width: 200px;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
+  display: block;
 }
 
 nav {
@@ -30,6 +31,10 @@ nav a {
   margin: 0 15px;
   text-decoration: none;
   font-size: 1rem;
+}
+
+nav a.active {
+  text-decoration: underline;
 }
 
 .hero {
@@ -55,19 +60,17 @@ section {
 
 section h2 {
   margin-top: 0;
+  font-size: 1.75rem;
+  margin-bottom: 15px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
+ul {
+  list-style: disc inside;
+  padding-left: 0;
 }
 
-th,
-td {
-  border: 1px solid #444;
-  padding: 8px;
-  text-align: left;
+ul li {
+  margin-bottom: 8px;
 }
 
 .btn-link {
@@ -88,3 +91,16 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
+/* Services page grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+.service-card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  pa
