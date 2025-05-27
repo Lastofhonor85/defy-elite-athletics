@@ -5,30 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services – Defy Elite Athletics</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AX8tNpeyEgJBHprAUsolwvqv1oGUeOMRTx74YxU1WniGxMybjVKT-cj8yTkf3F8OiTu6K8a5XgEJ5MAE"></script>
   <style>
+    .service-logo-btn {
+      border: none;
+      background: none;
+      cursor: pointer;
+      outline: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      display: block;
+      margin: 0 auto 12px;
+      border-radius: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      padding: 10px;
+      text-align: center;
+    }
+    .service-logo-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 6px 24px rgba(30, 144, 255, 0.22);
+      background: #1e222a;
+    }
     .service-logo {
       width: 100px;
-      margin: 0 auto 12px;
       display: block;
+      margin: 0 auto;
     }
-    .price-btns {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-    .price-btn {
-      background: #222;
-      padding: 10px;
-      border-radius: 6px;
-    }
-    .currency-label {
-      font-weight: bold;
-      color: #1e90ff;
-      margin-bottom: 4px;
-      font-size: 1.08em;
+    .service-card h2 {
+      margin-bottom: 0.5em;
+      margin-top: 0.2em;
     }
   </style>
 </head>
@@ -36,7 +39,6 @@
   <header>
     <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
   </header>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="drills.html">Drills Library</a>
@@ -44,241 +46,89 @@
     <a href="services.html" class="active">Services</a>
     <a href="contact.html">Contact</a>
   </nav>
-
   <section class="hero">
     <h1>Our Services</h1>
-    <p>Select the plan that best matches your goals. After payment, you’ll be directed to schedule your remote session immediately.</p>
+    <p>Select a service to continue to payment.</p>
   </section>
-
   <section id="services-list" class="services-grid">
 
-    <!-- Live Golf Coaching -->
     <div class="service-card">
-      <img src="assets/Live Coaching logo.png" alt="Live Golf Coaching" class="service-logo" />
+      <a href="pay-live-golf.html" class="service-logo-btn" title="Pay for Live Golf Coaching">
+        <img src="assets/Live Coaching logo.png" alt="Live Golf Coaching" class="service-logo" />
+      </a>
       <h2>Live Golf Coaching</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $50</div>
-          <div id="paypal-golf-live-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱2,774</div>
-          <div id="paypal-golf-live-php"></div>
-        </div>
-      </div>
     </div>
 
-    <!-- Remote Golf Coaching -->
     <div class="service-card">
-      <img src="assets/Remote Coaching Logo.png" alt="Remote Golf Coaching" class="service-logo" />
+      <a href="pay-remote-golf.html" class="service-logo-btn" title="Pay for Remote Golf Coaching">
+        <img src="assets/Remote Coaching Logo.png" alt="Remote Golf Coaching" class="service-logo" />
+      </a>
       <h2>Remote Golf Coaching</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $40</div>
-          <div id="paypal-golf-remote-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱2,219</div>
-          <div id="paypal-golf-remote-php"></div>
-        </div>
-      </div>
     </div>
 
-    <!-- Live Personal Training -->
     <div class="service-card">
-      <img src="assets/Live Personal Training Logo.png" alt="Live Personal Training" class="service-logo" />
+      <a href="pay-live-pt.html" class="service-logo-btn" title="Pay for Live Personal Training">
+        <img src="assets/Live Personal Training Logo.png" alt="Live Personal Training" class="service-logo" />
+      </a>
       <h2>Live Personal Training</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $50</div>
-          <div id="paypal-pt-live-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱2,774</div>
-          <div id="paypal-pt-live-php"></div>
-        </div>
-      </div>
     </div>
 
-    <!-- Remote Personal Training -->
     <div class="service-card">
-      <img src="assets/Remote Personal Training Logo.png" alt="Remote Personal Training" class="service-logo" />
+      <a href="pay-remote-pt.html" class="service-logo-btn" title="Pay for Remote Personal Training">
+        <img src="assets/Remote Personal Training Logo.png" alt="Remote Personal Training" class="service-logo" />
+      </a>
       <h2>Remote Personal Training</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $40</div>
-          <div id="paypal-pt-remote-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱2,219</div>
-          <div id="paypal-pt-remote-php"></div>
-        </div>
-      </div>
     </div>
 
-    <!-- Nutritional Counseling (Remote) -->
     <div class="service-card">
-      <img src="assets/Nutritional Counseling Remote.png" alt="Nutritional Counseling (Remote)" class="service-logo" />
+      <a href="pay-nutrition.html" class="service-logo-btn" title="Pay for Nutritional Counseling (Remote)">
+        <img src="assets/Nutritional Counseling Remote.png" alt="Nutritional Counseling (Remote)" class="service-logo" />
+      </a>
       <h2>Nutritional Counseling (Remote)</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $20/hr</div>
-          <div id="paypal-nutrition-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱1,110/hr</div>
-          <div id="paypal-nutrition-php"></div>
-        </div>
-      </div>
     </div>
 
-    <!-- 3-Month Plan -->
     <div class="service-card">
-      <img src="assets/3 Month Periodation Logo.png" alt="3-Month Plan" class="service-logo" />
+      <a href="pay-3mo.html" class="service-logo-btn" title="Pay for 3-Month Plan">
+        <img src="assets/3 Month Periodation Logo.png" alt="3-Month Plan" class="service-logo" />
+      </a>
       <h2>3-Month Periodization Plan</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $200</div>
-          <div id="paypal-period-3-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱11,095</div>
-          <div id="paypal-period-3-php"></div>
-        </div>
-      </div>
     </div>
-    <!-- 6-Month Plan -->
+
     <div class="service-card">
-      <img src="assets/6 Month Periodization Logo.png" alt="6-Month Plan" class="service-logo" />
+      <a href="pay-6mo.html" class="service-logo-btn" title="Pay for 6-Month Plan">
+        <img src="assets/6 Month Periodization Logo.png" alt="6-Month Plan" class="service-logo" />
+      </a>
       <h2>6-Month Periodization Plan</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $375</div>
-          <div id="paypal-period-6-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱20,804</div>
-          <div id="paypal-period-6-php"></div>
-        </div>
-      </div>
     </div>
-    <!-- 9-Month Plan -->
+
     <div class="service-card">
-      <img src="assets/9 Month Periodization Logo.png" alt="9-Month Plan" class="service-logo" />
+      <a href="pay-9mo.html" class="service-logo-btn" title="Pay for 9-Month Plan">
+        <img src="assets/9 Month Periodization Logo.png" alt="9-Month Plan" class="service-logo" />
+      </a>
       <h2>9-Month Periodization Plan</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $550</div>
-          <div id="paypal-period-9-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱30,512</div>
-          <div id="paypal-period-9-php"></div>
-        </div>
-      </div>
     </div>
-    <!-- 12-Month Plan -->
+
     <div class="service-card">
-      <img src="assets/12 Month Periodation Logo.png" alt="12-Month Plan" class="service-logo" />
+      <a href="pay-12mo.html" class="service-logo-btn" title="Pay for 12-Month Plan">
+        <img src="assets/12 Month Periodation Logo.png" alt="12-Month Plan" class="service-logo" />
+      </a>
       <h2>12-Month Periodization Plan</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $725</div>
-          <div id="paypal-period-12-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱40,220</div>
-          <div id="paypal-period-12-php"></div>
-        </div>
-      </div>
     </div>
 
-    <!-- Monthly Subscription -->
     <div class="service-card">
-      <img src="assets/Monthly Subscription Logo.png" alt="Monthly Subscription" class="service-logo" />
+      <a href="pay-subscription.html" class="service-logo-btn" title="Pay for Monthly Subscription">
+        <img src="assets/Monthly Subscription Logo.png" alt="Monthly Subscription" class="service-logo" />
+      </a>
       <h2>Monthly Subscription</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $30/mo</div>
-          <div id="paypal-sub-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱1,664/mo</div>
-          <div id="paypal-sub-php"></div>
-        </div>
-      </div>
     </div>
 
-    <!-- Swing Analysis + Video -->
     <div class="service-card">
-      <img src="assets/swing-analysis.png" alt="Swing Analysis" class="service-logo" />
+      <a href="pay-swing-analysis.html" class="service-logo-btn" title="Pay for Swing Analysis">
+        <img src="assets/swing-analysis.png" alt="Swing Analysis" class="service-logo" />
+      </a>
       <h2>Swing Analysis + Video</h2>
-      <div class="price-btns">
-        <div class="price-btn">
-          <div class="currency-label">USD $60</div>
-          <div id="paypal-analysis-usd"></div>
-        </div>
-        <div class="price-btn">
-          <div class="currency-label">PHP ₱3,329</div>
-          <div id="paypal-analysis-php"></div>
-        </div>
-      </div>
     </div>
   </section>
-
   <footer>&copy; 2025 Defy Elite Athletics</footer>
-
-  <script>
-    function renderBtn(selector, currency, amount, redirectUrl) {
-      paypal.Buttons({
-        createOrder: (data, actions) =>
-          actions.order.create({
-            purchase_units: [{ amount: { currency_code: currency, value: amount } }]
-          }),
-        onApprove: (data, actions) =>
-          actions.order.capture().then(() => {
-            if (redirectUrl) window.location.href = redirectUrl;
-          })
-      }).render(selector);
-    }
-
-    // Live Golf Coaching
-    renderBtn('#paypal-golf-live-usd', 'USD', '50.00');
-    renderBtn('#paypal-golf-live-php', 'PHP', '2773.80');
-
-    // Remote Golf Coaching (redirect)
-    renderBtn('#paypal-golf-remote-usd', 'USD', '40.00', 'schedule-remote.html');
-    renderBtn('#paypal-golf-remote-php', 'PHP', '2219.04', 'schedule-remote.html');
-
-    // Live Personal Training
-    renderBtn('#paypal-pt-live-usd', 'USD', '50.00');
-    renderBtn('#paypal-pt-live-php', 'PHP', '2773.80');
-
-    // Remote Personal Training (redirect)
-    renderBtn('#paypal-pt-remote-usd', 'USD', '40.00', 'schedule-remote.html');
-    renderBtn('#paypal-pt-remote-php', 'PHP', '2219.04', 'schedule-remote.html');
-
-    // Nutritional Counseling (redirect)
-    renderBtn('#paypal-nutrition-usd', 'USD', '20.00', 'schedule-remote.html');
-    renderBtn('#paypal-nutrition-php', 'PHP', '1109.52', 'schedule-remote.html');
-
-    // Periodization
-    renderBtn('#paypal-period-3-usd', 'USD', '200.00');
-    renderBtn('#paypal-period-3-php', 'PHP', '11095.20');
-    renderBtn('#paypal-period-6-usd', 'USD', '375.00');
-    renderBtn('#paypal-period-6-php', 'PHP', '20803.50');
-    renderBtn('#paypal-period-9-usd', 'USD', '550.00');
-    renderBtn('#paypal-period-9-php', 'PHP', '30511.80');
-    renderBtn('#paypal-period-12-usd', 'USD', '725.00');
-    renderBtn('#paypal-period-12-php', 'PHP', '40220.10');
-
-    // Monthly Subscription
-    renderBtn('#paypal-sub-usd', 'USD', '30.00');
-    renderBtn('#paypal-sub-php', 'PHP', '1664.28');
-
-    // Swing Analysis (redirect)
-    renderBtn('#paypal-analysis-usd', 'USD', '60.00', 'schedule-remote.html');
-    renderBtn('#paypal-analysis-php', 'PHP', '3328.56', 'schedule-remote.html');
-  </script>
 </body>
 </html>
