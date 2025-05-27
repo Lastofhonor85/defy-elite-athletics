@@ -19,90 +19,107 @@
 
   <section class="hero">
     <h1>Our Services</h1>
-    <p>Choose a plan that fits your goals—live coaching, remote training, nutrition, and more.</p>
+    <p>Choose the perfect plan to elevate your game and fitness.</p>
   </section>
 
-  <section id="services-list">
-    <ul>
-      <li>
-        <strong>One-on-One Live Golf Coaching</strong> — $50 / ₱2,774  
-        <div id="paypal-button-golf-live"></div>
-        <div id="paypal-button-golf-live-php"></div>
-      </li>
-      <li>
-        <strong>One-on-One Remote Golf Coaching</strong> — $40 / ₱2,219  
-        <div id="paypal-button-golf-remote"></div>
-        <div id="paypal-button-golf-remote-php"></div>
-      </li>
-      <li>
-        <strong>One-on-One Live Personal Training</strong> — $50 / ₱2,774  
-        <div id="paypal-button-pt-live"></div>
-        <div id="paypal-button-pt-live-php"></div>
-      </li>
-      <li>
-        <strong>One-on-One Remote Personal Training</strong> — $40 / ₱2,219  
-        <div id="paypal-button-pt-remote"></div>
-        <div id="paypal-button-pt-remote-php"></div>
-      </li>
-      <li>
-        <strong>Nutritional Counseling (Remote)</strong> — $20/hr / ₱1,110/hr  
-        <div id="paypal-button-nutrition-usd"></div>
-        <div id="paypal-button-nutrition-php"></div>
-      </li>
-      <li>
-        <strong>Complete Athletic Periodization</strong>  
-        <ul>
-          <li>3 Months — $200 / ₱11,095 <div id="paypal-button-period-3-usd"></div><div id="paypal-button-period-3-php"></div></li>
-          <li>6 Months — $375 / ₱20,804 <div id="paypal-button-period-6-usd"></div><div id="paypal-button-period-6-php"></div></li>
-          <li>9 Months — $550 / ₱30,512 <div id="paypal-button-period-9-usd"></div><div id="paypal-button-period-9-php"></div></li>
-          <li>12 Months — $725 / ₱40,220 <div id="paypal-button-period-12-usd"></div><div id="paypal-button-period-12-php"></div></li>
-        </ul>
-      </li>
-      <li>
-        <strong>Monthly Subscription</strong> — $30/mo / ₱1,664/mo  
-        <div id="paypal-button-subscription-usd"></div>
-        <div id="paypal-button-subscription-php"></div>
-      </li>
-      <li>
-        <strong>Swing Analysis w/ Personalized Video</strong> — $60 / ₱3,329  
-        <div id="paypal-button-analysis-usd"></div>
-        <div id="paypal-button-analysis-php"></div>
-      </li>
-    </ul>
+  <section id="services-list" class="services-grid">
+    <div class="service-card">
+      <h2>Live Golf Coaching</h2>
+      <p class="price">USD $50 | PHP ₱2,774</p>
+      <div id="paypal-golf-live-usd"></div>
+      <div id="paypal-golf-live-php"></div>
+    </div>
+
+    <div class="service-card">
+      <h2>Remote Golf Coaching</h2>
+      <p class="price">USD $40 | PHP ₱2,219</p>
+      <div id="paypal-golf-remote-usd"></div>
+      <div id="paypal-golf-remote-php"></div>
+    </div>
+
+    <div class="service-card">
+      <h2>Live Personal Training</h2>
+      <p class="price">USD $50 | PHP ₱2,774</p>
+      <div id="paypal-pt-live-usd"></div>
+      <div id="paypal-pt-live-php"></div>
+    </div>
+
+    <div class="service-card">
+      <h2>Remote Personal Training</h2>
+      <p class="price">USD $40 | PHP ₱2,219</p>
+      <div id="paypal-pt-remote-usd"></div>
+      <div id="paypal-pt-remote-php"></div>
+    </div>
+
+    <div class="service-card">
+      <h2>Nutritional Counseling (Remote)</h2>
+      <p class="price">USD $20/hr | PHP ₱1,110/hr</p>
+      <div id="paypal-nutrition-usd"></div>
+      <div id="paypal-nutrition-php"></div>
+    </div>
+
+    <div class="service-card">
+      <h2>Periodization Plans</h2>
+      <ul class="plan-list">
+        <li>3 mo: USD $200 | PHP ₱11,095 <div id="paypal-period-3-usd"></div><div id="paypal-period-3-php"></div></li>
+        <li>6 mo: USD $375 | PHP ₱20,804 <div id="paypal-period-6-usd"></div><div id="paypal-period-6-php"></div></li>
+        <li>9 mo: USD $550 | PHP ₱30,512 <div id="paypal-period-9-usd"></div><div id="paypal-period-9-php"></div></li>
+        <li>12 mo: USD $725 | PHP ₱40,220 <div id="paypal-period-12-usd"></div><div id="paypal-period-12-php"></div></li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h2>Monthly Subscription</h2>
+      <p class="price">USD $30/mo | PHP ₱1,664/mo</p>
+      <div id="paypal-sub-usd"></div>
+      <div id="paypal-sub-php"></div>
+    </div>
+
+    <div class="service-card">
+      <h2>Swing Analysis + Video</h2>
+      <p class="price">USD $60 | PHP ₱3,329</p>
+      <div id="paypal-analysis-usd"></div>
+      <div id="paypal-analysis-php"></div>
+    </div>
   </section>
 
-  <footer>
-    &copy; 2025 Defy Elite Athletics
-  </footer>
+  <footer>&copy; 2025 Defy Elite Athletics</footer>
 
   <script>
-    // Render every PayPal button
-    function initPayPalButton(sel, curr, val) {
-      paypal.Buttons({ createOrder: (d,a) => a.order.create({ purchase_units:[{amount:{currency_code:curr,value:val}}] }) })
-            .render(sel);
+    function renderBtn(selector, currency, amount) {
+      paypal.Buttons({ createOrder: (d,a) => a.order.create({ purchase_units:[{ amount:{ currency_code: currency, value: amount } }] }) })
+            .render(selector);
     }
-    initPayPalButton('#paypal-button-golf-live',        'USD','50.00');
-    initPayPalButton('#paypal-button-golf-live-php',    'PHP','2773.80');
-    initPayPalButton('#paypal-button-golf-remote',      'USD','40.00');
-    initPayPalButton('#paypal-button-golf-remote-php',  'PHP','2219.04');
-    initPayPalButton('#paypal-button-pt-live',          'USD','50.00');
-    initPayPalButton('#paypal-button-pt-live-php',      'PHP','2773.80');
-    initPayPalButton('#paypal-button-pt-remote',        'USD','40.00');
-    initPayPalButton('#paypal-button-pt-remote-php',    'PHP','2219.04');
-    initPayPalButton('#paypal-button-nutrition-usd',    'USD','20.00');
-    initPayPalButton('#paypal-button-nutrition-php',    'PHP','1109.52');
-    initPayPalButton('#paypal-button-period-3-usd',     'USD','200.00');
-    initPayPalButton('#paypal-button-period-3-php',     'PHP','11095.20');
-    initPayPalButton('#paypal-button-period-6-usd',     'USD','375.00');
-    initPayPalButton('#paypal-button-period-6-php',     'PHP','20803.50');
-    initPayPalButton('#paypal-button-period-9-usd',     'USD','550.00');
-    initPayPalButton('#paypal-button-period-9-php',     'PHP','30511.80');
-    initPayPalButton('#paypal-button-period-12-usd',    'USD','725.00');
-    initPayPalButton('#paypal-button-period-12-php',    'PHP','40220.10');
-    initPayPalButton('#paypal-button-subscription-usd', 'USD','30.00');
-    initPayPalButton('#paypal-button-subscription-php', 'PHP','1664.28');
-    initPayPalButton('#paypal-button-analysis-usd',     'USD','60.00');
-    initPayPalButton('#paypal-button-analysis-php',     'PHP','3328.56');
+    // Live Golf
+    renderBtn('#paypal-golf-live-usd', 'USD', '50.00');
+    renderBtn('#paypal-golf-live-php', 'PHP', '2773.80');
+    // Remote Golf
+    renderBtn('#paypal-golf-remote-usd', 'USD', '40.00');
+    renderBtn('#paypal-golf-remote-php', 'PHP', '2219.04');
+    // Live PT
+    renderBtn('#paypal-pt-live-usd', 'USD', '50.00');
+    renderBtn('#paypal-pt-live-php', 'PHP', '2773.80');
+    // Remote PT
+    renderBtn('#paypal-pt-remote-usd', 'USD', '40.00');
+    renderBtn('#paypal-pt-remote-php', 'PHP', '2219.04');
+    // Nutrition
+    renderBtn('#paypal-nutrition-usd', 'USD', '20.00');
+    renderBtn('#paypal-nutrition-php', 'PHP', '1109.52');
+    // Periodization
+    renderBtn('#paypal-period-3-usd', 'USD', '200.00');
+    renderBtn('#paypal-period-3-php', 'PHP', '11095.20');
+    renderBtn('#paypal-period-6-usd', 'USD', '375.00');
+    renderBtn('#paypal-period-6-php', 'PHP', '20803.50');
+    renderBtn('#paypal-period-9-usd', 'USD', '550.00');
+    renderBtn('#paypal-period-9-php', 'PHP', '30511.80');
+    renderBtn('#paypal-period-12-usd', 'USD', '725.00');
+    renderBtn('#paypal-period-12-php', 'PHP', '40220.10');
+    // Subscription
+    renderBtn('#paypal-sub-usd', 'USD', '30.00');
+    renderBtn('#paypal-sub-php', 'PHP', '1664.28');
+    // Analysis
+    renderBtn('#paypal-analysis-usd', 'USD', '60.00');
+    renderBtn('#paypal-analysis-php', 'PHP', '3328.56');
   </script>
 </body>
 </html>
