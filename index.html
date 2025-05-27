@@ -42,7 +42,7 @@
   <nav>
     <ul>
       <li><button class="tablink active" onclick="openTab(event, 'home')">Home</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'workouts')">Workouts</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'exercises')">Exercises</button></li>
       <li><button class="tablink" onclick="openTab(event, 'drills')">Drills</button></li>
       <li><button class="tablink" onclick="openTab(event, 'services')">Services</button></li>
       <li><button class="tablink" onclick="openTab(event, 'payment')">Payment/Join</button></li>
@@ -54,22 +54,23 @@
   <!-- Home Tab -->
   <div id="home" class="tab-content active">
     <h1>Defy Elite Athletics</h1>
-    <p>Welcome to Defy Elite Athletics – the training hub for athletes who want to excel, compete, and become their best. Explore our curated libraries of elite workouts and skill-specific drills, or learn more about our specialized services, philosophy, and how you can join our growing community.</p>
+    <p>Welcome to Defy Elite Athletics – the training hub for athletes who want to excel, compete, and become their best. Explore our curated libraries of elite exercises and skill-specific drills, or learn more about our specialized services, philosophy, and how you can join our growing community.</p>
     <div class="card">
       <h2>Our Mission</h2>
       <p>To empower athletes of all backgrounds to defy their limits and achieve excellence through world-class programming, coaching, and a culture of continuous improvement.</p>
     </div>
   </div>
   
-  <!-- Workouts Tab -->
-  <div id="workouts" class="tab-content">
-    <h1>Workout Library</h1>
+  <!-- Exercises Tab -->
+  <div id="exercises" class="tab-content">
+    <h1>Exercise Library</h1>
     <div class="filter-group">
-      <label>Sport: <input id="filter-sport" oninput="filterTable('workout-table')" placeholder="e.g. Golf"></label>
-      <label>Modality: <input id="filter-modality" oninput="filterTable('workout-table')" placeholder="e.g. Strength"></label>
-      <label>Training Focus: <input id="filter-focus" oninput="filterTable('workout-table')" placeholder="e.g. Power"></label>
+      <label>Sport: <input id="exercise-sport" oninput="filterExercises()"></label>
+      <label>Modality: <input id="exercise-modality" oninput="filterExercises()"></label>
+      <label>Focus: <input id="exercise-focus" oninput="filterExercises()"></label>
+      <label>Exercise Name: <input id="exercise-name" oninput="filterExercises()"></label>
     </div>
-    <table id="workout-table">
+    <table id="exercise-table">
       <thead>
         <tr>
           <th>Sport</th>
@@ -80,53 +81,57 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Sample rows: Replace/add from spreadsheet -->
-        <tr>
-          <td>Golf</td>
-          <td>Strength</td>
-          <td>Core Stability</td>
-          <td>Pallof Press</td>
-          <td>Anti-rotation core exercise, great for golfers</td>
-        </tr>
-        <tr>
-          <td>Basketball</td>
-          <td>Power</td>
-          <td>Explosiveness</td>
-          <td>Box Jumps</td>
-          <td>Build lower-body explosiveness and vertical jump</td>
-        </tr>
-        <!-- Add more rows here from your spreadsheet -->
+        <!-- BEGIN EXERCISE ROWS (from your spreadsheet, columns G-N) -->
+<tr><td>Metcon</td><td>Endurance</td><td>Legs</td><td>Bird Dog</td><td>Bird Dog focusing on Legs through Endurance training.</td></tr>
+<tr><td>Circuit Training</td><td>Balance</td><td>Core</td><td>Wall Sit</td><td>Wall Sit focusing on Core through Balance training.</td></tr>
+<tr><td>Metcon</td><td>Endurance</td><td>Legs</td><td>Row</td><td>Row focusing on Legs through Endurance training.</td></tr>
+<tr><td>Yoga</td><td>Endurance</td><td>Core</td><td>Jumping Jack</td><td>Jumping Jack focusing on Core through Endurance training.</td></tr>
+<tr><td>Golf</td><td>Power</td><td>Stability</td><td>Cobra Stretch</td><td>Cobra Stretch focusing on Stability through Power training.</td></tr>
+<tr><td>Golf</td><td>Endurance</td><td>Stability</td><td>Triangle Pose</td><td>Triangle Pose focusing on Stability through Endurance training.</td></tr>
+<tr><td>Circuit Training</td><td>Strength</td><td>Full Body</td><td>Bird Dog</td><td>Bird Dog focusing on Full Body through Strength training.</td></tr>
+<tr><td>Circuit Training</td><td>Flexibility</td><td>Explosiveness</td><td>Landmine Press</td><td>Landmine Press focusing on Explosiveness through Flexibility training.</td></tr>
+<tr><td>Metcon</td><td>Cardio</td><td>Stability</td><td>Banded Walk</td><td>Banded Walk focusing on Stability through Cardio training.</td></tr>
+<tr><td>Yoga</td><td>Power</td><td>Stability</td><td>Sled Push</td><td>Sled Push focusing on Stability through Power training.</td></tr>
+<tr><td>HIIT</td><td>Strength</td><td>Core</td><td>Prone Cobra</td><td>Prone Cobra focusing on Core through Strength training.</td></tr>
+<tr><td>Circuit Training</td><td>Power</td><td>Conditioning</td><td>Box Jump</td><td>Box Jump focusing on Conditioning through Power training.</td></tr>
+        <!-- END EXERCISE ROWS -->
       </tbody>
     </table>
-    <p style="font-size:0.98em; color:#777;">(Use the filters above or scroll to explore all workouts. To update, simply edit this table or use a CSV-to-HTML tool for bulk data.)</p>
+    <p style="font-size:0.98em; color:#777;">(Use the filters above or scroll to explore all exercises. To update, simply edit this table or use a CSV-to-HTML tool for bulk data.)</p>
   </div>
   
   <!-- Drills Tab -->
   <div id="drills" class="tab-content">
     <h1>Drills Library</h1>
     <div class="filter-group">
-      <label>Swing Fault: <input id="filter-swing" oninput="filterTable('drill-table')" placeholder="e.g. Casting"></label>
+      <label>Swing Fault: <input id="drill-swing" oninput="filterDrills()"></label>
+      <label>Drill Category: <input id="drill-category" oninput="filterDrills()"></label>
+      <label>Drill Name: <input id="drill-name" oninput="filterDrills()"></label>
     </div>
     <table id="drill-table">
       <thead>
         <tr>
           <th>Swing Fault</th>
+          <th>Drill Category</th>
           <th>Drill Name</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Early Extension</td>
-          <td>Wall Drill</td>
-          <td>Trains proper hip motion and prevents thrusting towards the ball</td>
-        </tr>
-        <tr>
-          <td>Sway</td>
-          <td>Alignment Stick Drill</td>
-          <td>Improves weight transfer and lateral movement control</td>
-        </tr>
-        <!-- Add more rows here from your spreadsheet -->
+        <!-- BEGIN DRILL ROWS (from your spreadsheet, columns G-N) -->
+<tr><td>Early Extension</td><td>Hip Depth & Posture Retention Drills</td><td>Wall Drill for Posture Retention</td><td>Bird Dog focusing on Legs through Endurance training.</td></tr>
+<tr><td>Casting / Early Release</td><td>Wrist Lag & Downswing Sequencing Drills</td><td>Pump Drill for Lag Creation</td><td>Wall Sit focusing on Core through Balance training.</td></tr>
+<tr><td>Over-the-Top</td><td>Shallowing & Path Correction Drills</td><td>Towel Under Arm Drill</td><td>Row focusing on Legs through Endurance training.</td></tr>
+<tr><td>Chicken Wing / Loss of Extension</td><td>Arm Extension & Rotation Drills</td><td>Swing with Glove Under Lead Arm</td><td>Jumping Jack focusing on Core through Endurance training.</td></tr>
+<tr><td>Reverse Pivot / Swaying</td><td>Weight Transfer & Centered Pivot Drills</td><td>Step-Through Drill</td><td>Cobra Stretch focusing on Stability through Power training.</td></tr>
+<tr><td>Scooping / Flipping</td><td>Impact Position & Shaft Lean Drills</td><td>Impact Bag Drill</td><td>Triangle Pose focusing on Stability through Endurance training.</td></tr>
+<tr><td>Loss of Balance / Stability</td><td>Balance & Core Engagement Drills</td><td>Feet Together Swings</td><td>Bird Dog focusing on Full Body through Strength training.</td></tr>
+<tr><td>Inconsistent Low Point</td><td>Low Point Control Drills</td><td>Tee Line Drill</td><td>Landmine Press focusing on Explosiveness through Flexibility training.</td></tr>
+<tr><td>Poor Rotation (Upper/Lower)</td><td>Rotation Mechanics & Mobility Drills</td><td>Chair Drill for Hip Rotation</td><td>Banded Walk focusing on Stability through Cardio training.</td></tr>
+<tr><td>Lack of Wrist Set</td><td>Wrist Hinge Timing Drills</td><td>L-to-L Drill</td><td>Sled Push focusing on Stability through Power training.</td></tr>
+<tr><td>Open or Closed Clubface</td><td>Clubface Awareness & Face Control Drills</td><td>Face Aim at Setup Drill</td><td>Prone Cobra focusing on Core through Strength training.</td></tr>
+<tr><td>Flat or Upright Swing Plane</td><td>Plane Matching & Shaft Path Drills</td><td>Plane Board Drill</td><td>Box Jump focusing on Conditioning through Power training.</td></tr>
+        <!-- END DRILL ROWS -->
       </tbody>
     </table>
     <p style="font-size:0.98em; color:#777;">(Filter or scroll to view drills. Update this table as needed.)</p>
@@ -196,22 +201,35 @@
       document.querySelectorAll('.tablink').forEach(btn => btn.classList.remove('active'));
       evt.currentTarget.classList.add('active');
     }
-    // Simple table filtering
-    function filterTable(tableId) {
-      let sport = (document.getElementById('filter-sport')||{value:''}).value.toLowerCase();
-      let modality = (document.getElementById('filter-modality')||{value:''}).value.toLowerCase();
-      let focus = (document.getElementById('filter-focus')||{value:''}).value.toLowerCase();
-      let swing = (document.getElementById('filter-swing')||{value:''}).value.toLowerCase();
-      document.querySelectorAll('#'+tableId+' tbody tr').forEach(row => {
+
+    // Exercises filter
+    function filterExercises() {
+      let sport = document.getElementById('exercise-sport').value.toLowerCase();
+      let modality = document.getElementById('exercise-modality').value.toLowerCase();
+      let focus = document.getElementById('exercise-focus').value.toLowerCase();
+      let name = document.getElementById('exercise-name').value.toLowerCase();
+      document.querySelectorAll('#exercise-table tbody tr').forEach(row => {
+        let cells = row.getElementsByTagName('td');
         let show = true;
-        if(tableId==='workout-table') {
-          if(sport && !row.cells[0].innerText.toLowerCase().includes(sport)) show = false;
-          if(modality && !row.cells[1].innerText.toLowerCase().includes(modality)) show = false;
-          if(focus && !row.cells[2].innerText.toLowerCase().includes(focus)) show = false;
-        }
-        if(tableId==='drill-table') {
-          if(swing && !row.cells[0].innerText.toLowerCase().includes(swing)) show = false;
-        }
+        if (sport && !cells[0].innerText.toLowerCase().includes(sport)) show = false;
+        if (modality && !cells[1].innerText.toLowerCase().includes(modality)) show = false;
+        if (focus && !cells[2].innerText.toLowerCase().includes(focus)) show = false;
+        if (name && !cells[3].innerText.toLowerCase().includes(name)) show = false;
+        row.style.display = show ? '' : 'none';
+      });
+    }
+
+    // Drills filter
+    function filterDrills() {
+      let swing = document.getElementById('drill-swing').value.toLowerCase();
+      let category = document.getElementById('drill-category').value.toLowerCase();
+      let name = document.getElementById('drill-name').value.toLowerCase();
+      document.querySelectorAll('#drill-table tbody tr').forEach(row => {
+        let cells = row.getElementsByTagName('td');
+        let show = true;
+        if (swing && !cells[0].innerText.toLowerCase().includes(swing)) show = false;
+        if (category && !cells[1].innerText.toLowerCase().includes(category)) show = false;
+        if (name && !cells[2].innerText.toLowerCase().includes(name)) show = false;
         row.style.display = show ? '' : 'none';
       });
     }
