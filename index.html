@@ -5,171 +5,216 @@
   <title>Defy Elite Athletics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f6f6f6; }
-    nav { background-color: #1a1a1a; }
-    nav ul { display: flex; justify-content: center; list-style-type: none; padding: 0; margin: 0; }
-    nav li { margin: 0 1em; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #fafbfc; color: #20232a; margin: 0; }
+    nav { background: #20232a; color: #fff; padding: 0; }
+    nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
+    nav li { flex: 1; }
     nav button {
-      background: none; color: white; border: none; padding: 1em; cursor: pointer;
-      font-size: 1.1em; font-weight: bold; transition: background 0.3s;
+      width: 100%; background: none; border: none; color: #fff;
+      padding: 1em; font-size: 1.1em; cursor: pointer; transition: background 0.2s;
     }
-    nav button:hover, nav button.active { background-color: #f54b23; }
-    .tab-content { display: none; padding: 2em; max-width: 1000px; margin: auto; background: white; }
+    nav button.active, nav button:hover { background: #61dafb; color: #20232a; }
+    .tab-content { display: none; padding: 2em 1em; max-width: 1100px; margin: auto; }
     .tab-content.active { display: block; }
-    h1 { color: #ba3326; }
-    .service { margin-bottom: 2em; padding: 1em; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
-    .paypal-btn { margin-top: 1em; }
-    .bio-section { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 2em; }
-    .bio-section img { width: 200px; border-radius: 8px; }
+    h1 { font-size: 2.3em; color: #111; margin-bottom: .5em; }
+    h2 { margin-top: 1.5em; color: #214c8d; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1em; background: #fff; }
+    th, td { padding: .7em; border-bottom: 1px solid #eee; }
+    th { background: #214c8d; color: #fff; }
+    tr:hover { background: #f5faff; }
+    .card { background: #fff; padding: 1.2em; margin: 1em 0; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+    .filter-group { margin: 1em 0; }
+    .filter-group label { margin-right: 0.7em; font-weight: 500; }
+    .contact-form input, .contact-form textarea {
+      display: block; width: 100%; margin: 0.5em 0 1em 0; padding: 0.7em;
+      border: 1px solid #ccc; border-radius: 5px; font-size: 1em;
+    }
+    .contact-form button { background: #214c8d; color: #fff; border: none; padding: 0.9em 2em; border-radius: 5px; font-size: 1em; }
+    .contact-form button:hover { background: #61dafb; color: #20232a; }
+    @media (max-width: 700px) {
+      nav ul { flex-direction: column; }
+      .tab-content { padding: 1em 0.3em; }
+      h1 { font-size: 1.4em; }
+    }
   </style>
 </head>
 <body>
-
-<nav>
-  <ul>
-    <li><button class="tablink active" onclick="openTab(event, 'services')">Services</button></li>
-    <li><button class="tablink" onclick="openTab(event, 'drills')">Drills</button></li>
-    <li><button class="tablink" onclick="openTab(event, 'workouts')">Workouts</button></li>
-    <li><button class="tablink" onclick="openTab(event, 'about')">About</button></li>
-    <li><button class="tablink" onclick="openTab(event, 'contact')">Contact</button></li>
-  </ul>
-</nav>
-
-<div id="services" class="tab-content active">
-  <h1>Elite Training & Coaching Services</h1>
-
-  <div class="service">
-    <h2>One-on-One Live Golf Lesson (1hr) – $50 (₱2,700)</h2>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="business" value="defyeliteathletics@yahoo.com">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="item_name" value="Live Golf Lesson 1hr">
-      <input type="hidden" name="amount" value="50.00">
-      <input type="hidden" name="currency_code" value="USD">
-      <input type="submit" value="Buy Now via PayPal" class="paypal-btn">
-    </form>
-  </div>
-
-  <div class="service">
-    <h2>Remote Golf Lesson (1hr) – $40 (₱2,200)</h2>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="business" value="defyeliteathletics@yahoo.com">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="item_name" value="Remote Golf Lesson 1hr">
-      <input type="hidden" name="amount" value="40.00">
-      <input type="hidden" name="currency_code" value="USD">
-      <input type="submit" value="Buy Now via PayPal" class="paypal-btn">
-    </form>
-  </div>
-
-  <div class="service">
-    <h2>Complete Swing Analysis – $60 (₱3,300)</h2>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="business" value="defyeliteathletics@yahoo.com">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="item_name" value="Complete Swing Analysis">
-      <input type="hidden" name="amount" value="60.00">
-      <input type="hidden" name="currency_code" value="USD">
-      <input type="submit" value="Buy Now via PayPal" class="paypal-btn">
-    </form>
-  </div>
-
-  <div class="service">
-    <h2>Complete Athletic Periodization Routine</h2>
+  <nav>
     <ul>
-      <li>3 Months – $200 (₱11,000)</li>
-      <li>6 Months – $350 (₱19,300)</li>
-      <li>9 Months – $500 (₱27,500)</li>
-      <li>12 Months – $700 (₱38,500)</li>
+      <li><button class="tablink active" onclick="openTab(event, 'home')">Home</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'workouts')">Workouts</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'drills')">Drills</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'services')">Services</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'payment')">Payment/Join</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'about')">About</button></li>
+      <li><button class="tablink" onclick="openTab(event, 'contact')">Contact</button></li>
     </ul>
-  </div>
-
-  <div class="service">
-    <h2>Online Personal Training Session (1hr) – $40 (₱2,200)</h2>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="business" value="defyeliteathletics@yahoo.com">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="item_name" value="Online Personal Training Session 1hr">
-      <input type="hidden" name="amount" value="40.00">
-      <input type="hidden" name="currency_code" value="USD">
-      <input type="submit" value="Buy Now via PayPal" class="paypal-btn">
-    </form>
-  </div>
-
-  <div class="service">
-    <h2>Live Personal Training Session (1hr) – $55 (₱3,000)</h2>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="business" value="defyeliteathletics@yahoo.com">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="item_name" value="Live Personal Training Session 1hr">
-      <input type="hidden" name="amount" value="55.00">
-      <input type="hidden" name="currency_code" value="USD">
-      <input type="submit" value="Buy Now via PayPal" class="paypal-btn">
-    </form>
-  </div>
-
-  <div class="service">
-    <h2>Nutrition Counseling (1hr) – $20 (₱1,100)</h2>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="business" value="defyeliteathletics@yahoo.com">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="item_name" value="Nutrition Counseling 1hr">
-      <input type="hidden" name="amount" value="20.00">
-      <input type="hidden" name="currency_code" value="USD">
-      <input type="submit" value="Buy Now via PayPal" class="paypal-btn">
-    </form>
-  </div>
-
-  <div class="service">
-    <h2>Website Access – $30/month (₱1,650)</h2>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="business" value="defyeliteathletics@yahoo.com">
-      <input type="hidden" name="cmd" value="_xclick-subscriptions">
-      <input type="hidden" name="item_name" value="Monthly Website Access">
-      <input type="hidden" name="a3" value="30.00">
-      <input type="hidden" name="p3" value="1">
-      <input type="hidden" name="t3" value="M">
-      <input type="hidden" name="src" value="1">
-      <input type="hidden" name="currency_code" value="USD">
-      <input type="submit" value="Subscribe via PayPal" class="paypal-btn">
-    </form>
-  </div>
-</div>
-
-<div id="drills" class="tab-content">
-  <h1>Drills</h1>
-  <p>Coming soon: a full breakdown of athletic drills, swing development routines, and mobility exercises categorized by sport and goal.</p>
-</div>
-
-<div id="workouts" class="tab-content">
-  <h1>Workout Programs</h1>
-  <p>Structured programs will be displayed here soon for strength, hypertrophy, fat loss, golf performance, and athletic development.</p>
-</div>
-
-<div id="about" class="tab-content">
-  <h1>About Steven Kittinger Jr.</h1>
-  <div class="bio-section">
-    <img src="499407090_10006568012698243_8780208516133082159_n.webp" alt="Steven Kittinger Jr">
-    <div>
-      <p>Steven Kittinger Jr is the founder and head trainer of Defy Elite Athletics. With a Bachelor's degree in Sports and Recreation Management and certification from the American College of Sports Medicine, he brings over 8 years of expertise in fitness, sports, and youth athletic development.</p>
-      <p>Steven has worked in diverse roles—from CrossFit trainer and U.S. Army recreation assistant to competitive golf coach and program director for youth leagues. He is driven by a passion for performance, progress, and truth, and he's dedicated to helping others unlock their physical potential.</p>
+  </nav>
+  
+  <!-- Home Tab -->
+  <div id="home" class="tab-content active">
+    <h1>Defy Elite Athletics</h1>
+    <p>Welcome to Defy Elite Athletics – the training hub for athletes who want to excel, compete, and become their best. Explore our curated libraries of elite workouts and skill-specific drills, or learn more about our specialized services, philosophy, and how you can join our growing community.</p>
+    <div class="card">
+      <h2>Our Mission</h2>
+      <p>To empower athletes of all backgrounds to defy their limits and achieve excellence through world-class programming, coaching, and a culture of continuous improvement.</p>
     </div>
   </div>
-</div>
-
-<div id="contact" class="tab-content">
-  <h1>Contact</h1>
-  <p>Email: <a href="mailto:defyeliteathletics@yahoo.com">defyeliteathletics@yahoo.com</a></p>
-  <p>Location: Davao City, Philippines</p>
-</div>
-
-<script>
-function openTab(evt, tabId) {
-  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-  document.getElementById(tabId).classList.add('active');
-  document.querySelectorAll('.tablink').forEach(btn => btn.classList.remove('active'));
-  evt.currentTarget.classList.add('active');
-}
-</script>
+  
+  <!-- Workouts Tab -->
+  <div id="workouts" class="tab-content">
+    <h1>Workout Library</h1>
+    <div class="filter-group">
+      <label>Sport: <input id="filter-sport" oninput="filterTable('workout-table')" placeholder="e.g. Golf"></label>
+      <label>Modality: <input id="filter-modality" oninput="filterTable('workout-table')" placeholder="e.g. Strength"></label>
+      <label>Training Focus: <input id="filter-focus" oninput="filterTable('workout-table')" placeholder="e.g. Power"></label>
+    </div>
+    <table id="workout-table">
+      <thead>
+        <tr>
+          <th>Sport</th>
+          <th>Modality</th>
+          <th>Training Focus</th>
+          <th>Exercise Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sample rows: Replace/add from spreadsheet -->
+        <tr>
+          <td>Golf</td>
+          <td>Strength</td>
+          <td>Core Stability</td>
+          <td>Pallof Press</td>
+          <td>Anti-rotation core exercise, great for golfers</td>
+        </tr>
+        <tr>
+          <td>Basketball</td>
+          <td>Power</td>
+          <td>Explosiveness</td>
+          <td>Box Jumps</td>
+          <td>Build lower-body explosiveness and vertical jump</td>
+        </tr>
+        <!-- Add more rows here from your spreadsheet -->
+      </tbody>
+    </table>
+    <p style="font-size:0.98em; color:#777;">(Use the filters above or scroll to explore all workouts. To update, simply edit this table or use a CSV-to-HTML tool for bulk data.)</p>
+  </div>
+  
+  <!-- Drills Tab -->
+  <div id="drills" class="tab-content">
+    <h1>Drills Library</h1>
+    <div class="filter-group">
+      <label>Swing Fault: <input id="filter-swing" oninput="filterTable('drill-table')" placeholder="e.g. Casting"></label>
+    </div>
+    <table id="drill-table">
+      <thead>
+        <tr>
+          <th>Swing Fault</th>
+          <th>Drill Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Early Extension</td>
+          <td>Wall Drill</td>
+          <td>Trains proper hip motion and prevents thrusting towards the ball</td>
+        </tr>
+        <tr>
+          <td>Sway</td>
+          <td>Alignment Stick Drill</td>
+          <td>Improves weight transfer and lateral movement control</td>
+        </tr>
+        <!-- Add more rows here from your spreadsheet -->
+      </tbody>
+    </table>
+    <p style="font-size:0.98em; color:#777;">(Filter or scroll to view drills. Update this table as needed.)</p>
+  </div>
+  
+  <!-- Services Tab -->
+  <div id="services" class="tab-content">
+    <h1>Services Offered</h1>
+    <ul>
+      <li>One-on-one coaching (in-person & virtual)</li>
+      <li>Customized sport-specific programming</li>
+      <li>Golf fitness and performance assessments</li>
+      <li>Youth athletic development</li>
+      <li>Online video analysis and feedback</li>
+      <li>Team training & consulting</li>
+      <!-- Add or edit your own services here -->
+    </ul>
+  </div>
+  
+  <!-- Payment Tab -->
+  <div id="payment" class="tab-content">
+    <h1>Join / Payment Portal</h1>
+    <p>Secure your spot in our programs or book services here:</p>
+    <ul>
+      <li><b>Monthly Membership:</b> <a href="#">Subscribe now</a></li>
+      <li><b>Book a session:</b> <a href="#">Schedule one-on-one</a></li>
+      <li><b>Gift certificates:</b> <a href="#">Purchase for others</a></li>
+      <!-- Connect to your payment system or provide instructions -->
+    </ul>
+    <p>For alternative payment or custom requests, please <a href="#" onclick="openTab(event, 'contact')">contact us</a>.</p>
+  </div>
+  
+  <!-- About Tab -->
+  <div id="about" class="tab-content">
+    <h1>About Defy Elite Athletics</h1>
+    <p>
+      Defy Elite Athletics was founded by Steven Kittinger Jr, an ACSM-certified personal trainer and experienced athletic coach. With over 8 years in the industry and a background in sports and recreation management, Steven brings a passion for athlete development and holistic training.
+    </p>
+    <div class="card">
+      <b>Our Philosophy:</b>
+      <ul>
+        <li>Evidence-based, practical programming</li>
+        <li>Personalized for every athlete</li>
+        <li>Continuous learning and improvement</li>
+        <li>Truth, discipline, and hard work above all</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Contact Tab -->
+  <div id="contact" class="tab-content">
+    <h1>Contact</h1>
+    <form class="contact-form" action="mailto:your@email.com" method="POST" enctype="text/plain">
+      <label>Your Name:<br><input type="text" name="name" required></label>
+      <label>Email:<br><input type="email" name="email" required></label>
+      <label>Message:<br><textarea name="message" rows="5" required></textarea></label>
+      <button type="submit">Send Message</button>
+    </form>
+    <p style="font-size:0.98em; color:#777;">Or email: <a href="mailto:your@email.com">your@email.com</a></p>
+  </div>
+  
+  <script>
+    // Tab navigation
+    function openTab(evt, tabId) {
+      document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      document.querySelectorAll('.tablink').forEach(btn => btn.classList.remove('active'));
+      evt.currentTarget.classList.add('active');
+    }
+    // Simple table filtering
+    function filterTable(tableId) {
+      let sport = (document.getElementById('filter-sport')||{value:''}).value.toLowerCase();
+      let modality = (document.getElementById('filter-modality')||{value:''}).value.toLowerCase();
+      let focus = (document.getElementById('filter-focus')||{value:''}).value.toLowerCase();
+      let swing = (document.getElementById('filter-swing')||{value:''}).value.toLowerCase();
+      document.querySelectorAll('#'+tableId+' tbody tr').forEach(row => {
+        let show = true;
+        if(tableId==='workout-table') {
+          if(sport && !row.cells[0].innerText.toLowerCase().includes(sport)) show = false;
+          if(modality && !row.cells[1].innerText.toLowerCase().includes(modality)) show = false;
+          if(focus && !row.cells[2].innerText.toLowerCase().includes(focus)) show = false;
+        }
+        if(tableId==='drill-table') {
+          if(swing && !row.cells[0].innerText.toLowerCase().includes(swing)) show = false;
+        }
+        row.style.display = show ? '' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>
