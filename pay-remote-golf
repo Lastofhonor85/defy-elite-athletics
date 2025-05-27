@@ -32,19 +32,18 @@
     <a class="back-link" href="services.html">&larr; Back to Services</a>
   </section>
   <footer>&copy; 2025 Defy Elite Athletics</footer>
-  <script>
-    function renderPayBtn(selector, currency, amount) {
-      paypal.Buttons({
-        style: { shape: 'pill', color: 'blue', layout: 'vertical', label: 'paypal', },
-        createOrder: (data, actions) =>
-          actions.order.create({ purchase_units: [{ amount: { currency_code: currency, value: amount } }] }),
-        onApprove: (data, actions) =>
-          actions.order.capture().then(() => {
-            alert('Thank you for your payment!');
-            window.location.href = 'services.html';
-          })
-      }).render(selector);
-    }
+ function renderPayBtn(selector, currency, amount) {
+  paypal.Buttons({
+    style: { shape: 'pill', color: 'blue', layout: 'vertical', label: 'paypal', },
+    createOrder: (data, actions) =>
+      actions.order.create({ purchase_units: [{ amount: { currency_code: currency, value: amount } }] }),
+    onApprove: (data, actions) =>
+      actions.order.capture().then(() => {
+        window.location.href = 'schedule-remote.html';
+      })
+  }).render(selector);
+}
+
     renderPayBtn('#paypal-remote-golf-usd', 'USD', '40.00');
     renderPayBtn('#paypal-remote-golf-php', 'PHP', '2219.04');
   </script>
