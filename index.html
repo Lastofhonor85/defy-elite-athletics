@@ -1,111 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Defy Elite Athletics</title>
-  <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AX8tNpeyEgJBHprAUsolwvqv1oGUeOMRTx74YxU1WniGxMybjVKT-cj8yTkf3F8OiTu6K8a5XgEJ5MAE"></script>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#111; color:#fff; }
-    header { background:#000; padding:20px; text-align:center; }
-    .logo { max-width:200px; margin-bottom:10px; }
-    nav { background:#222; padding:10px; text-align:center; }
-    nav a { color:#fff; margin:0 15px; text-decoration:none; font-size:1rem; }
-    .hero { text-align:center; padding:60px 20px; background:#1a1a1a; }
-    .hero h2 { font-size:2rem; margin-bottom:20px; }
-    .hero p { font-size:1.2rem; max-width:600px; margin:0 auto; }
-    section { padding:40px 20px; }
-    section h2 { margin-top:0; }
-    table { width:100%; border-collapse:collapse; margin-bottom:20px; }
-    th, td { border:1px solid #444; padding:8px; text-align:left; }
-    .btn-link { color:#1e90ff; text-decoration:none; font-weight:bold; }
-    .profile-pic { width:150px; border-radius:50%; display:block; margin:10px auto; }
-    footer { background:#000; text-align:center; padding:20px; }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
-    <h1>Defy Elite Athletics</h1>
   </header>
+
   <nav>
-    <a href="#about">About</a>
+    <a href="index.html" class="active">Home</a>
     <a href="drills.html">Drills Library</a>
     <a href="exercises.html">Exercises Library</a>
-    <a href="#services">Services</a>
+    <a href="services.html">Services</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section class="hero">
-    <h2>Unleash Your Inner Athlete</h2>
-    <p>Transform your body, sharpen your mind, and build unbreakable discipline through elite coaching, holistic fitness, and time-tested performance strategies.</p>
-  </section>
-
-  <section id="about">
-    <h2>About Us</h2>
+    <h1>Steven Edward Kittinger Jr.</h1>
     <img src="assets/profile.webp" alt="Steven Edward Kittinger Jr." class="profile-pic">
-    <p>Founded by Steven Edward Kittinger Jr., Defy Elite Athletics is committed to delivering personalized coaching and innovative training methods that defy conventional limits.</p>
+    <p>Welcome to Defy Elite Athletics—where golf coaching, sport-specific training, and holistic fitness come together to optimize your performance.</p>
   </section>
 
-  <section id="drills-preview">
-    <h2>Drills Preview</h2>
-    <table>
-      <thead><tr><th>Name</th><th>Focus</th></tr></thead>
-      <tbody>
-        <tr><td>Alignment Drill</td><td>Setup & Aim</td></tr>
-        <tr><td>Weighted Swing Drill</td><td>Clubhead Speed</td></tr>
-        <tr><td>Hip Rotation Drill</td><td>Lower Body Sequencing</td></tr>
-      </tbody>
-    </table>
-    <a href="drills.html" class="btn-link">View Full Drills Library</a>
-  </section>
-
-  <section id="exercises-preview">
-    <h2>Exercises Preview</h2>
-    <table>
-      <thead><tr><th>Name</th><th>Muscle Group</th></tr></thead>
-      <tbody>
-        <tr><td>Dumbbell Squat</td><td>Lower Body</td></tr>
-        <tr><td>Cable Rotation</td><td>Core & Obliques</td></tr>
-        <tr><td>Glute Bridge</td><td>Glutes & Hamstrings</td></tr>
-      </tbody>
-    </table>
-    <a href="exercises.html" class="btn-link">View Full Exercises Library</a>
-  </section>
-
-  <section id="services">
-    <h2>Services</h2>
+  <section id="services-summary">
+    <h2>What I Offer</h2>
     <ul>
-      <li>One-on-One Live Golf Coaching: $50 / ₱2,774 <div id="paypal-button-golf-live"></div><div id="paypal-button-golf-live-php"></div></li>
-      <!-- other services... -->
+      <li>One-on-One Live Golf Coaching</li>
+      <li>Remote Golf Coaching</li>
+      <li>One-on-One Live & Remote Personal Training</li>
+      <li>Nutritional Counseling (Remote)</li>
+      <li>Complete Athletic Periodization Plans</li>
+      <li>Monthly Subscription for Drills & Exercises Library</li>
+      <li>Complete Swing Analysis with Video</li>
     </ul>
-  </section>
-
-  <section id="features">
-    <h2>Member Features</h2>
-    <ul>
-      <li>Full access to detailed drills & exercises libraries</li>
-      <li>Personalized progress tracking & bookmarks</li>
-      <li>Interactive calendar & scheduling tools</li>
-      <li>Exclusive video tutorials & live coaching webinars</li>
-    </ul>
-    <p><em>(Available upon subscription)</em></p>
+    <a href="services.html" class="btn-link">View Full Services</a>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <img src="assets/profile.webp" alt="Steven Edward Kittinger Jr." class="profile-pic">
-    <p>Email: skittingerjr@yahoo.com</p>
-    <p>Location: Davao City, Philippines</p>
+    <p>Email: defyeliteathletics@yahoo.com</p>
+    <p>Davao City, Philippines</p>
   </section>
 
-  <footer>
-    &copy; 2025 Defy Elite Athletics. All rights reserved.
-  </footer>
-
-  <script>
-    // PayPal buttons initialization (omitted for brevity)
-  </script>
+  <footer>&copy; 2025 Defy Elite Athletics</footer>
 </body>
 </html>
