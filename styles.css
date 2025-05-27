@@ -104,3 +104,9 @@ footer {
   background-color: #1a1a1a;
   border-radius: 8px;
   pa
+
+  .service-logo {
+  width: 100px;
+  margin: 0 auto 12px;
+  display: block;
+}
