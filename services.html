@@ -13,6 +13,23 @@
       margin: 0 auto 12px;
       display: block;
     }
+    .price-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .price-btn {
+      background: #222;
+      padding: 10px;
+      border-radius: 6px;
+    }
+    .currency-label {
+      font-weight: bold;
+      color: #1e90ff;
+      margin-bottom: 4px;
+      font-size: 1.08em;
+    }
   </style>
 </head>
 <body>
@@ -34,97 +51,178 @@
   </section>
 
   <section id="services-list" class="services-grid">
+
     <!-- Live Golf Coaching -->
     <div class="service-card">
-      <img src="assets/live-golf.png" alt="Live Golf Coaching" class="service-logo" />
+      <img src="assets/Live Coaching logo.png" alt="Live Golf Coaching" class="service-logo" />
       <h2>Live Golf Coaching</h2>
-      <p class="price">USD $50 | PHP ₱2,774</p>
-      <div id="paypal-golf-live-usd"></div>
-      <div id="paypal-golf-live-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $50</div>
+          <div id="paypal-golf-live-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱2,774</div>
+          <div id="paypal-golf-live-php"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Remote Golf Coaching -->
     <div class="service-card">
-      <img src="assets/remote-golf.png" alt="Remote Golf Coaching" class="service-logo" />
+      <img src="assets/Remote Coaching Logo.png" alt="Remote Golf Coaching" class="service-logo" />
       <h2>Remote Golf Coaching</h2>
-      <p class="price">USD $40 | PHP ₱2,219</p>
-      <div id="paypal-golf-remote-usd"></div>
-      <div id="paypal-golf-remote-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $40</div>
+          <div id="paypal-golf-remote-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱2,219</div>
+          <div id="paypal-golf-remote-php"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Live Personal Training -->
     <div class="service-card">
-      <img src="assets/live-pt.png" alt="Live Personal Training" class="service-logo" />
+      <img src="assets/Live Personal Training Logo.png" alt="Live Personal Training" class="service-logo" />
       <h2>Live Personal Training</h2>
-      <p class="price">USD $50 | PHP ₱2,774</p>
-      <div id="paypal-pt-live-usd"></div>
-      <div id="paypal-pt-live-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $50</div>
+          <div id="paypal-pt-live-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱2,774</div>
+          <div id="paypal-pt-live-php"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Remote Personal Training -->
     <div class="service-card">
-      <img src="assets/remote-pt.png" alt="Remote Personal Training" class="service-logo" />
+      <img src="assets/Remote Personal Training Logo.png" alt="Remote Personal Training" class="service-logo" />
       <h2>Remote Personal Training</h2>
-      <p class="price">USD $40 | PHP ₱2,219</p>
-      <div id="paypal-pt-remote-usd"></div>
-      <div id="paypal-pt-remote-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $40</div>
+          <div id="paypal-pt-remote-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱2,219</div>
+          <div id="paypal-pt-remote-php"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Nutritional Counseling (Remote) -->
     <div class="service-card">
-      <img src="assets/nutrition.png" alt="Nutritional Counseling (Remote)" class="service-logo" />
+      <img src="assets/Nutritional Counseling Remote.png" alt="Nutritional Counseling (Remote)" class="service-logo" />
       <h2>Nutritional Counseling (Remote)</h2>
-      <p class="price">USD $20/hr | PHP ₱1,110/hr</p>
-      <div id="paypal-nutrition-usd"></div>
-      <div id="paypal-nutrition-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $20/hr</div>
+          <div id="paypal-nutrition-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱1,110/hr</div>
+          <div id="paypal-nutrition-php"></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Periodization Plans -->
+    <!-- 3-Month Plan -->
     <div class="service-card">
-      <img src="assets/3mo.png" alt="3-Month Plan" class="service-logo" />
+      <img src="assets/3 Month Periodation Logo.png" alt="3-Month Plan" class="service-logo" />
       <h2>3-Month Periodization Plan</h2>
-      <p class="price">USD $200 | PHP ₱11,095</p>
-      <div id="paypal-period-3-usd"></div>
-      <div id="paypal-period-3-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $200</div>
+          <div id="paypal-period-3-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱11,095</div>
+          <div id="paypal-period-3-php"></div>
+        </div>
+      </div>
     </div>
+    <!-- 6-Month Plan -->
     <div class="service-card">
-      <img src="assets/6mo.png" alt="6-Month Plan" class="service-logo" />
+      <img src="assets/6 Month Periodization Logo.png" alt="6-Month Plan" class="service-logo" />
       <h2>6-Month Periodization Plan</h2>
-      <p class="price">USD $375 | PHP ₱20,804</p>
-      <div id="paypal-period-6-usd"></div>
-      <div id="paypal-period-6-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $375</div>
+          <div id="paypal-period-6-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱20,804</div>
+          <div id="paypal-period-6-php"></div>
+        </div>
+      </div>
     </div>
+    <!-- 9-Month Plan -->
     <div class="service-card">
-      <img src="assets/9mo.png" alt="9-Month Plan" class="service-logo" />
+      <img src="assets/9 Month Periodization Logo.png" alt="9-Month Plan" class="service-logo" />
       <h2>9-Month Periodization Plan</h2>
-      <p class="price">USD $550 | PHP ₱30,512</p>
-      <div id="paypal-period-9-usd"></div>
-      <div id="paypal-period-9-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $550</div>
+          <div id="paypal-period-9-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱30,512</div>
+          <div id="paypal-period-9-php"></div>
+        </div>
+      </div>
     </div>
+    <!-- 12-Month Plan -->
     <div class="service-card">
-      <img src="assets/12mo.png" alt="12-Month Plan" class="service-logo" />
+      <img src="assets/12 Month Periodation Logo.png" alt="12-Month Plan" class="service-logo" />
       <h2>12-Month Periodization Plan</h2>
-      <p class="price">USD $725 | PHP ₱40,220</p>
-      <div id="paypal-period-12-usd"></div>
-      <div id="paypal-period-12-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $725</div>
+          <div id="paypal-period-12-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱40,220</div>
+          <div id="paypal-period-12-php"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Monthly Subscription -->
     <div class="service-card">
-      <img src="assets/subscription.png" alt="Monthly Subscription" class="service-logo" />
+      <img src="assets/Monthly Subscription Logo.png" alt="Monthly Subscription" class="service-logo" />
       <h2>Monthly Subscription</h2>
-      <p class="price">USD $30/mo | PHP ₱1,664/mo</p>
-      <div id="paypal-sub-usd"></div>
-      <div id="paypal-sub-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $30/mo</div>
+          <div id="paypal-sub-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱1,664/mo</div>
+          <div id="paypal-sub-php"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Swing Analysis + Video -->
     <div class="service-card">
       <img src="assets/swing-analysis.png" alt="Swing Analysis" class="service-logo" />
       <h2>Swing Analysis + Video</h2>
-      <p class="price">USD $60 | PHP ₱3,329</p>
-      <div id="paypal-analysis-usd"></div>
-      <div id="paypal-analysis-php"></div>
+      <div class="price-btns">
+        <div class="price-btn">
+          <div class="currency-label">USD $60</div>
+          <div id="paypal-analysis-usd"></div>
+        </div>
+        <div class="price-btn">
+          <div class="currency-label">PHP ₱3,329</div>
+          <div id="paypal-analysis-php"></div>
+        </div>
+      </div>
     </div>
   </section>
 
