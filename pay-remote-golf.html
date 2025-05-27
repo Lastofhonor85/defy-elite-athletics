@@ -14,16 +14,10 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header><img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo"></header>
+  <nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="contact.html">Contact</a></nav>
   <section class="pay-section">
-    <img src="assets/Remote Coaching Logo.png" alt="Remote Golf Coaching" class="service-logo" />
+    <img src="assets/remote-golf.png" alt="Remote Golf Coaching" class="service-logo" />
     <h2>Pay for Remote Golf Coaching</h2>
     <div class="currency-label">USD $40</div>
     <div id="paypal-remote-golf-usd"></div>
@@ -32,18 +26,18 @@
     <a class="back-link" href="services.html">&larr; Back to Services</a>
   </section>
   <footer>&copy; 2025 Defy Elite Athletics</footer>
- function renderPayBtn(selector, currency, amount) {
-  paypal.Buttons({
-    style: { shape: 'pill', color: 'blue', layout: 'vertical', label: 'paypal', },
-    createOrder: (data, actions) =>
-      actions.order.create({ purchase_units: [{ amount: { currency_code: currency, value: amount } }] }),
-    onApprove: (data, actions) =>
-      actions.order.capture().then(() => {
-        window.location.href = 'schedule-remote.html';
-      })
-  }).render(selector);
-}
-
+  <script>
+    function renderPayBtn(selector, currency, amount) {
+      paypal.Buttons({
+        style: { shape: 'pill', color: 'blue', layout: 'vertical', label: 'paypal', },
+        createOrder: (data, actions) =>
+          actions.order.create({ purchase_units: [{ amount: { currency_code: currency, value: amount } }] }),
+        onApprove: (data, actions) =>
+          actions.order.capture().then(() => {
+            window.location.href = 'schedule-remote.html';
+          })
+      }).render(selector);
+    }
     renderPayBtn('#paypal-remote-golf-usd', 'USD', '40.00');
     renderPayBtn('#paypal-remote-golf-php', 'PHP', '2219.04');
   </script>
