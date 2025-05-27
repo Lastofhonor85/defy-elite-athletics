@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services – Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AX8tNpeyEgJBHprAUsolwvqv1oGUeOMRTx74YxU1WniGxMybjVKT-cj8yTkf3F8OiTu6K8a5XgEJ5MAE"></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="drills.html">Drills Library</a>
+    <a href="exercises.html">Exercises Library</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Our Services</h1>
+    <p>Choose a plan that fits your goals—live coaching, remote training, nutrition, and more.</p>
+  </section>
+
+  <section id="services-list">
+    <ul>
+      <li>
+        <strong>One-on-One Live Golf Coaching</strong> — $50 / ₱2,774  
+        <div id="paypal-button-golf-live"></div>
+        <div id="paypal-button-golf-live-php"></div>
+      </li>
+      <li>
+        <strong>One-on-One Remote Golf Coaching</strong> — $40 / ₱2,219  
+        <div id="paypal-button-golf-remote"></div>
+        <div id="paypal-button-golf-remote-php"></div>
+      </li>
+      <li>
+        <strong>One-on-One Live Personal Training</strong> — $50 / ₱2,774  
+        <div id="paypal-button-pt-live"></div>
+        <div id="paypal-button-pt-live-php"></div>
+      </li>
+      <li>
+        <strong>One-on-One Remote Personal Training</strong> — $40 / ₱2,219  
+        <div id="paypal-button-pt-remote"></div>
+        <div id="paypal-button-pt-remote-php"></div>
+      </li>
+      <li>
+        <strong>Nutritional Counseling (Remote)</strong> — $20/hr / ₱1,110/hr  
+        <div id="paypal-button-nutrition-usd"></div>
+        <div id="paypal-button-nutrition-php"></div>
+      </li>
+      <li>
+        <strong>Complete Athletic Periodization</strong>  
+        <ul>
+          <li>3 Months — $200 / ₱11,095 <div id="paypal-button-period-3-usd"></div><div id="paypal-button-period-3-php"></div></li>
+          <li>6 Months — $375 / ₱20,804 <div id="paypal-button-period-6-usd"></div><div id="paypal-button-period-6-php"></div></li>
+          <li>9 Months — $550 / ₱30,512 <div id="paypal-button-period-9-usd"></div><div id="paypal-button-period-9-php"></div></li>
+          <li>12 Months — $725 / ₱40,220 <div id="paypal-button-period-12-usd"></div><div id="paypal-button-period-12-php"></div></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Monthly Subscription</strong> — $30/mo / ₱1,664/mo  
+        <div id="paypal-button-subscription-usd"></div>
+        <div id="paypal-button-subscription-php"></div>
+      </li>
+      <li>
+        <strong>Swing Analysis w/ Personalized Video</strong> — $60 / ₱3,329  
+        <div id="paypal-button-analysis-usd"></div>
+        <div id="paypal-button-analysis-php"></div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Defy Elite Athletics
+  </footer>
+
+  <script>
+    // Render every PayPal button
+    function initPayPalButton(sel, curr, val) {
+      paypal.Buttons({ createOrder: (d,a) => a.order.create({ purchase_units:[{amount:{currency_code:curr,value:val}}] }) })
+            .render(sel);
+    }
+    initPayPalButton('#paypal-button-golf-live',        'USD','50.00');
+    initPayPalButton('#paypal-button-golf-live-php',    'PHP','2773.80');
+    initPayPalButton('#paypal-button-golf-remote',      'USD','40.00');
+    initPayPalButton('#paypal-button-golf-remote-php',  'PHP','2219.04');
+    initPayPalButton('#paypal-button-pt-live',          'USD','50.00');
+    initPayPalButton('#paypal-button-pt-live-php',      'PHP','2773.80');
+    initPayPalButton('#paypal-button-pt-remote',        'USD','40.00');
+    initPayPalButton('#paypal-button-pt-remote-php',    'PHP','2219.04');
+    initPayPalButton('#paypal-button-nutrition-usd',    'USD','20.00');
+    initPayPalButton('#paypal-button-nutrition-php',    'PHP','1109.52');
+    initPayPalButton('#paypal-button-period-3-usd',     'USD','200.00');
+    initPayPalButton('#paypal-button-period-3-php',     'PHP','11095.20');
+    initPayPalButton('#paypal-button-period-6-usd',     'USD','375.00');
+    initPayPalButton('#paypal-button-period-6-php',     'PHP','20803.50');
+    initPayPalButton('#paypal-button-period-9-usd',     'USD','550.00');
+    initPayPalButton('#paypal-button-period-9-php',     'PHP','30511.80');
+    initPayPalButton('#paypal-button-period-12-usd',    'USD','725.00');
+    initPayPalButton('#paypal-button-period-12-php',    'PHP','40220.10');
+    initPayPalButton('#paypal-button-subscription-usd', 'USD','30.00');
+    initPayPalButton('#paypal-button-subscription-php', 'PHP','1664.28');
+    initPayPalButton('#paypal-button-analysis-usd',     'USD','60.00');
+    initPayPalButton('#paypal-button-analysis-php',     'PHP','3328.56');
+  </script>
+</body>
+</html>
