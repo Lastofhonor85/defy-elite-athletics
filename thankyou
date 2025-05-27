@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You – Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .thankyou-section {
+      max-width: 480px;
+      margin: 100px auto 0;
+      background: #181818;
+      padding: 48px 28px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 6px 24px rgba(30,144,255,0.15);
+    }
+    .thankyou-section h1 {
+      color: #1e90ff;
+      font-size: 2.3em;
+      margin-bottom: 0.4em;
+    }
+    .thankyou-section p {
+      font-size: 1.18em;
+      color: #bbb;
+      margin-bottom: 2em;
+    }
+    .thankyou-section a {
+      color: #1e90ff;
+      text-decoration: underline;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <section class="thankyou-section">
+    <h1>Thank You!</h1>
+    <p>Your payment was successful.<br>
+    If you purchased a remote session, <b>please book your time slot now</b>:</p>
+    <a href="schedule-remote.html">Book Your Remote Session &rarr;</a>
+    <p style="margin-top:2em;">Need help? <a href="contact.html">Contact us</a></p>
+  </section>
+  <footer>&copy; 2025 Defy Elite Athletics</footer>
+</body>
+</html>
