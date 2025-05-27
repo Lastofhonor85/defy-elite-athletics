@@ -14,16 +14,10 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header><img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo"></header>
+  <nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="contact.html">Contact</a></nav>
   <section class="pay-section">
-    <img src="assets/Remote Personal Training Logo.png" alt="Remote Personal Training" class="service-logo" />
+    <img src="assets/remote-pt.png" alt="Remote Personal Training" class="service-logo" />
     <h2>Pay for Remote Personal Training</h2>
     <div class="currency-label">USD $40</div>
     <div id="paypal-remote-pt-usd"></div>
@@ -40,8 +34,7 @@
           actions.order.create({ purchase_units: [{ amount: { currency_code: currency, value: amount } }] }),
         onApprove: (data, actions) =>
           actions.order.capture().then(() => {
-            alert('Thank you for your payment!');
-            window.location.href = 'services.html';
+            window.location.href = 'schedule-remote.html';
           })
       }).render(selector);
     }
