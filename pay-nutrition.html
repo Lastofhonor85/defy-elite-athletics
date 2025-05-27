@@ -14,16 +14,10 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header><img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo"></header>
+  <nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="contact.html">Contact</a></nav>
   <section class="pay-section">
-    <img src="assets/Nutritional Counseling Remote.png" alt="Nutritional Counseling" class="service-logo" />
+    <img src="assets/nutrition.png" alt="Nutritional Counseling" class="service-logo" />
     <h2>Pay for Nutritional Counseling (Remote)</h2>
     <div class="currency-label">USD $20/hr</div>
     <div id="paypal-nutrition-usd"></div>
@@ -40,8 +34,7 @@
           actions.order.create({ purchase_units: [{ amount: { currency_code: currency, value: amount } }] }),
         onApprove: (data, actions) =>
           actions.order.capture().then(() => {
-            alert('Thank you for your payment!');
-            window.location.href = 'services.html';
+            window.location.href = 'schedule-remote.html';
           })
       }).render(selector);
     }
