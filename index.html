@@ -5,221 +5,164 @@
   <title>Defy Elite Athletics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #fafbfc; color: #20232a; margin: 0; }
-    nav { background: #20232a; color: #fff; padding: 0; }
-    nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
-    nav li { flex: 1; }
-    nav button {
-      width: 100%; background: none; border: none; color: #fff;
-      padding: 1em; font-size: 1.1em; cursor: pointer; transition: background 0.2s;
-    }
-    nav button.active, nav button:hover { background: #61dafb; color: #20232a; }
-    .tab-content { display: none; padding: 2em 1em; max-width: 1100px; margin: auto; }
-    .tab-content.active { display: block; }
-    h1 { font-size: 2.3em; color: #111; margin-bottom: .5em; }
-    h2 { margin-top: 1.5em; color: #214c8d; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1em; background: #fff; }
-    th, td { padding: .7em; border-bottom: 1px solid #eee; }
-    th { background: #214c8d; color: #fff; }
-    tr:hover { background: #f5faff; }
-    .card { background: #fff; padding: 1.2em; margin: 1em 0; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
-    .profile-photo { width: 120px; border-radius: 50%; margin-bottom: 1em; }
-    .filter-group { margin: 1em 0; }
-    .filter-group label { margin-right: 0.7em; font-weight: 500; }
-    .contact-form input, .contact-form textarea {
-      display: block; width: 100%; margin: 0.5em 0 1em 0; padding: 0.7em;
-      border: 1px solid #ccc; border-radius: 5px; font-size: 1em;
-    }
-    .contact-form button { background: #214c8d; color: #fff; border: none; padding: 0.9em 2em; border-radius: 5px; font-size: 1em; }
-    .contact-form button:hover { background: #61dafb; color: #20232a; }
+    body { font-family: Arial, sans-serif; margin: 0; background: #f8f9fa; }
+    .navbar { overflow: hidden; background-color: #222; display: flex; justify-content: center; align-items: center; }
+    .navbar a { color: #f2f2f2; text-align: center; padding: 16px 20px; text-decoration: none; font-size: 17px; transition: background .2s; }
+    .navbar a:hover, .navbar a.active { background: #18bc9c; color: white; }
+    .container { max-width: 1100px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #18bc9c; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+    th, td { padding: 12px; border: 1px solid #eee; text-align: left; }
+    th { background: #18bc9c; color: #fff; }
+    input[type="text"] { padding: 8px; width: 250px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 8px; }
     @media (max-width: 700px) {
-      nav ul { flex-direction: column; }
-      .tab-content { padding: 1em 0.3em; }
-      h1 { font-size: 1.4em; }
+      .container { padding: 12px; }
+      th, td { padding: 7px; }
+      .navbar a { font-size: 15px; padding: 12px 8px;}
+      .profile-img { width: 90px; height: 90px; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><button class="tablink active" onclick="openTab(event, 'home')">Home</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'exercises')">Exercises</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'drills')">Drills</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'services')">Services</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'payment')">Payment/Join</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'about')">About</button></li>
-      <li><button class="tablink" onclick="openTab(event, 'contact')">Contact</button></li>
-    </ul>
-  </nav>
-  
-  <!-- Home Tab -->
-  <div id="home" class="tab-content active">
-    <h1>Defy Elite Athletics</h1>
-    <p>Welcome to Defy Elite Athletics – the training hub for athletes who want to excel, compete, and become their best. Explore our curated libraries of elite exercises and skill-specific drills, or learn more about our specialized services, philosophy, and how you can join our growing community.</p>
-    <div class="card">
-      <h2>Our Mission</h2>
-      <p>To empower athletes of all backgrounds to defy their limits and achieve excellence through world-class programming, coaching, and a culture of continuous improvement.</p>
+  <div class="navbar">
+    <a href="#" class="active" onclick="openTab(event, 'home')">Home</a>
+    <a href="#" onclick="openTab(event, 'about')">About</a>
+    <a href="#" onclick="openTab(event, 'drills')">Drills</a>
+    <a href="#" onclick="openTab(event, 'exercises')">Exercises</a>
+    <a href="#" onclick="openTab(event, 'contact')">Contact</a>
+  </div>
+  <div class="container">
+    <!-- Home Tab -->
+    <div id="home" class="tabcontent active">
+      <h1>Defy Elite Athletics</h1>
+      <p>Welcome to Defy Elite Athletics — your home for performance-driven sports drills and fitness programming.<br>Browse elite drills, comprehensive exercise libraries, and contact Coach Steven for personalized training plans.</p>
+    </div>
+    <!-- About Tab -->
+    <div id="about" class="tabcontent">
+      <h2>About Coach Steven Kittinger Jr.</h2>
+      <img src="499407090_10006568012698243_8780208516133082159_n.webp" alt="Profile Photo" class="profile-img">
+      <p>
+        Steven Kittinger Jr. holds a Bachelor's degree in Sports and Recreation Management and is a certified ACSM personal trainer. With over eight years of experience as an athletic coach, CrossFit trainer, Army recreation assistant, and competitive golf coach, he has dedicated his career to empowering others to achieve their peak athletic potential. Steven is passionate about family, sport, and holistic self-improvement.
+      </p>
+    </div>
+    <!-- Drills Tab -->
+    <div id="drills" class="tabcontent">
+      <h2>Golf Swing Fault Drills</h2>
+      <input type="text" id="drillSearch" onkeyup="filterTable('drillSearch', 'drillTable')" placeholder="Search for drills...">
+      <table id="drillTable">
+        <thead>
+          <tr>
+            <th>Swing Fault</th>
+            <th>Drill Category</th>
+            <th>Drill Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr><td>Early Extension</td><td>Hip Depth & Posture Retention Drills</td><td>Wall Drill for Posture Retention</td><td></td></tr>
+<tr><td>Casting / Early Release</td><td>Wrist Lag & Downswing Sequencing Drills</td><td>Pump Drill for Lag Creation</td><td></td></tr>
+<tr><td>Over-the-Top</td><td>Shallowing & Path Correction Drills</td><td>Towel Under Arm Drill</td><td></td></tr>
+<tr><td>Chicken Wing / Loss of Extension</td><td>Arm Extension & Rotation Drills</td><td>Swing with Glove Under Lead Arm</td><td></td></tr>
+<tr><td>Reverse Pivot / Swaying</td><td>Weight Transfer & Centered Pivot Drills</td><td>Step-Through Drill</td><td></td></tr>
+<tr><td>Scooping / Flipping</td><td>Impact Position & Shaft Lean Drills</td><td>Impact Bag Drill</td><td></td></tr>
+<tr><td>Loss of Balance / Stability</td><td>Balance & Core Engagement Drills</td><td>Feet Together Swings</td><td></td></tr>
+<tr><td>Inconsistent Low Point</td><td>Low Point Control Drills</td><td>Tee Line Drill</td><td></td></tr>
+<tr><td>Poor Rotation (Upper/Lower)</td><td>Rotation Mechanics & Mobility Drills</td><td>Chair Drill for Hip Rotation</td><td></td></tr>
+<tr><td>Lack of Wrist Set</td><td>Wrist Hinge Timing Drills</td><td>L-to-L Drill</td><td></td></tr>
+<tr><td>Open or Closed Clubface</td><td>Clubface Awareness & Face Control Drills</td><td>Face Aim at Setup Drill</td><td></td></tr>
+<tr><td>Flat or Upright Swing Plane</td><td>Plane Matching & Shaft Path Drills</td><td>Plane Board Drill</td><td></td></tr>
+<tr><td>Lack of Tempo / Rhythm</td><td>Timing & Tempo Synchronization Drills</td><td>1-2-3 Swing Rhythm Drill</td><td></td></tr>
+<tr><td>Swinging Too Hard</td><td>Controlled Acceleration & Feel Drills</td><td>50% Swing Tempo Drill</td><td></td></tr>
+<tr><td>Flying Elbow (Right Elbow Out)</td><td>Trail Arm Positioning Drills</td><td>Right Elbow Wall Drill</td><td></td></tr>
+<tr><td>Heel or Toe Strikes</td><td>Centered Striking & Sweet Spot Drills</td><td>Impact Tape Contact Drill</td><td></td></tr>
+<tr><td>Gripping Too Tightly</td><td>Grip Pressure Awareness Drills</td><td>Tension Awareness Swings</td><td></td></tr>
+<tr><td>Standing Up / Losing Spine Angle</td><td>Posture Maintenance & Body Awareness Drills</td><td>Chair Behind Hips Drill</td><td></td></tr>
+<tr><td>Club Getting Stuck Behind</td><td>Club Delivery & Exit Path Drills</td><td>Split Grip Drill</td><td></td></tr>
+<tr><td>Reverse Spine Tilt</td><td>Upper Body Positioning Drills</td><td>Torso Tilt in Mirror Drill</td><td></td></tr>
+<tr><td>Too Inside or Too Outside Takeaway</td><td>Takeaway Path Drills</td><td>Low and Slow Takeaway Drill</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Exercises Tab -->
+    <div id="exercises" class="tabcontent">
+      <h2>Exercise Library</h2>
+      <input type="text" id="exerciseSearch" onkeyup="filterTable('exerciseSearch', 'exerciseTable')" placeholder="Search for exercises...">
+      <table id="exerciseTable">
+        <thead>
+          <tr>
+            <th>Sport</th>
+            <th>Modality</th>
+            <th>Training Focus</th>
+            <th>Exercise Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+       <tbody>
+<tr><td>Metcon</td><td>Endurance</td><td>Legs</td><td>Bird Dog</td><td>Bird Dog focusing on Legs through Endurance training for metcon.</td></tr>
+<tr><td>Circuit Training</td><td>Balance</td><td>Core</td><td>Wall Sit</td><td>Wall Sit focusing on Core through Balance training for circuit training.</td></tr>
+<tr><td>Metcon</td><td>Endurance</td><td>Legs</td><td>Row</td><td>Row focusing on Legs through Endurance training for metcon.</td></tr>
+<tr><td>Yoga</td><td>Endurance</td><td>Core</td><td>Jumping Jack</td><td>Jumping Jack focusing on Core through Endurance training for yoga.</td></tr>
+<tr><td>Golf</td><td>Power</td><td>Stability</td><td>Cobra Stretch</td><td>Cobra Stretch focusing on Stability through Power training for golf.</td></tr>
+<tr><td>Golf</td><td>Endurance</td><td>Stability</td><td>Triangle Pose</td><td>Triangle Pose focusing on Stability through Endurance training for golf.</td></tr>
+<tr><td>Circuit Training</td><td>Strength</td><td>Full Body</td><td>Bird Dog</td><td>Bird Dog focusing on Full Body through Strength training for circuit training.</td></tr>
+<tr><td>Circuit Training</td><td>Flexibility</td><td>Explosiveness</td><td>Landmine Press</td><td>Landmine Press focusing on Explosiveness through Flexibility training for circuit training.</td></tr>
+<tr><td>Metcon</td><td>Cardio</td><td>Stability</td><td>Banded Walk</td><td>Banded Walk focusing on Stability through Cardio training for metcon.</td></tr>
+<tr><td>Yoga</td><td>Power</td><td>Stability</td><td>Sled Push</td><td>Sled Push focusing on Stability through Power training for yoga.</td></tr>
+<tr><td>HIIT</td><td>Strength</td><td>Core</td><td>Prone Cobra</td><td>Prone Cobra focusing on Core through Strength training for hiit.</td></tr>
+<tr><td>Circuit Training</td><td>Power</td><td>Conditioning</td><td>Box Jump</td><td>Box Jump focusing on Conditioning through Power training for circuit training.</td></tr>
+<tr><td>Metcon</td><td>Power</td><td>Explosiveness</td><td>Z-Press</td><td>Z-Press focusing on Explosiveness through Power training for metcon.</td></tr>
+<tr><td>Circuit Training</td><td>Endurance</td><td>Stability</td><td>Hollow Hold</td><td>Hollow Hold focusing on Stability through Endurance training for circuit training.</td></tr>
+<tr><td>HIIT</td><td>Power</td><td>Full Body</td><td>Sandbag Clean</td><td>Sandbag Clean focusing on Full Body through Power training for hiit.</td></tr>
+<tr><td>Golf</td><td>Stability</td><td>Core</td><td>Dead Bug</td><td>Dead Bug focusing on Core through Stability training for golf.</td></tr>
+<tr><td>Yoga</td><td>Flexibility</td><td>Stability</td><td>Twisted Lunge</td><td>Twisted Lunge focusing on Stability through Flexibility training for yoga.</td></tr>
+<tr><td>Metcon</td><td>Conditioning</td><td>Core</td><td>Side Plank</td><td>Side Plank focusing on Core through Conditioning training for metcon.</td></tr>
+<tr><td>Golf</td><td>Balance</td><td>Lower Body</td><td>Lateral Band Walk</td><td>Lateral Band Walk focusing on Lower Body through Balance training for golf.</td></tr>
+<tr><td>Circuit Training</td><td>Endurance</td><td>Upper Body</td><td>Incline Push-Up</td><td>Incline Push-Up focusing on Upper Body through Endurance training for circuit training.</td></tr>
+<!-- Continue if there are more rows in your spreadsheet. You can request additional chunks if needed! -->
+</tbody>
+
+        </tbody>
+      </table>
+    </div>
+    <!-- Contact Tab -->
+    <div id="contact" class="tabcontent">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:defyeliteathletics@yahoo.com">defyeliteathletics@yahoo.com</a></p>
     </div>
   </div>
-  
-  <!-- Exercises Tab -->
-  <div id="exercises" class="tab-content">
-    <h1>Exercise Library</h1>
-    <div class="filter-group">
-      <label>Sport: <input id="exercise-sport" oninput="filterExercises()"></label>
-      <label>Modality: <input id="exercise-modality" oninput="filterExercises()"></label>
-      <label>Focus: <input id="exercise-focus" oninput="filterExercises()"></label>
-      <label>Exercise Name: <input id="exercise-name" oninput="filterExercises()"></label>
-    </div>
-    <table id="exercise-table">
-      <thead>
-        <tr>
-          <th>Sport</th>
-          <th>Modality</th>
-          <th>Training Focus</th>
-          <th>Exercise Name</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- BEGIN EXERCISE ROWS (auto-generated from Exercises.xlsx, example structure below) -->
-        <tr><td>Golf</td><td>Strength</td><td>Upper Body</td><td>Push-Up</td><td>Classic push-up for upper body strength.</td></tr>
-        <tr><td>Golf</td><td>Flexibility</td><td>Core</td><td>Russian Twist</td><td>Twisting movement for core flexibility and strength.</td></tr>
-        <tr><td>Golf</td><td>Power</td><td>Full Body</td><td>Medicine Ball Slam</td><td>Explosive power move to improve coordination and full-body power.</td></tr>
-        <tr><td>All Sports</td><td>Balance</td><td>Lower Body</td><td>Single-Leg RDL</td><td>Improves balance, hip strength, and hamstring mobility.</td></tr>
-        <tr><td>Baseball</td><td>Mobility</td><td>Upper Body</td><td>Banded Pull-Apart</td><td>Activates scapular stabilizers for healthy shoulder mobility.</td></tr>
-        <tr><td>Football</td><td>Endurance</td><td>Full Body</td><td>Burpee</td><td>Classic conditioning exercise for cardiovascular and muscular endurance.</td></tr>
-        <!-- ADD ALL ROWS from your "Exercises.xlsx" file here. If you want, I can convert the entire sheet and deliver all rows for you to paste here. -->
-      </tbody>
-    </table>
-    <p style="font-size:0.98em; color:#777;">(Use the filters above or scroll to explore all exercises. To update, simply edit this table or use a CSV-to-HTML tool for bulk data.)</p>
-  </div>
-  
-  <!-- Drills Tab -->
-  <div id="drills" class="tab-content">
-    <h1>Drills Library</h1>
-    <div class="filter-group">
-      <label>Swing Fault: <input id="drill-swing" oninput="filterDrills()"></label>
-      <label>Drill Category: <input id="drill-category" oninput="filterDrills()"></label>
-      <label>Drill Name: <input id="drill-name" oninput="filterDrills()"></label>
-    </div>
-    <table id="drill-table">
-      <thead>
-        <tr>
-          <th>Swing Fault</th>
-          <th>Drill Category</th>
-          <th>Drill Name</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- BEGIN DRILL ROWS (auto-generated from Drills.xlsx, example structure below) -->
-        <tr><td>Early Extension</td><td>Hip Depth</td><td>Wall Drill</td><td>Maintain hip depth by keeping your glutes on the wall throughout your swing.</td></tr>
-        <tr><td>Casting</td><td>Wrist Lag</td><td>Pump Drill</td><td>Promotes proper lag by pausing in the downswing and holding the wrist set.</td></tr>
-        <tr><td>Over-the-Top</td><td>Shallowing</td><td>Towel Under Arm Drill</td><td>Encourages proper arm path by keeping a towel under the trail arm.</td></tr>
-        <tr><td>Reverse Pivot</td><td>Weight Transfer</td><td>Step-Through Drill</td><td>Focuses on shifting weight through the shot.</td></tr>
-        <tr><td>Scooping</td><td>Impact</td><td>Impact Bag Drill</td><td>Trains a firm left wrist and forward shaft lean at impact.</td></tr>
-        <!-- ADD ALL ROWS from your "Drills.xlsx" file here. If you want, I can convert the entire sheet and deliver all rows for you to paste here. -->
-      </tbody>
-    </table>
-    <p style="font-size:0.98em; color:#777;">(Filter or scroll to view drills. Update this table as needed.)</p>
-  </div>
-  
-  <!-- Services Tab -->
-  <div id="services" class="tab-content">
-    <h1>Services Offered</h1>
-    <ul>
-      <li>One-on-one coaching (in-person & virtual)</li>
-      <li>Customized sport-specific programming</li>
-      <li>Golf fitness and performance assessments</li>
-      <li>Youth athletic development</li>
-      <li>Online video analysis and feedback</li>
-      <li>Team training & consulting</li>
-    </ul>
-  </div>
-  
-  <!-- Payment Tab -->
-  <div id="payment" class="tab-content">
-    <h1>Join / Payment Portal</h1>
-    <p>Secure your spot in our programs or book services here:</p>
-    <ul>
-      <li><b>Monthly Membership:</b> <a href="#">Subscribe now</a></li>
-      <li><b>Book a session:</b> <a href="#">Schedule one-on-one</a></li>
-      <li><b>Gift certificates:</b> <a href="#">Purchase for others</a></li>
-    </ul>
-    <p>For alternative payment or custom requests, please <a href="#" onclick="openTab(event, 'contact')">contact us</a>.</p>
-  </div>
-  
-  <!-- About Tab -->
-  <div id="about" class="tab-content">
-    <h1>About Defy Elite Athletics</h1>
-    <img src="499407090_10006568012698243_8780208516133082159_n.webp" alt="Steven Kittinger Jr" class="profile-photo">
-    <p>
-      Defy Elite Athletics was founded by Steven Kittinger Jr, an ACSM-certified personal trainer and experienced athletic coach. With over 8 years in the industry and a background in sports and recreation management, Steven brings a passion for athlete development and holistic training.
-    </p>
-    <div class="card">
-      <b>Our Philosophy:</b>
-      <ul>
-        <li>Evidence-based, practical programming</li>
-        <li>Personalized for every athlete</li>
-        <li>Continuous learning and improvement</li>
-        <li>Truth, discipline, and hard work above all</li>
-      </ul>
-    </div>
-  </div>
-  
-  <!-- Contact Tab -->
-  <div id="contact" class="tab-content">
-    <h1>Contact</h1>
-    <img src="499407090_10006568012698243_8780208516133082159_n.webp" alt="Steven Kittinger Jr" class="profile-photo">
-    <form class="contact-form" action="mailto:defyeliteathletics@yahoo.com" method="POST" enctype="text/plain">
-      <label>Your Name:<br><input type="text" name="name" required></label>
-      <label>Email:<br><input type="email" name="email" required></label>
-      <label>Message:<br><textarea name="message" rows="5" required></textarea></label>
-      <button type="submit">Send Message</button>
-    </form>
-    <p style="font-size:0.98em; color:#777;">Or email: <a href="mailto:defyeliteathletics@yahoo.com">defyeliteathletics@yahoo.com</a></p>
-  </div>
-  
   <script>
-    // Tab navigation
-    function openTab(evt, tabId) {
-      document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      document.querySelectorAll('.tablink').forEach(btn => btn.classList.remove('active'));
-      evt.currentTarget.classList.add('active');
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("navbar")[0].getElementsByTagName("a");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
     }
-
-    // Exercises filter
-    function filterExercises() {
-      let sport = document.getElementById('exercise-sport').value.toLowerCase();
-      let modality = document.getElementById('exercise-modality').value.toLowerCase();
-      let focus = document.getElementById('exercise-focus').value.toLowerCase();
-      let name = document.getElementById('exercise-name').value.toLowerCase();
-      document.querySelectorAll('#exercise-table tbody tr').forEach(row => {
-        let cells = row.getElementsByTagName('td');
-        let show = true;
-        if (sport && !cells[0].innerText.toLowerCase().includes(sport)) show = false;
-        if (modality && !cells[1].innerText.toLowerCase().includes(modality)) show = false;
-        if (focus && !cells[2].innerText.toLowerCase().includes(focus)) show = false;
-        if (name && !cells[3].innerText.toLowerCase().includes(name)) show = false;
-        row.style.display = show ? '' : 'none';
-      });
-    }
-
-    // Drills filter
-    function filterDrills() {
-      let swing = document.getElementById('drill-swing').value.toLowerCase();
-      let category = document.getElementById('drill-category').value.toLowerCase();
-      let name = document.getElementById('drill-name').value.toLowerCase();
-      document.querySelectorAll('#drill-table tbody tr').forEach(row => {
-        let cells = row.getElementsByTagName('td');
-        let show = true;
-        if (swing && !cells[0].innerText.toLowerCase().includes(swing)) show = false;
-        if (category && !cells[1].innerText.toLowerCase().includes(category)) show = false;
-        if (name && !cells[2].innerText.toLowerCase().includes(name)) show = false;
-        row.style.display = show ? '' : 'none';
-      });
+    function filterTable(inputId, tableId) {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById(inputId);
+      filter = input.value.toUpperCase();
+      table = document.getElementById(tableId);
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        tr[i].style.display = "none";
+        for (var j = 0; j < tr[i].cells.length; j++) {
+          td = tr[i].cells[j];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+              break;
+            }
+          }
+        }
+      }
     }
   </script>
 </body>
