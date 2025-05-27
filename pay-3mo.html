@@ -14,16 +14,10 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header><img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo"></header>
+  <nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="contact.html">Contact</a></nav>
   <section class="pay-section">
-    <img src="assets/3 Month Periodation Logo.png" alt="3-Month Plan" class="service-logo" />
+    <img src="assets/3mo.png" alt="3-Month Plan" class="service-logo" />
     <h2>Pay for 3-Month Periodization Plan</h2>
     <div class="currency-label">USD $200</div>
     <div id="paypal-3mo-usd"></div>
@@ -40,8 +34,7 @@
           actions.order.create({ purchase_units: [{ amount: { currency_code: currency, value: amount } }] }),
         onApprove: (data, actions) =>
           actions.order.capture().then(() => {
-            alert('Thank you for your payment!');
-            window.location.href = 'services.html';
+            window.location.href = 'thankyou.html';
           })
       }).render(selector);
     }
@@ -50,4 +43,3 @@
   </script>
 </body>
 </html>
-
