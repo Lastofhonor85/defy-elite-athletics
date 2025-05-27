@@ -2,170 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Defy Elite Athletics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defy Elite Athletics</title>
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AX8tNpeyEgJBHprAUsolwvqv1oGUeOMRTx74YxU1WniGxMybjVKT-cj8yTkf3F8OiTu6K8a5XgEJ5MAE"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f8f9fa; }
-    .navbar { overflow: hidden; background-color: #222; display: flex; justify-content: center; align-items: center; }
-    .navbar a { color: #f2f2f2; text-align: center; padding: 16px 20px; text-decoration: none; font-size: 17px; transition: background .2s; }
-    .navbar a:hover, .navbar a.active { background: #18bc9c; color: white; }
-    .container { max-width: 1100px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #18bc9c; margin-bottom: 18px; }
-    .tabcontent { display: none; }
-    .tabcontent.active { display: block; }
-    table { width: 100%; border-collapse: collapse; margin-top: 18px; }
-    th, td { padding: 12px; border: 1px solid #eee; text-align: left; }
-    th { background: #18bc9c; color: #fff; }
-    input[type="text"] { padding: 8px; width: 250px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 8px; }
-    @media (max-width: 700px) {
-      .container { padding: 12px; }
-      th, td { padding: 7px; }
-      .navbar a { font-size: 15px; padding: 12px 8px;}
-      .profile-img { width: 90px; height: 90px; }
-    }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#111; color:#fff; }
+    header { background:#000; padding:1rem; text-align:center; }
+    header h1 { font-size:2.5rem; margin:0; }
+    nav { background:#222; padding:0.5rem; text-align:center; }
+    nav a { color:#fff; margin:0 1rem; text-decoration:none; }
+    section { padding:2rem; }
+    #services ul { list-style:none; padding:0; }
+    #services li { margin-bottom:1.5rem; }
+    #services li ul { margin:0.5rem 0 0 1rem; }
+    footer { background:#000; text-align:center; padding:1rem; }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <a href="#" class="active" onclick="openTab(event, 'home')">Home</a>
-    <a href="#" onclick="openTab(event, 'about')">About</a>
-    <a href="#" onclick="openTab(event, 'drills')">Drills</a>
-    <a href="#" onclick="openTab(event, 'exercises')">Exercises</a>
-    <a href="#" onclick="openTab(event, 'contact')">Contact</a>
-  </div>
-  <div class="container">
-    <!-- Home Tab -->
-    <div id="home" class="tabcontent active">
-      <h1>Defy Elite Athletics</h1>
-      <p>Welcome to Defy Elite Athletics — your home for performance-driven sports drills and fitness programming.<br>Browse elite drills, comprehensive exercise libraries, and contact Coach Steven for personalized training plans.</p>
-    </div>
+  <header>
+    <h1>Defy Elite Athletics</h1>
+  </header>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <!-- About Tab -->
-    <div id="about" class="tabcontent">
-      <h2>About Coach Steven Kittinger Jr.</h2>
-      <img src="499407090_10006568012698243_8780208516133082159_n.webp" alt="Profile Photo" class="profile-img">
-      <p>
-        Steven Kittinger Jr. holds a Bachelor's degree in Sports and Recreation Management and is a certified ACSM personal trainer. With over eight years of experience as an athletic coach, CrossFit trainer, Army recreation assistant, and competitive golf coach, he has dedicated his career to empowering others to achieve their peak athletic potential. Steven is passionate about family, sport, and holistic self-improvement.
-      </p>
-    </div>
+  <section id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>
+        <strong>One-on-One Live Golf Coaching:</strong> $50 / ₱2,774
+        <div id="paypal-button-golf-live"></div>
+        <div id="paypal-button-golf-live-php"></div>
+      </li>
+      <li>
+        <strong>One-on-One Remote Golf Coaching:</strong> $40 / ₱2,219
+        <div id="paypal-button-golf-remote"></div>
+        <div id="paypal-button-golf-remote-php"></div>
+      </li>
+      <li>
+        <strong>One-on-One Live Personal Training:</strong> $50 / ₱2,774
+        <div id="paypal-button-pt-live"></div>
+        <div id="paypal-button-pt-live-php"></div>
+      </li>
+      <li>
+        <strong>One-on-One Remote Personal Training:</strong> $40 / ₱2,219
+        <div id="paypal-button-pt-remote"></div>
+        <div id="paypal-button-pt-remote-php"></div>
+      </li>
+      <li>
+        <strong>Nutritional Counseling (Remote):</strong> $20/hr / ₱1,110/hr
+        <div id="paypal-button-nutrition-usd"></div>
+        <div id="paypal-button-nutrition-php"></div>
+      </li>
+      <li>
+        <strong>Complete Athletic Periodization:</strong>
+        <ul>
+          <li>3 Months: $200 / ₱11,095 <div id="paypal-button-period-3-usd"></div><div id="paypal-button-period-3-php"></div></li>
+          <li>6 Months: $375 / ₱20,804 <div id="paypal-button-period-6-usd"></div><div id="paypal-button-period-6-php"></div></li>
+          <li>9 Months: $550 / ₱30,512 <div id="paypal-button-period-9-usd"></div><div id="paypal-button-period-9-php"></div></li>
+          <li>12 Months: $725 / ₱40,220 <div id="paypal-button-period-12-usd"></div><div id="paypal-button-period-12-php"></div></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Monthly Subscription (Access to Libraries & Exclusive Content):</strong> $30/mo / ₱1,664/mo
+        <div id="paypal-button-subscription-usd"></div>
+        <div id="paypal-button-subscription-php"></div>
+      </li>
+      <li>
+        <strong>Complete Swing Analysis with Personalized Instruction Video:</strong> $60 / ₱3,329
+        <div id="paypal-button-analysis-usd"></div>
+        <div id="paypal-button-analysis-php"></div>
+      </li>
+    </ul>
+  </section>
 
-    <!-- Drills Tab -->
-    <div id="drills" class="tabcontent">
-      <h2>Golf Swing Fault Drills</h2>
-      <input type="text" id="drillSearch" onkeyup="filterTable('drillSearch', 'drillTable')" placeholder="Search for drills...">
-      <table id="drillTable">
-        <thead>
-          <tr>
-            <th>Swing Fault</th>
-            <th>Drill Category</th>
-            <th>Drill Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-<tr><td>Early Extension</td><td>Hip Depth & Posture Retention Drills</td><td>Wall Drill for Posture Retention</td><td></td></tr>
-<tr><td>Casting / Early Release</td><td>Wrist Lag & Downswing Sequencing Drills</td><td>Pump Drill for Lag Creation</td><td></td></tr>
-<tr><td>Over-the-Top</td><td>Shallowing & Path Correction Drills</td><td>Towel Under Arm Drill</td><td></td></tr>
-<tr><td>Chicken Wing / Loss of Extension</td><td>Arm Extension & Rotation Drills</td><td>Swing with Glove Under Lead Arm</td><td></td></tr>
-<tr><td>Reverse Pivot / Swaying</td><td>Weight Transfer & Centered Pivot Drills</td><td>Step-Through Drill</td><td></td></tr>
-<tr><td>Scooping / Flipping</td><td>Impact Position & Shaft Lean Drills</td><td>Impact Bag Drill</td><td></td></tr>
-<tr><td>Loss of Balance / Stability</td><td>Balance & Core Engagement Drills</td><td>Feet Together Swings</td><td></td></tr>
-<tr><td>Inconsistent Low Point</td><td>Low Point Control Drills</td><td>Tee Line Drill</td><td></td></tr>
-<tr><td>Poor Rotation (Upper/Lower)</td><td>Rotation Mechanics & Mobility Drills</td><td>Chair Drill for Hip Rotation</td><td></td></tr>
-<tr><td>Lack of Wrist Set</td><td>Wrist Hinge Timing Drills</td><td>L-to-L Drill</td><td></td></tr>
-<tr><td>Open or Closed Clubface</td><td>Clubface Awareness & Face Control Drills</td><td>Face Aim at Setup Drill</td><td></td></tr>
-<tr><td>Flat or Upright Swing Plane</td><td>Plane Matching & Shaft Path Drills</td><td>Plane Board Drill</td><td></td></tr>
-<tr><td>Lack of Tempo / Rhythm</td><td>Timing & Tempo Synchronization Drills</td><td>1-2-3 Swing Rhythm Drill</td><td></td></tr>
-<tr><td>Swinging Too Hard</td><td>Controlled Acceleration & Feel Drills</td><td>50% Swing Tempo Drill</td><td></td></tr>
-<tr><td>Flying Elbow (Right Elbow Out)</td><td>Trail Arm Positioning Drills</td><td>Right Elbow Wall Drill</td><td></td></tr>
-<tr><td>Heel or Toe Strikes</td><td>Centered Striking & Sweet Spot Drills</td><td>Impact Tape Contact Drill</td><td></td></tr>
-<tr><td>Gripping Too Tightly</td><td>Grip Pressure Awareness Drills</td><td>Tension Awareness Swings</td><td></td></tr>
-<tr><td>Standing Up / Losing Spine Angle</td><td>Posture Maintenance & Body Awareness Drills</td><td>Chair Behind Hips Drill</td><td></td></tr>
-<tr><td>Club Getting Stuck Behind</td><td>Club Delivery & Exit Path Drills</td><td>Split Grip Drill</td><td></td></tr>
-<tr><td>Reverse Spine Tilt</td><td>Upper Body Positioning Drills</td><td>Torso Tilt in Mirror Drill</td><td></td></tr>
-<tr><td>Too Inside or Too Outside Takeaway</td><td>Takeaway Path Drills</td><td>Low and Slow Takeaway Drill</td><td></td></tr>
-        </tbody>
-      </table>
-    </div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: skittingerjr@yahoo.com</p>
+    <p>Location: Davao City, Philippines</p>
+  </section>
 
-    <!-- Exercises Tab -->
-    <div id="exercises" class="tabcontent">
-      <h2>Exercise Library</h2>
-      <input type="text" id="exerciseSearch" onkeyup="filterTable('exerciseSearch', 'exerciseTable')" placeholder="Search for exercises...">
-      <table id="exerciseTable">
-        <thead>
-          <tr>
-            <th>Sport</th>
-            <th>Modality</th>
-            <th>Training Focus</th>
-            <th>Exercise Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-<tr><td>Metcon</td><td>Endurance</td><td>Legs</td><td>Bird Dog</td><td>Bird Dog focusing on Legs through Endurance training for metcon.</td></tr>
-<tr><td>Circuit Training</td><td>Balance</td><td>Core</td><td>Wall Sit</td><td>Wall Sit focusing on Core through Balance training for circuit training.</td></tr>
-<tr><td>Metcon</td><td>Endurance</td><td>Legs</td><td>Row</td><td>Row focusing on Legs through Endurance training for metcon.</td></tr>
-<tr><td>Yoga</td><td>Endurance</td><td>Core</td><td>Jumping Jack</td><td>Jumping Jack focusing on Core through Endurance training for yoga.</td></tr>
-<tr><td>Golf</td><td>Power</td><td>Stability</td><td>Cobra Stretch</td><td>Cobra Stretch focusing on Stability through Power training for golf.</td></tr>
-<tr><td>Golf</td><td>Endurance</td><td>Stability</td><td>Triangle Pose</td><td>Triangle Pose focusing on Stability through Endurance training for golf.</td></tr>
-<tr><td>Circuit Training</td><td>Strength</td><td>Full Body</td><td>Bird Dog</td><td>Bird Dog focusing on Full Body through Strength training for circuit training.</td></tr>
-<tr><td>Circuit Training</td><td>Flexibility</td><td>Explosiveness</td><td>Landmine Press</td><td>Landmine Press focusing on Explosiveness through Flexibility training for circuit training.</td></tr>
-<tr><td>Metcon</td><td>Cardio</td><td>Stability</td><td>Banded Walk</td><td>Banded Walk focusing on Stability through Cardio training for metcon.</td></tr>
-<tr><td>Yoga</td><td>Power</td><td>Stability</td><td>Sled Push</td><td>Sled Push focusing on Stability through Power training for yoga.</td></tr>
-<tr><td>HIIT</td><td>Strength</td><td>Core</td><td>Prone Cobra</td><td>Prone Cobra focusing on Core through Strength training for hiit.</td></tr>
-<tr><td>Circuit Training</td><td>Power</td><td>Conditioning</td><td>Box Jump</td><td>Box Jump focusing on Conditioning through Power training for circuit training.</td></tr>
-<tr><td>Metcon</td><td>Power</td><td>Explosiveness</td><td>Z-Press</td><td>Z-Press focusing on Explosiveness through Power training for metcon.</td></tr>
-<tr><td>Circuit Training</td><td>Endurance</td><td>Stability</td><td>Hollow Hold</td><td>Hollow Hold focusing on Stability through Endurance training for circuit training.</td></tr>
-<tr><td>HIIT</td><td>Power</td><td>Full Body</td><td>Sandbag Clean</td><td>Sandbag Clean focusing on Full Body through Power training for hiit.</td></tr>
-<tr><td>Golf</td><td>Stability</td><td>Core</td><td>Dead Bug</td><td>Dead Bug focusing on Core through Stability training for golf.</td></tr>
-<tr><td>Yoga</td><td>Flexibility</td><td>Stability</td><td>Twisted Lunge</td><td>Twisted Lunge focusing on Stability through Flexibility training for yoga.</td></tr>
-<tr><td>Metcon</td><td>Conditioning</td><td>Core</td><td>Side Plank</td><td>Side Plank focusing on Core through Conditioning training for metcon.</td></tr>
-<tr><td>Golf</td><td>Balance</td><td>Lower Body</td><td>Lateral Band Walk</td><td>Lateral Band Walk focusing on Lower Body through Balance training for golf.</td></tr>
-<tr><td>Circuit Training</td><td>Endurance</td><td>Upper Body</td><td>Incline Push-Up</td><td>Incline Push-Up focusing on Upper Body through Endurance training for circuit training.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- Contact Tab -->
-    <div id="contact" class="tabcontent">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:defyeliteathletics@yahoo.com">defyeliteathletics@yahoo.com</a></p>
-    </div>
-  </div>
+  <footer>
+    &copy; 2025 Defy Elite Athletics. All rights reserved.
+  </footer>
+
   <script>
-    function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].classList.remove("active");
-      }
-      tablinks = document.getElementsByClassName("navbar")[0].getElementsByTagName("a");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-      }
-      document.getElementById(tabName).classList.add("active");
-      evt.currentTarget.classList.add("active");
-    }
-    function filterTable(inputId, tableId) {
-      var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById(inputId);
-      filter = input.value.toUpperCase();
-      table = document.getElementById(tableId);
-      tr = table.getElementsByTagName("tr");
-      for (i = 1; i < tr.length; i++) {
-        tr[i].style.display = "none";
-        for (var j = 0; j < tr[i].cells.length; j++) {
-          td = tr[i].cells[j];
-          if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              tr[i].style.display = "";
-              break;
-            }
-          }
+    // Initialize PayPal Buttons
+    function initPayPalButton(selector, currency, value) {
+      paypal.Buttons({
+        createOrder: function(data, actions) {
+          return actions.order.create({ purchase_units: [{ amount: { currency_code: currency, value: value } }] });
         }
-      }
+      }).render(selector);
     }
+
+    // USD to PHP conversion at ~₱55.48
+    initPayPalButton('#paypal-button-golf-live', 'USD', '50.00');
+    initPayPalButton('#paypal-button-golf-live-php', 'PHP', '2773.80');
+    initPayPalButton('#paypal-button-golf-remote', 'USD', '40.00');
+    initPayPalButton('#paypal-button-golf-remote-php', 'PHP', '2219.04');
+    initPayPalButton('#paypal-button-pt-live', 'USD', '50.00');
+    initPayPalButton('#paypal-button-pt-live-php', 'PHP', '2773.80');
+    initPayPalButton('#paypal-button-pt-remote', 'USD', '40.00');
+    initPayPalButton('#paypal-button-pt-remote-php', 'PHP', '2219.04');
+    initPayPalButton('#paypal-button-nutrition-usd', 'USD', '20.00');
+    initPayPalButton('#paypal-button-nutrition-php', 'PHP', '1109.52');
+    initPayPalButton('#paypal-button-period-3-usd', 'USD', '200.00');
+    initPayPalButton('#paypal-button-period-3-php', 'PHP', '11095.20');
+    initPayPalButton('#paypal-button-period-6-usd', 'USD', '375.00');
+    initPayPalButton('#paypal-button-period-6-php', 'PHP', '20803.50');
+    initPayPalButton('#paypal-button-period-9-usd', 'USD', '550.00');
+    initPayPalButton('#paypal-button-period-9-php', 'PHP', '30511.80');
+    initPayPalButton('#paypal-button-period-12-usd', 'USD', '725.00');
+    initPayPalButton('#paypal-button-period-12-php', 'PHP', '40220.10');
+    initPayPalButton('#paypal-button-subscription-usd', 'USD', '30.00');
+    initPayPalButton('#paypal-button-subscription-php', 'PHP', '1664.28');
+    initPayPalButton('#paypal-button-analysis-usd', 'USD', '60.00');
+    initPayPalButton('#paypal-button-analysis-php', 'PHP', '3328.56');
   </script>
 </body>
 </html>
