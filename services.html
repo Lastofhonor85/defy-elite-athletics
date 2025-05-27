@@ -1,4 +1,3 @@
-<!-- services.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,21 +7,26 @@
   <link rel="stylesheet" href="styles.css" />
   <!-- PayPal SDK -->
   <script src="https://www.paypal.com/sdk/js?client-id=AX8tNpeyEgJBHprAUsolwvqv1oGUeOMRTx74YxU1WniGxMybjVKT-cj8yTkf3F8OiTu6K8a5XgEJ5MAE"></script>
+  <style>
+    .service-logo {
+      width: 100px;
+      margin: 0 auto 12px;
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <header>
     <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
   </header>
 
- <nav>
-  <a href="index.html" class="active">Home</a>
-  <a href="drills.html">Drills Library</a>
-  <a href="exercises.html">Exercises Library</a>
-  <a href="services.html">Services</a>
-  <a href="schedule-remote.html">Book Remote</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="drills.html">Drills Library</a>
+    <a href="exercises.html">Exercises Library</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <section class="hero">
     <h1>Our Services</h1>
@@ -30,9 +34,9 @@
   </section>
 
   <section id="services-list" class="services-grid">
-
     <!-- Live Golf Coaching -->
     <div class="service-card">
+      <img src="assets/live-golf.png" alt="Live Golf Coaching" class="service-logo" />
       <h2>Live Golf Coaching</h2>
       <p class="price">USD $50 | PHP ₱2,774</p>
       <div id="paypal-golf-live-usd"></div>
@@ -41,6 +45,7 @@
 
     <!-- Remote Golf Coaching -->
     <div class="service-card">
+      <img src="assets/remote-golf.png" alt="Remote Golf Coaching" class="service-logo" />
       <h2>Remote Golf Coaching</h2>
       <p class="price">USD $40 | PHP ₱2,219</p>
       <div id="paypal-golf-remote-usd"></div>
@@ -49,6 +54,7 @@
 
     <!-- Live Personal Training -->
     <div class="service-card">
+      <img src="assets/live-pt.png" alt="Live Personal Training" class="service-logo" />
       <h2>Live Personal Training</h2>
       <p class="price">USD $50 | PHP ₱2,774</p>
       <div id="paypal-pt-live-usd"></div>
@@ -57,14 +63,16 @@
 
     <!-- Remote Personal Training -->
     <div class="service-card">
+      <img src="assets/remote-pt.png" alt="Remote Personal Training" class="service-logo" />
       <h2>Remote Personal Training</h2>
       <p class="price">USD $40 | PHP ₱2,219</p>
       <div id="paypal-pt-remote-usd"></div>
       <div id="paypal-pt-remote-php"></div>
     </div>
 
-    <!-- Nutritional Counseling -->
+    <!-- Nutritional Counseling (Remote) -->
     <div class="service-card">
+      <img src="assets/nutrition.png" alt="Nutritional Counseling (Remote)" class="service-logo" />
       <h2>Nutritional Counseling (Remote)</h2>
       <p class="price">USD $20/hr | PHP ₱1,110/hr</p>
       <div id="paypal-nutrition-usd"></div>
@@ -73,31 +81,51 @@
 
     <!-- Periodization Plans -->
     <div class="service-card">
-      <h2>Periodization Plans</h2>
-      <ul class="plan-list">
-        <li>3 mo – USD $200 | PHP ₱11,095 <div id="paypal-period-3-usd"></div><div id="paypal-period-3-php"></div></li>
-        <li>6 mo – USD $375 | PHP ₱20,804 <div id="paypal-period-6-usd"></div><div id="paypal-period-6-php"></div></li>
-        <li>9 mo – USD $550 | PHP ₱30,512 <div id="paypal-period-9-usd"></div><div id="paypal-period-9-php"></div></li>
-        <li>12 mo – USD $725 | PHP ₱40,220 <div id="paypal-period-12-usd"></div><div id="paypal-period-12-php"></div></li>
-      </ul>
+      <img src="assets/3mo.png" alt="3-Month Plan" class="service-logo" />
+      <h2>3-Month Periodization Plan</h2>
+      <p class="price">USD $200 | PHP ₱11,095</p>
+      <div id="paypal-period-3-usd"></div>
+      <div id="paypal-period-3-php"></div>
+    </div>
+    <div class="service-card">
+      <img src="assets/6mo.png" alt="6-Month Plan" class="service-logo" />
+      <h2>6-Month Periodization Plan</h2>
+      <p class="price">USD $375 | PHP ₱20,804</p>
+      <div id="paypal-period-6-usd"></div>
+      <div id="paypal-period-6-php"></div>
+    </div>
+    <div class="service-card">
+      <img src="assets/9mo.png" alt="9-Month Plan" class="service-logo" />
+      <h2>9-Month Periodization Plan</h2>
+      <p class="price">USD $550 | PHP ₱30,512</p>
+      <div id="paypal-period-9-usd"></div>
+      <div id="paypal-period-9-php"></div>
+    </div>
+    <div class="service-card">
+      <img src="assets/12mo.png" alt="12-Month Plan" class="service-logo" />
+      <h2>12-Month Periodization Plan</h2>
+      <p class="price">USD $725 | PHP ₱40,220</p>
+      <div id="paypal-period-12-usd"></div>
+      <div id="paypal-period-12-php"></div>
     </div>
 
     <!-- Monthly Subscription -->
     <div class="service-card">
+      <img src="assets/subscription.png" alt="Monthly Subscription" class="service-logo" />
       <h2>Monthly Subscription</h2>
       <p class="price">USD $30/mo | PHP ₱1,664/mo</p>
       <div id="paypal-sub-usd"></div>
       <div id="paypal-sub-php"></div>
     </div>
 
-    <!-- Swing Analysis -->
+    <!-- Swing Analysis + Video -->
     <div class="service-card">
+      <img src="assets/swing-analysis.png" alt="Swing Analysis" class="service-logo" />
       <h2>Swing Analysis + Video</h2>
       <p class="price">USD $60 | PHP ₱3,329</p>
       <div id="paypal-analysis-usd"></div>
       <div id="paypal-analysis-php"></div>
     </div>
-
   </section>
 
   <footer>&copy; 2025 Defy Elite Athletics</footer>
@@ -120,7 +148,7 @@
     renderBtn('#paypal-golf-live-usd', 'USD', '50.00');
     renderBtn('#paypal-golf-live-php', 'PHP', '2773.80');
 
-    // Remote Golf Coaching (redirect to scheduler)
+    // Remote Golf Coaching (redirect)
     renderBtn('#paypal-golf-remote-usd', 'USD', '40.00', 'schedule-remote.html');
     renderBtn('#paypal-golf-remote-php', 'PHP', '2219.04', 'schedule-remote.html');
 
@@ -128,15 +156,15 @@
     renderBtn('#paypal-pt-live-usd', 'USD', '50.00');
     renderBtn('#paypal-pt-live-php', 'PHP', '2773.80');
 
-    // Remote Personal Training (redirect to scheduler)
+    // Remote Personal Training (redirect)
     renderBtn('#paypal-pt-remote-usd', 'USD', '40.00', 'schedule-remote.html');
     renderBtn('#paypal-pt-remote-php', 'PHP', '2219.04', 'schedule-remote.html');
 
-    // Nutritional Counseling (redirect to scheduler)
+    // Nutritional Counseling (redirect)
     renderBtn('#paypal-nutrition-usd', 'USD', '20.00', 'schedule-remote.html');
     renderBtn('#paypal-nutrition-php', 'PHP', '1109.52', 'schedule-remote.html');
 
-    // Periodization Plans
+    // Periodization
     renderBtn('#paypal-period-3-usd', 'USD', '200.00');
     renderBtn('#paypal-period-3-php', 'PHP', '11095.20');
     renderBtn('#paypal-period-6-usd', 'USD', '375.00');
@@ -150,7 +178,7 @@
     renderBtn('#paypal-sub-usd', 'USD', '30.00');
     renderBtn('#paypal-sub-php', 'PHP', '1664.28');
 
-    // Swing Analysis + Video (redirect to scheduler)
+    // Swing Analysis (redirect)
     renderBtn('#paypal-analysis-usd', 'USD', '60.00', 'schedule-remote.html');
     renderBtn('#paypal-analysis-php', 'PHP', '3328.56', 'schedule-remote.html');
   </script>
