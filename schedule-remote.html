@@ -2,32 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Schedule Remote Session – Defy Elite Athletics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schedule Your Remote Session – Defy Elite Athletics</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+  <style>
+    .schedule-section {
+      max-width: 600px;
+      margin: 60px auto 0;
+      background: #181818;
+      padding: 36px 24px 24px 24px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 6px 24px rgba(30,144,255,0.12);
+    }
+    .schedule-section h1 {
+      color: #1e90ff;
+      font-size: 2.15em;
+      margin-bottom: 0.5em;
+      letter-spacing: 1px;
+    }
+    .schedule-section p {
+      font-size: 1.16em;
+      color: #f3f3f3;
+      margin-bottom: 2em;
+      line-height: 1.5em;
+    }
+    .schedule-section iframe {
+      border-radius: 16px;
+      border: none;
+      width: 100%;
+      min-height: 700px;
+      margin-top: 15px;
+    }
+    .schedule-signature {
+      margin-top: 2em;
+      color: #aaa;
+      font-size: 1em;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="assets/logo.png" class="logo" alt="Defy Elite Athletics Logo" />
+    <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
   </header>
   <nav>
     <a href="index.html">Home</a>
-    <a href="drills.html">Drills Library</a>
-    <a href="exercises.html">Exercises Library</a>
     <a href="services.html">Services</a>
-    <a href="schedule-remote.html" class="active">Book Remote</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <section class="hero">
-    <h2>Schedule Your Remote Session</h2>
-    <p>Select a time that works for you:</p>
-  </section>
-  <section id="calendly-scheduler">
-    <div class="calendly-inline-widget"
-         data-url="https://calendly.com/defyeliteathletics"
-         style="min-width:320px;height:700px;">
+  <section class="schedule-section">
+    <h1>Schedule Your Remote Session</h1>
+    <p>
+      Thank you for your payment and for your commitment to progress.<br>
+      Please use the scheduling tool below to select a time for your remote session.<br><br>
+      If you have any questions, special requests, or need assistance, don’t hesitate to reach out.
+    </p>
+    <!-- Calendly inline embed -->
+    <iframe src="https://calendly.com/defyeliteathletics" frameborder="0" allowfullscreen></iframe>
+    <div class="schedule-signature">
+      <br>
+      Looking forward to working with you!<br>
+      <b>Steven Edward Kittinger Jr.</b>
     </div>
   </section>
   <footer>&copy; 2025 Defy Elite Athletics</footer>
