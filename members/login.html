@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Members Login – Defy Elite Athletics</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .login-container {max-width: 350px; margin: 90px auto 0; background:#181818; padding:38px 26px 28px; border-radius:14px; box-shadow: 0 6px 24px rgba(30,144,255,0.12);}
+    .login-container h1 {text-align:center; color:#1e90ff; margin-bottom:1.2em;}
+    .login-container label {color:#fff; font-size:1.13em;}
+    .login-container input {width:100%; padding:10px; border-radius:7px; border:none; margin:12px 0 24px; background:#292929; color:#fff; font-size:1.1em;}
+    .login-container button {width:100%; padding:12px; border-radius:7px; border:none; background:#1e90ff; color:#fff; font-size:1.11em; cursor:pointer; font-weight:600;}
+    .login-container .error {color:#ff4141; text-align:center; margin-bottom:8px;}
+  </style>
+</head>
+<body>
+  <header><img src="../assets/logo.png" alt="Defy Elite Athletics Logo" class="logo"></header>
+  <section class="login-container">
+    <h1>Members Login</h1>
+    <div id="error" class="error"></div>
+    <form onsubmit="return checkPassword(event)">
+      <label for="password">Enter Membership Password:</label>
+      <input type="password" id="password" required autofocus>
+      <button type="submit">Login</button>
+    </form>
+  </section>
+  <footer>&copy; 2025 Defy Elite Athletics</footer>
+  <script>
+    // Demo password: change for your members!
+    const MEMBER_PASSWORD = "defyelite2024";
+    function checkPassword(e) {
+      e.preventDefault();
+      const pw = document.getElementById('password').value;
+      if (pw === MEMBER_PASSWORD) {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById('error').innerText = "Incorrect password. Please try again.";
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
 
