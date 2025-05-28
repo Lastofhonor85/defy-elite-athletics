@@ -31,4 +31,15 @@
       paypal.Buttons({
         style: { shape: 'pill', color: 'blue', layout: 'vertical', label: 'paypal', },
         createOrder: (data, actions) =>
-          actions.order.create({ purchase_units: [{ amount: { currency_code
+          actions.order.create({ purchase_units: [{ amount: { currency_code: currency, value: amount } }] }),
+        onApprove: (data, actions) =>
+          actions.order.capture().then(() => {
+            window.location.href = 'schedule-remote.html';
+          })
+      }).render(selector);
+    }
+    renderPayBtn('#paypal-swing-analysis-usd', 'USD', '60.00');
+    renderPayBtn('#paypal-swing-analysis-php', 'PHP', '3328.56');
+  </script>
+</body>
+</html>
