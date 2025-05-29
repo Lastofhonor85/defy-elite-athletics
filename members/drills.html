@@ -3,21 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Members Drills Library</title>
+  <title>Drills Library – Members</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    .content-section {max-width: 900px; margin: 50px auto 0; background:#181818; padding:38px 20px; border-radius:14px;}
-    .content-section h1 {color:#1e90ff; margin-bottom:1em;}
+    .content-section { max-width: 1100px; margin: 40px auto; background: #181818; padding: 36px 18px; border-radius: 14px;}
+    h1 { color: #1e90ff; margin-bottom: 0.8em;}
+    #searchBar { width: 300px; padding: 10px; border-radius: 7px; margin-bottom: 24px; font-size: 1.08em; }
+    table { width: 100%; border-collapse: collapse; background: #202020; }
+    th, td { padding: 12px 8px; border: 1px solid #292929; color: #fff; }
+    th { background: #24292f; cursor: pointer;}
+    tr:hover { background: #2a2a32; }
+    .filter-select { width: 120px; margin-right: 12px; padding: 7px; border-radius: 6px; }
+    .table-controls { margin-bottom: 20px; }
   </style>
 </head>
 <body>
-  <header><img src="../assets/logo.png" alt="Defy Elite Athletics Logo" class="logo"></header>
+  <header>
+    <img src="../assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
+  </header>
   <section class="content-section">
     <h1>Complete Drills Library</h1>
-    <!-- Insert drills table or content here -->
-    <p>[Your full list of exclusive golf drills goes here!]</p>
+    <div class="table-controls">
+      <input id="searchBar" type="text" placeholder="Search drills..." onkeyup="searchTable()">
+      <span id="filters"></span>
+    </div>
+    <div style="overflow-x:auto;">
+      <table id="drillsTable">
+        <!-- JS will fill in the table -->
+      </table>
+    </div>
     <a href="dashboard.html" style="color:#1e90ff;text-decoration:underline;">&larr; Back to Portal</a>
   </section>
   <footer>&copy; 2025 Defy Elite Athletics</footer>
+  <script>
+    // 1. Fetch and display CSV as table
+    fetch('data/drills.csv')
+      .then(response => response.text())
+      .then(csv => displayTable(csv));
+
+    function displayTable(csv) {
+      let lines = csv.trim().split('\n');
+      let headings = lines[0].split(',');
+      let rows = lines.slice(1).map(line => line.split(','));
+      // Render table headers
+      let table = '<thead><tr>';
+      headings.forEach((h, idx) => {
+        table += `<th onclick="filterColumn(${idx})">${h}</th>`;
+      });
+      table += '</tr></thead><tbody>';
+      // Render table rows
+      rows.forEach(row => {
+        table += '<tr>';
+        row.forEach(cell => table += `<td>${cell}</td>`);
+        table += '</tr>';
+      });
+      table += '</tbody>';
+      document.getElementById('drillsTable').innerHTML = table;
+
+      // Create filter dropdowns
+      let filters = '';
+      headings.forEach((h, idx) => {
+        let unique = Array.from(new Set(rows.map(row => row[idx]))).filter(x => x !== "");
+        if (unique.length < rows.length && unique.length > 1) {
+          filters += `<select class="filter-select" onchange="filterByValue(${idx}, this.value)">
+            <option value="">All ${h}</option>
+            ${unique.map(u => `<option value="${u}">${u}</option>`).join('')}
+          </select>`;
+        }
+      });
+      document.getElementById('filters').innerHTML = filters;
+      window._drillsRows = rows;
+      window._drillsHeadings = headings;
+    }
+
+    // 2. Search function
+    function searchTable() {
+      let query = document.getElementById('searchBar').value.toLowerCase();
+      let trs = document.querySelectorAll('#drillsTable tbody tr');
+      trs.forEach(tr => {
+        let show = Array.from(tr.children).some(td => td.textContent.toLowerCase().includes(query));
+        tr.style.display = show ? '' : 'none';
+      });
+    }
+
+    // 3. Filter by column
+    function filterByValue(colIdx, value) {
+      let trs = document.querySelectorAll('#drillsTable tbody tr');
+      trs.forEach(tr => {
+        let match = !value || tr.children[colIdx].textContent === value;
+        tr.style.display = match ? '' : 'none';
+      });
+      searchTable(); // keep search working too
+    }
+
+    // 4. Clickable column heading for sorting (optional for later)
+    function filterColumn(colIdx) {
+      // To be implemented for sorting if you like
+    }
+  </script>
 </body>
 </html>
