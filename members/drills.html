@@ -36,7 +36,6 @@
   </section>
   <footer>&copy; 2025 Defy Elite Athletics</footer>
   <script>
-    // 1. Fetch and display CSV as table
     fetch('data/drills.csv')
       .then(response => response.text())
       .then(csv => displayTable(csv));
@@ -76,7 +75,6 @@
       window._drillsHeadings = headings;
     }
 
-    // 2. Search function
     function searchTable() {
       let query = document.getElementById('searchBar').value.toLowerCase();
       let trs = document.querySelectorAll('#drillsTable tbody tr');
@@ -86,7 +84,6 @@
       });
     }
 
-    // 3. Filter by column
     function filterByValue(colIdx, value) {
       let trs = document.querySelectorAll('#drillsTable tbody tr');
       trs.forEach(tr => {
@@ -96,9 +93,8 @@
       searchTable(); // keep search working too
     }
 
-    // 4. Clickable column heading for sorting (optional for later)
     function filterColumn(colIdx) {
-      // To be implemented for sorting if you like
+      // Optional: Implement column sorting here if you want later
     }
   </script>
 </body>
