@@ -2,43 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Golf Science & Performance News</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Golf Science & Performance</title>
   <link rel="stylesheet" href="../styles.css"/>
   <style>
-    .content-section {
-      max-width:900px;
-      margin:40px auto;
-      background:#181818;
-      padding:36px 18px;
-      border-radius:14px;
-      color:#eee;
-    }
-    h1 { color:#1e90ff; margin-bottom:0.5em; }
-    iframe { width:100%; height:800px; border:none; border-radius:8px; }
-    a.back { display:inline-block; margin-top:16px; color:#1e90ff; text-decoration:underline; }
+    body{background:#111;color:#eee;margin:0;font-family:Arial,sans-serif}
+    .content-section{max-width:900px;margin:40px auto;background:#181818;padding:36px 18px;border-radius:14px}
+    h1{color:#1e90ff;margin-bottom:0.8em}
+    .feed-entry{border-bottom:1px solid #222;padding-bottom:10px;margin-bottom:12px}
+    .feed-entry a{color:#1e90ff;font-weight:600}
+    .feed-entry small{color:#aaa}
+    .feed-error{color:#ff4444;background:#222;padding:6px 8px;border-radius:8px;margin-bottom:10px}
+    a.back{display:inline-block;margin-top:16px;color:#1e90ff;text-decoration:underline}
   </style>
 </head>
-<body style="background:#111; margin:0; font-family:Arial,sans-serif; color:#eee;">
-  <header style="text-align:center; padding:20px 0;">
-    <img src="../assets/logo.png" alt="Defy Elite Athletics Logo" style="max-width:200px;">
+<body>
+  <header style="text-align:center;padding:20px 0">
+    <img src="../assets/logo.png" alt="Logo" style="max-width:200px">
   </header>
 
   <section class="content-section">
-    <h1>Golf Science & Performance News</h1>
-    <p>All the latest peer-reviewed studies, research news, and expert analysis on golf performance science.</p>
-
-    <!-- Google News embed for “golf science performance” -->
-    <iframe 
-      src="https://news.google.com/search?q=golf%20science%20performance&hl=en-US&gl=US&ceid=US:en"
-      title="Golf Science & Performance News">
-    </iframe>
-
+    <h1>Golf Science & Performance</h1>
+    <p>Top research & news from journals and elite golf‐science sources.</p>
+    <div id="newsfeed">Loading...</div>
     <a href="articles.html" class="back">&larr; Back to Articles Hub</a>
   </section>
 
-  <footer style="text-align:center; padding:20px; color:#555;">
-    &copy; 2025 Defy Elite Athletics
-  </footer>
+  <footer style="text-align:center;padding:20px;color:#555">&copy; 2025 Defy Elite Athletics</footer>
+
+  <script>
+    const feeds = [
+      "https://golf.com/feed/",
+      "https://www.golfwrx.com/feed/",
+      "https://bjsm.bmj.com/rss/current.xml",
+      "https://www.frontiersin.org/journals/sports-and-active-living/rss",
+      "https://www.sciencedaily.com/rss/health_medicine/sports_fitness.xml"
+    ];
+
+    let allEntries = [], loaded = 0, errors = [];
+
+    function sanitize(html) {
+      const d = document.createElement("div"); d.innerHTML = html||""; 
+      return d.textContent||d.innerText||"";
+    }
+
+    function display() {
+      allEntries.sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));
+      let html = "";
+      allEntries.forEach(e=>{
+        html+=`<div class="feed-entry">
+          <a href="${e.link}" target="_blank">${e.title}</a><br>
+          <small>${e.pubDate?new Date(e.pubDate).toLocaleString():""}</small>
+          <div>${sanitize(e.description).slice(0,180)}…</div>
+        </div>`;
+      });
+      document.getElementById("newsfeed").innerHTML = 
+        (errors.join("")||"") + (html||"<div>No articles found.</div>");
+    }
+
+    feeds.forEach(url=>{
+      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`)
+        .then(r=>r.json())
+        .then(data=>{
+          if(data.status!=="ok") {
+            errors.push(`<div class="feed-error">Feed failed: ${url}<br>${data.message||"Error"}</div>`);
+          } else {
+            data.items.forEach(item=>{
+              allEntries.push({
+                title:item.title, link:item.link,
+                pubDate:item.pubDate, description:item.description
+              });
+            });
+          }
+        })
+        .catch(e=>{
+          errors.push(`<div class="feed-error">Feed error: ${url}<br>${e.message}</div>`);
+        })
+        .finally(()=>{
+          loaded++;
+          if(loaded===feeds.length) display();
+        });
+    });
+  </script>
 </body>
 </html>
