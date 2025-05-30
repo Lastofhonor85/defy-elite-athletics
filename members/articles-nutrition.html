@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Sports Nutrition & Dietetics</title>
-  <link rel="stylesheet" href="../styles.css"/><style>/* same styling as above */ body{background:#111;color:#eee;margin:0;font-family:Arial,sans-serif} .content-section{max-width:900px;margin:40px auto;background:#181818;padding:36px 18px;border-radius:14px} h1{color:#1e90ff;margin-bottom:0.8em} .feed-entry{border-bottom:1px solid #222;padding-bottom:10px;margin-bottom:12px} .feed-entry a{color:#1e90ff;font-weight:600} .feed-entry small{color:#aaa} .feed-error{color:#ff4444;background:#222;padding:6px 8px;border-radius:8px;margin-bottom:10px} a.back{display:inline-block;margin-top:16px;color:#1e90ff;text-decoration:underline}</style>
+  <link rel="stylesheet" href="../styles.css"/>
+  <style>/* same styles as above */ body{background:#111;color:#eee;margin:0;font-family:Arial,sans-serif} .content{max-width:900px;margin:40px auto;background:#181818;padding:36px;border-radius:14px} h1{color:#1e90ff;margin-bottom:12px} .feed-entry{border-bottom:1px solid #222;padding:12px 0} .feed-entry a{color:#1e90ff;font-weight:600} .feed-entry small{color:#aaa;display:block;margin:4px 0} .feed-error{color:#ff4444;background:#222;padding:6px;border-radius:6px;margin-bottom:10px} a.back{color:#1e90ff;text-decoration:underline;display:inline-block;margin-top:24px}</style>
 </head>
 <body>
-  <header style="text-align:center;padding:20px 0"><img src="../assets/logo.png" alt="Logo" style="max-width:200px"></header>
-  <section class="content-section">
-    <h1>Sports Nutrition & Dietetics</h1>
+  <header style="text-align:center;padding:20px;">
+    <img src="../assets/logo.png" alt="Defy Elite Athletics" style="max-width:200px">
+  </header>
+  <section class="content">
+    <h1>Sports Nutrition &amp; Dietetics</h1>
     <p>Evidence-based nutrition, supplementation, and dietetics for performance.</p>
-    <div id="newsfeed">Loading...</div>
+    <div id="newsfeed">Loading…</div>
     <a href="articles.html" class="back">&larr; Back to Articles Hub</a>
   </section>
-  <footer style="text-align:center;padding:20px;color:#555">&copy; 2025 Defy Elite Athletics</footer>
+  <footer style="text-align:center;padding:20px;color:#555">
+    &copy; 2025 Defy Elite Athletics
+  </footer>
   <script>
-    const feeds=[
+    const feeds = [
       "https://nutritionj.biomedcentral.com/articles/rss.xml",
-      "https://journals.humankinetics.com/feed/ijsn-em",
+      "https://journals.humankinetics.com/rss/ijsn.xml",
       "https://www.sciencedaily.com/rss/health_medicine/diet_and_weight_loss.xml"
-    ],allEntries=[],errors=[],loaded=0;
-    function sanitize(h){const d=document.createElement("div");d.innerHTML=h||"";return d.textContent||d.innerText||"";}
-    function display(){allEntries.sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));let h="";allEntries.forEach(e=>h+=`<div class="feed-entry"><a href="${e.link}" target="_blank">${e.title}</a><br><small>${e.pubDate?new Date(e.pubDate).toLocaleString():""}</small><div>${sanitize(e.description).slice(0,180)}…</div></div>`);document.getElementById("newsfeed").innerHTML=(errors.join("")||"")+(h||"<div>No articles.</div>");}
-    feeds.forEach(u=>fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(u)}`)
-      .then(r=>r.json()).then(d=>{if(d.status!=="ok")errors.push(`<div class="feed-error">${u}</div>`);else d.items.forEach(i=>allEntries.push({title:i.title,link:i.link,pubDate:i.pubDate,description:i.description}));})
-      .catch(_=>errors.push(`<div class="feed-error">${u}</div>`))
-      .finally(()=>{if(++loaded===feeds.length)display()}));
+    ];
+    // …use exactly the same fetch/render logic as above…
+    let allEntries = [], errors = [], loaded = 0;
+    function sanitize(h){const d=document.createElement("div");d.innerHTML=h||"";return d.textContent||"";}
+    function render(){
+      allEntries.sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));
+      let out = errors.join("");
+      if(allEntries.length){
+        out += allEntries.map(e=>`
+          <div class="feed-entry">
+            <a href="${e.link}" target="_blank">${e.title}</a>
+            <small>${new Date(e.pubDate).toLocaleString()}</small>
+            <div>${sanitize(e.description).slice(0,180)}…</div>
+          </div>
+        `).join("");
+      } else out += `<p>No articles found.</p>`;
+      document.getElementById("newsfeed").innerHTML = out;
+    }
+    feeds.forEach(u=>{
+      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(u)}`)
+        .then(r=>r.json()).then(d=>{
+          if(d.status!=="ok") errors.push(`<div class="feed-error">Failed: ${u}</div>`);
+          else d.items.forEach(i=>allEntries.push({
+            title:i.title, link:i.link, pubDate:i.pubDate, description:i.description
+          }));
+        })
+        .catch(e=>errors.push(`<div class="feed-error">${u}: ${e.message}</div>`))
+        .finally(()=>{if(++loaded===feeds.length) render();});
+    });
   </script>
 </body>
 </html>
