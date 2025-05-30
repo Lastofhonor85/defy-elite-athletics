@@ -1,90 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Golf Science & Performance News</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css"/>
   <style>
-    .content-section { max-width: 900px; margin: 40px auto; background: #181818; padding: 36px 18px; border-radius: 14px;}
-    h1 { color: #1e90ff; margin-bottom: 0.8em;}
-    .feed-entry { border-bottom:1px solid #222; padding-bottom:10px; margin-bottom:12px;}
-    .feed-entry a { color: #1e90ff; font-weight: 600;}
-    .feed-entry small { color: #aaa; }
-    .feed-error { color: #ff4444; background: #222; padding:6px 8px; border-radius:8px; margin-bottom:10px;}
+    .content-section {
+      max-width:900px;
+      margin:40px auto;
+      background:#181818;
+      padding:36px 18px;
+      border-radius:14px;
+      color:#eee;
+    }
+    h1 { color:#1e90ff; margin-bottom:0.5em; }
+    iframe { width:100%; height:800px; border:none; border-radius:8px; }
+    a.back { display:inline-block; margin-top:16px; color:#1e90ff; text-decoration:underline; }
   </style>
 </head>
-<body>
-  <header>
-    <img src="../assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
+<body style="background:#111; margin:0; font-family:Arial,sans-serif; color:#eee;">
+  <header style="text-align:center; padding:20px 0;">
+    <img src="../assets/logo.png" alt="Defy Elite Athletics Logo" style="max-width:200px;">
   </header>
+
   <section class="content-section">
     <h1>Golf Science & Performance News</h1>
-    <p>Peer-reviewed articles, research, and credible golf performance news from science journals and elite industry sources.</p>
-    <div id="newsfeed">Loading...</div>
-    <a href="articles.html" style="color:#1e90ff;text-decoration:underline;">&larr; Back to Articles Hub</a>
+    <p>All the latest peer-reviewed studies, research news, and expert analysis on golf performance science.</p>
+
+    <!-- Google News embed for “golf science performance” -->
+    <iframe 
+      src="https://news.google.com/search?q=golf%20science%20performance&hl=en-US&gl=US&ceid=US:en"
+      title="Golf Science & Performance News">
+    </iframe>
+
+    <a href="articles.html" class="back">&larr; Back to Articles Hub</a>
   </section>
-  <footer>&copy; 2025 Defy Elite Athletics</footer>
-  <script>
-    // Only use feeds that work for browser-side display
-    const feeds = [
-      "https://golf.com/feed/",
-      "https://www.golfwrx.com/feed/",
-      "https://bjsm.bmj.com/rss/current.xml",
-      "https://www.frontiersin.org/journals/sports-and-active-living/rss",
-      "https://www.sciencedaily.com/rss/health_medicine/sports_fitness.xml",
-      "https://golfbusinessnews.com/news/feed/",
-      "https://www.golfcourseindustry.com/rss/news/"
-    ];
 
-    const allEntries = [];
-    let loaded = 0;
-    let errors = [];
-
-    function sanitize(text) {
-      const div = document.createElement("div");
-      div.innerHTML = text || "";
-      return div.textContent || div.innerText || "";
-    }
-
-    function display() {
-      allEntries.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-      let html = "";
-      allEntries.forEach(entry => {
-        html += `<div class="feed-entry">
-          <a href="${entry.link}" target="_blank">${entry.title}</a><br>
-          <small>${entry.pubDate ? new Date(entry.pubDate).toLocaleString() : ""} | ${entry.author || ""}</small>
-          <div>${sanitize(entry.description).substring(0, 180)}...</div>
-        </div>`;
-      });
-      html = (errors.join("") || "") + (html || "<div>No articles found. Try again later or add more feeds.</div>");
-      document.getElementById("newsfeed").innerHTML = html;
-    }
-
-    feeds.forEach(feedUrl => {
-      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`)
-        .then(r => r.json())
-        .then(data => {
-          if (data.status !== "ok") {
-            errors.push(`<div class="feed-error"><b>Feed failed:</b> ${feedUrl}<br>Error: ${data.message || "Unknown error"}</div>`);
-          } else {
-            allEntries.push(...data.items.map(item => ({
-              title: item.title,
-              link: item.link,
-              pubDate: item.pubDate,
-              author: item.author || data.feed.title,
-              description: item.description
-            })));
-          }
-        })
-        .catch(e => {
-          errors.push(`<div class="feed-error"><b>Feed failed:</b> ${feedUrl}<br>Error: ${e.message}</div>`);
-        })
-        .finally(() => {
-          loaded++;
-          if (loaded === feeds.length) display();
-        });
-    });
-  </script>
+  <footer style="text-align:center; padding:20px; color:#555;">
+    &copy; 2025 Defy Elite Athletics
+  </footer>
 </body>
 </html>
