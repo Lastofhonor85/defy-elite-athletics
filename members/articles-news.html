@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Golf News & Tours</title>
+  <link rel="stylesheet" href="../styles.css"/><style>/* same styling */ body{background:#111;color:#eee;margin:0;font-family:Arial,sans-serif} .content-section{max-width:900px;margin:40px auto;background:#181818;padding:36px 18px;border-radius:14px} h1{color:#1e90ff;margin-bottom:0.8em} .feed-entry{border-bottom:1px solid #222;padding-bottom:10px;margin-bottom:12px} .feed-entry a{color:#1e90ff;font-weight:600} .feed-entry small{color:#aaa} .feed-error{color:#ff4444;background:#222;padding:6px 8px;border-radius:8px;margin-bottom:10px} a.back{display:inline-block;margin-top:16px;color:#1e90ff;text-decoration:underline}</style>
+</head>
+<body>
+  <header style="text-align:center;padding:20px 0"><img src="../assets/logo.png" alt="Logo" style="max-width:200px"></header>
+  <section class="content-section">
+    <h1>Golf News & Tours</h1>
+    <p>Latest from the PGA, DP World Tour, and top golf publications.</p>
+    <div id="newsfeed">Loading...</div>
+    <a href="articles.html" class="back">&larr; Back to Articles Hub</a>
+  </section>
+  <footer style="text-align:center;padding:20px;color:#555">&copy; 2025 Defy Elite Athletics</footer>
+  <script>
+    const feeds=[
+      "https://golf.com/feed/",
+      "https://www.pgatour.com/bin/data/feeds/news.xml",
+      "https://www.golfchannel.com/rss.xml",
+      "https://golfweek.usatoday.com/feed/"
+    ],allEntries=[],errors=[],loaded=0;
+    function sanitize(h){const d=document.createElement("div");d.innerHTML=h||"";return d.textContent||d.innerText||"";}
+    function display(){allEntries.sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));let h="";allEntries.forEach(e=>h+=`<div class="feed-entry"><a href="${e.link}" target="_blank">${e.title}</a><br><small>${e.pubDate?new Date(e.pubDate).toLocaleString():""}</small><div>${sanitize(e.description).slice(0,180)}…</div></div>`);document.getElementById("newsfeed").innerHTML=(errors.join("")||"")+(h||"<div>No articles.</div>");}
+    feeds.forEach(u=>fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(u)}`)
+      .then(r=>r.json()).then(d=>{if(d.status!=="ok")errors.push(`<div class="feed-error">${u}</div>`);else d.items.forEach(i=>allEntries.push({title:i.title,link:i.link,pubDate:i.pubDate,description:i.description}));})
+      .catch(_=>errors.push(`<div class="feed-error">${u}</div>`))
+      .finally(()=>{if(++loaded===feeds.length)display()}));
+  </script>
+</body>
+</html>
