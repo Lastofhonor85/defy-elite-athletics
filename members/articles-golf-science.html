@@ -20,58 +20,72 @@
   </header>
   <section class="content-section">
     <h1>Golf Science & Performance News</h1>
-    <p>Latest articles, research, and science in golf performance and athletic exercise science.<br>
-    <small style="color:#aaa;">If a feed fails to load, you’ll see an error message.</small></p>
+    <p>Latest articles, research, and science in golf performance and athletic exercise science.</p>
     <div id="newsfeed">Loading...</div>
     <a href="articles.html" style="color:#1e90ff;text-decoration:underline;">&larr; Back to Articles Hub</a>
   </section>
   <footer>&copy; 2025 Defy Elite Athletics</footer>
-  <script src="https://feednami.com/api/feed.js"></script>
   <script>
-    // Start with a few feeds you KNOW will work. Add more as desired.
-    var feeds = [
+    // List your top RSS feeds here. Add/remove as needed.
+    const feeds = [
       "https://www.golfdigest.com/rss",
       "https://golf.com/feed/",
       "https://www.golfmonthly.com/feed",
       "https://www.golfwrx.com/feed/",
       "https://thepartrain.libsyn.com/rss",
       "https://bjsm.bmj.com/rss/current.xml"
-      // Add more feeds below. Some academic journal feeds may show errors.
-      // "https://pubmed.ncbi.nlm.nih.gov/rss/search/1k8VW8BMvF6F57YAVDOPgR5y1ST_SFPL0J7lF45pKzO1GlkvTx/?limit=20&utm_campaign=pubmed-2&fc=20230527102341",
-      // "https://golfsciencelab.com/feed/"
+      // You can add more, but some academic feeds may not display due to browser CORS policy.
     ];
 
-    let allEntries = [];
-    let allErrors = [];
-    let feedsLoaded = 0;
+    const allEntries = [];
+    let loaded = 0;
+    let errors = [];
 
-    feeds.forEach(function(feedUrl){
-      feednami.load(feedUrl, function(result){
-        feedsLoaded++;
-        if(result.error) {
-          allErrors.push(`<div class="feed-error"><b>Feed failed:</b> ${feedUrl}<br>Error: ${result.error}</div>`);
-        } else {
-          var entries = result.feed.entries;
-          allEntries = allEntries.concat(entries);
-        }
-        if (feedsLoaded === feeds.length) {
-          allEntries.sort((a,b) => new Date(b.pubDate) - new Date(a.pubDate));
-          let html = '';
-          if (allEntries.length > 0) {
-            allEntries.forEach(entry => {
-              html += `<div class="feed-entry">
-                  <a href="${entry.link}" target="_blank">${entry.title}</a><br>
-                  <small>${entry.pubDate ? new Date(entry.pubDate).toLocaleString() : ''} | ${entry.meta ? entry.meta.title : ''}</small>
-                  <div>${entry.summary ? entry.summary.substring(0,180) + '...' : ''}</div>
-                </div>`;
-            });
-          } else {
-            html = '<div>No articles found. Try again later or add more feeds.</div>';
-          }
-          // Show errors (if any) at the top
-          document.getElementById("newsfeed").innerHTML = (allErrors.join('') || '') + html;
-        }
+    function sanitize(text) {
+      // Remove HTML tags for summaries
+      const div = document.createElement("div");
+      div.innerHTML = text || "";
+      return div.textContent || div.innerText || "";
+    }
+
+    function display() {
+      // Sort and show articles/errors
+      allEntries.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+      let html = "";
+      allEntries.forEach(entry => {
+        html += `<div class="feed-entry">
+          <a href="${entry.link}" target="_blank">${entry.title}</a><br>
+          <small>${entry.pubDate ? new Date(entry.pubDate).toLocaleString() : ""} | ${entry.author || ""}</small>
+          <div>${sanitize(entry.description).substring(0, 180)}...</div>
+        </div>`;
       });
+      html = (errors.join("") || "") + (html || "<div>No articles found. Try again later or add more feeds.</div>");
+      document.getElementById("newsfeed").innerHTML = html;
+    }
+
+    feeds.forEach(feedUrl => {
+      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`)
+        .then(r => r.json())
+        .then(data => {
+          if (data.status !== "ok") {
+            errors.push(`<div class="feed-error"><b>Feed failed:</b> ${feedUrl}<br>Error: ${data.message || "Unknown error"}</div>`);
+          } else {
+            allEntries.push(...data.items.map(item => ({
+              title: item.title,
+              link: item.link,
+              pubDate: item.pubDate,
+              author: item.author || data.feed.title,
+              description: item.description
+            })));
+          }
+        })
+        .catch(e => {
+          errors.push(`<div class="feed-error"><b>Feed failed:</b> ${feedUrl}<br>Error: ${e.message}</div>`);
+        })
+        .finally(() => {
+          loaded++;
+          if (loaded === feeds.length) display();
+        });
     });
   </script>
 </body>
