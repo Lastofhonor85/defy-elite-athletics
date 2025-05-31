@@ -5,97 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Drills Library – Members</title>
   <link rel="stylesheet" href="../styles.css" />
-  <style>
-    .content-section { max-width: 1100px; margin: 40px auto; background: #181818; padding: 36px 18px; border-radius: 14px;}
-    h1 { color: #1e90ff; margin-bottom: 0.8em;}
-    #searchBar { width: 300px; padding: 10px; border-radius: 7px; margin-bottom: 24px; font-size: 1.08em; }
-    table { width: 100%; border-collapse: collapse; background: #202020; }
-    th, td { padding: 12px 8px; border: 1px solid #292929; color: #fff; }
-    th { background: #24292f; cursor: pointer;}
-    tr:hover { background: #2a2a32; }
-    .filter-select { width: 120px; margin-right: 12px; padding: 7px; border-radius: 6px; }
-    .table-controls { margin-bottom: 20px; }
-  </style>
 </head>
-<body>
-  <header>
-    <img src="../assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
+<body class="dark">
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <a href="articles.html">
+      <img src="../assets/logo1.webp" alt="Defy Elite Athletics" class="logo" loading="lazy" />
+    </a>
   </header>
-  <section class="content-section">
-    <h1>Complete Drills Library</h1>
-    <div class="table-controls">
-      <input id="searchBar" type="text" placeholder="Search drills..." onkeyup="searchTable()">
-      <span id="filters"></span>
-    </div>
-    <div style="overflow-x:auto;">
-      <table id="drillsTable">
-        <!-- JS will fill in the table -->
-      </table>
-    </div>
-    <a href="dashboard.html" style="color:#1e90ff;text-decoration:underline;">&larr; Back to Portal</a>
-  </section>
-  <footer>&copy; 2025 Defy Elite Athletics</footer>
+
+  <!-- NAV BAR -->
+  <nav class="main-nav">
+    <a href="articles.html">Articles</a>
+    <a href="coaching-resources.html">Coaching</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="drills.html" class="active">Drills</a>
+  </nav>
+
+  <!-- MAIN CONTENT: DRILLS -->
+  <main class="container">
+    <h1 class="section-title">Drills Library</h1>
+    <p class="text-lead">
+      Browse and search the complete drills database. Click a column header to sort, or use the search box to filter.
+    </p>
+
+    <!-- SEARCH INPUT -->
+    <input
+      type="text"
+      id="drill-search"
+      placeholder="Search drills..."
+      class="search-input"
+    />
+
+    <!-- DRILLS TABLE -->
+    <table id="drill-table" class="data-table" data-sort-col="" data-sort-dir="">
+      <thead>
+        <tr>
+          <th onclick="sortDrills(0)">Name</th>
+          <th onclick="sortDrills(1)">Category</th>
+          <th onclick="sortDrills(2)">Equipment</th>
+          <th onclick="sortDrills(3)">Focus Area</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Populated by JS -->
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Deferred JS for CSV Loading + Sorting/Filtering -->
   <script>
-    fetch('data/drills.csv')
-      .then(response => response.text())
-      .then(csv => displayTable(csv));
+    async function loadDrills() {
+      const response = await fetch('data/drills.csv');
+      const raw = await response.text();
+      const lines = raw.trim().split('\n');
+      const rows = lines.slice(1).map(line => line.split(','));
 
-    function displayTable(csv) {
-      let lines = csv.trim().split('\n');
-      let headings = lines[0].split(',');
-      let rows = lines.slice(1).map(line => line.split(','));
-      // Render table headers
-      let table = '<thead><tr>';
-      headings.forEach((h, idx) => {
-        table += `<th onclick="filterColumn(${idx})">${h}</th>`;
+      const tbody = document.querySelector('#drill-table tbody');
+      rows.forEach(cells => {
+        const tr = document.createElement('tr');
+        cells.forEach(cell => {
+          const td = document.createElement('td');
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
       });
-      table += '</tr></thead><tbody>';
-      // Render table rows
-      rows.forEach(row => {
-        table += '<tr>';
-        row.forEach(cell => table += `<td>${cell}</td>`);
-        table += '</tr>';
-      });
-      table += '</tbody>';
-      document.getElementById('drillsTable').innerHTML = table;
+    }
 
-      // Create filter dropdowns
-      let filters = '';
-      headings.forEach((h, idx) => {
-        let unique = Array.from(new Set(rows.map(row => row[idx]))).filter(x => x !== "");
-        if (unique.length < rows.length && unique.length > 1) {
-          filters += `<select class="filter-select" onchange="filterByValue(${idx}, this.value)">
-            <option value="">All ${h}</option>
-            ${unique.map(u => `<option value="${u}">${u}</option>`).join('')}
-          </select>`;
+    function sortDrills(colIndex) {
+      const table = document.getElementById('drill-table');
+      const tbody = table.tBodies[0];
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const ascending = table.getAttribute('data-sort-col') != colIndex || table.getAttribute('data-sort-dir') === 'desc';
+
+      rows.sort((a, b) => {
+        const aText = a.cells[colIndex].textContent.trim().toLowerCase();
+        const bText = b.cells[colIndex].textContent.trim().toLowerCase();
+        if (!isNaN(parseFloat(aText)) && !isNaN(parseFloat(bText))) {
+          return ascending
+            ? parseFloat(aText) - parseFloat(bText)
+            : parseFloat(bText) - parseFloat(aText);
         }
+        return ascending
+          ? aText.localeCompare(bText)
+          : bText.localeCompare(aText);
       });
-      document.getElementById('filters').innerHTML = filters;
-      window._drillsRows = rows;
-      window._drillsHeadings = headings;
+
+      rows.forEach(row => tbody.appendChild(row));
+      table.setAttribute('data-sort-col', colIndex);
+      table.setAttribute('data-sort-dir', ascending ? 'asc' : 'desc');
     }
 
-    function searchTable() {
-      let query = document.getElementById('searchBar').value.toLowerCase();
-      let trs = document.querySelectorAll('#drillsTable tbody tr');
-      trs.forEach(tr => {
-        let show = Array.from(tr.children).some(td => td.textContent.toLowerCase().includes(query));
-        tr.style.display = show ? '' : 'none';
+    document.getElementById('drill-search').addEventListener('input', function(e) {
+      const filter = e.target.value.toLowerCase();
+      document.querySelectorAll('#drill-table tbody tr').forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        row.style.display = rowText.includes(filter) ? '' : 'none';
       });
-    }
+    });
 
-    function filterByValue(colIdx, value) {
-      let trs = document.querySelectorAll('#drillsTable tbody tr');
-      trs.forEach(tr => {
-        let match = !value || tr.children[colIdx].textContent === value;
-        tr.style.display = match ? '' : 'none';
-      });
-      searchTable(); // keep search working too
-    }
-
-    function filterColumn(colIdx) {
-      // Optional: Implement column sorting here if you want later
-    }
+    loadDrills();
   </script>
 </body>
 </html>
