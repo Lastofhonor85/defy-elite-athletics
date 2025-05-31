@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resources – Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Optional: any custom JS for resource filtering -->
+  <script src="assets/resources.js" defer></script>
+</head>
+<body class="dark">
+  <header class="site-header">
+    <a href="index.html">
+      <img src="assets/logo1.png" alt="Defy Elite Athletics" class="logo" />
+    </a>
+  </header>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a> |
+    <a href="exercises.html">Exercises</a> |
+    <a href="drills.html">Drills</a> |
+    <a href="nutrition.html">Nutrition</a> |
+    <a href="resources.html">Resources</a> |
+    <a href="members/articles.html">Members Portal</a>
+  </nav>
+
+  <main class="container">
+    <h1>Performance Resources</h1>
+    <p>Find coaching tools, video libraries, and research papers to support your athlete or team.</p>
+
+    <!-- Sample Content: Replace with your current “resources” content -->
+    <section>
+      <h2>Video Library</h2>
+      <ul>
+        <li><a href="#">Squat Technique Breakdown</a></li>
+        <li><a href="#">Dynamic Warm‐Up for Golfers</a></li>
+        <!-- … -->
+      </ul>
+    </section>
+
+    <section>
+      <h2>Downloadable PDFs</h2>
+      <ul>
+        <li><a href="#">Periodization Template</a></li>
+        <li><a href="#">Injury Prevention Checklist</a></li>
+        <!-- … -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2025 Defy Elite Athletics
+  </footer>
+</body>
+</html>
