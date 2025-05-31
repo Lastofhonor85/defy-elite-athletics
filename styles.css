@@ -1,127 +1,212 @@
-/* ==========================
-   STYLES.CSS (Root of Repo)
-   ========================== */
-
-/* 1) Dark body background + base text color */
+/* -----------------------
+   Base & Utility Styles
+   ----------------------- */
 body.dark {
-  background: #000;       /* pure black behind everything */
-  color: #fff;            /* white text by default */
-  font-family: sans-serif;
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
-
-/* 2) Global site header (logo area) */
-.site-header {
-  background: #000;       /* <— now matches the heading background */
-  text-align: center;
-  padding: 1rem;
+a {
+  text-decoration: none;
+  color: #09f;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-/* Logo image itself (keeps it reasonably sized) */
+/* -----------------------
+   Header & Nav
+   ----------------------- */
+.site-header {
+  background-color: #000;
+  padding: 1rem;
+  text-align: center;
+}
 .logo {
   max-width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+.main-nav {
+  background-color: #111;
+  padding: 0.75rem;
+  text-align: center;
+}
+.main-nav a {
+  color: #fff;
+  margin: 0 1rem;
+  font-weight: 500;
+}
+.main-nav a.active {
+  color: #09f;
+  font-weight: bold;
 }
 
-/* 3) Main (page‐content) container */
+/* -----------------------
+   Container & Sections
+   ----------------------- */
 .container {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
-
-/* 4) Top‐level navigation bar */
-.main-nav {
-  background: #111;       /* just a shade lighter than #000 (optional) */
-  padding: 0.5rem 1rem;
-  text-align: center;
+.section-title {
+  font-size: 1.75rem;
+  color: #09f;
+  margin-bottom: 0.5rem;
+}
+.text-lead {
+  color: #ddd;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.flex-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+.flex-col-150 {
+  flex: 0 0 150px;
+  margin-right: 1rem;
 }
 
-/* Style for nav links */
-.main-nav a {
-  color: #09f;            /* bright blue links */
-  text-decoration: none;
-  margin: 0 0.5rem;
-  font-weight: bold;
+/* -----------------------
+   About Me
+   ----------------------- */
+.profile-pic {
+  width: 150px;
+  border-radius: 50%;
+  border: 3px solid #444;
+}
+.bio-text {
+  flex: 1;
+  color: #eee;
+  line-height: 1.6;
 }
 
-/* Nav link hover/active state */
-.main-nav a:hover {
-  text-decoration: underline;
+/* -----------------------
+   Services List
+   ----------------------- */
+.services-list {
+  list-style: disc inside;
+  line-height: 1.6;
+  color: #eee;
+  margin-bottom: 3rem;
 }
 
-/* 5) List used in Hub page, etc. */
+/* -----------------------
+   Quick Links
+   ----------------------- */
 .articles-list {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  line-height: 1.8;
+  color: #eee;
+  margin-bottom: 3rem;
 }
 
-/* 6) Footer at bottom */
-.site-footer {
-  text-align: center;
-  padding: 2rem 0;
-  color: #666;
-  font-size: 0.9rem;
+/* -----------------------
+   Testimonials
+   ----------------------- */
+.testimonials {
+  margin-bottom: 3rem;
+  color: #eee;
+}
+.testimonial-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.testimonial-avatar {
+  flex: 0 0 80px;
+  margin-right: 1rem;
+}
+.testimonial-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #444;
+}
+.testimonial-text {
+  flex: 1;
+  border-left: 4px solid #444;
+  padding-left: 1rem;
+  color: #ccc;
 }
 
-/* 7) Any “back‐link” styling—e.g. “← Back to Articles Hub” */
-.back-link {
-  color: #09f;
-  text-decoration: none;
+/* -----------------------
+   Lite YouTube Embed
+   ----------------------- */
+.yt-lite {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  background: #000;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.yt-lite img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.yt-lite .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68px;
+  height: 48px;
+  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8v...') no-repeat center center;
+  background-size: 68px 48px;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+}
+.yt-lite:hover .play-button {
+  opacity: 1;
 }
 
-.back-link:hover {
-  text-decoration: underline;
+/* -----------------------
+   Tables (Exercises & Drills)
+   ----------------------- */
+.search-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 1rem;
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
 }
-
-/* 8) Feed errors (if using RSS pages) */
-.feed-error {
-  background: #400;       /* maroon/red‐tinted box */
-  padding: 0.5rem;
-  margin: 0.5rem 0;
-  border-radius: 4px;
-}
-
-/* 9) Individual feed item styling */
-.feed-item {
-  margin: 1.5rem 0;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #333;
-}
-.feed-item h2 {
-  margin: 0 0 0.25rem;
-  font-size: 1.25rem;
-}
-.feed-item .meta {
-  font-size: 0.85rem;
-  color: #999;
-}
-.feed-item p {
-  margin: 0.5rem 0 0;
-}
-
-/* 10) Table styles for Exercises/Drills */
-table {
+.data-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
-  background: #111;       /* dark‐gray background behind rows */
+  background: #111;
 }
-
-table th,
-table td {
+.data-table th,
+.data-table td {
   padding: 8px;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #333;
   color: #fff;
 }
-
-table th {
-  cursor: pointer;        /* if you have sorting JS */
-  background: #222;       /* slightly lighter header cells */
+.data-table th {
+  cursor: pointer;
+}
+.data-table th:hover {
+  background: #222;
 }
 
-/* Optional: row hover */
-table tbody tr:hover {
-  background: #1a1a1a;
+/* -----------------------
+   Footer
+   ----------------------- */
+.site-footer {
+  background: #000;
+  color: #666;
+  text-align: center;
+  padding: 2rem 0;
 }
