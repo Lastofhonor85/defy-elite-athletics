@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nutrition – Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Optional: any custom JS for filtering nutrition info -->
+  <script src="assets/nutrition.js" defer></script>
+</head>
+<body class="dark">
+  <header class="site-header">
+    <a href="index.html">
+      <img src="assets/logo1.png" alt="Defy Elite Athletics" class="logo" />
+    </a>
+  </header>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a> |
+    <a href="exercises.html">Exercises</a> |
+    <a href="drills.html">Drills</a> |
+    <a href="nutrition.html">Nutrition</a> |
+    <a href="resources.html">Resources</a> |
+    <a href="members/articles.html">Members Portal</a>
+  </nav>
+
+  <main class="container">
+    <h1>Nutrition</h1>
+    <p>Explore our evidence-based guides on sports nutrition, supplementation, meal planning, and fueling strategies for peak performance.</p>
+
+    <!-- Sample Content: Replace with your current pages -->
+    <section>
+      <h2>Macronutrient Guidelines</h2>
+      <p>[Insert your content or tables here.]</p>
+    </section>
+
+    <section>
+      <h2>Supplement Protocols</h2>
+      <p>[Insert your content or lists here.]</p>
+    </section>
+
+    <!-- Optional back link -->
+    <!-- <p style="margin-top:1rem;"><a href="index.html" class="back-link">← Back to Home</a></p> -->
+  </main>
+
+  <footer class="site-footer">
+    © 2025 Defy Elite Athletics
+  </footer>
+</body>
+</html>
