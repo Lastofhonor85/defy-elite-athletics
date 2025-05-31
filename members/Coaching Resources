@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coaching Resources – Members</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- No external scripts needed here unless you want a gallery or lightbox, etc. -->
+</head>
+
+<body class="dark">
+  <!-- SITE HEADER -->
+  <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
+    <a href="articles.html" style="text-decoration: none;">
+      <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo" class="logo"
+           style="max-width: 200px;" />
+    </a>
+  </header>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="main-nav" style="background-color: #111; padding: 0.75rem; text-align: center;">
+    <a href="articles.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">← Back to Articles Hub</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- PAGE HEADING -->
+    <section class="articles-section">
+      <h1 style="font-size: 2rem; color: #09f; margin-bottom: 0.5rem;">Coaching &amp; Instruction Resources</h1>
+      <p style="font-size: 1rem; color: #ddd; margin-bottom: 2rem;">
+        Curated video series, drills, and downloadable tools for golf instructors and performance coaches.
+      </p>
+    </section>
+
+    <!-- SECTION A: Biomechanics of Golf (Dr. Kwon Playlist) -->
+    <section id="kwon-biomechanics" style="margin-bottom: 3rem;">
+      <h2 style="font-size: 1.5rem; color: #09f; margin-bottom: 1rem;">Biomechanics of Golf (Dr. Kwon)</h2>
+      <p style="color: #eee; line-height: 1.5; margin-bottom: 1rem;">
+        Below is a selection of Dr. Kwon’s “Biomechanics of Golf” videos, focusing on kinematic sequencing, 
+        ground reaction forces, and club‐head speed mechanics. Click “full screen” on any video to enlarge.
+      </p>
+
+      <!-- Video 1 -->
+      <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.25rem; color: #09f; margin-bottom: 0.5rem;">1. Introduction to Golf Biomechanics</h3>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
+          <iframe 
+            src="https://www.youtube.com/embed/VIDEO_ID_1" 
+            title="Dr Kwon Biomechanics 1" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          </iframe>
+        </div>
+        <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">
+          <em>Duration: 10:24 | Published Jan 15, 2021</em>
+        </p>
+      </div>
+
+      <!-- Video 2 -->
+      <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.25rem; color: #09f; margin-bottom: 0.5rem;">2. Ground Reaction Forces & Weight Shift</h3>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
+          <iframe 
+            src="https://www.youtube.com/embed/VIDEO_ID_2" 
+            title="Dr Kwon Biomechanics 2" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          </iframe>
+        </div>
+        <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">
+          <em>Duration: 12:05 | Published Feb 10, 2021</em>
+        </p>
+      </div>
+
+      <!-- Video 3 -->
+      <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.25rem; color: #09f; margin-bottom: 0.5rem;">3. Kinematic Sequence for Maximum Speed</h3>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
+          <iframe 
+            src="https://www.youtube.com/embed/VIDEO_ID_3" 
+            title="Dr Kwon Biomechanics 3" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          </iframe>
+        </div>
+        <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">
+          <em>Duration: 14:47 | Published Mar 5, 2021</em>
+        </p>
+      </div>
+
+      <!-- Add more embedded videos as needed... -->
+    </section>
+
+    <!-- SECTION B: Additional Coaching Tools & Downloads -->
+    <section id="coaching-tools" style="margin-bottom: 3rem;">
+      <h2 style="font-size: 1.5rem; color: #09f; margin-bottom: 1rem;">Additional Coaching Tools &amp; Downloads</h2>
+      <p style="color: #eee; line-height: 1.5; margin-bottom: 1rem;">
+        These PDFs and external links will help you structure your lessons, share best practices, and keep up with
+        the latest research. Simply click any title to view or download.
+      </p>
+      <ul style="list-style: none; padding: 0; color: #ddd; line-height: 1.8;">
+        <li style="margin-bottom: 0.75rem;">
+          <strong>•</strong>
+          <a href="../members/data/Coaching_Checklist.pdf" style="color: #09f; text-decoration: none;" target="_blank" rel="noopener">
+            Lesson Plan &amp; Coaching Checklist (PDF)
+          </a>
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+          <strong>•</strong>
+          <a href="https://example.com/golf-drills-handout" style="color: #09f; text-decoration: none;" target="_blank" rel="noopener">
+            Golf Drills Handout (Printable)
+          </a>
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+          <strong>•</strong>
+          <a href="https://example.com/motor-learning-guide" style="color: #09f; text-decoration: none;" target="_blank" rel="noopener">
+            Motor Learning Principles for Golf Instructors (Article)
+          </a>
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+          <strong>•</strong>
+          <a href="https://example.com/force-plate-protocols" style="color: #09f; text-decoration: none;" target="_blank" rel="noopener">
+            Force‐Plate Testing Protocols (Spreadsheet + Example Report)
+          </a>
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+          <strong>•</strong>
+          <a href="https://example.com/video-analysis-guide" style="color: #09f; text-decoration: none;" target="_blank" rel="noopener">
+            Video Analysis &amp; Tagging Best Practices (Guide)
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SECTION C: External Links for Advanced Reading -->
+    <section id="advanced-reading" style="margin-bottom: 3rem;">
+      <h2 style="font-size: 1.5rem; color: #09f; margin-bottom: 1rem;">Advanced Reading &amp; Industry Links</h2>
+      <p style="color: #eee; line-height: 1.5; margin-bottom: 1rem;">
+        Stay current with peer-reviewed research, coaching blogs, and respected golf-science publications:
+      </p>
+      <ul style="list-style: none; padding: 0; color: #ddd; line-height: 1.8;">
+        <li style="margin-bottom: 0.75rem;">
+          <strong>•</strong>
+          <a href="https://bjsm.bmj.com/rss/current.xml" style="color: #09f; text-decoration: none;" target="_blank" rel="noopener">
+            British Journal of Sports Medicine (RSS)
+          </a>
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+          <strong>•</strong>
+          <a href="https://www.frontiersin.org/journals/sports-and-active-living/articles.rss" style="color: #09f; text-decoration: none;" target="_blank" rel="noopener">
+            Frontiers in Sports and Active Living (RSS)
+          </a>
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+          <strong>•</strong>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/rss/search?term=golf+biomechanics&limit=10" style="color: #09f; text-decoration: none;" target="_blank" rel="noopener">
+            PubMed: Golf Biomechanics Search (RSS)
+          </a>
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+          <strong>•</strong>
+          <a href="https://www.golfsciencejournal.org/feed" style="color: #09f; text-decoration: none;" target="_blank" rel="noopener">
+            International Journal of Golf Science (RSS)
+          </a>
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+          <strong>•</strong>
+          <a href="https://www.nsca.com/journal/rss/" style="color: #09f; text-decoration: none;" target="_blank" rel="noopener">
+            NSCA Strength &amp; Conditioning Journal (RSS)
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" style="background: #000; color: #666; text-align: center; padding: 2rem 0;">
+    © 2025 Defy Elite Athletics
+  </footer>
+</body>
+</html>
