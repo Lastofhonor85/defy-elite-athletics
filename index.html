@@ -8,106 +8,124 @@
 </head>
 
 <body class="dark">
-  <!-- SITE HEADER (Black background via CSS) -->
-  <header class="site-header">
-    <a href="index.html">
-      <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" class="logo" />
+  <!-- SITE HEADER -->
+  <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
+    <a href="index.html" style="text-decoration: none;">
+      <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" class="logo" 
+           style="max-width: 200px;" />
     </a>
   </header>
 
-  <!-- NAVIGATION BAR (Directly below header) -->
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="services.html">Services</a>
-    <a href="exercises.html">Exercises</a>
-    <a href="drills.html">Drills</a>
-    <a href="nutrition.html">Nutrition</a>
-    <a href="resources.html">Resources</a>
-    <a href="members/articles.html">Members Portal</a>
+  <!-- NAVIGATION BAR -->
+  <nav class="main-nav" style="background-color: #111; padding: 0.75rem; text-align: center;">
+    <a href="index.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Home</a>
+    <a href="index.html#about-me" style="color: #fff; margin: 0 1rem; text-decoration: none;">About Me</a>
+    <a href="services.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Services</a>
+    <a href="exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
+    <a href="drills.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Drills</a>
+    <a href="nutrition.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Nutrition</a>
+    <a href="resources.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Resources</a>
+    <a href="members/articles.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Members</a>
   </nav>
 
-  <!-- MAIN CONTENT CONTAINER -->
-  <main class="container">
-    <!-- 1) Hero / “Above the Fold” Section -->
-    <section id="hero">
-      <h1>Welcome to Defy Elite Athletics</h1>
-      <p>
-        Elevate your game with expert‐curated training resources, personalized coaching, and
-        cutting‐edge performance insights. Take your fitness, technique, and mindset to the next level.
+  <!-- MAIN CONTENT -->
+  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- HERO SECTION -->
+    <section id="hero" style="text-align: center; margin-bottom: 3rem;">
+      <h1 style="font-size: 2.5rem; color: #09f; margin-bottom: 1rem;">Welcome to Defy Elite Athletics</h1>
+      <p style="font-size: 1.125rem; color: #ddd;">
+        Transforming competitive golfers and performance athletes through science-backed training, 
+        cutting-edge analysis, and world-class coaching.
       </p>
-    </section>
+   <section id="about-me" style="display: flex; align-items: flex-start; margin-bottom: 3rem;">
+  <!-- Left column: Your profile picture -->
+  <div style="flex: 0 0 150px; margin-right: 1rem;">
+    <img src="assets/profile.webp" alt="Steven Edward Kittinger Jr."
+         style="width: 150px; border-radius: 50%; border: 3px solid #444;" />
+  </div>
 
-    <!-- 2) “About Me” Section -->
-    <section id="about-me" style="margin-top: 2rem;">
-      <h2>About Me</h2>
-      <p>
-        I’m John Smith, lead coach and founder of Defy Elite Athletics. With over a decade of experience working
-        alongside competitive golfers, high‐level athletes, and performance specialists, my mission is to
-        bridge the gap between sports science and real‐world training. I hold a Master’s in Exercise Physiology,
-        am a certified CSCS, and have been featured in <em>Golf Digest</em> for my work in swing biomechanics.
-      </p>
-    </section>
+  <!-- Right column: Your Bio Text -->
+  <div style="flex: 1; color: #eee;">
+    <h2 style="font-size: 1.75rem; color: #09f; margin-bottom: 0.5rem;">About Me</h2>
+    <p style="line-height: 1.6;">
+      I’m <strong>Steven Edward Kittinger Jr.</strong>, an ACSM‐certified personal trainer with a
+      Bachelor’s in Sports & Recreation Sciences. I’ve coached a wide range of clients—everything
+      from family members (my niece and sister-in-law) to military personnel on an Army installation—
+      plus worked in commercial gyms. Early in my career I served as Athletic Director for the Boys &
+      Girls Clubs of SWC and oversaw recreation programs for the U.S. Army.
+    </p>
+    <p style="line-height: 1.6;">
+      Growing up playing every sport since age three—basketball, baseball, soccer, golf, and
+      football—I later refereed and coached youth teams in each. My two daughters have thrived
+      under my guidance in competitive junior golf, which inspired me to launch Defy Elite
+      Athletics and bring my experience to a broader audience.
+    </p>
+    <p style="line-height: 1.6;">
+      Whether you’re an elite golfer chasing lower handicaps or someone looking to improve overall
+      health, I combine hands-on coaching with science-backed programming to help you defy limits
+      and reach your personal best.
+    </p>
+  </div>
+</section>
 
-    <!-- 3) “Services” or “What I Offer” Section -->
-    <section id="services" style="margin-top: 2rem;">
-      <h2>Services</h2>
-      <ul>
+
+    <!-- SERVICES BRIEF (optional on homepage) -->
+    <section id="services" style="margin-bottom: 3rem; color: #eee;">
+      <h2 style="font-size: 1.75rem; color: #09f; margin-bottom: 0.5rem;">Services</h2>
+      <ul style="list-style: disc inside; line-height: 1.6;">
         <li>
-          <strong>Online Coaching:</strong> Tailored 12‐week programs covering strength &amp; conditioning,
-          mobility, and golf‐specific biomechanics. Everything delivered via our secure portal.
+          <strong>One-on-One Coaching:</strong> Personalized swing analysis, functional training, 
+          and mental-skills development tailored to your game.
         </li>
         <li>
-          <strong>In‐Person Training:</strong> One‐on‐one sessions at our Long Beach facility, focusing on
-          power development, injury prevention, and performance analytics.
+          <strong>Remote Programming:</strong> Comprehensive monthly plans delivered digitally, 
+          complete with video feedback and weekly check-ins.
         </li>
         <li>
-          <strong>Performance Assessments:</strong> Video motion‐capture analysis, force‐plate testing, and
-          neuromuscular screening to identify weaknesses and track improvements.
+          <strong>Performance Analysis:</strong> Advanced force-plate testing, trackman launch-monitor 
+          sessions, and data-driven insights to optimize your swing and movement patterns.
         </li>
         <li>
-          <strong>Nutrition &amp; Recovery:</strong> Customized meal plans, supplement protocols, and guided
-          recovery strategies—including sleep optimization and mobility routines.
+          <strong>Group Clinics & Workshops:</strong> Small-group, in-person training on movement 
+          quality, golf-specific strength, and on-course strategy.
         </li>
       </ul>
     </section>
 
-    <!-- 4) “Quick Links” / “Featured Resources” Section -->
-    <section id="quick-links" style="margin-top: 2rem;">
-      <h2>Quick Links</h2>
-      <p>Jump straight to our most popular pages:</p>
-      <ul class="articles-list">
-        <li><a href="about.html">Learn More About Me</a></li>
-        <li><a href="services.html">Explore Services</a></li>
-        <li><a href="exercises.html">Exercise Library</a></li>
-        <li><a href="drills.html">Drills Library</a></li>
-        <li><a href="nutrition.html">Nutrition Resources</a></li>
-        <li><a href="resources.html">Performance Resources</a></li>
-        <li><a href="members/articles.html">Members Portal</a></li>
+    <!-- QUICK LINKS -->
+    <section id="quick-links" style="margin-bottom: 3rem; color: #eee;">
+      <h2 style="font-size: 1.75rem; color: #09f; margin-bottom: 0.5rem;">Quick Links</h2>
+      <ul class="articles-list" style="list-style: none; padding: 0; line-height: 1.8;">
+        <li><a href="about.html" style="color: #09f; text-decoration: none;">About Me (Full Bio)</a></li>
+        <li><a href="services.html" style="color: #09f; text-decoration: none;">Services &amp; Pricing</a></li>
+        <li><a href="exercises.html" style="color: #09f; text-decoration: none;">Exercise Library</a></li>
+        <li><a href="drills.html" style="color: #09f; text-decoration: none;">Drills Library</a></li>
+        <li><a href="nutrition.html" style="color: #09f; text-decoration: none;">Nutrition Resources</a></li>
+        <li><a href="resources.html" style="color: #09f; text-decoration: none;">Performance Resources</a></li>
+        <li><a href="members/articles.html" style="color: #09f; text-decoration: none;">Members Portal</a></li>
       </ul>
     </section>
 
-    <!-- 5) Testimonials or “Why Choose Us” (Optional) -->
-    <section id="testimonials" style="margin-top: 2rem;">
-      <h2>What Clients Are Saying</h2>
-      <blockquote style="border-left: 4px solid #444; padding-left: 1rem; color: #ccc;">
-        “Since working with John at Defy Elite Athletics, my 5-iron distance improved by 12 yards and I’ve
-        shaved 4 strokes off my handicap. His programs are science-backed, yet practical for real golfers!”
-        <br />
-        <em>– Emily R., 5-handicap Golfer</em>
+    <!-- TESTIMONIALS (if you had them) -->
+    <section id="testimonials" style="margin-bottom: 3rem; color: #eee;">
+      <h2 style="font-size: 1.75rem; color: #09f; margin-bottom: 0.5rem;">What Clients Are Saying</h2>
+
+      <blockquote style="border-left: 4px solid #444; padding-left: 1rem; color: #ccc; margin-bottom: 1.5rem;">
+        “Steven’s data-driven approach completely changed my swing. Within six weeks, I was hitting my drives 
+        20 yards longer and shaving strokes off my handicap.”—<em>Jane Doe, Collegiate Golfer</em>
       </blockquote>
-      <blockquote style="border-left: 4px solid #444; padding-left: 1rem; color: #ccc; margin-top: 1rem;">
-        “The strength/conditioning protocols here took my sprint speed to the next level. I’m now hitting over
-        140 mph ball speed consistently—thanks to John’s biomechanical tweaks and recovery plan.”
-        <br />
-        <em>– Robert K., Collegiate Athlete</em>
+
+      <blockquote style="border-left: 4px solid #444; padding-left: 1rem; color: #ccc;">
+        “The remote programming is phenomenal—detailed, easy to follow, and the weekly feedback keeps me accountable. 
+        My strength numbers are at an all-time high.”—<em>John Smith, Amateur Tour Player</em>
       </blockquote>
     </section>
   </main>
 
   <!-- SITE FOOTER -->
-  <footer class="site-footer">
-    © 2025 Defy Elite Athletics | <a href="privacy.html" style="color: #666;">Privacy Policy</a>
+  <footer class="site-footer" style="background: #000; color: #666; text-align: center; padding: 2rem 0;">
+    © 2025 Defy Elite Athletics | <a href="privacy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
   </footer>
 </body>
 </html>
