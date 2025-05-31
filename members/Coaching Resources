@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Exercises Library – Members</title>
+  <title>Drills Library – Members</title>
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="dark">
@@ -22,37 +22,37 @@
     <a href="coaching-resources.html" style="color:#fff; margin:0 0.5rem; text-decoration:none;">
       Coaching
     </a>
-    <a href="exercises.html" style="color:#09f; margin:0 0.5rem; text-decoration:none; font-weight:bold;">
+    <a href="exercises.html" style="color:#fff; margin:0 0.5rem; text-decoration:none;">
       Exercises
     </a>
-    <a href="drills.html" style="color:#fff; margin:0 0.5rem; text-decoration:none;">
+    <a href="drills.html" style="color:#09f; margin:0 0.5rem; text-decoration:none; font-weight:bold;">
       Drills
     </a>
   </nav>
 
-  <!-- MAIN CONTENT: EXERCISES LIBRARY -->
+  <!-- MAIN CONTENT: DRILLS LIBRARY -->
   <main class="container" style="max-width:900px; margin:2rem auto; padding:0 1rem;">
-    <h1 style="color:#09f; margin-bottom:1rem;">Exercises Library</h1>
+    <h1 style="color:#09f; margin-bottom:1rem;">Drills Library</h1>
     <p style="color:#ddd; margin-bottom:1rem;">
-      Browse and search the complete exercises database. Click a column header to sort, or use the search box to filter.
+      Browse and search the complete drills database. Click a column header to sort, or use the search box to filter.
     </p>
 
     <!-- SEARCH INPUT -->
     <input
       type="text"
-      id="exercise-search"
-      placeholder="Search exercises..."
+      id="drill-search"
+      placeholder="Search drills..."
       style="width:100%; padding:8px; margin-bottom:1rem; background:#111; color:#fff; border:1px solid #333;"
     />
 
-    <!-- EXERCISES TABLE -->
-    <table id="exercise-table" style="width:100%; border-collapse:collapse; background:#111;">
+    <!-- DRILLS TABLE -->
+    <table id="drill-table" style="width:100%; border-collapse:collapse; background:#111;">
       <thead>
         <tr>
-          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortTable(0)">Name</th>
-          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortTable(1)">Category</th>
-          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortTable(2)">Equipment</th>
-          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortTable(3)">Level</th>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(0)">Name</th>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(1)">Category</th>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(2)">Equipment</th>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(3)">Focus Area</th>
         </tr>
       </thead>
       <tbody>
@@ -67,14 +67,14 @@
   </footer>
 
   <script>
-    // Fetch and display exercises.csv
-    async function loadExercises() {
-      const response = await fetch('data/exercises.csv');
+    // Fetch and display drills.csv
+    async function loadDrills() {
+      const response = await fetch('data/drills.csv');
       const raw = await response.text();
       const lines = raw.trim().split('\n');
       const rows = lines.slice(1).map(line => line.split(','));
 
-      const tbody = document.querySelector('#exercise-table tbody');
+      const tbody = document.querySelector('#drill-table tbody');
       rows.forEach(cells => {
         const tr = document.createElement('tr');
         cells.forEach(cell => {
@@ -89,9 +89,9 @@
       });
     }
 
-    // Simple sort function for the table
-    function sortTable(colIndex) {
-      const table = document.getElementById('exercise-table');
+    // Simple sort function for the drills table
+    function sortDrills(colIndex) {
+      const table = document.getElementById('drill-table');
       const tbody = table.tBodies[0];
       const rows = Array.from(tbody.querySelectorAll('tr'));
       const ascending = table.getAttribute('data-sort-col') != colIndex || table.getAttribute('data-sort-dir') === 'desc';
@@ -115,9 +115,9 @@
     }
 
     // Filter/search function
-    document.getElementById('exercise-search').addEventListener('input', function(e) {
+    document.getElementById('drill-search').addEventListener('input', function(e) {
       const filter = e.target.value.toLowerCase();
-      const rows = document.querySelectorAll('#exercise-table tbody tr');
+      const rows = document.querySelectorAll('#drill-table tbody tr');
       rows.forEach(row => {
         const rowText = row.textContent.toLowerCase();
         row.style.display = rowText.includes(filter) ? '' : 'none';
@@ -125,7 +125,7 @@
     });
 
     // Initialize
-    loadExercises();
+    loadDrills();
   </script>
 </body>
 </html>
