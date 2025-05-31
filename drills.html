@@ -1,39 +1,77 @@
-<!-- drills.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drills Library – Defy Elite Athletics (Preview)</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Drills Library – Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- If you have custom JS for drills filtering/sorting -->
+  <script src="assets/drills.js" defer></script>
 </head>
-<body>
- <nav>
-  <a href="index.html">Home</a>
-  <a href="drills.html">Drills Library</a>
-  <a href="exercises.html">Exercises Library</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
-  <a href="members/login.html">Members</a>
-</nav>
+<body class="dark">
+  <!-- Header with New Logo -->
+  <header class="site-header">
+    <a href="index.html">
+      <img src="assets/logo1.png" alt="Defy Elite Athletics" class="logo" />
+    </a>
+  </header>
 
+  <!-- Top‐Level Navigation Bar -->
+  <nav class="main-nav">
+    <a href="index.html">Home</a> |
+    <a href="exercises.html">Exercises</a> |
+    <a href="drills.html">Drills</a> |
+    <a href="nutrition.html">Nutrition</a> |
+    <a href="resources.html">Resources</a> |
+    <a href="members/articles.html">Members Portal</a>
+  </nav>
 
+  <main class="container">
+    <h1>Drills Library</h1>
+    <p>Use the search box or click column headers to filter and sort our entire drill collection.</p>
 
-  <h1>Drills Library (Preview)</h1>
-  <section id="preview-note">
-    <p><em>This is a preview of our Drills Library. Full access to the complete library is available to subscribers.</em> <a href="subscribe.html" class="btn-link">Subscribe Now</a></p>
-  </section>
-  <table>
-    <thead>
-      <tr><th>Name</th><th>Focus</th><th>Level</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Alignment Drill</td><td>Setup &amp; Aim</td><td>Beginner</td></tr>
-      <tr><td>Weighted Swing Drill</td><td>Clubhead Speed</td><td>Intermediate</td></tr>
-      <tr><td>Hip Rotation Drill</td><td>Lower Body Sequencing</td><td>Intermediate</td></tr>
-    </tbody>
-  </table>
+    <!-- Search Bar -->
+    <input
+      type="text"
+      id="drill-search"
+      placeholder="Search drills..."
+      style="width:100%; padding:8px; margin-bottom:1rem; background:#111; color:#fff; border:1px solid #333;"
+    />
 
+    <!-- Drills Table Example -->
+    <table id="drill-table" style="width:100%; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(0)">Name</th>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(1)">Category</th>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(2)">Equipment</th>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(3)">Focus Area</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sample rows; replace as needed -->
+        <tr>
+          <td style="padding:8px; border-bottom:1px solid #333;">Split Squat Holds</td>
+          <td style="padding:8px; border-bottom:1px solid #333;">Lower Body</td>
+          <td style="padding:8px; border-bottom:1px solid #333;">Bodyweight</td>
+          <td style="padding:8px; border-bottom:1px solid #333;">Stability</td>
+        </tr>
+        <tr>
+          <td style="padding:8px; border-bottom:1px solid #333;">Band Rotations</td>
+          <td style="padding:8px; border-bottom:1px solid #333;">Core</td>
+          <td style="padding:8px; border-bottom:1px solid #333;">Resistance Band</td>
+          <td style="padding:8px; border-bottom:1px solid #333;">Mobility</td>
+        </tr>
+        <!-- etc… -->
+      </tbody>
+    </table>
+
+    <!-- Optional back link -->
+    <!-- <p style="margin-top:1rem;"><a href="index.html" class="back-link">← Back to Home</a></p> -->
+  </main>
+
+  <footer class="site-footer">
+    © 2025 Defy Elite Athletics
+  </footer>
 </body>
 </html>
- 
