@@ -2,21 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Golf Science & Performance</title>
   <link rel="stylesheet" href="../styles.css" />
   <script src="https://feednami.com/api/v1/feed.js"></script>
 </head>
 <body class="dark">
   <header class="site-header">
-    <img src="../assets/logo.png" alt="Defy Elite Athletics" class="logo" />
+    <img src="../assets/logo1.png" alt="Defy Elite Athletics" class="logo" />
   </header>
+
+  <nav class="main-nav">
+    <a href="articles.html">Hub</a> |
+    <a href="articles-golf-science.html">Golf Science</a> |
+    <a href="articles-strength.html">Strength</a> |
+    <a href="articles-nutrition.html">Nutrition</a> |
+    <a href="articles-psychology.html">Psychology</a> |
+    <a href="articles-coaching.html">Coaching</a> |
+    <a href="articles-news.html">News</a> |
+    <a href="articles-industry.html">Industry</a>
+  </nav>
 
   <main class="container">
     <section class="articles-section">
       <h1>Golf Science &amp; Performance</h1>
       <p class="lead">Top research &amp; news from journals and elite golf‐science sources.</p>
+
       <div id="feed-container">Loading…</div>
+
       <p><a href="articles.html" class="back-link">← Back to Articles Hub</a></p>
     </section>
   </main>
@@ -27,9 +40,9 @@
 
   <script>
     const FEED_URLS = [
-      "https://bjsm.bmj.com/rss/current.xml",                              // British Journal of Sports Medicine
-      "https://www.frontiersin.org/journals/sports-and-active-living/articles.rss", // Frontiers in Sports and Active Living
-      "https://pubmed.ncbi.nlm.nih.gov/rss/search?term=golf+performance&limit=10"     // PubMed search for golf performance
+      "https://bjsm.bmj.com/rss/current.xml",                              // British J. of Sports Medicine
+      "https://www.frontiersin.org/journals/sports-and-active-living/articles.rss", // Frontiers in Sports & Active Living
+      "https://pubmed.ncbi.nlm.nih.gov/rss/search?term=golf+performance&limit=10"     // PubMed example
     ];
 
     let loadedCount = 0;
@@ -60,7 +73,6 @@
     FEED_URLS.forEach(url => {
       feednami.load(url, result => {
         if (!result.error) {
-          // Grab up to 5 newest entries from this feed
           result.feed.entries.slice(0, 5).forEach(e => {
             allItems.push({
               title: e.title,
