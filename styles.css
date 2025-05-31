@@ -1,68 +1,71 @@
-/* styles.css */
+/* ==========================
+   STYLES.CSS (Root of Repo)
+   ========================== */
 
+/* 1) Dark body background + base text color */
 body.dark {
-  background: #000;
-  color: #fff;
+  background: #000;       /* pure black behind everything */
+  color: #fff;            /* white text by default */
   font-family: sans-serif;
   margin: 0;
   padding: 0;
 }
 
+/* 2) Global site header (logo area) */
 .site-header {
-  background: #111;
-  padding: 1rem 0;
+  background: #000;       /* <— now matches the heading background */
   text-align: center;
+  padding: 1rem;
 }
 
+/* Logo image itself (keeps it reasonably sized) */
 .logo {
   max-width: 200px;
 }
 
-.main-nav {
-  background: #222;
-  padding: 0.5rem 1rem;
-  text-align: center;
-}
-
-.main-nav a {
-  color: #09f;
-  text-decoration: none;
-  margin: 0 0.75rem;
-  font-weight: bold;
-}
-
-.main-nav a:hover {
-  text-decoration: underline;
-}
-
+/* 3) Main (page‐content) container */
 .container {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-.articles-list {
-  list-style: none;
-  padding: 0;
+/* 4) Top‐level navigation bar */
+.main-nav {
+  background: #111;       /* just a shade lighter than #000 (optional) */
+  padding: 0.5rem 1rem;
+  text-align: center;
 }
 
-.articles-list li {
-  margin: 0.5rem 0;
-}
-
-.articles-list a {
-  color: #09f;
+/* Style for nav links */
+.main-nav a {
+  color: #09f;            /* bright blue links */
   text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: bold;
 }
 
-.articles-list a:hover {
+/* Nav link hover/active state */
+.main-nav a:hover {
   text-decoration: underline;
 }
 
-.articles-section h1 {
-  color: #09f;
+/* 5) List used in Hub page, etc. */
+.articles-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
 }
 
+/* 6) Footer at bottom */
+.site-footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 7) Any “back‐link” styling—e.g. “← Back to Articles Hub” */
 .back-link {
   color: #09f;
   text-decoration: none;
@@ -72,35 +75,53 @@ body.dark {
   text-decoration: underline;
 }
 
+/* 8) Feed errors (if using RSS pages) */
 .feed-error {
-  background: #400;
+  background: #400;       /* maroon/red‐tinted box */
   padding: 0.5rem;
   margin: 0.5rem 0;
   border-radius: 4px;
 }
 
+/* 9) Individual feed item styling */
 .feed-item {
   margin: 1.5rem 0;
   padding-bottom: 1rem;
   border-bottom: 1px solid #333;
 }
-
 .feed-item h2 {
   margin: 0 0 0.25rem;
   font-size: 1.25rem;
 }
-
 .feed-item .meta {
   font-size: 0.85rem;
   color: #999;
 }
-
 .feed-item p {
   margin: 0.5rem 0 0;
 }
 
-.site-footer {
-  text-align: center;
-  padding: 2rem 0;
-  color: #666;
+/* 10) Table styles for Exercises/Drills */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: #111;       /* dark‐gray background behind rows */
+}
+
+table th,
+table td {
+  padding: 8px;
+  border-bottom: 1px solid #444;
+  color: #fff;
+}
+
+table th {
+  cursor: pointer;        /* if you have sorting JS */
+  background: #222;       /* slightly lighter header cells */
+}
+
+/* Optional: row hover */
+table tbody tr:hover {
+  background: #1a1a1a;
 }
