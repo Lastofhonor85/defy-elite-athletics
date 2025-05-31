@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sports Nutrition & Dietetics</title>
   <link rel="stylesheet" href="../styles.css" />
   <script src="https://feednami.com/api/v1/feed.js"></script>
 </head>
 <body class="dark">
   <header class="site-header">
-    <img src="../assets/logo.png" alt="Defy Elite Athletics" class="logo" />
+    <img src="../assets/logo1.png" alt="Defy Elite Athletics" class="logo" />
   </header>
+
+  <nav class="main-nav">
+    <a href="articles.html">Hub</a> |
+    <a href="articles-golf-science.html">Golf Science</a> |
+    <a href="articles-strength.html">Strength</a> |
+    <a href="articles-nutrition.html">Nutrition</a> |
+    <a href="articles-psychology.html">Psychology</a> |
+    <a href="articles-coaching.html">Coaching</a> |
+    <a href="articles-news.html">News</a> |
+    <a href="articles-industry.html">Industry</a>
+  </nav>
 
   <main class="container">
     <section class="articles-section">
       <h1>Sports Nutrition &amp; Dietetics</h1>
       <p class="lead">Evidence-based nutrition, supplementation, and dietetics for performance.</p>
+
       <div id="feed-container">Loading…</div>
+
       <p><a href="articles.html" class="back-link">← Back to Articles Hub</a></p>
     </section>
   </main>
@@ -26,9 +39,9 @@
 
   <script>
     const FEED_URLS = [
-      "https://jissn.biomedcentral.com/articles.atom",                  // Journal of the Int. Society of Sports Nutrition
-      "https://nutritionj.biomedcentral.com/articles.atom",             // Nutrition Journal
-      "https://pubmed.ncbi.nlm.nih.gov/rss/search?term=sports+nutrition&limit=10" // PubMed search sports nutrition
+      "https://jissn.biomedcentral.com/articles.atom",            // JISSN
+      "https://nutritionj.biomedcentral.com/articles.atom",      // Nutrition J.
+      "https://pubmed.ncbi.nlm.nih.gov/rss/search?term=sports+nutrition&limit=10"
     ];
 
     let loadedCount = 0;
