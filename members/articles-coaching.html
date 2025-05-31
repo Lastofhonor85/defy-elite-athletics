@@ -1,26 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Coaching & Skill Development</title>
-  <link rel="stylesheet" href="../styles.css"/>
+  <link rel="stylesheet" href="../styles.css" />
   <script src="https://feednami.com/api/v1/feed.js"></script>
 </head>
 <body class="dark">
-  <header class="site-header"><img src="../assets/logo.png" alt="Defy Elite Athletics" class="logo"/></header>
+  <header class="site-header">
+    <img src="../assets/logo.png" alt="Defy Elite Athletics" class="logo" />
+  </header>
+
   <main class="container">
-    <h1>Coaching &amp; Skill Development</h1>
-    <p class="lead">Leading blogs, podcasts, and research on golf coaching &amp; motor learning.</p>
-    <div id="feed-container">Loading…</div>
-    <p><a href="articles.html" class="back-link">← Back to Articles Hub</a></p>
+    <section class="articles-section">
+      <h1>Coaching &amp; Skill Development</h1>
+      <p class="lead">Leading blogs, podcasts, and research on golf coaching &amp; motor learning.</p>
+      <div id="feed-container">Loading…</div>
+      <p><a href="articles.html" class="back-link">← Back to Articles Hub</a></p>
+    </section>
   </main>
-  <footer class="site-footer">© 2025 Defy Elite Athletics</footer>
+
+  <footer class="site-footer">
+    © 2025 Defy Elite Athletics
+  </footer>
+
   <script>
     const FEED_URLS = [
-      "https://pubmed.ncbi.nlm.nih.gov/rss/search?term=golf+coaching&limit=10",
-      "https://www.frontiersin.org/journals/human-movement-science/articles.rss",
-      "https://www.tandfonline.com/action/showFeed?journalCode=rijp20&feedType=etoc&feed=rss"
+      "https://pubmed.ncbi.nlm.nih.gov/rss/search?term=golf+coaching&limit=10",               // PubMed search golf coaching
+      "https://www.frontiersin.org/journals/human-movement-science/articles.rss",             // Frontiers in Human Movement Science
+      "https://www.tandfonline.com/action/showFeed?journalCode=rijp20&feedType=etoc&feed=rss"   // Int. J. of Instructional Psychology
     ];
-    /* …render logic… */
+
+    let loadedCount = 0;
+    const allItems = [];
+    const container = document.getElementById("feed-container");
+
+    function sanitize(html) {
+      const div = document.createElement("div");
+      div.innerHTML = html || "";
+      return div.textContent || div.innerText || "";
+    }
+
+    function renderAll() {
+      if (!allItems.length) {
+        container.innerHTML = "<p>No articles found.</p>";
+        return;
+      }
+      allItems.sort((a, b) => new Date(b.date) - new Date(a.date));
+      container.innerHTML = allItems.map(item => `
+        <article class="feed-item">
+          <h2><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h2>
+          <div class="meta">${item.date.toLocaleString()}${item.author ? " | " + item.author : ""}</div>
+          <p>${item.snippet}</p>
+        </article>
+      `).join("");
+    }
+
+    FEED_URLS.forEach(url => {
+      feednami.load(url, result => {
+        if (!result.error) {
+          result.feed.entries.slice(0, 5).forEach(e => {
+            allItems.push({
+              title: e.title,
+              link: e.link,
+              date: new Date(e.publishedDate),
+              author: e.author || "",
+              snippet: sanitize(e.contentSnippet || "")
+            });
+          });
+        } else {
+          const errorDiv = document.createElement("div");
+          errorDiv.className = "feed-error";
+          errorDiv.innerText = `⚠️ Failed to load ${url}`;
+          container.appendChild(errorDiv);
+        }
+        loadedCount++;
+        if (loadedCount === FEED_URLS.length) {
+          renderAll();
+        }
+      });
+    });
   </script>
 </body>
 </html>
