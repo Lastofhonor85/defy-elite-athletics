@@ -2,21 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Defy Elite Athletics</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body class="dark">
   <!-- SITE HEADER (Black background via CSS) -->
   <header class="site-header">
     <a href="index.html">
-      <img src="assets/logo1.png" alt="Defy Elite Athletics" class="logo" />
+      <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" class="logo" />
     </a>
   </header>
 
-  <!-- NAVIGATION BAR -->
+  <!-- NAVIGATION BAR (Directly below header) -->
   <nav class="main-nav">
     <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="services.html">Services</a>
     <a href="exercises.html">Exercises</a>
     <a href="drills.html">Drills</a>
     <a href="nutrition.html">Nutrition</a>
@@ -24,29 +27,87 @@
     <a href="members/articles.html">Members Portal</a>
   </nav>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT CONTAINER -->
   <main class="container">
-    <h1>Welcome to Defy Elite Athletics</h1>
-    <p>
-      Your ultimate hub for expert‐curated training resources, performance insights,
-      and more. Browse our exercise library, explore drill progressions, and—if you’re
-      a member—dive into exclusive content in our Members Portal.
-    </p>
+    <!-- 1) Hero / “Above the Fold” Section -->
+    <section id="hero">
+      <h1>Welcome to Defy Elite Athletics</h1>
+      <p>
+        Elevate your game with expert‐curated training resources, personalized coaching, and
+        cutting‐edge performance insights. Take your fitness, technique, and mindset to the next level.
+      </p>
+    </section>
 
-    <section>
+    <!-- 2) “About Me” Section -->
+    <section id="about-me" style="margin-top: 2rem;">
+      <h2>About Me</h2>
+      <p>
+        I’m John Smith, lead coach and founder of Defy Elite Athletics. With over a decade of experience working
+        alongside competitive golfers, high‐level athletes, and performance specialists, my mission is to
+        bridge the gap between sports science and real‐world training. I hold a Master’s in Exercise Physiology,
+        am a certified CSCS, and have been featured in <em>Golf Digest</em> for my work in swing biomechanics.
+      </p>
+    </section>
+
+    <!-- 3) “Services” or “What I Offer” Section -->
+    <section id="services" style="margin-top: 2rem;">
+      <h2>Services</h2>
+      <ul>
+        <li>
+          <strong>Online Coaching:</strong> Tailored 12‐week programs covering strength &amp; conditioning,
+          mobility, and golf‐specific biomechanics. Everything delivered via our secure portal.
+        </li>
+        <li>
+          <strong>In‐Person Training:</strong> One‐on‐one sessions at our Long Beach facility, focusing on
+          power development, injury prevention, and performance analytics.
+        </li>
+        <li>
+          <strong>Performance Assessments:</strong> Video motion‐capture analysis, force‐plate testing, and
+          neuromuscular screening to identify weaknesses and track improvements.
+        </li>
+        <li>
+          <strong>Nutrition &amp; Recovery:</strong> Customized meal plans, supplement protocols, and guided
+          recovery strategies—including sleep optimization and mobility routines.
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4) “Quick Links” / “Featured Resources” Section -->
+    <section id="quick-links" style="margin-top: 2rem;">
       <h2>Quick Links</h2>
+      <p>Jump straight to our most popular pages:</p>
       <ul class="articles-list">
+        <li><a href="about.html">Learn More About Me</a></li>
+        <li><a href="services.html">Explore Services</a></li>
         <li><a href="exercises.html">Exercise Library</a></li>
         <li><a href="drills.html">Drills Library</a></li>
         <li><a href="nutrition.html">Nutrition Resources</a></li>
-        <li><a href="resources.html">Coaching & Performance Resources</a></li>
+        <li><a href="resources.html">Performance Resources</a></li>
         <li><a href="members/articles.html">Members Portal</a></li>
       </ul>
     </section>
+
+    <!-- 5) Testimonials or “Why Choose Us” (Optional) -->
+    <section id="testimonials" style="margin-top: 2rem;">
+      <h2>What Clients Are Saying</h2>
+      <blockquote style="border-left: 4px solid #444; padding-left: 1rem; color: #ccc;">
+        “Since working with John at Defy Elite Athletics, my 5-iron distance improved by 12 yards and I’ve
+        shaved 4 strokes off my handicap. His programs are science-backed, yet practical for real golfers!”
+        <br />
+        <em>– Emily R., 5-handicap Golfer</em>
+      </blockquote>
+      <blockquote style="border-left: 4px solid #444; padding-left: 1rem; color: #ccc; margin-top: 1rem;">
+        “The strength/conditioning protocols here took my sprint speed to the next level. I’m now hitting over
+        140 mph ball speed consistently—thanks to John’s biomechanical tweaks and recovery plan.”
+        <br />
+        <em>– Robert K., Collegiate Athlete</em>
+      </blockquote>
+    </section>
   </main>
 
+  <!-- SITE FOOTER -->
   <footer class="site-footer">
-    © 2025 Defy Elite Athletics
+    © 2025 Defy Elite Athletics | <a href="privacy.html" style="color: #666;">Privacy Policy</a>
   </footer>
 </body>
 </html>
