@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Coaching Resources – Members</title>
+  <title>Exercises Library – Members</title>
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="dark">
@@ -19,10 +19,10 @@
     <a href="articles.html" style="color:#fff; margin:0 0.5rem; text-decoration:none;">
       Articles
     </a>
-    <a href="coaching-resources.html" style="color:#09f; margin:0 0.5rem; text-decoration:none; font-weight:bold;">
+    <a href="coaching-resources.html" style="color:#fff; margin:0 0.5rem; text-decoration:none;">
       Coaching
     </a>
-    <a href="exercises.html" style="color:#fff; margin:0 0.5rem; text-decoration:none;">
+    <a href="exercises.html" style="color:#09f; margin:0 0.5rem; text-decoration:none; font-weight:bold;">
       Exercises
     </a>
     <a href="drills.html" style="color:#fff; margin:0 0.5rem; text-decoration:none;">
@@ -30,149 +30,102 @@
     </a>
   </nav>
 
-  <!-- MAIN CONTENT: COACHING RESOURCES -->
-  <main class="container" style="max-width:800px; margin:2rem auto; padding:0 1rem;">
-    
-    <h1 style="color:#09f; margin-bottom:1rem;">Coaching &amp; Instruction Resources</h1>
-    <p style="color:#ddd; margin-bottom:2rem;">
-      Below you’ll find curated video playlists, downloadable tools, and links to high-level publications that help you stay on the cutting edge of golf coaching.
+  <!-- MAIN CONTENT: EXERCISES LIBRARY -->
+  <main class="container" style="max-width:900px; margin:2rem auto; padding:0 1rem;">
+    <h1 style="color:#09f; margin-bottom:1rem;">Exercises Library</h1>
+    <p style="color:#ddd; margin-bottom:1rem;">
+      Browse and search the complete exercises database. Click a column header to sort, or use the search box to filter.
     </p>
 
-    <!-- SECTION A: Biomechanics of Golf (Dr. Kwon Playlist) -->
-    <section id="kwon-biomechanics" style="margin-bottom:3rem;">
-      <h2 style="font-size:1.5rem; color:#09f; margin-bottom:1rem;">Biomechanics of Golf (Dr. Kwon)</h2>
+    <!-- SEARCH INPUT -->
+    <input
+      type="text"
+      id="exercise-search"
+      placeholder="Search exercises..."
+      style="width:100%; padding:8px; margin-bottom:1rem; background:#111; color:#fff; border:1px solid #333;"
+    />
 
-      <!-- Example Video 1 -->
-      <div style="margin-bottom:2rem;">
-        <h3 style="font-size:1.25rem; color:#09f; margin-bottom:0.5rem;">
-          1. Introduction to Golf Biomechanics
-        </h3>
-        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; background:#000;">
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID_1"
-            title="Dr Kwon Biomechanics 1"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            style="position:absolute; top:0; left:0; width:100%; height:100%;">
-          </iframe>
-        </div>
-        <p style="color:#999; font-size:0.9rem; margin-top:0.5rem;">
-          <em>Duration: 10:24 | Published Jan 15, 2021</em>
-        </p>
-      </div>
-
-      <!-- Example Video 2 -->
-      <div style="margin-bottom:2rem;">
-        <h3 style="font-size:1.25rem; color:#09f; margin-bottom:0.5rem;">
-          2. Ground Reaction Forces &amp; Weight Shift
-        </h3>
-        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; background:#000;">
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID_2"
-            title="Dr Kwon Biomechanics 2"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            style="position:absolute; top:0; left:0; width:100%; height:100%;">
-          </iframe>
-        </div>
-        <p style="color:#999; font-size:0.9rem; margin-top:0.5rem;">
-          <em>Duration: 12:05 | Published Feb 10, 2021</em>
-        </p>
-      </div>
-
-      <!-- Example Video 3 -->
-      <div style="margin-bottom:2rem;">
-        <h3 style="font-size:1.25rem; color:#09f; margin-bottom:0.5rem;">
-          3. Kinematic Sequence for Maximum Speed
-        </h3>
-        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; background:#000;">
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID_3"
-            title="Dr Kwon Biomechanics 3"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            style="position:absolute; top:0; left:0; width:100%; height:100%;">
-          </iframe>
-        </div>
-        <p style="color:#999; font-size:0.9rem; margin-top:0.5rem;">
-          <em>Duration: 14:47 | Published Mar 5, 2021</em>
-        </p>
-      </div>
-
-      <!-- Repeat the same block to add more Dr. Kwon videos -->
-    </section>
-
-    <!-- SECTION B: Additional Coaching Tools & Downloads -->
-    <section id="coaching-tools" style="margin-bottom:3rem;">
-      <h2 style="font-size:1.5rem; color:#09f; margin-bottom:1rem;">Additional Tools &amp; Downloads</h2>
-      <ul style="list-style:none; padding:0; color:#ddd; line-height:1.8;">
-        <li style="margin-bottom:0.75rem;">
-          • <a href="data/Coaching_Checklist.pdf" style="color:#09f; text-decoration:none;" target="_blank" rel="noopener">
-            Lesson Plan &amp; Coaching Checklist (PDF)
-          </a>
-        </li>
-        <li style="margin-bottom:0.75rem;">
-          • <a href="https://example.com/golf-drills-handout" style="color:#09f; text-decoration:none;" target="_blank" rel="noopener">
-            Golf Drills Handout (Printable)
-          </a>
-        </li>
-        <li style="margin-bottom:0.75rem;">
-          • <a href="https://example.com/motor-learning-guide" style="color:#09f; text-decoration:none;" target="_blank" rel="noopener">
-            Motor Learning Principles for Golf Instructors (Article)
-          </a>
-        </li>
-        <li style="margin-bottom:0.75rem;">
-          • <a href="https://example.com/force-plate-protocols" style="color:#09f; text-decoration:none;" target="_blank" rel="noopener">
-            Force-Plate Testing Protocols (Spreadsheet + Example Report)
-          </a>
-        </li>
-        <li style="margin-bottom:0.75rem;">
-          • <a href="https://example.com/video-analysis-guide" style="color:#09f; text-decoration:none;" target="_blank" rel="noopener">
-            Video Analysis &amp; Tagging Best Practices (Guide)
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <!-- SECTION C: Advanced Reading & Industry Links -->
-    <section id="advanced-reading" style="margin-bottom:3rem;">
-      <h2 style="font-size:1.5rem; color:#09f; margin-bottom:1rem;">Advanced Reading &amp; Industry Links</h2>
-      <ul style="list-style:none; padding:0; color:#ddd; line-height:1.8;">
-        <li style="margin-bottom:0.75rem;">
-          • <a href="https://bjsm.bmj.com/rss/current.xml" style="color:#09f; text-decoration:none;" target="_blank" rel="noopener">
-            British Journal of Sports Medicine (RSS)
-          </a>
-        </li>
-        <li style="margin-bottom:0.75rem;">
-          • <a href="https://www.frontiersin.org/journals/sports-and-active-living/articles.rss" style="color:#09f; text-decoration:none;" target="_blank" rel="noopener">
-            Frontiers in Sports and Active Living (RSS)
-          </a>
-        </li>
-        <li style="margin-bottom:0.75rem;">
-          • <a href="https://pubmed.ncbi.nlm.nih.gov/rss/search?term=golf+biomechanics&limit=10" style="color:#09f; text-decoration:none;" target="_blank" rel="noopener">
-            PubMed: Golf Biomechanics Search (RSS)
-          </a>
-        </li>
-        <li style="margin-bottom:0.75rem;">
-          • <a href="https://www.golfsciencejournal.org/feed" style="color:#09f; text-decoration:none;" target="_blank" rel="noopener">
-            International Journal of Golf Science (RSS)
-          </a>
-        </li>
-        <li style="margin-bottom:0.75rem;">
-          • <a href="https://www.nsca.com/journal/rss/" style="color:#09f; text-decoration:none;" target="_blank" rel="noopener">
-            NSCA Strength &amp; Conditioning Journal (RSS)
-          </a>
-        </li>
-      </ul>
-    </section>
+    <!-- EXERCISES TABLE -->
+    <table id="exercise-table" style="width:100%; border-collapse:collapse; background:#111;">
+      <thead>
+        <tr>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortTable(0)">Name</th>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortTable(1)">Category</th>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortTable(2)">Equipment</th>
+          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortTable(3)">Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be populated by JavaScript -->
+      </tbody>
+    </table>
   </main>
 
   <!-- SITE FOOTER -->
   <footer class="site-footer">
     © 2025 Defy Elite Athletics
   </footer>
+
+  <script>
+    // Fetch and display exercises.csv
+    async function loadExercises() {
+      const response = await fetch('data/exercises.csv');
+      const raw = await response.text();
+      const lines = raw.trim().split('\n');
+      const rows = lines.slice(1).map(line => line.split(','));
+
+      const tbody = document.querySelector('#exercise-table tbody');
+      rows.forEach(cells => {
+        const tr = document.createElement('tr');
+        cells.forEach(cell => {
+          const td = document.createElement('td');
+          td.textContent = cell;
+          td.style.padding = '8px';
+          td.style.borderBottom = '1px solid #333';
+          td.style.color = '#fff';
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Simple sort function for the table
+    function sortTable(colIndex) {
+      const table = document.getElementById('exercise-table');
+      const tbody = table.tBodies[0];
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const ascending = table.getAttribute('data-sort-col') != colIndex || table.getAttribute('data-sort-dir') === 'desc';
+
+      rows.sort((a, b) => {
+        const aText = a.cells[colIndex].textContent.trim().toLowerCase();
+        const bText = b.cells[colIndex].textContent.trim().toLowerCase();
+        if (!isNaN(parseFloat(aText)) && !isNaN(parseFloat(bText))) {
+          return ascending
+            ? parseFloat(aText) - parseFloat(bText)
+            : parseFloat(bText) - parseFloat(aText);
+        }
+        return ascending
+          ? aText.localeCompare(bText)
+          : bText.localeCompare(aText);
+      });
+
+      rows.forEach(row => tbody.appendChild(row));
+      table.setAttribute('data-sort-col', colIndex);
+      table.setAttribute('data-sort-dir', ascending ? 'asc' : 'desc');
+    }
+
+    // Filter/search function
+    document.getElementById('exercise-search').addEventListener('input', function(e) {
+      const filter = e.target.value.toLowerCase();
+      const rows = document.querySelectorAll('#exercise-table tbody tr');
+      rows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        row.style.display = rowText.includes(filter) ? '' : 'none';
+      });
+    });
+
+    // Initialize
+    loadExercises();
+  </script>
 </body>
 </html>
