@@ -9,12 +9,30 @@ body.dark {
 }
 
 .site-header {
+  background: #111;
+  padding: 1rem 0;
   text-align: center;
-  padding: 1rem;
 }
 
 .logo {
   max-width: 200px;
+}
+
+.main-nav {
+  background: #222;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.main-nav a {
+  color: #09f;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  font-weight: bold;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
 }
 
 .container {
