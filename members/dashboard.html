@@ -6,29 +6,117 @@
   <title>Members Portal – Defy Elite Athletics</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    .portal-container {max-width: 700px; margin: 54px auto 0; background:#181818; padding:44px 28px; border-radius:16px; text-align:center; box-shadow:0 6px 24px rgba(30,144,255,0.13);}
-    .portal-container h1 {color:#1e90ff; margin-bottom:0.6em;}
-    .portal-links {display: flex; flex-wrap: wrap; justify-content: center; gap:24px; margin-top:2em;}
-    .portal-link {background:#232323; color:#fff; text-decoration:none; border-radius:11px; padding:26px 34px; font-size:1.25em; font-weight:600; transition:background 0.18s,transform 0.12s; box-shadow:0 3px 18px rgba(30,144,255,0.07);}
-    .portal-link:hover {background:#1e90ff; color:#fff; transform:scale(1.055);}
+    /* Container styling */
+    .portal-container {
+      max-width: 700px;
+      margin: 54px auto 0;
+      background: #181818;
+      padding: 44px 28px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 24px rgba(30, 144, 255, 0.13);
+    }
+    .portal-container h1 {
+      color: #1e90ff;
+      margin-bottom: 0.6em;
+    }
+    .portal-container p {
+      color: #eee;
+      line-height: 1.6;
+      margin-top: 0;
+    }
+
+    /* Link grid */
+    .portal-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 2em;
+    }
+    .portal-link {
+      background: #232323;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 11px;
+      padding: 26px 34px;
+      font-size: 1.25em;
+      font-weight: 600;
+      transition: background 0.18s, transform 0.12s;
+      box-shadow: 0 3px 18px rgba(30, 144, 255, 0.07);
+    }
+    .portal-link:hover {
+      background: #1e90ff;
+      color: #fff;
+      transform: scale(1.055);
+    }
+
+    /* Footer styling, matching your other pages */
+    .dashboard-footer {
+      text-align: center;
+      color: #666;
+      margin-top: 2rem;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .dashboard-footer a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    /* Simple reset for header image centering */
+    .site-header img {
+      max-width: 200px;
+      display: block;
+      margin: 1.5rem auto 0.5rem;
+    }
   </style>
 </head>
-<body>
-  <header><img src="../assets/logo.png" alt="Defy Elite Athletics Logo" class="logo"></header>
+<body class="dark">
+  <!-- SITE HEADER (with correct logo file) -->
+  <header class="site-header" style="background: transparent; padding-bottom: 0;">
+    <a href="../index.html" style="text-decoration: none;">
+      <!-- Change this to logo1.webp (or logo1.png) so it matches your actual file in assets/ -->
+      <img
+        src="../assets/logo1.webp"
+        alt="Defy Elite Athletics Logo"
+        loading="lazy"
+      />
+    </a>
+  </header>
+
+  <!-- NAVIGATION BAR (same as other members pages) -->
+  <nav class="main-nav" style="background-color: #111; padding: 0.75rem; text-align: center;">
+    <a href="dashboard.html" style="color: #09f; margin: 0 1rem; text-decoration: none; font-weight: bold;">Dashboard</a>
+    <a href="drills.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Drills</a>
+    <a href="exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
+    <a href="articles.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Articles</a>
+    <a href="resources.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Coaching &amp; Resources</a>
+    <a href="nutrition.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Nutrition</a>
+    <a href="logout.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Logout</a>
+  </nav>
+
+  <!-- MEMBERS PORTAL CONTAINER -->
   <section class="portal-container">
     <h1>Welcome, Member!</h1>
     <p>
-      Thank you for subscribing to Defy Elite Athletics.<br>
+      Thank you for subscribing to Defy Elite Athletics.<br />
       Explore our exclusive member resources below—everything you need for your performance journey, all in one place.
     </p>
+
     <div class="portal-links">
       <a class="portal-link" href="drills.html">Drills Library</a>
       <a class="portal-link" href="exercises.html">Exercises Library</a>
       <a class="portal-link" href="articles.html">Performance Articles</a>
-      <a class="portal-link" href="resources.html">Coaching & Resources</a>
-      <a class="portal-link" href="nutrition.html">Nutrition & Recipes</a>
+      <a class="portal-link" href="resources.html">Coaching &amp; Resources</a>
+      <a class="portal-link" href="nutrition.html">Nutrition &amp; Recipes</a>
     </div>
   </section>
-  <footer>&copy; 2025 Defy Elite Athletics</footer>
+
+  <!-- FOOTER -->
+  <footer class="dashboard-footer">
+    &copy; 2025 Defy Elite Athletics | 
+    <a href="../privacy.html">Privacy Policy</a>
+  </footer>
 </body>
 </html>
