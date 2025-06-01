@@ -1,98 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Golf News & Tours</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Golf News &amp; Tours – Members</title>
   <link rel="stylesheet" href="../styles.css" />
-  <script src="https://feednami.com/api/v1/feed.js"></script>
 </head>
 <body class="dark">
+  <!-- SITE HEADER -->
   <header class="site-header">
-    <img src="../assets/logo1.png" alt="Defy Elite Athletics" class="logo" />
+    <a href="articles.html">
+      <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo" class="logo" loading="lazy" />
+    </a>
   </header>
 
+  <!-- NAVIGATION BAR -->
   <nav class="main-nav">
-    <a href="articles.html">Hub</a> |
-    <a href="articles-golf-science.html">Golf Science</a> |
-    <a href="articles-strength.html">Strength</a> |
-    <a href="articles-nutrition.html">Nutrition</a> |
-    <a href="articles-psychology.html">Psychology</a> |
-    <a href="articles-coaching.html">Coaching</a> |
-    <a href="articles-news.html">News</a> |
-    <a href="articles-industry.html">Industry</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="drills.html">Drills</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="articles.html" style="color: #09f; font-weight: bold;">Articles</a>
+    <a href="resources.html">Coaching &amp; Resources</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="logout.html">Logout</a>
   </nav>
 
+  <!-- MAIN CONTENT -->
   <main class="container">
-    <section class="articles-section">
-      <h1>Golf News &amp; Tours</h1>
-      <p class="lead">Latest from the PGA Tour, DP World Tour, and top outlets.</p>
+    <h1 class="section-title">Golf News &amp; Tours</h1>
+    <p class="text-lead">
+      Latest headlines from the PGA Tour, DP World Tour, and top golf publications.
+    </p>
 
-      <div id="feed-container">Loading…</div>
+    <div id="feed-container">Loading…</div>
 
-      <p><a href="articles.html" class="back-link">← Back to Articles Hub</a></p>
-    </section>
+    <p style="margin-top: 2rem;">
+      <a href="articles.html" class="back-link">← Back to Articles Hub</a>
+    </p>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     © 2025 Defy Elite Athletics
   </footer>
 
   <script>
-    const FEED_URLS = [
-      "http://www.espn.com/espn/rss/golf/news",  // ESPN Golf
-      "https://www.golfdigest.com/rss",          // Golf Digest
-      "https://www.europeantour.com/rss/news"    // DP World Tour
-    ];
+    (function() {
+      const container = document.getElementById("feed-container");
 
-    let loadedCount = 0;
-    const allItems = [];
-    const container = document.getElementById("feed-container");
-
-    function sanitize(html) {
-      const div = document.createElement("div");
-      div.innerHTML = html || "";
-      return div.textContent || div.innerText || "";
-    }
-
-    function renderAll() {
-      if (!allItems.length) {
-        container.innerHTML = "<p>No articles found.</p>";
-        return;
-      }
-      allItems.sort((a, b) => new Date(b.date) - new Date(a.date));
-      container.innerHTML = allItems.map(item => `
-        <article class="feed-item">
-          <h2><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h2>
-          <div class="meta">${item.date.toLocaleString()}${item.author ? " | " + item.author : ""}</div>
-          <p>${item.snippet}</p>
-        </article>
-      `).join("");
-    }
-
-    FEED_URLS.forEach(url => {
-      feednami.load(url, result => {
-        if (!result.error) {
-          result.feed.entries.slice(0, 5).forEach(e => {
-            allItems.push({
-              title: e.title,
-              link: e.link,
-              date: new Date(e.publishedDate),
-              author: e.author || "",
-              snippet: sanitize(e.contentSnippet || "")
-            });
-          });
-        } else {
-          const errorDiv = document.createElement("div");
-          errorDiv.className = "feed-error";
-          errorDiv.innerText = `⚠️ Failed to load ${url}`;
-          container.appendChild(errorDiv);
-        }
-        loadedCount++;
-        if (loadedCount === FEED_URLS.length) {
-          renderAll();
-        }
-      });
-    });
+      fetch('data/news.json')
+        .then(res => {
+          if (!res.ok) throw new Error("Network response was not ok");
+          return res.json();
+        })
+        .then(items => {
+          if (!items || !items.length) {
+            container.innerHTML = "<p>No articles found.</p>";
+            return;
+          }
+          items.sort((a, b) => new Date(b.date) - new Date(a.date));
+          container.innerHTML = items.map(e => {
+            const date = new Date(e.date).toLocaleString();
+            const author = e.author ? ` | ${e.author}` : "";
+            return `
+              <article class="feed-item">
+                <h2>
+                  <a href="${e.link}" target="_blank" rel="noopener">${e.title}</a>
+                </h2>
+                <div class="meta">${date}${author}</div>
+                <p>${e.snippet}</p>
+              </article>`;
+          }).join("");
+        })
+        .catch(err => {
+          container.innerHTML = `
+            <div class="feed-error">
+              ⚠️ Failed to load articles. Please try again later.
+            </div>`;
+          console.error("Error loading news.json:", err);
+        });
+    })();
   </script>
 </body>
 </html>
