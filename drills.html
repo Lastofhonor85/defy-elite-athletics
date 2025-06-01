@@ -3,47 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Drills Library – Members – Defy Elite Athletics</title>
+  <title>Drills Library – Members</title>
   <link rel="stylesheet" href="../styles.css" />
-  <style>
-    /* You can leave most of your existing CSS in styles.css.
-       These extra overrides just target the logos on this page. */
-
-    /* Increase the main site logo size in the header */
-    .site-header .logo {
-      max-width: 300px;   /* adjust up or down until it “feels” as large as your headings */
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Container for the Swing Drills logo + heading */
-    .drills-heading {
-      display: flex;
-      align-items: center;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-    .drills-heading img {
-      width: 60px;       /* size of the Swing Drills icon; adjust as necessary */
-      height: auto;
-      margin-right: 1rem;
-    }
-    .drills-heading h1 {
-      font-size: 2.5rem; /* same size you use for other section <h1> headings */
-      color: #09f;
-      margin: 0;
-    }
-  </style>
 </head>
-
 <body class="dark">
   <!-- SITE HEADER -->
-  <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
-    <a href="dashboard.html" style="text-decoration: none;">
+  <header class="site-header">
+    <a href="articles.html">
       <img
-        src="../assets/logo1.png"
-        alt="Defy Elite Athletics Logo"
+        src="../assets/logo1.webp"
+        alt="Defy Elite Athletics"
         class="logo"
         loading="lazy"
       />
@@ -51,76 +20,115 @@
   </header>
 
   <!-- NAVIGATION BAR -->
-  <nav class="main-nav" style="background-color: #111; padding: 0.75rem; text-align: center;">
-    <a href="articles.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Articles</a>
-    <a href="coaching-resources.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Coaching</a>
-    <a href="exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
-    <a href="drills.html" style="color: #09f; margin: 0 1rem; text-decoration: none; font-weight: bold;">Drills</a>
-    <a href="nutrition.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Nutrition</a>
-    <a href="logout.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Logout</a>
+  <nav class="main-nav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="drills.html" style="color: #09f; font-weight: bold;">Drills</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Coaching &amp; Resources</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="logout.html">Logout</a>
   </nav>
 
   <!-- MAIN CONTENT -->
-  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
-
-    <!-- DRILLS HEADING WITH SWING DRILLS LOGO -->
-    <div class="drills-heading">
-      <img
-        src="../assets/swing-drills-logo.png"
-        alt="Swing Drills Logo"
-        loading="lazy"
-      />
-      <h1>Drills Library</h1>
-    </div>
-
-    <!-- DRILLS TABLE / SEARCH BOX (example content below) -->
-    <p style="color: #eee; font-size: 1.125rem; margin-bottom: 1rem;">
+  <main class="container">
+    <h1 class="section-title">Drills Library</h1>
+    <p class="text-lead">
       Browse and search the complete drills database. Click a column header to sort, or use the search box to filter.
     </p>
 
-    <!-- Example: Search input—adjust IDs/classes as your JS expects -->
+    <!-- Search input -->
     <input
-      type="text"
-      id="search-box"
+      type="search"
+      id="drill-search"
       placeholder="Search drills..."
-      style="width: 100%; padding: 0.75rem; border-radius: 6px; border: none; margin-bottom: 1.5rem; background: #292929; color: #fff;"
+      style="width: 100%; padding: 0.5rem; font-size: 1rem; margin-bottom: 1rem; border-radius: 4px; border: none; background: #292929; color: #fff;"
     />
 
-    <!-- Example: A table of drills—your existing code likely goes here -->
-    <table
-      id="drills-table"
-      style="width: 100%; border-collapse: collapse; color: #eee;"
-    >
+    <!-- Drills table -->
+    <table id="drill-table" style="width: 100%; border-collapse: collapse;">
       <thead>
         <tr>
-          <th style="text-align: left; padding: 0.75rem; background: #111; cursor: pointer;">Drill Name</th>
-          <th style="text-align: left; padding: 0.75rem; background: #111;">Category</th>
-          <th style="text-align: left; padding: 0.75rem; background: #111;">Description</th>
+          <th data-column="name" style="cursor: pointer; text-align: left; padding: 0.75rem; border-bottom: 1px solid #444;">Drill Name</th>
+          <th data-column="category" style="cursor: pointer; text-align: left; padding: 0.75rem; border-bottom: 1px solid #444;">Category</th>
+          <th data-column="difficulty" style="cursor: pointer; text-align: left; padding: 0.75rem; border-bottom: 1px solid #444;">Difficulty</th>
+          <th data-column="description" style="text-align: left; padding: 0.75rem; border-bottom: 1px solid #444;">Description</th>
         </tr>
       </thead>
       <tbody>
-        <!-- 
-          Example rows: replace with your generated rows or script-generated content.
-        -->
-        <tr>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #333;">Full Swing Drill</td>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #333;">Swing</td>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #333;">A drill focusing on proper hip rotation...</td>
-        </tr>
-        <!-- …more rows… -->
+        <!-- Rows will be populated dynamically by JavaScript -->
       </tbody>
     </table>
   </main>
 
   <!-- SITE FOOTER -->
-  <footer class="site-footer" style="background: #000; color: #666; text-align: center; padding: 2rem 0;">
-    © 2025 Defy Elite Athletics | <a href="privacy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
+  <footer class="site-footer">
+    © 2025 Defy Elite Athletics
   </footer>
 
-  <!-- OPTIONAL: Your existing drill‐table scripts go here -->
+  <!-- SCRIPT: load drills data from JSON and handle search/sort -->
   <script>
-    // Example: If you have a script that handles sorting/searching your drills table,
-    // make sure it targets #search-box and #drills-table. This is where that code would live.
+    async function loadDrills() {
+      try {
+        const res = await fetch('drills.json');
+        if (!res.ok) throw new Error('Failed to load drills.json');
+        const drills = await res.json();
+        populateTable(drills);
+      } catch (err) {
+        console.error(err);
+        const tbody = document.querySelector('#drill-table tbody');
+        tbody.innerHTML = '<tr><td colspan="4" style="padding: 1rem; color: #ff4141;">Unable to load drills data.</td></tr>';
+      }
+    }
+
+    function populateTable(drills) {
+      const tbody = document.querySelector('#drill-table tbody');
+      tbody.innerHTML = '';
+      drills.forEach(drill => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="padding: 0.75rem; border-bottom: 1px solid #333;">${drill.name}</td>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #333;">${drill.category}</td>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #333;">${drill.difficulty}</td>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #333;">${drill.description}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Sort functionality
+    function sortTable(column, ascending) {
+      const table = document.getElementById('drill-table');
+      const rowsArray = Array.from(table.querySelectorAll('tbody tr'));
+      rowsArray.sort((a, b) => {
+        const aText = a.querySelector(`td:nth-child(${column + 1})`).textContent.toLowerCase();
+        const bText = b.querySelector(`td:nth-child(${column + 1})`).textContent.toLowerCase();
+        if (aText < bText) return ascending ? -1 : 1;
+        if (aText > bText) return ascending ? 1 : -1;
+        return 0;
+      });
+      rowsArray.forEach(row => table.querySelector('tbody').appendChild(row));
+    }
+
+    document.querySelectorAll('#drill-table th').forEach((th, index) => {
+      let ascending = true;
+      th.addEventListener('click', () => {
+        sortTable(index, ascending);
+        ascending = !ascending;
+      });
+    });
+
+    // Search/filter functionality
+    document.getElementById('drill-search').addEventListener('input', function(e) {
+      const filter = e.target.value.toLowerCase();
+      document.querySelectorAll('#drill-table tbody tr').forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        row.style.display = rowText.includes(filter) ? '' : 'none';
+      });
+    });
+
+    // On page load, fetch and display drills
+    loadDrills();
   </script>
 </body>
 </html>
