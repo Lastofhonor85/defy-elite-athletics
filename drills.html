@@ -2,76 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Drills Library – Defy Elite Athletics</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- If you have custom JS for drills filtering/sorting -->
-  <script src="assets/drills.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drills Library – Members</title>
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="dark">
-  <!-- Header with New Logo -->
+  <!-- SITE HEADER -->
   <header class="site-header">
-    <a href="index.html">
-      <img src="assets/logo1.png" alt="Defy Elite Athletics" class="logo" />
+    <!-- 
+      Make sure logo1.webp is in the SAME directory as drills.html 
+      (i.e. /members/logo1.webp). 
+      If you instead place it inside /members/assets/, change this to "assets/logo1.webp".
+    -->
+    <a href="articles.html">
+      <img
+        src="logo1.webp"
+        alt="Defy Elite Athletics"
+        class="logo"
+        loading="lazy"
+      />
     </a>
   </header>
 
-  <!-- Top‐Level Navigation Bar -->
+  <!-- NAV BAR -->
   <nav class="main-nav">
-    <a href="index.html">Home</a> |
-    <a href="exercises.html">Exercises</a> |
-    <a href="drills.html">Drills</a> |
-    <a href="nutrition.html">Nutrition</a> |
-    <a href="resources.html">Resources</a> |
-    <a href="members/articles.html">Members Portal</a>
+    <a href="articles.html">Articles</a>
+    <a href="coaching-resources.html">Coaching</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="drills.html" class="active">Drills</a>
   </nav>
 
   <main class="container">
-    <h1>Drills Library</h1>
-    <p>Use the search box or click column headers to filter and sort our entire drill collection.</p>
+    <!-- SWING DRILLS GRAPHIC -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <!-- 
+        Make sure Swing Drills.png is in the SAME directory as drills.html 
+        (i.e. /members/Swing Drills.png). 
+        If you instead place it inside /members/assets/, change this to "assets/Swing Drills.png".
+      -->
+      <img
+        src="Swing Drills.png"
+        alt="Swing Drills Graphic"
+        style="max-width: 100%; height: auto;"
+        loading="lazy"
+      />
+    </div>
 
-    <!-- Search Bar -->
+    <!-- MAIN CONTENT: DRILLS -->
+    <h1 class="section-title">Drills Library</h1>
+    <p class="text-lead">
+      Browse and search the complete drills database. Click a column header to sort, or use the search box to filter.
+    </p>
+
+    <!-- SEARCH INPUT -->
     <input
       type="text"
       id="drill-search"
       placeholder="Search drills..."
-      style="width:100%; padding:8px; margin-bottom:1rem; background:#111; color:#fff; border:1px solid #333;"
+      class="search-input"
     />
 
-    <!-- Drills Table Example -->
-    <table id="drill-table" style="width:100%; border-collapse:collapse;">
+    <!-- DRILLS TABLE -->
+    <table id="drill-table" class="data-table" data-sort-col="" data-sort-dir="">
       <thead>
         <tr>
-          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(0)">Name</th>
-          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(1)">Category</th>
-          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(2)">Equipment</th>
-          <th style="padding:8px; border-bottom:1px solid #444; cursor:pointer;" onclick="sortDrills(3)">Focus Area</th>
+          <th onclick="sortDrills(0)">Name</th>
+          <th onclick="sortDrills(1)">Category</th>
+          <th onclick="sortDrills(2)">Equipment</th>
+          <th onclick="sortDrills(3)">Focus Area</th>
         </tr>
       </thead>
       <tbody>
-        <!-- Sample rows; replace as needed -->
-        <tr>
-          <td style="padding:8px; border-bottom:1px solid #333;">Split Squat Holds</td>
-          <td style="padding:8px; border-bottom:1px solid #333;">Lower Body</td>
-          <td style="padding:8px; border-bottom:1px solid #333;">Bodyweight</td>
-          <td style="padding:8px; border-bottom:1px solid #333;">Stability</td>
-        </tr>
-        <tr>
-          <td style="padding:8px; border-bottom:1px solid #333;">Band Rotations</td>
-          <td style="padding:8px; border-bottom:1px solid #333;">Core</td>
-          <td style="padding:8px; border-bottom:1px solid #333;">Resistance Band</td>
-          <td style="padding:8px; border-bottom:1px solid #333;">Mobility</td>
-        </tr>
-        <!-- etc… -->
+        <!-- Populated by JS -->
       </tbody>
     </table>
-
-    <!-- Optional back link -->
-    <!-- <p style="margin-top:1rem;"><a href="index.html" class="back-link">← Back to Home</a></p> -->
   </main>
 
-  <footer class="site-footer">
-    © 2025 Defy Elite Athletics
-  </footer>
+  <!-- Deferred JS for CSV Loading + Sorting/Filtering -->
+  <script>
+    async function loadDrills() {
+      const response = await fetch('data/drills.csv');
+      const raw = await response.text();
+      const lines = raw.trim().split('\n');
+      const rows = lines.slice(1).map(line => line.split(','));
+
+      const tbody = document.querySelector('#drill-table tbody');
+      rows.forEach(cells => {
+        const tr = document.createElement('tr');
+        cells.forEach(cell => {
+          const td = document.createElement('td');
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+    }
+
+    function sortDrills(colIndex) {
+      const table = document.getElementById('drill-table');
+      const tbody = table.tBodies[0];
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const ascending =
+        table.getAttribute('data-sort-col') != colIndex ||
+        table.getAttribute('data-sort-dir') === 'desc';
+
+      rows.sort((a, b) => {
+        const aText = a.cells[colIndex].textContent.trim().toLowerCase();
+        const bText = b.cells[colIndex].textContent.trim().toLowerCase();
+        if (!isNaN(parseFloat(aText)) && !isNaN(parseFloat(bText))) {
+          return ascending
+            ? parseFloat(aText) - parseFloat(bText)
+            : parseFloat(bText) - parseFloat(aText);
+        }
+        return ascending
+          ? aText.localeCompare(bText)
+          : bText.localeCompare(aText);
+      });
+
+      rows.forEach(row => tbody.appendChild(row));
+      table.setAttribute('data-sort-col', colIndex);
+      table.setAttribute('data-sort-dir', ascending ? 'asc' : 'desc');
+    }
+
+    document.getElementById('drill-search').addEventListener('input', function (e) {
+      const filter = e.target.value.toLowerCase();
+      document.querySelectorAll('#drill-table tbody tr').forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        row.style.display = rowText.includes(filter) ? '' : 'none';
+      });
+    });
+
+    loadDrills();
+  </script>
 </body>
 </html>
