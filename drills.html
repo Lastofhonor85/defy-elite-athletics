@@ -1,3 +1,4 @@
+<!-- drills.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,23 +7,10 @@
   <title>Drills Library – Defy Elite Athletics</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .drills-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 2rem;
-    }
-    .drills-table th, .drills-table td {
-      padding: 0.75em 1em;
-      border-bottom: 1px solid #333;
-      text-align: left;
-    }
-    .drills-table th {
-      background: #181818;
-      color: #09f;
-    }
-    .drills-table tr:hover {
-      background: #222;
-    }
+    .drills-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+    .drills-table th, .drills-table td { padding: 0.75em 1em; border-bottom: 1px solid #333; text-align: left; }
+    .drills-table th { background: #181818; color: #09f; }
+    .drills-table tr:hover { background: #222; }
   </style>
 </head>
 <body class="dark">
@@ -42,9 +30,7 @@
   </nav>
   <main class="container">
     <h1 class="section-title">Drills Library</h1>
-    <p>
-      Browse and search the complete drills database below.
-    </p>
+    <p>Browse and search the complete drills database below.</p>
     <table class="drills-table">
       <thead>
         <tr>
@@ -55,29 +41,21 @@
         </tr>
       </thead>
       <tbody id="drills-tbody">
-        <!-- Sample fallback data in case JS/data fails -->
         <tr>
-          <td>Full Swing Drill</td>
-          <td>Swing Mechanics</td>
-          <td>Intermediate</td>
-          <td>Focus on proper hip rotation with a weighted club.</td>
-        </tr>
-        <tr>
-          <td>Short Game Accuracy</td>
-          <td>Chipping &amp; Putting</td>
-          <td>Beginner</td>
-          <td>Use tees to create narrow gates for precise chipping.</td>
+          <td>Loading…</td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
       </tbody>
     </table>
     <script>
-      // Load drills.csv dynamically and populate table
-      fetch('drills.csv')
+      fetch('members/data/drills.csv')
         .then(res => res.ok ? res.text() : Promise.reject())
         .then(text => {
           const lines = text.trim().split('\n');
           const tbody = document.getElementById('drills-tbody');
-          tbody.innerHTML = ''; // Clear fallback data
+          tbody.innerHTML = '';
           lines.slice(1).forEach(row => {
             const cols = row.split(',');
             const tr = document.createElement('tr');
@@ -90,12 +68,10 @@
           });
         })
         .catch(() => {
-          // On failure, fallback table is already shown
+          document.getElementById('drills-tbody').innerHTML = '<tr><td colspan="4" style="color:#f44;">Unable to load drills data.</td></tr>';
         });
     </script>
   </main>
-  <footer class="site-footer">
-    © 2025 Defy Elite Athletics
-  </footer>
+  <footer class="site-footer">© 2025 Defy Elite Athletics</footer>
 </body>
 </html>
