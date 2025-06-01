@@ -10,7 +10,12 @@
   <!-- SITE HEADER -->
   <header class="site-header">
     <a href="articles.html">
-      <img src="../assets/logo1.webp" alt="Defy Elite Athletics" class="logo" loading="lazy" />
+      <img
+        src="../assets/logo1.webp"
+        alt="Defy Elite Athletics"
+        class="logo"
+        loading="lazy"
+      />
     </a>
   </header>
 
@@ -22,8 +27,19 @@
     <a href="drills.html" class="active">Drills</a>
   </nav>
 
-  <!-- MAIN CONTENT: DRILLS -->
+  <!-- INSERT SWING DRILLS GRAPHIC BELOW -->
   <main class="container">
+    <!-- You can adjust max-width/margin as needed -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <img
+        src="../assets/Swing Drills.png"
+        alt="Swing Drills Graphic"
+        style="max-width: 100%; height: auto;"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- MAIN CONTENT: DRILLS -->
     <h1 class="section-title">Drills Library</h1>
     <p class="text-lead">
       Browse and search the complete drills database. Click a column header to sort, or use the search box to filter.
@@ -77,7 +93,9 @@
       const table = document.getElementById('drill-table');
       const tbody = table.tBodies[0];
       const rows = Array.from(tbody.querySelectorAll('tr'));
-      const ascending = table.getAttribute('data-sort-col') != colIndex || table.getAttribute('data-sort-dir') === 'desc';
+      const ascending =
+        table.getAttribute('data-sort-col') != colIndex ||
+        table.getAttribute('data-sort-dir') === 'desc';
 
       rows.sort((a, b) => {
         const aText = a.cells[colIndex].textContent.trim().toLowerCase();
@@ -97,7 +115,7 @@
       table.setAttribute('data-sort-dir', ascending ? 'asc' : 'desc');
     }
 
-    document.getElementById('drill-search').addEventListener('input', function(e) {
+    document.getElementById('drill-search').addEventListener('input', function (e) {
       const filter = e.target.value.toLowerCase();
       document.querySelectorAll('#drill-table tbody tr').forEach(row => {
         const rowText = row.textContent.toLowerCase();
