@@ -2,59 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Golf Drills Library – Defy Elite Athletics</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Drills Library – Defy Elite Athletics</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="dark">
   <header class="site-header">
     <a href="index.html">
-      <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" class="logo" style="max-width:150px; margin-top:1rem;" loading="lazy" />
+      <img src="assets/logo1.png" alt="Defy Elite Athletics" class="logo" loading="lazy" style="max-width: 130px;" />
     </a>
   </header>
+
   <nav class="main-nav">
     <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
     <a href="services.html">Services</a>
     <a href="exercises.html">Exercises</a>
-    <a href="drills.html" style="color:#09f;font-weight:bold;">Drills</a>
+    <a href="drills.html" style="color: #09f; font-weight: bold;">Drills</a>
     <a href="nutrition.html">Nutrition</a>
     <a href="resources.html">Resources</a>
     <a href="members/login.html">Members</a>
   </nav>
 
   <main class="container">
-    <h1 class="section-title" style="margin-top:2rem;">Drills Library</h1>
-    <p class="text-lead">
-      Explore sample golf drills below. For the full library, log in to the Members Portal.
+    <h1 class="section-title">Drills Library</h1>
+    <p>
+      Browse and search the complete drills database. Click a column header to sort, or use the search box to filter.
     </p>
-    <table style="width:100%;border-collapse:collapse;background:#141414;">
+    <input type="text" id="search-drills" placeholder="Search drills..." style="width:100%;padding:12px;border-radius:8px;border:none;margin-bottom:22px;background:#181818;color:#fff;" />
+
+    <!-- TABLE -->
+    <table style="width:100%;margin-bottom:2rem;">
       <thead>
-        <tr style="background:#222;">
-          <th style="text-align:left;padding:10px 8px;">Drill Name</th>
-          <th style="text-align:left;padding:10px 8px;">Category</th>
-          <th style="text-align:left;padding:10px 8px;">Description</th>
+        <tr>
+          <th style="text-align:left;">Drill Name</th>
+          <th style="text-align:left;">Category</th>
+          <th style="text-align:left;">Description</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="drills-table-body">
         <tr>
-          <td style="padding:8px;">Full Swing Drill</td>
-          <td style="padding:8px;">Swing Mechanics</td>
-          <td style="padding:8px;">Focus on proper hip rotation with a weighted club.</td>
+          <td>Full Swing Drill</td>
+          <td>Swing Mechanics</td>
+          <td>Focus on proper hip rotation with a weighted club.</td>
         </tr>
         <tr>
-          <td style="padding:8px;">Short Game Accuracy</td>
-          <td style="padding:8px;">Chipping & Putting</td>
-          <td style="padding:8px;">Use tees to create narrow gates for precise chipping.</td>
+          <td>Short Game Accuracy</td>
+          <td>Chipping &amp; Putting</td>
+          <td>Use tees to create narrow gates for precise chipping.</td>
         </tr>
       </tbody>
     </table>
-    <p style="margin-top:2rem;text-align:center;">
-      <a href="members/login.html" style="color:#09f;text-decoration:underline;">Log in to access the complete drills library &rarr;</a>
-    </p>
   </main>
+
   <footer class="site-footer">
-    &copy; 2025 Defy Elite Athletics | <a href="privacy.html" style="color:#666;">Privacy Policy</a>
+    © 2025 Defy Elite Athletics
   </footer>
+
+  <script>
+    // Optional: Enable search
+    document.getElementById("search-drills").addEventListener("input", function() {
+      const filter = this.value.toLowerCase();
+      const rows = document.querySelectorAll("#drills-table-body tr");
+      rows.forEach(row => {
+        row.style.display = row.textContent.toLowerCase().includes(filter) ? "" : "none";
+      });
+    });
+  </script>
 </body>
 </html>
