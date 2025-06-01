@@ -1,0 +1,13 @@
+{
+  "name": "defy-elite-athletics",
+  "version": "1.0.0",
+  "description": "Static site for Defy Elite Athletics, plus RSS → JSON script.",
+  "main": "index.js",
+  "scripts": {
+    "build-feeds": "node scripts/fetch-rss-to-json.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "xml2js": "^0.4.23"
+  }
+}
