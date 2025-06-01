@@ -2,114 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Exercises Library – Members</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercises</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <style>
+    body {
+      padding: 20px;
+    }
+    table {
+      margin-top: 20px;
+    }
+  </style>
 </head>
-<body class="dark">
-  <!-- SITE HEADER -->
-  <header class="site-header">
-    <a href="articles.html">
-      <img src="../assets/logo1.webp" alt="Defy Elite Athletics" class="logo" loading="lazy" />
-    </a>
-  </header>
+<body>
+  <h1>Exercises</h1>
+  <table id="exercisesTable" class="table table-bordered table-striped">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
 
-  <!-- NAV BAR -->
-  <nav class="main-nav">
-    <a href="articles.html">Articles</a>
-    <a href="coaching-resources.html">Coaching</a>
-    <a href="exercises.html" class="active">Exercises</a>
-    <a href="drills.html">Drills</a>
-  </nav>
-
-  <!-- MAIN CONTENT: EXERCISES -->
-  <main class="container">
-    <h1 class="section-title">Exercises Library</h1>
-    <p class="text-lead">
-      Browse and search the complete exercises database. Click a column header to sort, or use the search box to filter.
-    </p>
-
-    <!-- SEARCH INPUT -->
-    <input
-      type="text"
-      id="exercise-search"
-      placeholder="Search exercises..."
-      class="search-input"
-    />
-
-    <!-- EXERCISES TABLE -->
-    <table id="exercise-table" class="data-table" data-sort-col="" data-sort-dir="">
-      <thead>
-        <tr>
-          <th onclick="sortTable(0)">Name</th>
-          <th onclick="sortTable(1)">Category</th>
-          <th onclick="sortTable(2)">Equipment</th>
-          <th onclick="sortTable(3)">Level</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Populated by JS -->
-      </tbody>
-    </table>
-  </main>
-
-  <!-- Deferred JS for CSV Loading + Table Sorting/Searching -->
+  <!-- PapaParse Library -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
   <script>
-    // 1) Load CSV data and build table
-    async function loadExercises() {
-      const response = await fetch('data/exercises.csv');
-      const raw = await response.text();
-      const lines = raw.trim().split('\n');
-      const rows = lines.slice(1).map(line => line.split(','));
-
-      const tbody = document.querySelector('#exercise-table tbody');
-      rows.forEach(cells => {
-        const tr = document.createElement('tr');
-        cells.forEach(cell => {
-          const td = document.createElement('td');
-          td.textContent = cell;
-          tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
-      });
-    }
-
-    // 2) Simple sort function for the table
-    function sortTable(colIndex) {
-      const table = document.getElementById('exercise-table');
-      const tbody = table.tBodies[0];
-      const rows = Array.from(tbody.querySelectorAll('tr'));
-      const ascending = table.getAttribute('data-sort-col') != colIndex || table.getAttribute('data-sort-dir') === 'desc';
-
-      rows.sort((a, b) => {
-        const aText = a.cells[colIndex].textContent.trim().toLowerCase();
-        const bText = b.cells[colIndex].textContent.trim().toLowerCase();
-        if (!isNaN(parseFloat(aText)) && !isNaN(parseFloat(bText))) {
-          return ascending
-            ? parseFloat(aText) - parseFloat(bText)
-            : parseFloat(bText) - parseFloat(aText);
+    fetch('members/data/exercises.csv')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        return ascending
-          ? aText.localeCompare(bText)
-          : bText.localeCompare(aText);
+        return response.text();
+      })
+      .then(csvText => {
+        const parsedData = Papa.parse(csvText, {
+          header: true,
+          skipEmptyLines: true
+        });
+
+        const table = document.getElementById('exercisesTable');
+        const thead = table.querySelector('thead');
+        const tbody = table.querySelector('tbody');
+
+        // Create table header
+        const headerRow = document.createElement('tr');
+        parsedData.meta.fields.forEach(header => {
+          const th = document.createElement('th');
+          th.textContent = header;
+          headerRow.appendChild(th);
+        });
+        thead.appendChild(headerRow);
+
+        // Create table rows
+        parsedData.data.forEach(row => {
+          const tr = document.createElement('tr');
+          parsedData.meta.fields.forEach(field => {
+            const td = document.createElement('td');
+            td.textContent = row[field] || '';
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading exercises.csv:', error);
       });
-
-      rows.forEach(row => tbody.appendChild(row));
-      table.setAttribute('data-sort-col', colIndex);
-      table.setAttribute('data-sort-dir', ascending ? 'asc' : 'desc');
-    }
-
-    // 3) Filter / search
-    document.getElementById('exercise-search').addEventListener('input', function(e) {
-      const filter = e.target.value.toLowerCase();
-      document.querySelectorAll('#exercise-table tbody tr').forEach(row => {
-        const rowText = row.textContent.toLowerCase();
-        row.style.display = rowText.includes(filter) ? '' : 'none';
-      });
-    });
-
-    // 4) Initialize
-    loadExercises();
   </script>
 </body>
 </html>
