@@ -6,40 +6,114 @@
   <title>Members Login – Defy Elite Athletics</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    .login-container {max-width: 350px; margin: 90px auto 0; background:#181818; padding:38px 26px 28px; border-radius:14px; box-shadow: 0 6px 24px rgba(30,144,255,0.12);}
-    .login-container h1 {text-align:center; color:#1e90ff; margin-bottom:1.2em;}
-    .login-container label {color:#fff; font-size:1.13em;}
-    .login-container input {width:100%; padding:10px; border-radius:7px; border:none; margin:12px 0 24px; background:#292929; color:#fff; font-size:1.1em;}
-    .login-container button {width:100%; padding:12px; border-radius:7px; border:none; background:#1e90ff; color:#fff; font-size:1.11em; cursor:pointer; font-weight:600;}
-    .login-container .error {color:#ff4141; text-align:center; margin-bottom:8px;}
+    /* Login box styling */
+    .login-container {
+      max-width: 350px;
+      margin: 90px auto 0;
+      background: #181818;
+      padding: 38px 26px 28px;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(30, 144, 255, 0.12);
+    }
+    .login-container h1 {
+      text-align: center;
+      color: #1e90ff;
+      margin-bottom: 1.2em;
+    }
+    .login-container label {
+      color: #fff;
+      font-size: 1.13em;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 7px;
+      border: none;
+      margin: 12px 0 24px;
+      background: #292929;
+      color: #fff;
+      font-size: 1.1em;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 7px;
+      border: none;
+      background: #1e90ff;
+      color: #fff;
+      font-size: 1.11em;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .login-container .error {
+      color: #ff4141;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    /* Footer styling, matching your other pages */
+    .login-footer {
+      text-align: center;
+      color: #666;
+      margin-top: 2rem;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .login-footer a {
+      color: #666;
+      text-decoration: none;
+    }
   </style>
 </head>
-<body>
-  <header><img src="../assets/logo.png" alt="Defy Elite Athletics Logo" class="logo"></header>
+
+<body class="dark">
+  <!-- SITE HEADER (logo only) -->
+  <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
+    <a href="../index.html" style="text-decoration: none;">
+      <!-- Change to logo1.png to match your actual file -->
+      <img
+        src="../assets/logo1.png"
+        alt="Defy Elite Athletics Logo"
+        class="logo"
+        style="max-width: 200px;"
+        loading="lazy"
+      />
+    </a>
+  </header>
+
+  <!-- LOGIN BOX -->
   <section class="login-container">
     <h1>Members Login</h1>
     <div id="error" class="error"></div>
     <form onsubmit="return checkPassword(event)">
       <label for="password">Enter Membership Password:</label>
-      <input type="password" id="password" required autofocus>
+      <input type="password" id="password" required autofocus />
       <button type="submit">Login</button>
     </form>
   </section>
-  <footer>&copy; 2025 Defy Elite Athletics</footer>
+
+  <!-- FOOTER -->
+  <footer class="login-footer">
+    &copy; 2025 Defy Elite Athletics | 
+    <a href="../privacy.html">Privacy Policy</a>
+  </footer>
+
   <script>
-    // Demo password: change for your members!
+    // Replace this with your actual member password
     const MEMBER_PASSWORD = "defyelite2024";
+
     function checkPassword(e) {
       e.preventDefault();
-      const pw = document.getElementById('password').value;
+      const pw = document.getElementById("password").value.trim();
       if (pw === MEMBER_PASSWORD) {
+        // On success, redirect to dashboard.html (or whichever page you want)
         window.location.href = "dashboard.html";
       } else {
-        document.getElementById('error').innerText = "Incorrect password. Please try again.";
+        document.getElementById("error").innerText =
+          "Incorrect password. Please try again.";
       }
       return false;
     }
   </script>
 </body>
 </html>
-
