@@ -3,161 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Drills Library – Defy Elite Athletics</title>
+  <title>Drills Library – Members</title>
   <link rel="stylesheet" href="../styles.css" />
-  <style>
-    /* ↑ Pull in your existing dark-theme CSS; below are just the overrides for this page. */
-
-    /* Enlarge the main Defy Elite logo in the header */
-    .site-header .logo {
-      max-width: 300px;   /* Adjust as needed so it visually matches your other headings */
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Container that holds the Swing Drills icon + "Drills Library" text  */
-    .drills-heading {
-      display: flex;
-      align-items: center;
-      margin-top: 2rem;       /* space above the heading, adjust if needed */
-      margin-bottom: 1rem;    /* space below the heading */
-    }
-    /* Swing Drills icon itself */
-    .drills-heading img {
-      width: 50px;            /* size of the Swing Drills logo—bump up/down as necessary */
-      height: auto;
-      margin-right: 0.75rem;  /* small gap between image and text */
-    }
-    /* The actual "Drills Library" text */
-    .drills-heading h1 {
-      font-size: 2.5rem;      /* match other <h1> sizes on your site */
-      color: #09f;            /* bright-blue heading color */
-      margin: 0;              /* remove any default <h1> margin */
-      line-height: 1;         /* ensure text vertically centers next to icon */
-    }
-
-    /* Optional: if you have a paragraph or input right after the heading, ensure it’s spaced nicely */
-    .drills-intro {
-      color: #eee;
-      font-size: 1.125rem;
-      margin-bottom: 1rem;
-    }
-    #search-box {
-      width: 100%;
-      padding: 0.75rem;
-      border-radius: 6px;
-      border: none;
-      margin-bottom: 1.5rem;
-      background: #292929;
-      color: #fff;
-      font-size: 1rem;
-    }
-    /* Example table styling—preserve your existing table CSS or replace with your own */
-    #drills-table {
-      width: 100%;
-      border-collapse: collapse;
-      color: #eee;
-      margin-bottom: 2rem;
-    }
-    #drills-table th,
-    #drills-table td {
-      padding: 0.75rem;
-      border-bottom: 1px solid #333;
-    }
-    #drills-table th {
-      background: #111;
-      text-align: left;
-      cursor: pointer; /* if you plan to sort on header click */
-    }
-  </style>
 </head>
-
 <body class="dark">
-  <!-- SITE HEADER -->
-  <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
-    <a href="dashboard.html" style="text-decoration: none;">
-      <img
-        src="../assets/logo1.png"
-        alt="Defy Elite Athletics Logo"
-        class="logo"
-        loading="lazy"
-      />
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="dashboard.html">
+      <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo" class="logo" style="max-width:150px; margin-top:1rem;" loading="lazy" />
     </a>
   </header>
-
-  <!-- NAVIGATION BAR -->
-  <nav class="main-nav" style="background-color: #111; padding: 0.75rem; text-align: center;">
-    <a href="articles.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Articles</a>
-    <a href="coaching-resources.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Coaching</a>
-    <a href="exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
-    <a href="drills.html" style="color: #09f; margin: 0 1rem; text-decoration: none; font-weight: bold;">Drills</a>
-    <a href="nutrition.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Nutrition</a>
-    <a href="logout.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Logout</a>
+  <!-- NAV BAR -->
+  <nav class="main-nav">
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Coaching</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="drills.html" style="color:#09f;font-weight:bold;">Drills</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="logout.html">Logout</a>
   </nav>
 
-  <!-- MAIN CONTENT -->
-  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
-
-    <!-- 1) DRILLS HEADING: Swing Drills Icon + "Drills Library" -->
-    <div class="drills-heading">
-      <!-- Make sure this file name matches exactly what you uploaded -->
-      <img
-        src="../assets/swing-drills-logo.png"
-        alt="Swing Drills Logo"
-        loading="lazy"
-      />
-      <h1>Drills Library</h1>
+  <main class="container">
+    <!-- HEADING + SWING DRILLS LOGO (side-by-side) -->
+    <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+      <img src="../assets/swingdrills.png" alt="Swing Drills Logo" style="width: 60px; height: 60px; margin-right: 18px;" />
+      <h1 class="section-title" style="margin: 0;">Drills Library</h1>
     </div>
-
-    <!-- 2) INTRO PARAGRAPH -->
-    <p class="drills-intro">
+    <p class="text-lead">
       Browse and search the complete drills database. Click a column header to sort, or use the search box to filter.
     </p>
+    <!-- SEARCH BAR -->
+    <input type="text" id="drill-search" placeholder="Search drills..." style="width:100%;padding:10px;margin-bottom:18px;background:#222;color:#eee;border:1px solid #222;border-radius:7px;" />
 
-    <!-- 3) SEARCH BOX (example) -->
-    <input
-      type="text"
-      id="search-box"
-      placeholder="Search drills..."
-    />
-
-    <!-- 4) DRILLS TABLE (example structure; you can replace with your own dynamically generated rows) -->
-    <table id="drills-table">
+    <!-- DRILLS TABLE (Sample Data) -->
+    <table style="width:100%;border-collapse:collapse;background:#141414;">
       <thead>
-        <tr>
-          <th>Drill Name</th>
-          <th>Category</th>
-          <th>Description</th>
+        <tr style="background:#222;">
+          <th style="text-align:left;padding:10px 8px;">Drill Name</th>
+          <th style="text-align:left;padding:10px 8px;">Category</th>
+          <th style="text-align:left;padding:10px 8px;">Description</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Example rows; replace or generate via your JS/data pipeline -->
+      <tbody id="drills-table">
         <tr>
-          <td>Full Swing Drill</td>
-          <td>Swing Mechanics</td>
-          <td>Focus on proper hip rotation with a weighted club.</td>
+          <td style="padding:8px;">Full Swing Drill</td>
+          <td style="padding:8px;">Swing Mechanics</td>
+          <td style="padding:8px;">Focus on proper hip rotation with a weighted club.</td>
         </tr>
         <tr>
-          <td>Short Game Accuracy</td>
-          <td>Chipping & Putting</td>
-          <td>Use tees to create narrow gates for precise chipping.</td>
+          <td style="padding:8px;">Short Game Accuracy</td>
+          <td style="padding:8px;">Chipping & Putting</td>
+          <td style="padding:8px;">Use tees to create narrow gates for precise chipping.</td>
         </tr>
-        <!-- ...more rows... -->
       </tbody>
     </table>
   </main>
-
-  <!-- SITE FOOTER -->
-  <footer class="site-footer" style="background: #000; color: #666; text-align: center; padding: 2rem 0;">
-    © 2025 Defy Elite Athletics | 
-    <a href="privacy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
+  <footer class="site-footer">
+    &copy; 2025 Defy Elite Athletics | <a href="privacy.html" style="color:#666;">Privacy Policy</a>
   </footer>
-
-  <!-- OPTIONAL: If you have JavaScript for sorting/searching, place it here -->
   <script>
-    // Example placeholder: you might hook up #search-box to filter rows of #drills-table here.
-    // Your existing drill-table JS would go in this <script> block.
+    // Simple search function for table filtering
+    document.getElementById('drill-search').addEventListener('input', function(e){
+      const val = e.target.value.toLowerCase();
+      document.querySelectorAll('#drills-table tr').forEach(tr=>{
+        tr.style.display = tr.innerText.toLowerCase().includes(val) ? '' : 'none';
+      });
+    });
   </script>
 </body>
 </html>
