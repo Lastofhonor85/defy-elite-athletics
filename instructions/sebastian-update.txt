@@ -1,1 +1,1 @@
-New test: check if file exists gracefully
+Test confirmation: append logic fixed
