@@ -24,26 +24,23 @@
   <!-- PapaParse Library -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
   <script>
-    fetch('members/data/drills.csv')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then(csvText => {
-        const parsedData = Papa.parse(csvText, {
-          header: true,
-          skipEmptyLines: true
-        });
-
+    Papa.parse('members/data/drills.csv', {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        const data = results.data;
         const table = document.getElementById('drillsTable');
         const thead = table.querySelector('thead');
         const tbody = table.querySelector('tbody');
 
+        // Clear existing content
+        thead.innerHTML = '';
+        tbody.innerHTML = '';
+
         // Create table header
         const headerRow = document.createElement('tr');
-        parsedData.meta.fields.forEach(header => {
+        results.meta.fields.forEach(header => {
           const th = document.createElement('th');
           th.textContent = header;
           headerRow.appendChild(th);
@@ -51,19 +48,20 @@
         thead.appendChild(headerRow);
 
         // Create table rows
-        parsedData.data.forEach(row => {
+        data.forEach(row => {
           const tr = document.createElement('tr');
-          parsedData.meta.fields.forEach(field => {
+          results.meta.fields.forEach(field => {
             const td = document.createElement('td');
             td.textContent = row[field] || '';
             tr.appendChild(td);
           });
           tbody.appendChild(tr);
         });
-      })
-      .catch(error => {
+      },
+      error: function(error) {
         console.error('Error loading drills.csv:', error);
-      });
+      }
+    });
   </script>
 </body>
 </html>
