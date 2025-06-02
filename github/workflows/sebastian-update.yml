@@ -1,0 +1,31 @@
+name: Update Site via Sebastian
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "instructions/sebastian-update.txt"
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure Git identity
+        run: |
+          git config --global user.name "Mr. Sebastian (Bot)"
+          git config --global user.email "sebastian-bot@users.noreply.github.com"
+
+      - name: Make site updates (example)
+        run: |
+          echo "<!-- updated by Sebastian -->" >> members/drills.html
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEBASTIAN_TOKEN }}
+        run: |
+          git add .
+          git commit -m "Automated update from Sebastian"
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
