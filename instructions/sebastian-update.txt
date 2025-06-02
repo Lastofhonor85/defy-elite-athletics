@@ -1,1 +1,1 @@
-Auto-note: Added by Sebastian at 10:52 PM
+New test: check if file exists gracefully
