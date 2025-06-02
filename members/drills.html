@@ -2,37 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Drills</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-    th, td { border: 1px solid #ddd; padding: 8px; }
-    th { background-color: #f2f2f2; }
-  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Drills Library – Defy Elite Athletics</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../assets/drills.js" defer></script>
 </head>
-<body>
-  <h1>Drills</h1>
-  <table id="drillsTable"></table>
+<body class="dark">
+  <header class="site-header">
+    <a href="../index.html">
+      <img src="../assets/logo1.png" alt="Defy Elite Athletics" class="logo" />
+    </a>
+  </header>
+  <nav class="main-nav">
+    <a href="../index.html">Home</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="drills.html" class="active">Drills</a>
+    <a href="../nutrition.html">Nutrition</a>
+    <a href="../resources.html">Resources</a>
+    <a href="articles.html">Members Portal</a>
+  </nav>
+  <main class="container">
+    <h1 class="section-title">Drills Library</h1>
+    <p class="text-lead">Use the search box or category/equipment tabs to filter and explore drills.</p>
 
-  <script>
-    fetch('members/data/drills.csv')
-      .then(response => response.text())
-      .then(data => {
-        const rows = data.trim().split('\n');
-        const table = document.getElementById('drillsTable');
+    <input type="text" id="drill-search" class="search-input" placeholder="Search drills..." />
 
-        rows.forEach((row, index) => {
-          const tr = document.createElement('tr');
-          row.split(',').forEach(cell => {
-            const cellElement = document.createElement(index === 0 ? 'th' : 'td');
-            cellElement.textContent = cell.trim();
-            tr.appendChild(cellElement);
-          });
-          table.appendChild(tr);
-        });
-      })
-      .catch(error => console.error('Error loading drills.csv:', error));
-  </script>
+    <div id="drill-tabs" class="tab-buttons"></div>
+
+    <table id="drill-table" class="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Equipment</th>
+          <th>Focus Area</th>
+        </tr>
+      </thead>
+      <tbody id="drill-tbody"></tbody>
+    </table>
+  </main>
+  <footer class="site-footer">
+    © 2025 Defy Elite Athletics
+  </footer>
 </body>
 </html>
