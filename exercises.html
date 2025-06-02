@@ -1,63 +1,43 @@
-<!-- exercises.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Exercises Library – Defy Elite Athletics</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercises</title>
   <style>
-    .drills-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
-    .drills-table th, .drills-table td { padding: 0.75em 1em; border-bottom: 1px solid #333; text-align: left; }
-    .drills-table th { background: #181818; color: #09f; }
-    .drills-table tr:hover { background: #222; }
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background-color: #f2f2f2; }
   </style>
 </head>
-<body class="dark">
-  <header class="site-header">
-    <a href="index.html">
-      <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" class="logo" loading="lazy" />
-    </a>
-  </header>
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="exercises.html" style="color: #09f; font-weight: bold;">Exercises</a>
-    <a href="drills.html">Drills</a>
-    <a href="nutrition.html">Nutrition</a>
-    <a href="resources.html">Resources</a>
-    <a href="members/login.html">Members</a>
-  </nav>
-  <main class="container">
-    <h1 class="section-title">Exercises Library</h1>
-    <p>Browse and search the complete exercises database below.</p>
-    <table class="drills-table">
-      <thead>
-        <tr>
-          <th>Exercise Name</th>
-          <th>Category</th>
-          <th>Difficulty</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody id="exercises-tbody">
-        <tr>
-          <td>Loading…</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-    <script>
-      fetch('members/data/exercises.csv')
-        .then(res => res.ok ? res.text() : Promise.reject())
+<body>
+  <h1>Exercises</h1>
+  <table id="exercisesTable"></table>
+
+  <script>
+    function loadCSV(url, tableId) {
+      fetch(url)
+        .then(res => res.text())
         .then(text => {
-          const lines = text.trim().split('\n');
-          const tbody = document.getElementById('exercises-tbody');
-          tbody.innerHTML = '';
-          lines.slice(1).forEach(row => {
-            const cols = row.split(',');
+          const rows = text.trim().split('\n');
+          const table = document.getElementById(tableId);
+          table.innerHTML = '';
+          rows.forEach((row, i) => {
             const tr = document.createElement('tr');
-            cols.forEach(col => {
-             
+            row.split(',').forEach(cell => {
+              const tag = i === 0 ? 'th' : 'td';
+              const td = document.createElement(tag);
+              td.textContent = cell.trim().replace(/^"|"$/g, '');
+              tr.appendChild(td);
+            });
+            table.appendChild(tr);
+          });
+        })
+        .catch(err => console.error('CSV load error:', err));
+    }
+
+    loadCSV('data/exercises.csv', 'exercisesTable');
+  </script>
+</body>
+</html>
