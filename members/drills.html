@@ -2,47 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Drills Library – Defy Elite Athletics</title>
+  <title>Drills</title>
   <link rel="stylesheet" href="../styles.css" />
-  <script src="../assets/drills.js" defer></script>
+  <style>
+    #search {
+      margin: 20px;
+      padding: 8px;
+      width: 300px;
+      font-size: 16px;
+    }
+    table {
+      width: 95%;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+  </style>
 </head>
-<body class="dark">
-  <header class="site-header">
-    <a href="../index.html">
-      <img src="../assets/logo1.png" alt="Defy Elite Athletics" class="logo" />
-    </a>
-  </header>
-  <nav class="main-nav">
-    <a href="../index.html">Home</a>
-    <a href="exercises.html">Exercises</a>
-    <a href="drills.html" class="active">Drills</a>
-    <a href="../nutrition.html">Nutrition</a>
-    <a href="../resources.html">Resources</a>
-    <a href="articles.html">Members Portal</a>
-  </nav>
-  <main class="container">
-    <h1 class="section-title">Drills Library</h1>
-    <p class="text-lead">Use the search box or category/equipment tabs to filter and explore drills.</p>
+<body>
+  <h1 style="text-align: center;">Drills</h1>
+  <input type="text" id="search" placeholder="Search drills..." onkeyup="filterTable()" />
+  <table id="drillsTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Tip Type</th>
+        <th>Difficulty</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody id="drillBody">
+      <!-- Rows will be injected here by JavaScript -->
+    </tbody>
+  </table>
 
-    <input type="text" id="drill-search" class="search-input" placeholder="Search drills..." />
+  <script>
+    async function loadCSV() {
+      const response = await fetch('./data/drills.csv');
+      const data = await response.text();
+      const lines = data.trim().split('\\n');
+      const tbody = document.getElementById('drillBody');
+      tbody.innerHTML = '';
 
-    <div id="drill-tabs" class="tab-buttons"></div>
+      lines.forEach((line, index) => {
+        if (index === 0) return; // Skip header
+        const cols = line.split(',');
+        const row = document.createElement('tr');
+        cols.forEach(col => {
+          const td = document.createElement('td');
+          td.textContent = col;
+          row.appendChild(td);
+        });
+        tbody.appendChild(row);
+      });
+    }
 
-    <table id="drill-table" class="data-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Equipment</th>
-          <th>Focus Area</th>
-        </tr>
-      </thead>
-      <tbody id="drill-tbody"></tbody>
-    </table>
-  </main>
-  <footer class="site-footer">
-    © 2025 Defy Elite Athletics
-  </footer>
+    function filterTable() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const rows = document.querySelectorAll('#drillsTable tbody tr');
+      rows.forEach(row => {
+        const match = [...row.children].some(td =>
+          td.textContent.toLowerCase().includes(input)
+        );
+        row.style.display = match ? '' : 'none';
+      });
+    }
+
+    loadCSV();
+  </script>
 </body>
 </html>
