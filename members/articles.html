@@ -2,47 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Performance Articles Hub – Members</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Performance Articles Hub – Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://feednami.com/api/v1/feed.js"></script>
 </head>
 <body class="dark">
   <!-- SITE HEADER -->
-  <header class="site-header">
-    <a href="dashboard.html">
-      <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo" class="logo" loading="lazy" />
+  <header class="site-header" style="background: #000; padding: 1rem; text-align: center;">
+    <a href="articles.html" style="text-decoration: none;">
+      <img src="assets/logo1.png" alt="Defy Elite Athletics" class="logo" style="max-width: 180px;" />
     </a>
   </header>
 
-  <!-- NAVIGATION BAR -->
-  <nav class="main-nav">
-    <a href="dashboard.html">Dashboard</a>
-    <a href="drills.html">Drills</a>
-    <a href="exercises.html">Exercises</a>
-    <a href="articles.html" style="color:#09f; font-weight:bold;">Articles</a>
-    <a href="resources.html">Coaching &amp; Resources</a>
-    <a href="nutrition.html">Nutrition</a>
-    <a href="logout.html">Logout</a>
+  <!-- MAIN NAVIGATION -->
+  <nav style="background: #111; padding: 0.75rem; text-align: center;">
+    <a href="index.html" style="color: #09f; margin: 0 1rem; text-decoration: none; font-weight: bold;">Home</a>
+    <a href="services.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Services</a>
+    <a href="members/exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
+    <a href="members/drills.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Drills</a>
+    <a href="nutrition.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Nutrition</a>
+    <a href="resources.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Resources</a>
+    <a href="members/login.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Members</a>
   </nav>
 
-  <!-- MAIN CONTENT -->
-  <main class="container">
-    <h1 class="section-title">Performance Articles Hub</h1>
-    <p class="text-lead">
-      Choose a topic to view the latest curated research, news, and insights. Click any category below:
-    </p>
-    <ul style="list-style: none; padding: 0; line-height: 2;">
-      <li><a href="articles-golf-science.html" style="color: #09f; text-decoration: none;">Golf Science &amp; Performance</a></li>
-      <li><a href="articles-strength.html" style="color: #09f; text-decoration: none;">Strength &amp; Conditioning</a></li>
-      <li><a href="articles-nutrition.html" style="color: #09f; text-decoration: none;">Sports Nutrition &amp; Dietetics</a></li>
-      <li><a href="articles-psychology.html" style="color: #09f; text-decoration: none;">Sports Psychology &amp; Mental Skills</a></li>
-      <li><a href="articles-news.html" style="color: #09f; text-decoration: none;">Golf News &amp; Tours</a></li>
-      <li><a href="articles-industry.html" style="color: #09f; text-decoration: none;">Industry &amp; Equipment</a></li>
-    </ul>
+  <!-- ARTICLES CONTENT -->
+  <main style="padding: 2rem 1rem; color: #eee; background: #111;">
+    <section style="max-width: 900px; margin: 0 auto;">
+      <h1>Performance Articles Hub</h1>
+      <p>Stay up-to-date with the latest research, tutorials, and industry trends in athletic performance, nutrition, and golf coaching.</p>
+      <div id="rss-feeds">
+        <!-- FeedNami script or other article embeds go here -->
+      </div>
+      <ul style="margin-top: 1.5rem; line-height: 1.6; color: #ccc;">
+        <li><a href="articles-coaching.html" style="color:#09f; text-decoration:none;">Coaching &amp; Training</a></li>
+        <li><a href="articles-nutrition.html" style="color:#09f; text-decoration:none;">Nutrition &amp; Supplementation</a></li>
+        <li><a href="articles-health.html" style="color:#09f; text-decoration:none;">Health &amp; Wellness</a></li>
+        <li><a href="articles-industry.html" style="color:#09f; text-decoration:none;">Industry &amp; Equipment</a></li>
+      </ul>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
+  <!-- SITE FOOTER -->
+  <footer style="background: #000; color: #666; text-align: center; padding: 2rem 0;">
     © 2025 Defy Elite Athletics
   </footer>
 </body>
