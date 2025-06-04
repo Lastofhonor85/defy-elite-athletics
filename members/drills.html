@@ -1,82 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Drills</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css">
   <style>
-    #search {
-      margin: 20px;
-      padding: 8px;
-      width: 300px;
-      font-size: 16px;
-    }
-    table {
-      width: 95%;
-      margin: 0 auto;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 12px;
-      border: 1px solid #ccc;
-      text-align: left;
-    }
-    th {
-      background-color: #f4f4f4;
-    }
+    body { font-family: sans-serif; padding: 2rem; }
+    #search { padding: 0.5rem; width: 300px; font-size: 16px; margin-bottom: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 10px; }
+    th { background: #f0f0f0; }
   </style>
 </head>
 <body>
-  <h1 style="text-align: center;">Drills</h1>
-  <input type="text" id="search" placeholder="Search drills..." onkeyup="filterTable()" />
+  <h1>Drills</h1>
+  <input type="text" id="search" placeholder="Search..." onkeyup="filterTable()" />
   <table id="drillsTable">
     <thead>
-      <tr>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Tip Type</th>
-        <th>Difficulty</th>
-        <th>Description</th>
-      </tr>
+      <tr><th>Swing Fault</th><th>Drill Category</th><th>Example Drill</th></tr>
     </thead>
-    <tbody id="drillBody">
-      <!-- Rows will be injected here by JavaScript -->
+    <tbody>
+      <tr><td>Early Extension</td><td>Hip Depth & Posture Retention Drills</td><td>Wall Drill for Posture Retention</td></tr>
+      <tr><td>Casting / Early Release</td><td>Wrist Lag & Downswing Sequencing Drills</td><td>Pump Drill for Lag Creation</td></tr>
+      <tr><td>Over-the-Top</td><td>Shallowing & Path Correction Drills</td><td>Towel Under Arm Drill</td></tr>
+      <tr><td>Chicken Wing / Loss of Extension</td><td>Arm Extension & Rotation Drills</td><td>Swing with Glove Under Lead Arm</td></tr>
+      <tr><td>Reverse Pivot / Swaying</td><td>Weight Transfer & Centered Pivot Drills</td><td>Step-Through Drill</td></tr>
+      <tr><td>Scooping / Flipping</td><td>Impact Position & Shaft Lean Drills</td><td>Impact Bag Drill</td></tr>
     </tbody>
   </table>
 
   <script>
-    async function loadCSV() {
-      const response = await fetch('./data/drills.csv');
-      const data = await response.text();
-      const lines = data.trim().split('\\n');
-      const tbody = document.getElementById('drillBody');
-      tbody.innerHTML = '';
-
-      lines.forEach((line, index) => {
-        if (index === 0) return; // Skip header
-        const cols = line.split(',');
-        const row = document.createElement('tr');
-        cols.forEach(col => {
-          const td = document.createElement('td');
-          td.textContent = col;
-          row.appendChild(td);
-        });
-        tbody.appendChild(row);
-      });
-    }
-
     function filterTable() {
       const input = document.getElementById('search').value.toLowerCase();
       const rows = document.querySelectorAll('#drillsTable tbody tr');
       rows.forEach(row => {
-        const match = [...row.children].some(td =>
-          td.textContent.toLowerCase().includes(input)
-        );
-        row.style.display = match ? '' : 'none';
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(input) ? '' : 'none';
       });
     }
-
-    loadCSV();
   </script>
 </body>
 </html>
