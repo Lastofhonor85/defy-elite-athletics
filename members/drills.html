@@ -2,42 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Drills - Defy Elite Athletics</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drills | Defy Elite Athletics</title>
+  <link rel="stylesheet" href="../../styles.css" />
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    h1 {
-      text-align: center;
-      color: #09f;
-      margin-bottom: 1rem;
-    }
-    #search {
-      display: block;
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      margin-bottom: 1.5rem;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      background-color: #111;
+      margin-top: 1rem;
     }
     th, td {
-      padding: 1rem;
       border: 1px solid #444;
+      padding: 0.75rem;
       text-align: left;
     }
     th {
@@ -47,105 +28,73 @@
     tr:nth-child(even) {
       background-color: #1a1a1a;
     }
-    tr:hover {
-      background-color: #333;
-    }
-    @media screen and (max-width: 768px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-      th {
-        display: none;
-      }
-      td {
-        position: relative;
-        padding-left: 50%;
-        border: none;
-        border-bottom: 1px solid #444;
-      }
-      td::before {
-        position: absolute;
-        top: 0;
-        left: 1rem;
-        width: 45%;
-        padding-right: 1rem;
-        white-space: nowrap;
-        font-weight: bold;
-        color: #09f;
-      }
-      td:nth-of-type(1)::before { content: "Swing Fault"; }
-      td:nth-of-type(2)::before { content: "Drill Category"; }
-      td:nth-of-type(3)::before { content: "Example Drill"; }
+    #searchInput {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background-color: #222;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <!-- SITE HEADER -->
   <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
-    <a href="../index.html" style="text-decoration: none;">
-      <img
-        src="../assets/logo1.png"
-        alt="Defy Elite Athletics Logo"
-        class="logo"
-        style="max-width: 200px;"
-        loading="lazy"
-      />
+    <a href="../../index.html">
+      <img src="../../assets/logo1.png" alt="Defy Elite Athletics Logo" style="max-width: 200px;" />
     </a>
   </header>
 
-  <!-- NAVIGATION BAR -->
-  <nav class="main-nav" style="background-color: #111; padding: 0.75rem; text-align: center;">
-    <a href="../index.html" style="color: #09f; margin: 0 1rem; text-decoration: none; font-weight: bold;">Home</a>
-    <a href="../services.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Services</a>
-    <a href="../exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
-    <a href="drills.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Drills</a>
-    <a href="../nutrition.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Nutrition</a>
-    <a href="../resources.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Resources</a>
-    <a href="../members/login.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Members</a>
-  </nav>
-
-  <!-- MAIN CONTENT -->
-  <main class="container">
-    <h1>Drills</h1>
-    <input type="text" id="search" placeholder="Search drills..." onkeyup="filterTable()" />
-
-    <table id="drillsTable">
-      <thead>
-        <tr>
-          <th>Swing Fault</th>
-          <th>Drill Category</th>
-          <th>Example Drill</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Early Extension</td><td>Hip Depth &amp; Posture Retention Drills</td><td>Wall Drill for Posture Retention</td></tr>
-        <tr><td>Casting / Early Release</td><td>Wrist Lag &amp; Downswing Sequencing Drills</td><td>Pump Drill for Lag Creation</td></tr>
-        <tr><td>Over-the-Top</td><td>Shallowing &amp; Path Correction Drills</td><td>Towel Under Arm Drill</td></tr>
-        <tr><td>Chicken Wing / Loss of Extension</td><td>Arm Extension &amp; Rotation Drills</td><td>Swing with Glove Under Lead Arm</td></tr>
-        <tr><td>Reverse Pivot / Swaying</td><td>Weight Transfer &amp; Centered Pivot Drills</td><td>Step-Through Drill</td></tr>
-        <tr><td>Scooping / Flipping</td><td>Impact Position &amp; Shaft Lean Drills</td><td>Impact Bag Drill</td></tr>
-        <!-- Add more rows as needed -->
-      </tbody>
-    </table>
+  <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+    <h1 style="text-align: center; font-size: 2.5rem; color: #09f;">Drills</h1>
+    <input type="text" id="searchInput" placeholder="Search drills..." onkeyup="filterTable()" />
+    <div style="overflow-x: auto;">
+      <table id="drillsTable">
+        <thead>
+          <tr>
+            <th>Swing Fault</th>
+            <th>Drill Category</th>
+            <th>Example Drill</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </main>
 
-  <!-- SITE FOOTER -->
-  <footer class="site-footer" style="background: #000; color: #666; text-align: center; padding: 2rem 0;">
-    © 2025 Defy Elite Athletics | 
-    <a href="../privacy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
-  </footer>
-
   <script>
-    function filterTable() {
-      const input = document.getElementById("search").value.toLowerCase();
-      const rows = document.querySelectorAll("#drillsTable tbody tr");
+    async function loadDrills() {
+      const response = await fetch('../data/drills.csv');
+      const data = await response.text();
+      const rows = data.split('\n').slice(1); // skip header
+      const tbody = document.querySelector('#drillsTable tbody');
+
       rows.forEach(row => {
-        const match = [...row.cells].some(cell =>
-          cell.textContent.toLowerCase().includes(input)
-        );
-        row.style.display = match ? "" : "none";
+        const cols = row.split(',');
+        if (cols.length >= 3) {
+          const tr = document.createElement('tr');
+          cols.slice(0, 3).forEach(col => {
+            const td = document.createElement('td');
+            td.textContent = col.trim();
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        }
       });
     }
+
+    function filterTable() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const rows = document.querySelectorAll('#drillsTable tbody tr');
+      rows.forEach(row => {
+        const match = [...row.children].some(td => td.textContent.toLowerCase().includes(query));
+        row.style.display = match ? '' : 'none';
+      });
+    }
+
+    loadDrills();
   </script>
 </body>
 </html>
