@@ -5,37 +5,103 @@
   <title>Drills</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
-    body { font-family: sans-serif; padding: 2rem; }
-    #search { padding: 0.5rem; width: 300px; font-size: 16px; margin-bottom: 20px; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 10px; }
-    th { background: #f0f0f0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+      background: #fff;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    #search {
+      display: block;
+      margin: 0 auto 20px auto;
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+    @media screen and (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr {
+        margin: 0 0 1rem 0;
+      }
+      td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+      }
+      td::before {
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+      td:nth-of-type(1)::before { content: "Swing Fault"; }
+      td:nth-of-type(2)::before { content: "Drill Category"; }
+      td:nth-of-type(3)::before { content: "Example Drill"; }
+    }
   </style>
 </head>
 <body>
   <h1>Drills</h1>
   <input type="text" id="search" placeholder="Search..." onkeyup="filterTable()" />
+
   <table id="drillsTable">
     <thead>
-      <tr><th>Swing Fault</th><th>Drill Category</th><th>Example Drill</th></tr>
+      <tr>
+        <th>Swing Fault</th>
+        <th>Drill Category</th>
+        <th>Example Drill</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td>Early Extension</td><td>Hip Depth & Posture Retention Drills</td><td>Wall Drill for Posture Retention</td></tr>
-      <tr><td>Casting / Early Release</td><td>Wrist Lag & Downswing Sequencing Drills</td><td>Pump Drill for Lag Creation</td></tr>
-      <tr><td>Over-the-Top</td><td>Shallowing & Path Correction Drills</td><td>Towel Under Arm Drill</td></tr>
-      <tr><td>Chicken Wing / Loss of Extension</td><td>Arm Extension & Rotation Drills</td><td>Swing with Glove Under Lead Arm</td></tr>
-      <tr><td>Reverse Pivot / Swaying</td><td>Weight Transfer & Centered Pivot Drills</td><td>Step-Through Drill</td></tr>
-      <tr><td>Scooping / Flipping</td><td>Impact Position & Shaft Lean Drills</td><td>Impact Bag Drill</td></tr>
+      <tr><td>Early Extension</td><td>Hip Depth &amp; Posture Retention Drills</td><td>Wall Drill for Posture Retention</td></tr>
+      <tr><td>Casting / Early Release</td><td>Wrist Lag &amp; Downswing Sequencing Drills</td><td>Pump Drill for Lag Creation</td></tr>
+      <tr><td>Over-the-Top</td><td>Shallowing &amp; Path Correction Drills</td><td>Towel Under Arm Drill</td></tr>
+      <tr><td>Chicken Wing / Loss of Extension</td><td>Arm Extension &amp; Rotation Drills</td><td>Swing with Glove Under Lead Arm</td></tr>
+      <tr><td>Reverse Pivot / Swaying</td><td>Weight Transfer &amp; Centered Pivot Drills</td><td>Step-Through Drill</td></tr>
+      <tr><td>Scooping / Flipping</td><td>Impact Position &amp; Shaft Lean Drills</td><td>Impact Bag Drill</td></tr>
     </tbody>
   </table>
 
   <script>
     function filterTable() {
-      const input = document.getElementById('search').value.toLowerCase();
-      const rows = document.querySelectorAll('#drillsTable tbody tr');
+      const input = document.getElementById("search").value.toLowerCase();
+      const rows = document.querySelectorAll("#drillsTable tbody tr");
       rows.forEach(row => {
-        const text = row.innerText.toLowerCase();
-        row.style.display = text.includes(input) ? '' : 'none';
+        const match = [...row.cells].some(cell =>
+          cell.textContent.toLowerCase().includes(input)
+        );
+        row.style.display = match ? "" : "none";
       });
     }
   </script>
