@@ -1,100 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drills | Defy Elite Athletics</title>
-  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../../styles.css">
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #111;
       color: #eee;
+      padding: 20px;
+    }
+    h1 {
+      color: #09f;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border: 1px solid #444;
+      border-radius: 5px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
+      background-color: #222;
     }
     th, td {
       border: 1px solid #444;
-      padding: 0.75rem;
+      padding: 12px;
       text-align: left;
     }
     th {
-      background-color: #222;
+      background-color: #333;
       color: #09f;
     }
-    tr:nth-child(even) {
-      background-color: #1a1a1a;
-    }
-    #searchInput {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      border: 1px solid #333;
-      border-radius: 5px;
-      background-color: #222;
-      color: #fff;
+    tr:hover {
+      background-color: #333;
     }
   </style>
 </head>
 <body>
-  <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
-    <a href="../../index.html">
-      <img src="../../assets/logo1.png" alt="Defy Elite Athletics Logo" style="max-width: 200px;" />
-    </a>
-  </header>
-
-  <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
-    <h1 style="text-align: center; font-size: 2.5rem; color: #09f;">Drills</h1>
-    <input type="text" id="searchInput" placeholder="Search drills..." onkeyup="filterTable()" />
-    <div style="overflow-x: auto;">
-      <table id="drillsTable">
-        <thead>
-          <tr>
-            <th>Swing Fault</th>
-            <th>Drill Category</th>
-            <th>Example Drill</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </main>
+  <h1>Drills</h1>
+  <input type="text" id="search" placeholder="Search...">
+  <table id="drillTable">
+    <thead>
+      <tr>
+        <th>Swing Fault</th>
+        <th>Drill Category</th>
+        <th>Example Drill</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 
   <script>
-    async function loadDrills() {
-      const response = await fetch('../data/drills.csv');
-      const data = await response.text();
-      const rows = data.split('\n').slice(1); // skip header
-      const tbody = document.querySelector('#drillsTable tbody');
-
-      rows.forEach(row => {
-        const cols = row.split(',');
-        if (cols.length >= 3) {
-          const tr = document.createElement('tr');
-          cols.slice(0, 3).forEach(col => {
-            const td = document.createElement('td');
-            td.textContent = col.trim();
-            tr.appendChild(td);
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("data/drills.csv")
+        .then((response) => response.text())
+        .then((text) => {
+          const lines = text.trim().split("\n");
+          const tbody = document.querySelector("#drillTable tbody");
+          lines.slice(1).forEach(line => {
+            const cols = line.split(',').map(col => col.trim());
+            const tr = document.createElement("tr");
+            cols.forEach(col => {
+              const td = document.createElement("td");
+              td.textContent = col;
+              tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
           });
-          tbody.appendChild(tr);
-        }
-      });
-    }
+        });
 
-    function filterTable() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      const rows = document.querySelectorAll('#drillsTable tbody tr');
-      rows.forEach(row => {
-        const match = [...row.children].some(td => td.textContent.toLowerCase().includes(query));
-        row.style.display = match ? '' : 'none';
+      document.getElementById("search").addEventListener("keyup", function () {
+        const filter = this.value.toLowerCase();
+        const rows = document.querySelectorAll("#drillTable tbody tr");
+        rows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          row.style.display = text.includes(filter) ? "" : "none";
+        });
       });
-    }
-
-    loadDrills();
+    });
   </script>
 </body>
 </html>
