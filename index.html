@@ -1,3 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="dark">
+  <!-- SITE HEADER -->
+  <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
+    <a href="index.html" style="text-decoration: none;">
+      <!-- Make sure this matches your actual file in assets/ (PNG vs. WEBP) -->
+      <img
+        src="assets/logo1.png"
+        alt="Defy Elite Athletics Logo"
+        class="logo"
+        style="max-width: 200px;"
+        loading="lazy"
+      />
+    </a>
+  </header>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="main-nav" style="background-color: #111; padding: 0.75rem; text-align: center;">
+    <a href="index.html" style="color: #09f; margin: 0 1rem; text-decoration: none; font-weight: bold;">
+      Home
+    </a>
+    <a href="#about-me" style="color: #fff; margin: 0 1rem; text-decoration: none;">About Me</a>
+    <a href="services.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Services</a>
+    <a href="exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
+    <a href="drills.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Drills</a>
+    <a href="nutrition.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Nutrition</a>
+    <a href="resources.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Resources</a>
+    <!-- Members now correctly points to the login page -->
+    <a href="members/login.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Members</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+
+    <!-- HERO SECTION -->
+    <section id="hero" style="text-align: center; margin-bottom: 3rem;">
+      <h1 style="font-size: 2.5rem; color: #09f; margin-bottom: 1rem;">
+        Welcome to Defy Elite Athletics
+      </h1>
+      <p style="font-size: 1.125rem; color: #ddd;">
+        Transforming competitive golfers and performance athletes through science-backed training,
+        precise analysis, and quality coaching.
+      </p>
+
 <!-- PROMOTIONAL VIDEOS SECTION -->
 <section id="promo-videos" style="margin: 2rem auto; display: flex; flex-direction: column; gap: 2rem; align-items: center;">
   
@@ -14,3 +66,128 @@
   </video>
 
 </section>
+
+
+      
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about-me" style="display: flex; align-items: flex-start; margin-bottom: 3rem;">
+      <!-- Left column: Profile Picture -->
+      <div style="flex: 0 0 150px; margin-right: 1rem;">
+        <!-- Make sure you have uploaded "profile.webp" into assets/ -->
+        <img
+          src="assets/profile.webp"
+          alt="Steven Edward Kittinger Jr."
+          style="width: 150px; border-radius: 50%; border: 3px solid #444;"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Right column: Bio Text -->
+      <div style="flex: 1; color: #eee;">
+        <h2 style="font-size: 1.75rem; color: #09f; margin-bottom: 0.5rem;">About Me</h2>
+        <p style="line-height: 1.6;">
+          I’m <strong>Steven Edward Kittinger Jr.</strong>, an ACSM‐certified personal trainer with a
+          Bachelor’s in Sports &amp; Recreation Sciences. I’ve coached a broad spectrum of clients—from
+          family members (my niece and sister‐in‐law) to military personnel on an Army installation—
+          and have experience in both commercial gyms and youth recreation. Early in my career, I served
+          as Athletic Director for the Boys &amp; Girls Clubs of SWC and oversaw recreation programs for the
+          U.S. Army.
+        </p>
+        <p style="line-height: 1.6;">
+          From age three, I’ve been involved in organized sports—basketball, baseball, soccer, and football
+          —and eventually went on to coach and referee youth teams in all of them. Watching my girls thrive
+          in competitive junior golf under my mentorship inspired me to create Defy Elite Athletics and share
+          my expertise with a broader audience.
+
+        </p>
+        <p style="line-height: 1.6;">
+          Whether you’re an elite golfer seeking lower handicaps or someone pursuing better overall
+          fitness, I combine hands‐on coaching with science‐driven programming to help you defy limits
+          and reach your personal best.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" style="margin-bottom: 3rem; color: #eee;">
+      <h2 style="font-size: 1.75rem; color: #09f; margin-bottom: 0.5rem;">Services</h2>
+      <ul style="list-style: disc inside; line-height: 1.6;">
+        <li>
+          <strong>One‐on‐One Live Golf Coaching:</strong> Personalized in‐person swing analysis and
+          short‐game instruction to sharpen your on‐course skill.
+        </li>
+        <li>
+          <strong>Remote Golf Coaching:</strong> Weekly digital lessons, video‐based swing breakdowns,
+          and online check‐ins to keep you progressing no matter where you train.
+        </li>
+        <li>
+          <strong>3-/6-/9‐Month Periodization Plans:</strong> Structured, long‐term training cycles
+          designed to peak your performance at key tournaments or seasons.
+        </li>
+        <li>
+          <strong>Full Swing Analysis Package:</strong> In‐depth video analysis, TrackMan session data,
+          instructional drills, and a custom 4‐week practice plan to optimize your launch and ball flight.
+        </li>
+        <li>
+          <strong>Nutritional Counseling:</strong> Sport‐specific meal planning, supplementation guidance,
+          and performance‐fuel strategies to help you train and recover smarter.
+        </li>
+        <li>
+          <strong>Membership Access:</strong> Unlimited entry to our Members Portal for:
+          <ul style="list-style: circle inside; margin: 0.5rem 0 0 1.5rem;">
+            <li>Cutting‐edge articles &amp; industry news feeds</li>
+            <li>Performance tools &amp; trackers (PDFs, spreadsheets, calculators)</li>
+            <li>Complete exercise &amp; drills library (videos + step‐by‐step guides)</li>
+            <li>Preferred pricing on golf‐performance products</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- QUICK LINKS SECTION -->
+    <section id="quick-links" style="margin-bottom: 3rem; color: #eee;">
+      <h2 style="font-size: 1.75rem; color: #09f; margin-bottom: 0.5rem;">Quick Links</h2>
+      <ul class="articles-list" style="list-style: none; padding: 0; line-height: 1.8;">
+        <li><a href="about.html" style="color: #09f; text-decoration: none;">About Me (Full Bio)</a></li>
+        <li><a href="services.html" style="color: #09f; text-decoration: none;">Services &amp; Pricing</a></li>
+        <li><a href="exercises.html" style="color: #09f; text-decoration: none;">Exercise Library</a></li>
+        <li><a href="drills.html" style="color: #09f; text-decoration: none;">Drills Library</a></li>
+        <li><a href="nutrition.html" style="color: #09f; text-decoration: none;">Nutrition Resources</a></li>
+        <li><a href="resources.html" style="color: #09f; text-decoration: none;">Performance Resources</a></li>
+        <li><a href="members/login.html" style="color: #09f; text-decoration: none;">Members Portal</a></li>
+      </ul>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" style="margin-bottom: 3rem; color: #eee;">
+      <h2 style="font-size: 1.75rem; color: #09f; margin-bottom: 0.5rem;">What Clients Are Saying</h2>
+
+      <!-- Single testimonial as requested -->
+      <div style="display: flex; align-items: flex-start; margin-bottom: 2rem;">
+        <div style="flex: 0 0 80px; margin-right: 1rem;">
+          <!-- Make sure this file lives in assets/ exactly as named -->
+          <img
+            src="assets/1517524437836.jpg"
+            alt="Client Testimonial Photo"
+            style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #444;"
+            loading="lazy"
+          />
+        </div>
+        <blockquote style="flex: 1; border-left: 4px solid #444; padding-left: 1rem; color: #ccc; margin: 0;">
+          “Went above and beyond, that’s all I have to say—great info, clear explanation, and drills with in-depth analysis.”
+          <br /><br />
+          <em style="color: #999;">— <strong>Darkou Zelac</strong></em>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" style="background: #000; color: #666; text-align: center; padding: 2rem 0;">
+    © 2025 Defy Elite Athletics | 
+    <a href="privacy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
+  </footer>
+</body>
+</html>
