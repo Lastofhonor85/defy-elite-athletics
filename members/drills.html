@@ -1,69 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Drills</title>
-  <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drills - Defy Elite Athletics</title>
+  <link rel="stylesheet" href="../styles.css" />
   <style>
     body {
+      background-color: #000;
+      color: #fff;
       font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
-      background: #fff;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
     }
     h1 {
       text-align: center;
-      font-size: 2.2rem;
+      color: #09f;
       margin-bottom: 1rem;
     }
     #search {
       display: block;
-      margin: 0 auto 20px auto;
-      padding: 10px;
-      width: 300px;
-      font-size: 16px;
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      border-radius: 8px;
+      margin-bottom: 1.5rem;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 10px;
+      background-color: #111;
     }
     th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
+      padding: 1rem;
+      border: 1px solid #444;
       text-align: left;
     }
     th {
-      background-color: #f2f2f2;
-      font-weight: bold;
+      background-color: #222;
+      color: #09f;
     }
     tr:nth-child(even) {
-      background-color: #fafafa;
+      background-color: #1a1a1a;
+    }
+    tr:hover {
+      background-color: #333;
     }
     @media screen and (max-width: 768px) {
       table, thead, tbody, th, td, tr {
         display: block;
       }
       th {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-      }
-      tr {
-        margin: 0 0 1rem 0;
+        display: none;
       }
       td {
-        border: none;
         position: relative;
         padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #444;
       }
       td::before {
         position: absolute;
-        left: 10px;
-        top: 12px;
+        top: 0;
+        left: 1rem;
+        width: 45%;
+        padding-right: 1rem;
         white-space: nowrap;
         font-weight: bold;
+        color: #09f;
       }
       td:nth-of-type(1)::before { content: "Swing Fault"; }
       td:nth-of-type(2)::before { content: "Drill Category"; }
@@ -72,26 +80,60 @@
   </style>
 </head>
 <body>
-  <h1>Drills</h1>
-  <input type="text" id="search" placeholder="Search..." onkeyup="filterTable()" />
+  <!-- SITE HEADER -->
+  <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
+    <a href="../index.html" style="text-decoration: none;">
+      <img
+        src="../assets/logo1.png"
+        alt="Defy Elite Athletics Logo"
+        class="logo"
+        style="max-width: 200px;"
+        loading="lazy"
+      />
+    </a>
+  </header>
 
-  <table id="drillsTable">
-    <thead>
-      <tr>
-        <th>Swing Fault</th>
-        <th>Drill Category</th>
-        <th>Example Drill</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Early Extension</td><td>Hip Depth &amp; Posture Retention Drills</td><td>Wall Drill for Posture Retention</td></tr>
-      <tr><td>Casting / Early Release</td><td>Wrist Lag &amp; Downswing Sequencing Drills</td><td>Pump Drill for Lag Creation</td></tr>
-      <tr><td>Over-the-Top</td><td>Shallowing &amp; Path Correction Drills</td><td>Towel Under Arm Drill</td></tr>
-      <tr><td>Chicken Wing / Loss of Extension</td><td>Arm Extension &amp; Rotation Drills</td><td>Swing with Glove Under Lead Arm</td></tr>
-      <tr><td>Reverse Pivot / Swaying</td><td>Weight Transfer &amp; Centered Pivot Drills</td><td>Step-Through Drill</td></tr>
-      <tr><td>Scooping / Flipping</td><td>Impact Position &amp; Shaft Lean Drills</td><td>Impact Bag Drill</td></tr>
-    </tbody>
-  </table>
+  <!-- NAVIGATION BAR -->
+  <nav class="main-nav" style="background-color: #111; padding: 0.75rem; text-align: center;">
+    <a href="../index.html" style="color: #09f; margin: 0 1rem; text-decoration: none; font-weight: bold;">Home</a>
+    <a href="../services.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Services</a>
+    <a href="../exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
+    <a href="drills.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Drills</a>
+    <a href="../nutrition.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Nutrition</a>
+    <a href="../resources.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Resources</a>
+    <a href="../members/login.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Members</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <h1>Drills</h1>
+    <input type="text" id="search" placeholder="Search drills..." onkeyup="filterTable()" />
+
+    <table id="drillsTable">
+      <thead>
+        <tr>
+          <th>Swing Fault</th>
+          <th>Drill Category</th>
+          <th>Example Drill</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Early Extension</td><td>Hip Depth &amp; Posture Retention Drills</td><td>Wall Drill for Posture Retention</td></tr>
+        <tr><td>Casting / Early Release</td><td>Wrist Lag &amp; Downswing Sequencing Drills</td><td>Pump Drill for Lag Creation</td></tr>
+        <tr><td>Over-the-Top</td><td>Shallowing &amp; Path Correction Drills</td><td>Towel Under Arm Drill</td></tr>
+        <tr><td>Chicken Wing / Loss of Extension</td><td>Arm Extension &amp; Rotation Drills</td><td>Swing with Glove Under Lead Arm</td></tr>
+        <tr><td>Reverse Pivot / Swaying</td><td>Weight Transfer &amp; Centered Pivot Drills</td><td>Step-Through Drill</td></tr>
+        <tr><td>Scooping / Flipping</td><td>Impact Position &amp; Shaft Lean Drills</td><td>Impact Bag Drill</td></tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" style="background: #000; color: #666; text-align: center; padding: 2rem 0;">
+    © 2025 Defy Elite Athletics | 
+    <a href="../privacy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
+  </footer>
 
   <script>
     function filterTable() {
