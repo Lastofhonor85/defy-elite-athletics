@@ -40,6 +40,29 @@
   <!-- MAIN CONTENT -->
   <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
 
+    <!-- VIDEO GALLERY SECTION -->
+<section id="gallery" style="padding: 3rem 1rem; background-color: #000; color: #fff;">
+  <h2 style="text-align: center; font-size: 2rem; color: #09f; margin-bottom: 2rem;">Video Gallery</h2>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
+    <!-- Thumbnail 1 -->
+    <div style="cursor: pointer;" onclick="openModal('RPQnk3PX0Rc')">
+      <img src="https://img.youtube.com/vi/RPQnk3PX0Rc/hqdefault.jpg" alt="Video 1" style="width: 360px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);" />
+    </div>
+
+    <!-- Thumbnail 2 -->
+    <div style="cursor: pointer;" onclick="openModal('XL-jmAoqIvo')">
+      <img src="https://img.youtube.com/vi/XL-jmAoqIvo/hqdefault.jpg" alt="Video 2" style="width: 360px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);" />
+    </div>
+
+    <!-- Add more videos here -->
+    <div style="cursor: pointer;" onclick="openModal('hL_XMJGKd7M')">
+      <img src="https://img.youtube.com/vi/hL_XMJGKd7M/hqdefault.jpg" alt="Video 3" style="width: 360px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);" />
+    </div>
+  </div>
+</section>
+
+
     <!-- HERO SECTION -->
     <section id="hero" style="text-align: center; margin-bottom: 3rem;">
       <h1 style="font-size: 2.5rem; color: #09f; margin-bottom: 1rem;">
@@ -50,30 +73,8 @@
         precise analysis, and quality coaching.
       </p>
 
-<!-- EMBEDDED SHORTS SECTION -->
-<div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 2rem; padding: 2rem; background: #000;">
 
-  <!-- Video 1 -->
-  <iframe 
-    width="360" height="640"
-    src="https://www.youtube.com/embed/RPQnk3PX0Rc?autoplay=1&mute=1&loop=1&playlist=RPQnk3PX0Rc&controls=0&modestbranding=1&rel=0&playsinline=1"
-    title="Defy Elite Promo 1" 
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-    style="border-radius: 12px; box-shadow: 0 0 20px rgba(0, 153, 255, 0.3); background: #111;">
-  </iframe>
-
-  <!-- Video 2 -->
-  <iframe 
-    width="360" height="640"
-    src="https://www.youtube.com/embed/XL-jmAoqIvo?autoplay=1&mute=1&loop=1&playlist=XL-jmAoqIvo&controls=0&modestbranding=1&rel=0&playsinline=1"
-    title="Defy Elite Promo 2" 
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-    style="border-radius: 12px; box-shadow: 0 0 20px rgba(0, 153, 255, 0.3); background: #111;">
-  </iframe>
+ 
 
 </div>
 
@@ -191,23 +192,7 @@
           <em style="color: #999;">— <strong>Darkou Zelac</strong></em>
         </blockquote>
       </div>
-    </section>
-<!-- VIDEO GALLERY SECTION -->
-<section id="gallery" style="padding: 3rem 1rem; background-color: #000; color: #fff;">
-  <h2 style="text-align: center; font-size: 2rem; color: #09f; margin-bottom: 2rem;">Video Gallery</h2>
-
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
-    <!-- Thumbnail 1 -->
-    <div style="cursor: pointer;" onclick="openModal('RPQnk3PX0Rc')">
-      <img src="https://img.youtube.com/vi/RPQnk3PX0Rc/hqdefault.jpg" alt="Video 1" style="width: 360px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);" />
-    </div>
-
-    <!-- Thumbnail 2 -->
-    <div style="cursor: pointer;" onclick="openModal('XL-jmAoqIvo')">
-      <img src="https://img.youtube.com/vi/XL-jmAoqIvo/hqdefault.jpg" alt="Video 2" style="width: 360px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);" />
-    </div>
-  </div>
-</section>
+  
 
 <!-- VIDEO MODAL -->
 <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000;">
@@ -241,5 +226,29 @@
     © 2025 Defy Elite Athletics | 
     <a href="privacy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
   </footer>
+  <!-- VIDEO MODAL -->
+<div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000;">
+  <div style="position: relative; max-width: 90%; max-height: 90%;">
+    <iframe id="modalVideo" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <button onclick="closeModal()" style="position: absolute; top: -40px; right: 0; background: #09f; color: #000; padding: 10px 15px; border: none; font-size: 1rem; cursor: pointer; border-radius: 6px;">Close</button>
+  </div>
+</div>
+
+<script>
+  function openModal(videoId) {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('modalVideo');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0`;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('modalVideo');
+    iframe.src = '';
+    modal.style.display = 'none';
+  }
+</script>
+
 </body>
 </html>
