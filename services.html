@@ -6,54 +6,124 @@
   <title>Services – Defy Elite Athletics</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+    body {
+      background-color: #000;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #000;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 200px;
+    }
+
+    nav {
+      background: #111;
+      text-align: center;
+      padding: 0.75rem;
+    }
+
+    nav a {
+      color: #09f;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+      color: #09f;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: #111;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+    }
+
+    .service-card h2 {
+      margin-top: 0.75rem;
+      font-size: 1.1rem;
+      color: #09f;
+    }
+
     .service-logo-btn {
       border: none;
       background: none;
       cursor: pointer;
-      outline: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-      display: block;
-      margin: 0 auto 12px;
-      border-radius: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      padding: 10px;
-      text-align: center;
+      display: inline-block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 12px;
+      padding: 0.5rem;
     }
+
     .service-logo-btn:hover {
-      transform: scale(1.06);
-      box-shadow: 0 6px 24px rgba(30, 144, 255, 0.22);
-      background: #1e222a;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 153, 255, 0.4);
+      background-color: #1a1a1a;
     }
+
     .service-logo {
       width: 100px;
       display: block;
-      margin: 0 auto;
+      margin: auto;
     }
-    .service-card h2 {
-      margin-bottom: 0.5em;
-      margin-top: 0.2em;
+
+    footer {
+      background: #000;
+      color: #666;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 2rem;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
+    <img src="assets/logo.png" alt="Defy Elite Athletics Logo">
   </header>
+
   <nav>
-  <a href="index.html">Home</a>
-  <a href="drills.html">Drills Library</a>
-  <a href="exercises.html">Exercises Library</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
-  <a href="members/login.html">Members</a>
-</nav>
+    <a href="index.html">Home</a>
+    <a href="drills.html">Drills Library</a>
+    <a href="exercises.html">Exercises Library</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="members/login.html">Members</a>
+  </nav>
 
   <section class="hero">
     <h1>Our Services</h1>
     <p>Select a service to continue to payment.</p>
   </section>
-  <section id="services-list" class="services-grid">
 
+  <section id="services-list" class="services-grid">
+    <!-- Repeatable service card blocks -->
     <div class="service-card">
       <a href="pay-live-golf.html" class="service-logo-btn" title="Pay for Live Golf Coaching">
         <img src="assets/live-golf.png" alt="Live Golf Coaching" class="service-logo" />
@@ -83,10 +153,10 @@
     </div>
 
     <div class="service-card">
-      <a href="pay-nutrition.html" class="service-logo-btn" title="Pay for Nutritional Counseling (Remote)">
-        <img src="assets/nutrition.png" alt="Nutritional Counseling (Remote)" class="service-logo" />
+      <a href="pay-nutrition.html" class="service-logo-btn" title="Pay for Nutritional Counseling">
+        <img src="assets/nutrition.png" alt="Nutritional Counseling" class="service-logo" />
       </a>
-      <h2>Nutritional Counseling (Remote)</h2>
+      <h2>Nutritional Counseling</h2>
     </div>
 
     <div class="service-card">
@@ -131,6 +201,9 @@
       <h2>Swing Analysis + Video</h2>
     </div>
   </section>
-  <footer>&copy; 2025 Defy Elite Athletics</footer>
+
+  <footer>
+    &copy; 2025 Defy Elite Athletics
+  </footer>
 </body>
 </html>
