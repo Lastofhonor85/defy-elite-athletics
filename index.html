@@ -7,251 +7,100 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="dark">
+<body class="dark" style="margin: 0; background: #000; color: #fff; font-family: Arial, sans-serif;">
   <!-- SITE HEADER -->
-  <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
-    <a href="index.html" style="text-decoration: none;">
-      <!-- Make sure this matches your actual file in assets/ (PNG vs. WEBP) -->
-      <img
-        src="assets/logo1.png"
-        alt="Defy Elite Athletics Logo"
-        class="logo"
-        style="max-width: 200px;"
-        loading="lazy"
-      />
+  <header style="background-color: #000; padding: 1rem; text-align: center;">
+    <a href="index.html">
+      <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" style="max-width: 200px;" loading="lazy" />
     </a>
   </header>
 
-  <!-- NAVIGATION BAR -->
-  <nav class="main-nav" style="background-color: #111; padding: 0.75rem; text-align: center;">
-    <a href="index.html" style="color: #09f; margin: 0 1rem; text-decoration: none; font-weight: bold;">
-      Home
-    </a>
+  <!-- NAVIGATION -->
+  <nav style="background-color: #111; text-align: center; padding: 0.75rem;">
+    <a href="index.html" style="color: #09f; margin: 0 1rem; font-weight: bold; text-decoration: none;">Home</a>
     <a href="#about-me" style="color: #fff; margin: 0 1rem; text-decoration: none;">About Me</a>
     <a href="services.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Services</a>
     <a href="exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
     <a href="drills.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Drills</a>
     <a href="nutrition.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Nutrition</a>
     <a href="resources.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Resources</a>
-    <!-- Members now correctly points to the login page -->
     <a href="members/login.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Members</a>
   </nav>
 
-  <!-- MAIN CONTENT -->
-  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+  <!-- HERO -->
+  <section style="text-align: center; padding: 2rem 1rem;">
+    <h1 style="color: #09f; font-size: 2.5rem;">Welcome to Defy Elite Athletics</h1>
+    <p style="font-size: 1.125rem; color: #ccc;">Transforming competitive golfers and performance athletes through science-backed training, precise analysis, and quality coaching.</p>
+  </section>
 
-    <!-- VIDEO GALLERY SECTION -->
-<section id="gallery" style="padding: 3rem 1rem; background-color: #000; color: #fff;">
-  <h2 style="text-align: center; font-size: 2rem; color: #09f; margin-bottom: 2rem;">Video Gallery</h2>
+  <!-- THREE COLUMN LAYOUT -->
+  <section style="display: flex; flex-wrap: wrap; justify-content: space-around; padding: 2rem 1rem; gap: 2rem;">
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
-    <!-- Thumbnail 1 -->
-    <div style="cursor: pointer;" onclick="openModal('RPQnk3PX0Rc')">
-      <img src="https://img.youtube.com/vi/RPQnk3PX0Rc/hqdefault.jpg" alt="Video 1" style="width: 360px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);" />
-    </div>
-
-    <!-- Thumbnail 2 -->
-    <div style="cursor: pointer;" onclick="openModal('XL-jmAoqIvo')">
-      <img src="https://img.youtube.com/vi/XL-jmAoqIvo/hqdefault.jpg" alt="Video 2" style="width: 360px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);" />
-    </div>
-
-   <!-- Thumbnail 5 -->
-<div style="cursor: pointer;" onclick="openModal('6kroDI68cfQ')">
-  <img src="https://img.youtube.com/vi/6kroDI68cfQ/hqdefault.jpg" alt="Video 5" style="width: 360px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);" />
-</div>
-
-<!-- Thumbnail 6 -->
-<div style="cursor: pointer;" onclick="openModal('C525lXReLTA')">
-  <img src="https://img.youtube.com/vi/C525lXReLTA/hqdefault.jpg" alt="Video 6" style="width: 360px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);" />
-</div>
-
-</section>
-
-
-    <!-- HERO SECTION -->
-    <section id="hero" style="text-align: center; margin-bottom: 3rem;">
-      <h1 style="font-size: 2.5rem; color: #09f; margin-bottom: 1rem;">
-        Welcome to Defy Elite Athletics
-      </h1>
-      <p style="font-size: 1.125rem; color: #ddd;">
-        Transforming competitive golfers and performance athletes through science-backed training,
-        precise analysis, and quality coaching.
+    <!-- ABOUT ME -->
+    <div style="flex: 1 1 280px; max-width: 350px;">
+      <img src="assets/profile.webp" alt="Steven Edward Kittinger Jr." style="width: 150px; border-radius: 50%; border: 3px solid #444; margin-bottom: 1rem;" loading="lazy" />
+      <h2 style="color: #09f; font-size: 1.5rem;">About Me</h2>
+      <p style="line-height: 1.6; color: #eee;">
+        I’m <strong>Steven Edward Kittinger Jr.</strong>, an ACSM‐certified personal trainer with a degree in Sports &amp; Recreation Sciences. I’ve coached a broad range of clients—from youth athletes to military personnel—and launched Defy Elite Athletics to deliver science-backed training to high-performance athletes.
       </p>
-
-
- 
-
-</div>
-
-
-
-
-
-    <!-- ABOUT ME SECTION -->
-    <section id="about-me" style="display: flex; align-items: flex-start; margin-bottom: 3rem;">
-      <!-- Left column: Profile Picture -->
-      <div style="flex: 0 0 150px; margin-right: 1rem;">
-        <!-- Make sure you have uploaded "profile.webp" into assets/ -->
-        <img
-          src="assets/profile.webp"
-          alt="Steven Edward Kittinger Jr."
-          style="width: 150px; border-radius: 50%; border: 3px solid #444;"
-          loading="lazy"
-        />
-      </div>
-
-      <!-- Right column: Bio Text -->
-      <div style="flex: 1; color: #eee;">
-        <h2 style="font-size: 1.75rem; color: #09f; margin-bottom: 0.5rem;">About Me</h2>
-        <p style="line-height: 1.6;">
-          I’m <strong>Steven Edward Kittinger Jr.</strong>, an ACSM‐certified personal trainer with a
-          Bachelor’s in Sports &amp; Recreation Sciences. I’ve coached a broad spectrum of clients—from
-          family members (my niece and sister‐in‐law) to military personnel on an Army installation—
-          and have experience in both commercial gyms and youth recreation. Early in my career, I served
-          as Athletic Director for the Boys &amp; Girls Clubs of SWC and oversaw recreation programs for the
-          U.S. Army.
-        </p>
-        <p style="line-height: 1.6;">
-          From age three, I’ve been involved in organized sports—basketball, baseball, soccer, and football
-          —and eventually went on to coach and referee youth teams in all of them. Watching my girls thrive
-          in competitive junior golf under my mentorship inspired me to create Defy Elite Athletics and share
-          my expertise with a broader audience.
-
-        </p>
-        <p style="line-height: 1.6;">
-          Whether you’re an elite golfer seeking lower handicaps or someone pursuing better overall
-          fitness, I combine hands‐on coaching with science‐driven programming to help you defy limits
-          and reach your personal best.
-        </p>
-      </div>
- <!-- SERVICES SECTION -->
-<section id="services" style="padding: 3rem 1rem; background-color: #0a0a0a; color: #fff; border-top: 1px solid #222;">
-  <h2 style="font-size: 2rem; color: #09f; text-align: left; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;">💼 Our Services</h2>
-
-  <div style="max-width: 900px; margin: 0 auto; display: grid; gap: 2rem; text-align: left;">
-    
-    <div style="background: #111; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-      <h3 style="color: #09f; margin-bottom: 0.5rem;">🏌️ One‐on‐One Live Golf Coaching</h3>
-      <p style="line-height: 1.6;">Personalized in‐person swing analysis and short‐game instruction to sharpen your on‐course skill.</p>
     </div>
 
-    <div style="background: #111; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-      <h3 style="color: #09f; margin-bottom: 0.5rem;">📹 Remote Golf Coaching</h3>
-      <p style="line-height: 1.6;">Weekly digital lessons, video‐based swing breakdowns, and online check‐ins to keep you progressing no matter where you train.</p>
-    </div>
-
-    <div style="background: #111; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-      <h3 style="color: #09f; margin-bottom: 0.5rem;">📅 Periodization Plans (3-/6-/9‐Month)</h3>
-      <p style="line-height: 1.6;">Structured, long‐term training cycles designed to peak your performance at key tournaments or seasons.</p>
-    </div>
-
-    <div style="background: #111; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-      <h3 style="color: #09f; margin-bottom: 0.5rem;">📊 Full Swing Analysis Package</h3>
-      <p style="line-height: 1.6;">In‐depth video analysis, TrackMan session data, instructional drills, and a custom 4‐week practice plan to optimize your launch and ball flight.</p>
-    </div>
-
-    <div style="background: #111; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-      <h3 style="color: #09f; margin-bottom: 0.5rem;">🥗 Nutritional Counseling</h3>
-      <p style="line-height: 1.6;">Sport‐specific meal planning, supplementation guidance, and performance‐fuel strategies to help you train and recover smarter.</p>
-    </div>
-
-    <div style="background: #111; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-      <h3 style="color: #09f; margin-bottom: 0.5rem;">🧑‍💻 Membership Access</h3>
-      <ul style="list-style: disc; padding-left: 1.5rem; line-height: 1.6;">
-        <li>Cutting‐edge articles & industry news feeds</li>
-        <li>Performance tools & trackers (PDFs, spreadsheets, calculators)</li>
-        <li>Complete exercise & drills library (videos + step‐by‐step guides)</li>
-        <li>Preferred pricing on golf‐performance products</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-   
-
-    <!-- TESTIMONIALS SECTION -->
-    <section id="testimonials" style="margin-bottom: 3rem; color: #eee;">
-      <h2 style="font-size: 1.75rem; color: #09f; margin-bottom: 0.5rem;">What Clients Are Saying</h2>
-
-      <!-- Single testimonial as requested -->
-      <div style="display: flex; align-items: flex-start; margin-bottom: 2rem;">
-        <div style="flex: 0 0 80px; margin-right: 1rem;">
-          <!-- Make sure this file lives in assets/ exactly as named -->
-          <img
-            src="assets/1517524437836.jpg"
-            alt="Client Testimonial Photo"
-            style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #444;"
-            loading="lazy"
-          />
+    <!-- SERVICES -->
+    <div style="flex: 1 1 300px; max-width: 400px; background: #111; border-radius: 12px; padding: 1.5rem;">
+      <h2 style="color: #09f; font-size: 1.75rem; text-align: center;">💼 Our Services</h2>
+      <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+        <div>
+          <h3 style="color: #09f;">🏌️ One-on-One Coaching</h3>
+          <p style="color: #ccc;">In-person swing analysis and short-game instruction.</p>
+          <a href="services.html#one-on-one" style="color: #000; background: #09f; padding: 0.5rem 1rem; display: inline-block; text-decoration: none; border-radius: 6px;">Learn More</a>
         </div>
-        <blockquote style="flex: 1; border-left: 4px solid #444; padding-left: 1rem; color: #ccc; margin: 0;">
-          “Went above and beyond, that’s all I have to say—great info, clear explanation, and drills with in-depth analysis.”
-          <br /><br />
-          <em style="color: #999;">— <strong>Darkou Zelac</strong></em>
-        </blockquote>
+
+        <div>
+          <h3 style="color: #09f;">📹 Remote Golf Coaching</h3>
+          <p style="color: #ccc;">Weekly video lessons and virtual check-ins.</p>
+          <a href="services.html#remote" style="color: #000; background: #09f; padding: 0.5rem 1rem; display: inline-block; text-decoration: none; border-radius: 6px;">Learn More</a>
+        </div>
+
+        <div>
+          <h3 style="color: #09f;">📅 Periodization Plans</h3>
+          <p style="color: #ccc;">3-/6-/9-month cycles for peak performance.</p>
+          <a href="services.html#plans" style="color: #000; background: #09f; padding: 0.5rem 1rem; display: inline-block; text-decoration: none; border-radius: 6px;">Learn More</a>
+        </div>
+
+        <div>
+          <h3 style="color: #09f;">📊 Swing Analysis Package</h3>
+          <p style="color: #ccc;">TrackMan data, drills, and 4-week custom plan.</p>
+          <a href="services.html#swing-analysis" style="color: #000; background: #09f; padding: 0.5rem 1rem; display: inline-block; text-decoration: none; border-radius: 6px;">Learn More</a>
+        </div>
+
+        <div>
+          <h3 style="color: #09f;">🥗 Nutritional Counseling</h3>
+          <p style="color: #ccc;">Meal planning, supplements, and fuel strategies.</p>
+          <a href="services.html#nutrition" style="color: #000; background: #09f; padding: 0.5rem 1rem; display: inline-block; text-decoration: none; border-radius: 6px;">Learn More</a>
+        </div>
+
+        <div>
+          <h3 style="color: #09f;">🧑‍💻 Member Access</h3>
+          <p style="color: #ccc;">Full library access, trackers, and exclusive pricing.</p>
+          <a href="services.html#membership" style="color: #000; background: #09f; padding: 0.5rem 1rem; display: inline-block; text-decoration: none; border-radius: 6px;">Learn More</a>
+        </div>
       </div>
-  
+    </div>
 
-<!-- VIDEO MODAL -->
-<div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000;">
-  <div style="position: relative; max-width: 90%; max-height: 90%;">
-    <iframe id="modalVideo" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <button onclick="closeModal()" style="position: absolute; top: -40px; right: 0; background: #09f; color: #000; padding: 10px 15px; border: none; font-size: 1rem; cursor: pointer; border-radius: 6px;">Close</button>
-  </div>
-</div>
+    <!-- TESTIMONIAL -->
+    <div style="flex: 1 1 280px; max-width: 350px;">
+      <img src="assets/1517524437836.jpg" alt="Client Testimonial Photo" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #444;" />
+      <h2 style="color: #09f; font-size: 1.5rem;">What Clients Are Saying</h2>
+      <blockquote style="border-left: 4px solid #444; padding-left: 1rem; color: #ccc;">
+        “Went above and beyond—that’s all I have to say. Great info, clear explanation, and drills with in-depth analysis.”
+        <br /><br /><em style="color: #999;">— Darkou Zelac</em>
+      </blockquote>
+    </div>
+  </section>
 
-<script>
-  function openModal(videoId) {
-    const modal = document.getElementById('videoModal');
-    const iframe = document.getElementById('modalVideo');
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0`;
-    modal.style.display = 'flex';
-  }
-
-  function closeModal() {
-    const modal = document.getElementById('videoModal');
-    const iframe = document.getElementById('modalVideo');
-    iframe.src = '';
-    modal.style.display = 'none';
-  }
-</script>
-
-      
-  </main>
-
-  <!-- SITE FOOTER -->
-  <footer class="site-footer" style="background: #000; color: #666; text-align: center; padding: 2rem 0;">
-    © 2025 Defy Elite Athletics | 
-    <a href="privacy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
+  <!-- FOOTER -->
+  <footer style="text-align: center; background: #000; color: #666; padding: 2rem 0;">
+    © 2025 Defy Elite Athletics | <a href="privacy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
   </footer>
-  <!-- VIDEO MODAL -->
-<div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000;">
-  <div style="position: relative; max-width: 90%; max-height: 90%;">
-    <iframe id="modalVideo" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <button onclick="closeModal()" style="position: absolute; top: -40px; right: 0; background: #09f; color: #000; padding: 10px 15px; border: none; font-size: 1rem; cursor: pointer; border-radius: 6px;">Close</button>
-  </div>
-</div>
-
-<script>
-  function openModal(videoId) {
-    const modal = document.getElementById('videoModal');
-    const iframe = document.getElementById('modalVideo');
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0`;
-    modal.style.display = 'flex';
-  }
-
-  function closeModal() {
-    const modal = document.getElementById('videoModal');
-    const iframe = document.getElementById('modalVideo');
-    iframe.src = '';
-    modal.style.display = 'none';
-  }
-</script>
-
 </body>
 </html>
