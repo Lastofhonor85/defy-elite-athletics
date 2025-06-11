@@ -2,52 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Exercises</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercises – Defy Elite Athletics</title>
+  <link rel="stylesheet" href="../styles.css" />
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-    th, td { border: 1px solid #ddd; padding: 8px; }
-    th { background-color: #f2f2f2; }
+    body {
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #09f;
+      margin: 2rem 0 1rem;
+    }
+    .search-bar {
+      display: block;
+      margin: 1rem auto 2rem;
+      padding: 0.75rem;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 6px;
+      border: none;
+      background: #222;
+      color: #fff;
+    }
+    table {
+      width: 90%;
+      margin: 0 auto 4rem;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #333;
+    }
+    th {
+      background: #000;
+      color: #09f;
+    }
+    tr:hover {
+      background: #222;
+    }
   </style>
 </head>
 <body>
+  <header style="background: #000; text-align: center; padding: 1rem;">
+    <a href="../index.html"><img src="../assets/logo1.png" alt="Logo" style="max-width: 180px;" /></a>
+  </header>
+
   <h1>Exercises</h1>
-  <table id="exercisesTable"></table>
+  <input type="text" id="searchInput" class="search-bar" placeholder="Search exercises..." />
+
+  <table id="exercisesTable">
+    <thead>
+      <tr>
+        <th>Exercise</th>
+        <th>Primary Focus</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Deadlift</td><td>Lower Body</td><td>Strength</td></tr>
+      <tr><td>Plank</td><td>Core Stability</td><td>Endurance</td></tr>
+      <tr><td>Rotational Med Ball Toss</td><td>Power</td><td>Rotation</td></tr>
+      <tr><td>Goblet Squat</td><td>Lower Body</td><td>Mobility</td></tr>
+      <tr><td>Shoulder Taps</td><td>Stability</td><td>Core</td></tr>
+    </tbody>
+  </table>
 
   <script>
-    function loadCSV(url, tableId) {
-      fetch(url)
-        .then(res => res.text())
-        .then(text => {
-          const rows = text.trim().split('\n');
-          const table = document.getElementById(tableId);
-          table.innerHTML = '';
-          rows.forEach((row, i) => {
-            const tr = document.createElement('tr');
-            row.split(',').forEach(cell => {
-              const tag = i === 0 ? 'th' : 'td';
-              const td = document.createElement(tag);
-              td.textContent = cell.trim().replace(/^"|"$/g, '');
-              tr.appendChild(td);
-            });
-            table.appendChild(tr);
-          });
-        })
-        .catch(err => console.error('CSV load error:', err));
-    }
+    const input = document.getElementById("searchInput");
+    const rows = document.querySelectorAll("#exercisesTable tbody tr");
 
-    loadCSV('data/exercises.csv', 'exercisesTable');
+    input.addEventListener("input", function () {
+      const value = this.value.toLowerCase();
+      rows.forEach(row => {
+        const show = [...row.children].some(td => td.textContent.toLowerCase().includes(value));
+        row.style.display = show ? "" : "none";
+      });
+    });
   </script>
-
-  <nav class="main-nav" style="background-color: #111; padding: 0.75rem; text-align: center;">
-  <a href="index.html" style="color: #09f; margin: 0 1rem; text-decoration: none; font-weight: bold;">Home</a>
-  <a href="drills.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Drills</a>
-  <a href="exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
-  <a href="services.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Services</a>
-  <a href="contact.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Contact</a> <!-- ADD THIS -->
-  <a href="members/login.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Members</a>
-</nav>
-
 </body>
 </html>
