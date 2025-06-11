@@ -4,64 +4,98 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Exercises</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../styles.css" />
   <style>
     body {
-      padding: 20px;
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      color: #09f;
+      margin-top: 2rem;
+    }
+    .search-bar {
+      width: 80%;
+      max-width: 600px;
+      margin: 1.5rem auto;
+      display: block;
+      padding: 10px 14px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: none;
     }
     table {
-      margin-top: 20px;
+      width: 90%;
+      margin: 0 auto 2rem auto;
+      border-collapse: collapse;
+      background: #1c1c1c;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #333;
+    }
+    th {
+      background-color: #000;
+      color: #09f;
+    }
+    tr:hover {
+      background-color: #222;
     }
   </style>
 </head>
 <body>
   <h1>Exercises</h1>
-  <table id="exercisesTable" class="table table-bordered table-striped">
-    <thead></thead>
+  <input type="text" id="searchInput" class="search-bar" placeholder="Search exercises..."/>
+
+  <table id="exercisesTable">
+    <thead>
+      <tr>
+        <th>Exercise Name</th>
+        <th>Category</th>
+        <th>Target Area</th>
+      </tr>
+    </thead>
     <tbody></tbody>
   </table>
 
-  <!-- PapaParse Library -->
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
   <script>
-    Papa.parse('members/data/exercises.csv', {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      complete: function(results) {
-        const data = results.data;
-        const table = document.getElementById('exercisesTable');
-        const thead = table.querySelector('thead');
-        const tbody = table.querySelector('tbody');
+    async function loadExercises() {
+      const response = await fetch("../assets/data/exercises.csv");
+      const text = await response.text();
+      const lines = text.trim().split('\n');
+      const tbody = document.querySelector("#exercisesTable tbody");
 
-        // Clear existing content
-        thead.innerHTML = '';
-        tbody.innerHTML = '';
-
-        // Create table header
-        const headerRow = document.createElement('tr');
-        results.meta.fields.forEach(header => {
-          const th = document.createElement('th');
-          th.textContent = header;
-          headerRow.appendChild(th);
+      lines.slice(1).forEach(row => {
+        const cols = row.split(',');
+        const tr = document.createElement("tr");
+        cols.forEach(col => {
+          const td = document.createElement("td");
+          td.textContent = col.trim();
+          tr.appendChild(td);
         });
-        thead.appendChild(headerRow);
+        tbody.appendChild(tr);
+      });
+    }
 
-        // Create table rows
-        data.forEach(row => {
-          const tr = document.createElement('tr');
-          results.meta.fields.forEach(field => {
-            const td = document.createElement('td');
-            td.textContent = row[field] || '';
-            tr.appendChild(td);
-          });
-          tbody.appendChild(tr);
-        });
-      },
-      error: function(error) {
-        console.error('Error loading exercises.csv:', error);
-      }
-    });
+    function filterExercises() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#exercisesTable tbody tr");
+      rows.forEach(row => {
+        const match = Array.from(row.children).some(td => td.textContent.toLowerCase().includes(input));
+        row.style.display = match ? "" : "none";
+      });
+    }
+
+    document.getElementById("searchInput").addEventListener("input", filterExercises);
+    loadExercises();
   </script>
 </body>
 </html>
