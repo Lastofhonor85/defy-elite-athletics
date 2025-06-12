@@ -2,98 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Defy Elite Athletics – Articles & News</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article & News Hub</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    body { background: #000; color: #eee; font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-    header img { max-width: 200px; }
-    nav { background: #111; text-align: center; padding: 0.75rem; }
-    nav a { color: #fff; margin: 0 1rem; text-decoration: none; }
-    nav a.active { color: #09f; font-weight: bold; }
-    h2 { color: #09f; margin-top: 3rem; border-bottom: 2px solid #09f; padding-bottom: 0.5rem; }
-    .feed-list { list-style: none; padding: 0; margin: 1rem 0 2rem; }
-    .feed-item {
-      background: #111;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
-    .feed-item a {
-      color: #09f; font-weight: bold;
+    header {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+    }
+    header img {
+      max-width: 200px;
+    }
+    nav {
+      background-color: #111;
+      text-align: center;
+      padding: 0.75rem 0;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
       text-decoration: none;
     }
-    .feed-item p {
-      margin: 0.5rem 0 0;
-      color: #ccc;
+    nav a:hover {
+      color: #09f;
+    }
+    h1, h2 {
+      color: #09f;
+      text-align: center;
+    }
+    .section {
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #222;
+    }
+    .feed {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .feed ul {
+      list-style: none;
+      padding: 0;
+    }
+    .feed li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #333;
+    }
+    .feed a {
+      color: #0af;
+      text-decoration: none;
+    }
+    .feed a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header style="background:#000; padding:1rem; text-align:center;">
-    <a href="index.html"><img src="assets/logo1.png" alt="Defy Elite Athletics Logo"></a>
+  <header>
+    <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" />
   </header>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="articles.html" class="active">Articles</a>
+    <a href="articles.html" style="color: #09f; font-weight: bold;">Articles</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
     <a href="members/login.html">Members</a>
   </nav>
 
-  <main class="container">
-    <h1 style="text-align:center; color:#09f;">Article & News Hub</h1>
+  <main>
+    <h1>Article & News Hub</h1>
 
-    <!-- Article Sections -->
-    <section id="golf-industry-news">
-      <h2>Golf Industry & News</h2>
-      <ul class="feed-list" id="golfIndustryFeed"></ul>
-    </section>
-
-    <section id="pro-tour">
-      <h2>PGA & LPGA Tour Updates</h2>
-      <ul class="feed-list" id="proTourFeed"></ul>
-    </section>
-
-    <section id="equipment-tech">
-      <h2>Equipment & Technology</h2>
-      <ul class="feed-list" id="equipmentFeed"></ul>
-    </section>
-
-    <section id="fitness-training">
-      <h2>Fitness & Strength Training</h2>
-      <ul class="feed-list" id="fitnessFeed"></ul>
-    </section>
-
-    <section id="nutrition-recovery">
-      <h2>Nutrition & Recovery</h2>
-      <ul class="feed-list" id="nutritionFeed"></ul>
-    </section>
-
-    <section id="sports-psychology">
-      <h2>Sports Psychology</h2>
-      <ul class="feed-list" id="psychologyFeed"></ul>
-    </section>
-
-    <section id="sports-medicine">
-      <h2>Clinical & Sports Medicine</h2>
-      <ul class="feed-list" id="medicineFeed"></ul>
-    </section>
-
-    <section id="youth-development">
-      <h2>Youth & Amateur Development</h2>
-      <ul class="feed-list" id="youthFeed"></ul>
-    </section>
+    <div id="rss-sections"></div>
   </main>
 
-  <footer style="text-align:center; background:#000; color:#666; padding:2rem 0;">
-    © 2025 Defy Elite Athletics
-  </footer>
+  <script>
+    const sections = [
+      { title: "Golf Industry & News", url: "https://www.golfdigest.com/rss" },
+      { title: "PGA & LPGA Tour Updates", url: "https://www.golfchannel.com/rss/news" },
+      { title: "Equipment & Technology", url: "https://mygolfspy.com/feed/" },
+      { title: "Fitness & Strength Training", url: "https://breakingmuscle.com/feed" },
+      { title: "Nutrition & Recovery", url: "https://www.precisionnutrition.com/feed" },
+      { title: "Sports Psychology & Concentration", url: "https://sportpsychologytoday.com/feed/" },
+      { title: "Clinical / Sports Medicine & Rehab", url: "https://journals.humankinetics.com/action/showFeed?type=etoc&feed=rss&jc/jsr" },
+      { title: "Technology & Equipment Innovation", url: "https://www.wearable-technologies.com/feed/" },
+      { title: "Pro Tour & Professional Updates", url: "https://www.pgatour.com/bin/data/feeds/rss/r" },
+      { title: "Youth & Amateur Performance", url: "https://www.njga.org/rss" },
+      { title: "Education, Certifications & Research", url: "https://journals.sagepub.com/action/showFeed?type=etoc&feed=rss&jc/jsr" }
+    ];
 
-  <!-- Loads the news feeds -->
-  <script src="script.js"></script>
+    function loadFeed(title, url) {
+      const section = document.createElement('section');
+      section.className = 'section';
+      section.innerHTML = `<h2>${title}</h2><div class="feed"><ul id="${title.replace(/\s+/g, '-')}-list"></ul></div>`;
+      document.getElementById('rss-sections').appendChild(section);
+
+      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`)
+        .then(res => res.json())
+        .then(data => {
+          const list = document.getElementById(`${title.replace(/\s+/g, '-')}-list`);
+          data.items.slice(0, 5).forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+            list.appendChild(li);
+          });
+        })
+        .catch(err => console.error(`Error loading RSS for ${title}:`, err));
+    }
+
+    sections.forEach(({ title, url }) => loadFeed(title, url));
+  </script>
 </body>
 </html>
