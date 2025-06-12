@@ -31,12 +31,14 @@
       margin: 0 1rem;
       text-decoration: none;
     }
-    nav a:hover {
+    nav a:hover, nav .active {
       color: #09f;
+      font-weight: bold;
     }
     h1, h2 {
       color: #09f;
       text-align: center;
+      margin-top: 1.5rem;
     }
     .section {
       padding: 2rem 1rem;
@@ -61,6 +63,25 @@
     .feed a:hover {
       text-decoration: underline;
     }
+    .sample-article {
+      max-width: 800px;
+      margin: 1rem auto;
+      padding: 1rem;
+      background: #111;
+      border-radius: 8px;
+    }
+    .sample-article h3 {
+      margin-top: 0;
+      color: #09f;
+    }
+    .sample-article p {
+      color: #ccc;
+    }
+    .sample-article a {
+      color: #0af;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -70,7 +91,7 @@
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="articles.html" style="color: #09f; font-weight: bold;">Articles</a>
+    <a href="articles.html" class="active">Articles</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
     <a href="members/login.html">Members</a>
@@ -79,14 +100,63 @@
   <main>
     <h1>Article & News Hub</h1>
 
+    <!-- Section 1: Golf Industry & News (with sample articles) -->
+    <section class="section">
+      <h2>Golf Industry & News</h2>
+
+      <div class="sample-article">
+        <h3>Golf Digest: 2025 Equipment Trends</h3>
+        <p>From AI-powered launch monitors to sustainable club materials, here's what to watch this year.</p>
+        <a href="https://www.golfdigest.com/story/2025-equipment-tech-trends" target="_blank">Read full article ➝</a>
+      </div>
+
+      <div class="sample-article">
+        <h3>Golf.com: PGA Tour Rule Changes Announced</h3>
+        <p>PGA officials have introduced new regulations affecting club face designs and scorekeeping.</p>
+        <a href="https://golf.com/news/pga-tour-rules-changes-2025/" target="_blank">Read full article ➝</a>
+      </div>
+    </section>
+
+    <!-- Section 2: PGA & LPGA Tour Updates (sample) -->
+    <section class="section">
+      <h2>PGA & LPGA Tour Updates</h2>
+
+      <div class="sample-article">
+        <h3>LPGA: Major Tournament Highlights</h3>
+        <p>Rising star clinches first major win in dramatic playoff.</p>
+        <a href="https://www.lpga.com/news/major-final-round-review" target="_blank">Read full article ➝</a>
+      </div>
+
+      <div class="sample-article">
+        <h3>PGA: Smith Dominates Final Round</h3>
+        <p>Low amateur score seals the deal at a thrilling Sunday finish.</p>
+        <a href="https://www.pgatour.com/news/2025-final-round-analysis" target="_blank">Read full article ➝</a>
+      </div>
+    </section>
+
+    <!-- Section 3: Equipment & Technology (sample) -->
+    <section class="section">
+      <h2>Equipment & Technology</h2>
+
+      <div class="sample-article">
+        <h3>Tech Innovations: Smart Swing Sensors</h3>
+        <p>We compare the latest devices that track your golf swing metrics in real time.</p>
+        <a href="https://www.mygolfspy.com/swing-sensor-review-2025/" target="_blank">Read full article ➝</a>
+      </div>
+
+      <div class="sample-article">
+        <h3>Launch Monitor Guide: GCQuad vs TrackMan</h3>
+        <p>A detailed breakdown of accuracy, features, and price for elite-level training.</p>
+        <a href="https://www.mytechgolf.com/launch-monitor-comparisons" target="_blank">Read full article ➝</a>
+      </div>
+    </section>
+
+    <!-- Real-time RSS Feed sections -->
     <div id="rss-sections"></div>
   </main>
 
   <script>
-    const sections = [
-      { title: "Golf Industry & News", url: "https://www.golfdigest.com/rss" },
-      { title: "PGA & LPGA Tour Updates", url: "https://www.golfchannel.com/rss/news" },
-      { title: "Equipment & Technology", url: "https://mygolfspy.com/feed/" },
+    const rssSections = [
       { title: "Fitness & Strength Training", url: "https://breakingmuscle.com/feed" },
       { title: "Nutrition & Recovery", url: "https://www.precisionnutrition.com/feed" },
       { title: "Sports Psychology & Concentration", url: "https://sportpsychologytoday.com/feed/" },
@@ -100,23 +170,31 @@
     function loadFeed(title, url) {
       const section = document.createElement('section');
       section.className = 'section';
-      section.innerHTML = `<h2>${title}</h2><div class="feed"><ul id="${title.replace(/\s+/g, '-')}-list"></ul></div>`;
+      const id = title.replace(/\W+/g, '-');
+
+      section.innerHTML = `
+        <h2>${title}</h2>
+        <div class="feed">
+          <ul id="${id}-list"></ul>
+        </div>`;
       document.getElementById('rss-sections').appendChild(section);
 
       fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`)
         .then(res => res.json())
         .then(data => {
-          const list = document.getElementById(`${title.replace(/\s+/g, '-')}-list`);
-          data.items.slice(0, 5).forEach(item => {
+          const list = document.getElementById(`${id}-list`);
+          data.items.slice(0,5).forEach(item => {
             const li = document.createElement('li');
             li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
             list.appendChild(li);
           });
         })
-        .catch(err => console.error(`Error loading RSS for ${title}:`, err));
+        .catch(err => {
+          console.error(`Error loading RSS for "${title}":`, err);
+        });
     }
 
-    sections.forEach(({ title, url }) => loadFeed(title, url));
+    rssSections.forEach(s => loadFeed(s.title, s.url));
   </script>
 </body>
 </html>
