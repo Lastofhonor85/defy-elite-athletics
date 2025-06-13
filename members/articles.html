@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Article & News Hub</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
-      background-color: #000;
+      background: #000;
       color: #fff;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -16,13 +16,13 @@
     header {
       text-align: center;
       padding: 1rem;
-      background-color: #111;
+      background: #111;
     }
     header img {
       max-width: 200px;
     }
     nav {
-      background-color: #111;
+      background: #111;
       text-align: center;
       padding: 0.75rem 0;
     }
@@ -31,7 +31,8 @@
       margin: 0 1rem;
       text-decoration: none;
     }
-    nav a:hover, nav .active {
+    nav a:hover,
+    nav .active {
       color: #09f;
       font-weight: bold;
     }
@@ -46,7 +47,7 @@
     }
     .feed {
       max-width: 800px;
-      margin: 0 auto;
+      margin: auto;
     }
     .feed ul {
       list-style: none;
@@ -63,28 +64,10 @@
     .feed a:hover {
       text-decoration: underline;
     }
-    .sample-article {
-      max-width: 800px;
-      margin: 1rem auto;
-      padding: 1rem;
-      background: #111;
-      border-radius: 8px;
-    }
-    .sample-article h3 {
-      margin-top: 0;
-      color: #09f;
-    }
-    .sample-article p {
-      color: #ccc;
-    }
-    .sample-article a {
-      color: #0af;
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
   </style>
 </head>
 <body>
+
   <header>
     <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" />
   </header>
@@ -100,101 +83,64 @@
   <main>
     <h1>Article & News Hub</h1>
 
-    <!-- Section 1: Golf Industry & News (with sample articles) -->
-    <section class="section">
-      <h2>Golf Industry & News</h2>
+    <div id="rss-sections">
 
-      <div class="sample-article">
-        <h3>Golf Digest: 2025 Equipment Trends</h3>
-        <p>From AI-powered launch monitors to sustainable club materials, here's what to watch this year.</p>
-        <a href="https://www.golfdigest.com/story/2025-equipment-tech-trends" target="_blank">Read full article ➝</a>
-      </div>
+      <!-- Section titles will be injected here via JavaScript -->
 
-      <div class="sample-article">
-        <h3>Golf.com: PGA Tour Rule Changes Announced</h3>
-        <p>PGA officials have introduced new regulations affecting club face designs and scorekeeping.</p>
-        <a href="https://golf.com/news/pga-tour-rules-changes-2025/" target="_blank">Read full article ➝</a>
-      </div>
-    </section>
-
-    <!-- Section 2: PGA & LPGA Tour Updates (sample) -->
-    <section class="section">
-      <h2>PGA & LPGA Tour Updates</h2>
-
-      <div class="sample-article">
-        <h3>LPGA: Major Tournament Highlights</h3>
-        <p>Rising star clinches first major win in dramatic playoff.</p>
-        <a href="https://www.lpga.com/news/major-final-round-review" target="_blank">Read full article ➝</a>
-      </div>
-
-      <div class="sample-article">
-        <h3>PGA: Smith Dominates Final Round</h3>
-        <p>Low amateur score seals the deal at a thrilling Sunday finish.</p>
-        <a href="https://www.pgatour.com/news/2025-final-round-analysis" target="_blank">Read full article ➝</a>
-      </div>
-    </section>
-
-    <!-- Section 3: Equipment & Technology (sample) -->
-    <section class="section">
-      <h2>Equipment & Technology</h2>
-
-      <div class="sample-article">
-        <h3>Tech Innovations: Smart Swing Sensors</h3>
-        <p>We compare the latest devices that track your golf swing metrics in real time.</p>
-        <a href="https://www.mygolfspy.com/swing-sensor-review-2025/" target="_blank">Read full article ➝</a>
-      </div>
-
-      <div class="sample-article">
-        <h3>Launch Monitor Guide: GCQuad vs TrackMan</h3>
-        <p>A detailed breakdown of accuracy, features, and price for elite-level training.</p>
-        <a href="https://www.mytechgolf.com/launch-monitor-comparisons" target="_blank">Read full article ➝</a>
-      </div>
-    </section>
-
-    <!-- Real-time RSS Feed sections -->
-    <div id="rss-sections"></div>
+    </div>
   </main>
 
+  <!-- JavaScript to dynamically load feeds -->
   <script>
-    const rssSections = [
-      { title: "Fitness & Strength Training", url: "https://breakingmuscle.com/feed" },
+    const rssFeeds = [
+      { title: "Golf & Performance Training", url: "https://www.breakingmuscle.com/feed" },
+      { title: "Golf Industry News", url: "https://www.golfdigest.com/rss" },
+      { title: "PGA / LPGA Tour Updates", url: "https://www.pgatour.com/bin/data/feeds/rss/r" },
+      { title: "Amateur & Junior Golf", url: "https://www.njga.org/rss" },
+      { title: "Equipment Reviews & Tech", url: "https://www.mygolfspy.com/feed" },
+      { title: "Performance Analysis & Swing Technique", url: "https://swingstudies.com/feed" },
+      { title: "Fitness & Strength Conditioning", url: "https://breakingmuscle.com/feed" },
+      { title: "Mobility, Flexibility & Injury Prevention", url: "https://www.precisionnutrition.com/feed" },
+      { title: "Sports Science Journals (NSCA/ACSM)", url: "https://www.nsca.com/rss" },
       { title: "Nutrition & Recovery", url: "https://www.precisionnutrition.com/feed" },
       { title: "Sports Psychology & Concentration", url: "https://sportpsychologytoday.com/feed/" },
       { title: "Clinical / Sports Medicine & Rehab", url: "https://journals.humankinetics.com/action/showFeed?type=etoc&feed=rss&jc/jsr" },
       { title: "Technology & Equipment Innovation", url: "https://www.wearable-technologies.com/feed/" },
       { title: "Pro Tour & Professional Updates", url: "https://www.pgatour.com/bin/data/feeds/rss/r" },
       { title: "Youth & Amateur Performance", url: "https://www.njga.org/rss" },
-      { title: "Education, Certifications & Research", url: "https://journals.sagepub.com/action/showFeed?type=etoc&feed=rss&jc/jsr" }
+      { title: "Education & Certifications", url: "https://journals.sagepub.com/action/showFeed?type=etoc&feed=rss&jc/jsr" }
     ];
 
-    function loadFeed(title, url) {
+    rssFeeds.forEach(feed => {
       const section = document.createElement('section');
       section.className = 'section';
-      const id = title.replace(/\W+/g, '-');
+      const id = feed.title.replace(/\W+/g, '-').toLowerCase();
 
-      section.innerHTML = `
-        <h2>${title}</h2>
+      section.innerHTML = `<h2>${feed.title}</h2>
         <div class="feed">
-          <ul id="${id}-list"></ul>
+          <ul id="${id}-list"><li>Loading...</li></ul>
         </div>`;
+
       document.getElementById('rss-sections').appendChild(section);
 
-      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`)
+      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`)
         .then(res => res.json())
         .then(data => {
           const list = document.getElementById(`${id}-list`);
-          data.items.slice(0,5).forEach(item => {
+          list.innerHTML = ""; // clear loading message
+          data.items.slice(0, 5).forEach(item => {
             const li = document.createElement('li');
             li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
             list.appendChild(li);
           });
         })
         .catch(err => {
-          console.error(`Error loading RSS for "${title}":`, err);
+          const list = document.getElementById(`${id}-list`);
+          list.innerHTML = `<li style="color: #f44;">Failed to load feed</li>`;
+          console.error(`RSS load error (${feed.title}):`, err);
         });
-    }
-
-    rssSections.forEach(s => loadFeed(s.title, s.url));
+    });
   </script>
+
 </body>
 </html>
