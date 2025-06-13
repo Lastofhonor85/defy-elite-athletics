@@ -1,143 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Article & News Hub</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles & News Hub</title>
+  <link rel="stylesheet" href="../styles.css">
   <style>
     body {
-      background: #000;
-      color: #fff;
+      background-color: #0d0d0d;
+      color: white;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      text-align: center;
-      padding: 1rem;
-      background: #111;
-    }
-    header img {
-      max-width: 200px;
-    }
-    nav {
-      background: #111;
-      text-align: center;
-      padding: 0.75rem 0;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-    nav a:hover,
-    nav .active {
-      color: #09f;
-      font-weight: bold;
-    }
-    h1, h2 {
-      color: #09f;
-      text-align: center;
-      margin-top: 1.5rem;
+      padding-bottom: 50px;
     }
     .section {
-      padding: 2rem 1rem;
-      border-bottom: 1px solid #222;
+      margin: 50px auto;
+      max-width: 900px;
+      padding: 20px;
     }
-    .feed {
-      max-width: 800px;
-      margin: auto;
+    h1, h2 {
+      color: #00aaff;
+      border-bottom: 2px solid #00aaff;
+      padding-bottom: 10px;
     }
-    .feed ul {
+    ul {
       list-style: none;
       padding: 0;
     }
-    .feed li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid #333;
+    ul li {
+      margin-bottom: 10px;
     }
-    .feed a {
-      color: #0af;
+    ul li a {
+      color: #fff;
       text-decoration: none;
     }
-    .feed a:hover {
-      text-decoration: underline;
+    ul li a:hover {
+      color: #00aaff;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" />
+    <nav>
+      <ul class="navbar">
+        <li><a href="../index.html">Home</a></li>
+        <li><a class="active" href="#">Articles</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../members.html">Members</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="articles.html" class="active">Articles</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-    <a href="members/login.html">Members</a>
-  </nav>
-
-  <main>
+  <div class="section">
     <h1>Article & News Hub</h1>
+  </div>
 
-    <div id="rss-sections">
+  <div class="section">
+    <h2>Golf Industry News</h2>
+    <ul id="golf-industry-news-list"><li>Loading...</li></ul>
+  </div>
 
-      <!-- Section titles will be injected here via JavaScript -->
+  <div class="section">
+    <h2>PGA / LPGA Tour Updates</h2>
+    <ul id="pga-lpga-news-list"><li>Loading...</li></ul>
+  </div>
 
-    </div>
-  </main>
+  <div class="section">
+    <h2>Amateur & Junior Golf</h2>
+    <ul id="junior-golf-news-list"><li>Loading...</li></ul>
+  </div>
 
-  <!-- JavaScript to dynamically load feeds -->
   <script>
+    const CORS_PROXY = "https://api.allorigins.win/raw?url=";
+
     const rssFeeds = [
-      { title: "Golf & Performance Training", url: "https://www.breakingmuscle.com/feed" },
-      { title: "Golf Industry News", url: "https://www.golfdigest.com/rss" },
-      { title: "PGA / LPGA Tour Updates", url: "https://www.pgatour.com/bin/data/feeds/rss/r" },
-      { title: "Amateur & Junior Golf", url: "https://www.njga.org/rss" },
-      { title: "Equipment Reviews & Tech", url: "https://www.mygolfspy.com/feed" },
-      { title: "Performance Analysis & Swing Technique", url: "https://swingstudies.com/feed" },
-      { title: "Fitness & Strength Conditioning", url: "https://breakingmuscle.com/feed" },
-      { title: "Mobility, Flexibility & Injury Prevention", url: "https://www.precisionnutrition.com/feed" },
-      { title: "Sports Science Journals (NSCA/ACSM)", url: "https://www.nsca.com/rss" },
-      { title: "Nutrition & Recovery", url: "https://www.precisionnutrition.com/feed" },
-      { title: "Sports Psychology & Concentration", url: "https://sportpsychologytoday.com/feed/" },
-      { title: "Clinical / Sports Medicine & Rehab", url: "https://journals.humankinetics.com/action/showFeed?type=etoc&feed=rss&jc/jsr" },
-      { title: "Technology & Equipment Innovation", url: "https://www.wearable-technologies.com/feed/" },
-      { title: "Pro Tour & Professional Updates", url: "https://www.pgatour.com/bin/data/feeds/rss/r" },
-      { title: "Youth & Amateur Performance", url: "https://www.njga.org/rss" },
-      { title: "Education & Certifications", url: "https://journals.sagepub.com/action/showFeed?type=etoc&feed=rss&jc/jsr" }
+      {
+        id: "golf-industry-news",
+        url: "https://www.golfdigest.com/feed/rss" // Replace with your desired source if different
+      },
+      {
+        id: "pga-lpga-news",
+        url: "https://www.pgatour.com/bin/data/feeds/rss.xml"
+      },
+      {
+        id: "junior-golf-news",
+        url: "https://juniorgolfhub.com/feed/"
+      }
     ];
 
     rssFeeds.forEach(feed => {
-      const section = document.createElement('section');
-      section.className = 'section';
-      const id = feed.title.replace(/\W+/g, '-').toLowerCase();
-
-      section.innerHTML = `<h2>${feed.title}</h2>
-        <div class="feed">
-          <ul id="${id}-list"><li>Loading...</li></ul>
-        </div>`;
-
-      document.getElementById('rss-sections').appendChild(section);
-
-      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`)
-        .then(res => res.json())
+      const list = document.getElementById(`${feed.id}-list`);
+      fetch(`${CORS_PROXY}${encodeURIComponent(feed.url)}`)
+        .then(res => res.text())
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
         .then(data => {
-          const list = document.getElementById(`${id}-list`);
-          list.innerHTML = ""; // clear loading message
-          data.items.slice(0, 5).forEach(item => {
-            const li = document.createElement('li');
-            li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
-            list.appendChild(li);
+          const items = data.querySelectorAll("item");
+          list.innerHTML = "";
+          items.forEach((item, index) => {
+            if (index < 5) {
+              const title = item.querySelector("title").textContent;
+              const link = item.querySelector("link").textContent;
+              const li = document.createElement("li");
+              li.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+              list.appendChild(li);
+            }
           });
         })
         .catch(err => {
-          const list = document.getElementById(`${id}-list`);
-          list.innerHTML = `<li style="color: #f44;">Failed to load feed</li>`;
-          console.error(`RSS load error (${feed.title}):`, err);
+          list.innerHTML = `<li style='color:red;'>Failed to load feed</li>`;
+          console.error(err);
         });
     });
   </script>
