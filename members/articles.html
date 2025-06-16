@@ -49,8 +49,6 @@
     <ul id="pga-list"><li>Loading...</li></ul>
   </div>
 
-  <!-- Add more sections here if desired -->
-
   <script>
     async function loadFeed(proxyUrl, listId) {
       const ul = document.getElementById(listId);
@@ -63,25 +61,35 @@
         const xml = new DOMParser().parseFromString(text, "text/xml");
         const items = xml.querySelectorAll("item, entry");
         ul.innerHTML = "";
+
+        if (!items.length) throw new Error("No articles found");
+
         for (let i = 0; i < Math.min(8, items.length); i++) {
           const el = items[i];
           const title = el.querySelector("title")?.textContent || "No title";
-          const link = el.querySelector("link")?.textContent || el.querySelector("link")?.getAttribute("href");
+
+          let link = "";
+          const linkTag = el.querySelector("link");
+          if (linkTag) {
+            if (linkTag.getAttribute("href")) {
+              link = linkTag.getAttribute("href");
+            } else {
+              link = linkTag.textContent;
+            }
+          }
+
           const li = document.createElement("li");
-          li.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+          li.innerHTML = `<a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>`;
           ul.appendChild(li);
         }
-        if (!items.length) throw new Error("No articles found");
       } catch (err) {
-        ul.innerHTML = `<li style="color: red;">Unable to load feed</li>`;
+        ul.innerHTML = `<li style="color: red;">Unable to load feed: ${err.message}</li>`;
       }
     }
 
     loadFeed("https://api.allorigins.win/raw?url=https://www.golfdigest.com/feed/rss", "golf-industry-list");
     loadFeed("https://api.allorigins.win/raw?url=https://www.pgatour.com/bin/data/feeds/content/feed/pga-tour/news.xml", "pga-list");
     loadFeed("https://api.allorigins.win/raw?url=https://golfweek.usatoday.com/feed/", "golf-performance-list");
-
-    // Add more loadFeed() calls for other sections if needed
   </script>
 </body>
 </html>
