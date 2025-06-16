@@ -68,21 +68,29 @@
 
   <script>
     async function loadExercises() {
-      const response = await fetch("../assets/data/exercises.csv");
-      const text = await response.text();
-      const lines = text.trim().split('\n');
       const tbody = document.querySelector("#exercisesTable tbody");
 
-      lines.slice(1).forEach(row => {
-        const cols = row.split(',');
-        const tr = document.createElement("tr");
-        cols.forEach(col => {
-          const td = document.createElement("td");
-          td.textContent = col.trim();
-          tr.appendChild(td);
+      try {
+        const response = await fetch("../members/data/exercises.csv"); // Adjust path as needed
+        if (!response.ok) throw new Error("File not found");
+        const text = await response.text();
+
+        const lines = text.trim().split('\n');
+        lines.slice(1).forEach(row => {
+          const cols = row.split(',');
+          if (cols.length >= 3) {
+            const tr = document.createElement("tr");
+            cols.slice(0, 3).forEach(col => {
+              const td = document.createElement("td");
+              td.textContent = col.trim();
+              tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+          }
         });
-        tbody.appendChild(tr);
-      });
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="3" style="color:red; text-align:center;">Error loading CSV: ${err.message}</td></tr>`;
+      }
     }
 
     function filterExercises() {
