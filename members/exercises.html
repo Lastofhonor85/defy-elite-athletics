@@ -45,15 +45,23 @@
     th {
       background-color: #000;
       color: #09f;
+      font-weight: bold;
     }
     tr:hover {
       background-color: #222;
+      cursor: pointer;
+    }
+    .description-row {
+      display: none;
+      background-color: #181818;
     }
     .description-row td {
-      font-size: 0.95rem;
       color: #aaa;
-      border-bottom: 1px solid #222;
-      background-color: #161616;
+      font-size: 0.95rem;
+      padding: 1rem 1.5rem;
+    }
+    .visible {
+      display: table-row;
     }
   </style>
 </head>
@@ -64,10 +72,10 @@
   <table id="exercisesTable">
     <thead>
       <tr>
+        <th>Sport</th>
+        <th>Modality</th>
+        <th>Training Focus</th>
         <th>Exercise Name</th>
-        <th>Category</th>
-        <th>Target Area</th>
-        <th>Equipment</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -78,30 +86,32 @@
       const tbody = document.querySelector("#exercisesTable tbody");
 
       try {
-        const res = await fetch("../members/data/exercises.csv"); // adjust if needed
+        const res = await fetch("../members/data/exercises.csv");  // Adjust if file path differs
         if (!res.ok) throw new Error("CSV file not found");
         const text = await res.text();
         const lines = text.trim().split('\n');
 
-        lines.slice(1).forEach(row => {
+        lines.slice(1).forEach((row) => {
           const cols = row.split(',');
           if (cols.length < 5) return;
 
-          // Main row
           const tr = document.createElement("tr");
-          for (let i = 0; i < 4; i++) {
+          for (let j = 0; j < 4; j++) {
             const td = document.createElement("td");
-            td.textContent = cols[i].trim();
+            td.textContent = cols[j].trim();
             tr.appendChild(td);
           }
 
-          // Description row
           const descTr = document.createElement("tr");
           descTr.className = "description-row";
           const descTd = document.createElement("td");
           descTd.colSpan = 4;
-          descTd.textContent = "Description: " + cols[4].trim();
+          descTd.innerHTML = `<strong>Description:</strong> ${cols[4].trim()}`;
           descTr.appendChild(descTd);
+
+          tr.addEventListener("click", () => {
+            descTr.classList.toggle("visible");
+          });
 
           tbody.appendChild(tr);
           tbody.appendChild(descTr);
@@ -114,12 +124,15 @@
     function filterExercises() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const rows = document.querySelectorAll("#exercisesTable tbody tr");
+
       for (let i = 0; i < rows.length; i += 2) {
-        const visible = Array.from(rows[i].children).some(td =>
+        const mainRow = rows[i];
+        const descRow = rows[i + 1];
+        const match = Array.from(mainRow.children).some(td =>
           td.textContent.toLowerCase().includes(input)
         );
-        rows[i].style.display = visible ? "" : "none";
-        rows[i + 1].style.display = visible ? "" : "none";
+        mainRow.style.display = match ? "" : "none";
+        descRow.style.display = match && descRow.classList.contains("visible") ? "" : "none";
       }
     }
 
@@ -128,4 +141,3 @@
   </script>
 </body>
 </html>
-
