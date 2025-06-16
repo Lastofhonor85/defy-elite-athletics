@@ -1,100 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Articles & News Hub</title>
-<link rel="stylesheet" href="../styles.css"/>
-<style>
-  body { margin:0; background:#111; font-family:Arial,sans-serif; color:#fff; }
-  header, nav { background:#000; }
-  header { text-align:center; padding:1.5rem 0 1rem; }
-  header img { max-width:150px; }
-  nav { display:flex; justify-content:center; padding:1rem 0; }
-  nav a { color:#fff; text-decoration:none; margin:0 1.5rem; font-weight:bold; transition:color .3s; }
-  nav a:hover, nav a.active { color:#09f; }
-  .content { background:#1a1a1a; padding:2rem 1rem 4rem; }
-  h1, h2 { text-align:center; color:#09f; margin:2rem 0 1rem; }
-  .feed-section { border-top:1px solid #333; padding:2rem 0; max-width:900px; margin:auto; }
-  ul { list-style:none; padding:0; margin:1rem 0; }
-  li { margin-bottom:.75rem; }
-  a { color:#0cf; text-decoration:none; }
-  a:hover { text-decoration:underline; }
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Articles & News Hub</title>
+  <link rel="stylesheet" href="../styles.css"/>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    header {
+      background: #000;
+      text-align: center;
+      padding: 1.5rem 0 1rem;
+    }
+    header img {
+      max-width: 150px;
+    }
+    nav {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: #09f;
+    }
+    .content {
+      background: #1a1a1a;
+      padding: 2rem 1rem 4rem;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #09f;
+      margin: 2rem 0 1rem;
+    }
+    .feed-section {
+      border-top: 1px solid #333;
+      padding: 2rem 0;
+      max-width: 900px;
+      margin: auto;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    li {
+      margin-bottom: 0.75rem;
+    }
+    a {
+      color: #0cf;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <a href="dashboard.html"><img src="../assets/logo1.png" alt="Defy Elite Athletics Logo"></a>
-</header>
+  <header>
+    <a href="dashboard.html"><img src="../assets/logo1.png" alt="Defy Elite Athletics Logo"></a>
+  </header>
 
-<nav>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="drills.html">Drills</a>
-  <a href="exercises.html">Exercises</a>
-  <a href="articles.html" class="active">Articles</a>
-  <a href="coaching.html">Coaching & Resources</a>
-  <a href="nutrition.html">Nutrition</a>
-  <a href="logout.html">Logout</a>
-</nav>
+  <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="drills.html">Drills</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="articles.html" class="active">Articles</a>
+    <a href="coaching.html">Coaching & Resources</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="logout.html">Logout</a>
+  </nav>
 
-<div class="content">
-  <h1>Articles & News Hub</h1>
+  <div class="content">
+    <h1>Articles & News Hub</h1>
 
-  <!-- Sections -->
-  <div class="feed-section"><h2>Golf & Performance Training</h2><ul id="fitness_sect1"><li>Loading…</li></ul></div>
-  <div class="feed-section"><h2>Golf Industry News</h2><ul id="fitness_sect2"><li>Loading…</li></ul></div>
-  <div class="feed-section"><h2>Pro Tour Coverage (PGA / LPGA / Korn Ferry)</h2><ul id="fitness_sect3"><li>Loading…</li></ul></div>
-  <div class="feed-section"><h2>Equipment Reviews & Launch News</h2><ul id="fitness_sect4"><li>Loading…</li></ul></div>
-  <div class="feed-section"><h2>Fitness & Strength Conditioning</h2><ul id="fitness_sect5"><li>Loading…</li></ul></div>
-  <div class="feed-section"><h2>Nutrition & Recovery</h2><ul id="fitness_sect6"><li>Loading…</li></ul></div>
-  <div class="feed-section"><h2>Sports Psychology & Mental Performance</h2><ul id="fitness_sect7"><li>Loading…</li></ul></div>
-  <div class="feed-section"><h2>Sports Medicine & Rehabilitation</h2><ul id="fitness_sect8"><li>Loading…</li></ul></div>
-  <div class="feed-section"><h2>Technology & Equipment Innovation</h2><ul id="fitness_sect9"><li>Loading…</li></ul></div>
-  <div class="feed-section"><h2>Youth & Amateur Golf</h2><ul id="fitness_sect10"><li>Loading…</li></ul></div>
-</div>
+    <div class="feed-section"><h2>Golf & Performance Training</h2><ul id="feed1"><li>Loading…</li></ul></div>
+    <div class="feed-section"><h2>Golf Industry News</h2><ul id="feed2"><li>Loading…</li></ul></div>
+    <div class="feed-section"><h2>Pro Tour Coverage</h2><ul id="feed3"><li>Loading…</li></ul></div>
+    <div class="feed-section"><h2>Equipment Reviews & Launch News</h2><ul id="feed4"><li>Loading…</li></ul></div>
+    <div class="feed-section"><h2>Fitness & Strength Conditioning</h2><ul id="feed5"><li>Loading…</li></ul></div>
+    <div class="feed-section"><h2>Nutrition & Recovery</h2><ul id="feed6"><li>Loading…</li></ul></div>
+    <div class="feed-section"><h2>Sports Psychology & Mental Performance</h2><ul id="feed7"><li>Loading…</li></ul></div>
+    <div class="feed-section"><h2>Sports Medicine & Rehabilitation</h2><ul id="feed8"><li>Loading…</li></ul></div>
+    <div class="feed-section"><h2>Technology & Equipment Innovation</h2><ul id="feed9"><li>Loading…</li></ul></div>
+    <div class="feed-section"><h2>Youth & Amateur Golf</h2><ul id="feed10"><li>Loading…</li></ul></div>
+  </div>
 
-<script>
-// Helper function to load RSS feeds
-async function loadFeed(feedUrl, listId) {
-  const ul = document.getElementById(listId);
-  ul.innerHTML = "<li>Loading…</li>";
+  <script>
+    async function loadFeed(url, id) {
+      const ul = document.getElementById(id);
+      ul.innerHTML = "<li>Loading…</li>";
+      try {
+        const res = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`);
+        if (!res.ok) throw new Error(res.status);
+        const xml = await res.text();
+        const doc = new DOMParser().parseFromString(xml, 'text/xml');
+        const items = doc.querySelectorAll('item, entry');
+        ul.innerHTML = '';
+        items.forEach((it, i) => {
+          if (i >= 6) return;
+          const title = it.querySelector('title')?.textContent || 'No title';
+          const linkEl = it.querySelector('link');
+          const link = linkEl.getAttribute('href') || linkEl.textContent || '#';
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+          ul.append(li);
+        });
+      } catch (err) {
+        ul.innerHTML = `<li style="color:red;">Error loading feed</li>`;
+      }
+    }
 
-  try {
-    const res = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}`);
-    if (!res.ok) throw new Error(res.statusText);
-    const xml = await res.text();
-    const doc = new DOMParser().parseFromString(xml, "application/xml");
-    const items = doc.querySelectorAll("item, entry");
-    if (!items.length) throw new Error("No items found.");
+    const feeds = [
+      ["https://golf.com/rss/feed", "feed1"],
+      ["https://golfdigest.com/feed/rss", "feed2"],
+      ["https://www.pgatour.com/data/rdf/media/articles.rss", "feed3"],
+      ["https://feeds.feedburner.com/MyGolfSpy", "feed4"],
+      ["https://breakingmuscle.com/feed/", "feed5"],
+      ["https://www.precisionnutrition.com/feed", "feed6"],
+      ["https://psychminded.org/feed/", "feed7"],
+      ["https://www.acsm.org/newsroom-acsm-magazine/rss", "feed8"],
+      ["https://golftechtoday.com/feed", "feed9"],
+      ["https://www.ajga.org/rss", "feed10"]
+    ];
 
-    ul.innerHTML = "";
-    items.forEach((el, i) => {
-      if (i >= 6) return;
-      const title = el.querySelector("title")?.textContent ?? "No title";
-      const linkEl = el.querySelector("link");
-      const link = linkEl?.getAttribute("href") || linkEl?.textContent || "#";
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>`;
-      ul.appendChild(li);
-    });
-  } catch {
-    ul.innerHTML = `<li style="color:red;">Unable to load feed</li>`;
-  }
-}
-
-// Load each category feed
-loadFeed("https://golf.com/rss/feed", "fitness_sect1");
-loadFeed("https://rss.feedspot.com/golfdigest_rss_feeds", "fitness_sect2");
-loadFeed("https://www.pgatour.com/data/rdf/media/articles.rss", "fitness_sect3");
-loadFeed("https://feeds.feedburner.com/MyGolfSpy", "fitness_sect4");
-loadFeed("https://breakingmuscle.com/feed/", "fitness_sect5");
-loadFeed("https://www.precisionnutrition.com/feed", "fitness_sect6");
-loadFeed("https://psychminded.org/feed/", "fitness_sect7");
-loadFeed("https://www.acsm.org/newsroom-acsm-magazine/rss", "fitness_sect8");
-loadFeed("https://golftechtoday.com/feed", "fitness_sect9");
-loadFeed("https://www.ajga.org/rss", "fitness_sect10");
-</script>
+    feeds.forEach(([u, id]) => loadFeed(u, id));
+  </script>
 
 </body>
 </html>
