@@ -1,95 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Articles & News Hub</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css"/>
   <style>
     body { background: #000; color: #fff; font-family: Arial, sans-serif; padding-bottom: 4rem; }
-    h1, h2 { color: #09f; text-align: center; margin-top: 2rem; }
+    header, nav { background: #111; }
+    header img { background: none; }
+    nav a { color: #fff; text-decoration: none; margin: 0 1rem; }
+    nav a.active { color: #09f; }
+    h1, h2 { color: #09f; text-align: center; margin: 2rem 0 1rem; }
     ul { list-style: none; padding: 0; margin: 1rem auto; max-width: 800px; }
     li { margin: 0.5rem 0; }
-    a { color: #0cf; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .feed-section { border-top: 1px solid #222; padding-top: 2rem; margin-top: 2rem; }
+    a.feed-link { color: #0cf; text-decoration: none; }
+    .feed-section { border-top: 1px solid #222; padding: 2rem 0; }
   </style>
 </head>
 <body>
-
-  <!-- HEADER + NAV -->
-  <header style="background: #111; padding: 1rem; text-align: center;">
+  <header style="padding: 1rem; text-align: center;">
     <a href="../index.html">
-      <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo" style="max-width: 180px;" />
+      <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo"/>
     </a>
   </header>
-  <nav style="background: #111; text-align: center; padding: 1rem;">
-    <a href="../index.html" style="color: #fff; margin: 0 1rem;">Home</a>
-    <a href="articles.html" style="color: #09f; margin: 0 1rem;">Articles</a>
-    <a href="../services.html" style="color: #fff; margin: 0 1rem;">Services</a>
-    <a href="../contact.html" style="color: #fff; margin: 0 1rem;">Contact</a>
-    <a href="login.html" style="color: #fff; margin: 0 1rem;">Members</a>
+  <nav style="text-align:center; padding:1rem;">
+    <a href="../index.html">Home</a>
+    <a href="articles.html" class="active">Articles</a>
+    <a href="../services.html">Services</a>
+    <a href="../contact.html">Contact</a>
+    <a href="login.html">Members</a>
   </nav>
 
   <h1>Articles & News Hub</h1>
 
-  <!-- SECTION EXAMPLE -->
+  <!-- Define all sections -->
   <div class="feed-section">
-    <h2>Golf & Performance Training</h2>
-    <ul id="golf-performance-list"><li>Loading...</li></ul>
+    <h2>🏌️ Golf & Performance Training</h2>
+    <ul id="golf-performance-list"><li>Loading…</li></ul>
   </div>
 
   <div class="feed-section">
     <h2>Golf Industry News</h2>
-    <ul id="golf-industry-list"><li>Loading...</li></ul>
+    <ul id="golf-industry-list"><li>Loading…</li></ul>
   </div>
 
   <div class="feed-section">
-    <h2>PGA & LPGA Tour Updates</h2>
-    <ul id="pga-list"><li>Loading...</li></ul>
+    <h2>PGA / LPGA / Korn Ferry Tour</h2>
+    <ul id="pro-tour-list"><li>Loading…</li></ul>
+  </div>
+
+  <div class="feed-section">
+    <h2>Amateur & Junior Golf</h2>
+    <ul id="amateur-junior-list"><li>Loading…</li></ul>
+  </div>
+
+  <div class="feed-section">
+    <h2>Equipment Reviews & Launches</h2>
+    <ul id="equipment-list"><li>Loading…</li></ul>
+  </div>
+
+  <div class="feed-section">
+    <h2>Performance Analysis & Swing Technique</h2>
+    <ul id="analysis-technique-list"><li>Loading…</li></ul>
+  </div>
+
+  <div class="feed-section">
+    <h2>💪 Fitness & Strength Conditioning</h2>
+    <ul id="fitness-list"><li>Loading…</li></ul>
+  </div>
+
+  <div class="feed-section">
+    <h2>🍎 Nutrition & Recovery</h2>
+    <ul id="nutrition-list"><li>Loading…</li></ul>
+  </div>
+
+  <div class="feed-section">
+    <h2>🧠 Sports Psychology & Concentration</h2>
+    <ul id="psychology-list"><li>Loading…</li></ul>
+  </div>
+
+  <div class="feed-section">
+    <h2>🏥 Clinical Sports Medicine & Rehab</h2>
+    <ul id="medicine-list"><li>Loading…</li></ul>
+  </div>
+
+  <div class="feed-section">
+    <h2>⌚ Technology & Equipment Innovation</h2>
+    <ul id="tech-list"><li>Loading…</li></ul>
+  </div>
+
+  <div class="feed-section">
+    <h2>🏆 Youth & Amateur Performance</h2>
+    <ul id="youth-list"><li>Loading…</li></ul>
+  </div>
+
+  <div class="feed-section">
+    <h2>📚 Education, Certifications & Research</h2>
+    <ul id="education-list"><li>Loading…</li></ul>
   </div>
 
   <script>
     async function loadFeed(proxyUrl, listId) {
       const ul = document.getElementById(listId);
       ul.innerHTML = "<li>Loading…</li>";
-
       try {
-        const resp = await fetch(proxyUrl);
-        if (!resp.ok) throw new Error(resp.statusText);
-        const text = await resp.text();
-        const xml = new DOMParser().parseFromString(text, "text/xml");
-        const items = xml.querySelectorAll("item, entry");
-        ul.innerHTML = "";
-
-        if (!items.length) throw new Error("No articles found");
-
-        for (let i = 0; i < Math.min(8, items.length); i++) {
-          const el = items[i];
-          const title = el.querySelector("title")?.textContent || "No title";
-
-          let link = "";
-          const linkTag = el.querySelector("link");
-          if (linkTag) {
-            if (linkTag.getAttribute("href")) {
-              link = linkTag.getAttribute("href");
-            } else {
-              link = linkTag.textContent;
-            }
-          }
-
-          const li = document.createElement("li");
-          li.innerHTML = `<a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>`;
+        const res = await fetch(proxyUrl);
+        if (!res.ok) throw new Error(res.statusText);
+        const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
+        const items = xml.querySelectorAll('item, entry');
+        if(!items.length) throw new Error('No items');
+        ul.innerHTML = '';
+        items.forEach((el, i) => {
+          if(i >= 8) return;
+          const title = el.querySelector('title')?.textContent || 'No title';
+          const linkTag = el.querySelector('link');
+          const link = linkTag?.getAttribute('href') || linkTag?.textContent || '#';
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${link}" target="_blank" rel="noopener noreferrer" class="feed-link">${title}</a>`;
           ul.appendChild(li);
-        }
-      } catch (err) {
-        ul.innerHTML = `<li style="color: red;">Unable to load feed: ${err.message}</li>`;
+        });
+      } catch (e) {
+        ul.innerHTML = `<li style="color:red;">Error loading feed</li>`;
       }
     }
 
-    loadFeed("https://api.allorigins.win/raw?url=https://www.golfdigest.com/feed/rss", "golf-industry-list");
-    loadFeed("https://api.allorigins.win/raw?url=https://www.pgatour.com/bin/data/feeds/content/feed/pga-tour/news.xml", "pga-list");
-    loadFeed("https://api.allorigins.win/raw?url=https://golfweek.usatoday.com/feed/", "golf-performance-list");
+    // Golf
+    loadFeed('https://api.allorigins.win/raw?url=https://golfdigest.com/feed/rss', 'golf-industry-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://golfweek.usatoday.com/feed/', 'golf-performance-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://www.pgatour.com/rss.html', 'pro-tour-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://example.com/amateur-junior-rss', 'amateur-junior-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://mygolfspy.com/feed/', 'equipment-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://golf.com/feed', 'analysis-technique-list');
+
+    // Fitness & Nutrition
+    loadFeed('https://api.allorigins.win/raw?url=https://breakingmuscle.com/feed/', 'fitness-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://www.precisionnutrition.com/feed', 'nutrition-list');
+
+    // Psychology & Medicine
+    loadFeed('https://api.allorigins.win/raw?url=https://psychminded.org/feed/', 'psychology-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://www.acsm.org/newsroom-acsm-magazine/rss', 'medicine-list');
+
+    // Tech & Youth & Research
+    loadFeed('https://api.allorigins.win/raw?url=https://golftechtoday.com/feed', 'tech-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://www.ajga.org/rss', 'youth-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://pubmed.ncbi.nlm.nih.gov/rss/search/1', 'education-list');
   </script>
 </body>
 </html>
