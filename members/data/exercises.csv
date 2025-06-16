@@ -1,0 +1,226 @@
+﻿Sport,Modality,Training Focus,Exercise Name,Description
+Baseball,Strength,Lower Body,Romanian Deadlift,Romanian Deadlift focusing on Lower Body strength for batting power.
+Baseball,Strength,Upper Body,Pull-Up,Pull-Up focusing on Upper Body pulling strength for throwing velocity.
+Baseball,Strength,Core,Pallof Press,Pallof Press focusing on Core anti-rotation stability for pitching control.
+Baseball,Plyometrics,Rotational Power,Rotational Med Ball Throw,Rotational Medicine Ball Throw focusing on rotational power for batting.
+Baseball,Plyometrics,Explosiveness,Broad Jump,Broad Jump focusing on full-body explosiveness for base running.
+Baseball,Agility,Change of Direction,Agility Ladder Drills,Agility Ladder Drills focusing on quick footwork fielding ground balls.
+Baseball,Conditioning,Interval,Mound-to-Home Sprints,Mound-to-Home Sprints focusing on Conditioning for game-like sprint demands.
+Baseball,Power,Explosiveness,Overhead Medicine Ball Slam,Overhead Medicine Ball Slam focusing on upper-body explosiveness.
+Baseball,Balance,Stability,Single-Leg Turkish Get-Up,Single-Leg Turkish Get-Up focusing on shoulder stability for throwing.
+Baseball,Mobility,Shoulder Mobility,PVC Pipe Shoulder Dislocation,PVC Pipe Shoulder Dislocation focusing on Shoulder Mobility to prevent injury.
+Baseball,Speed,Base Running,Home-to-First Sprint,Home-to-First Sprint focusing on Speed for base running efficiency.
+Baseball,Reactive,Hand-Eye Coordination,Reaction Ball Fielding,Reaction Ball Fielding focusing on reactive hand-eye coordination for fielding.
+Basketball,Strength,Lower Body,Back Squat,Back Squat focusing on Lower Body strength specific to basketball performance.
+Basketball,Strength,Upper Body,Dumbbell Bench Press,Dumbbell Bench Press focusing on Upper Body strength to improve shooting and passes.
+Basketball,Strength,Core,Hanging Leg Raise,Hanging Leg Raise focusing on Core strength for stability on the court.
+Basketball,Plyometrics,Lower Body,Box Jump,Box Jump focusing on Lower Body explosiveness for rebounding and vertical leap.
+Basketball,Plyometrics,Upper Body,Clap Push-Up,Clap Push-Up focusing on Upper Body plyometric power for robust finishes.
+Basketball,Agility,Lateral Movement,Lateral Cone Hops,Lateral Cone Hops focusing on Agility to improve defensive slides.
+Basketball,Conditioning,Endurance,Full Court Suicides,Full Court Suicides focusing on Conditioning and endurance to maintain pace.
+Basketball,Power,Explosiveness,Medicine Ball Slam,Medicine Ball Slam focusing on explosive power transfers from core to limbs.
+Basketball,Balance,Stability,Single-Leg Balance Reach,Single-Leg Balance Reach focusing on Stability during dynamic play.
+Basketball,Mobility,Hip Mobility,Hip Flexor Stretch with Reach,Hip Flexor Stretch with Reach focusing on Hip Mobility for defensive positioning.
+Basketball,Speed,Acceleration,10m Sprint Repeats,10m Sprint Repeats focusing on Speed acceleration for fast breaks.
+Basketball,Reactive,Hand-Eye Coordination,Reaction Ball Drill,Reaction Ball Drill focusing on Reactive hand-eye coordination for steals.
+Circuit Training,Balance,Core,Wall Sit,Wall Sit focusing on Core through Balance training for circuit training.
+Circuit Training,Strength,Full Body,Bird Dog,Bird Dog focusing on Full Body through Strength training for circuit training.
+Circuit Training,Flexibility,Explosiveness,Landmine Press,Landmine Press focusing on Explosiveness through Flexibility training for circuit training.
+Circuit Training,Power,Conditioning,Box Jump,Box Jump focusing on Conditioning through Power training for circuit training.
+Circuit Training,Power,Stability,Turkish Get-Up,Turkish Get-Up focusing on Stability through Power training for circuit training.
+Circuit Training,Balance,Legs,Split Squat,Split Squat focusing on Legs through Balance training for circuit training.
+Circuit Training,Cardio,Core,Single Arm Snatch,Single Arm Snatch focusing on Core through Cardio training for circuit training.
+Circuit Training,Mobility,Conditioning,Crow Pose,Crow Pose focusing on Conditioning through Mobility training for circuit training.
+Circuit Training,Mobility,Legs,Crow Pose,Crow Pose focusing on Legs through Mobility training for circuit training.
+Circuit Training,Flexibility,Legs,Wall Ball Clean,Wall Ball Clean focusing on Legs through Flexibility training for circuit training.
+Circuit Training,Mobility,Upper Body,Wall Ball Clean,Wall Ball Clean focusing on Upper Body through Mobility training for circuit training.
+Circuit Training,Balance,Legs,Russian Twist,Russian Twist focusing on Legs through Balance training for circuit training.
+Circuit Training,Cardio,Explosiveness,Push Jerk,Push Jerk focusing on Explosiveness through Cardio training for circuit training.
+Circuit Training,Cardio,Upper Body,Broad Jump,Broad Jump focusing on Upper Body through Cardio training for circuit training.
+Circuit Training,Balance,Upper Body,Glute Bridge,Glute Bridge focusing on Upper Body through Balance training for circuit training.
+Circuit Training,Cardio,Full Body,Butt Kicks,Butt Kicks focusing on Full Body through Cardio training for circuit training.
+Circuit Training,Balance,Upper Body,Windshield Wiper,Windshield Wiper focusing on Upper Body through Balance training for circuit training.
+Circuit Training,Strength,Legs,90/90 Hip Switch,90/90 Hip Switch focusing on Legs through Strength training for circuit training.
+Circuit Training,Balance,Upper Body,Wall Ball Clean,Wall Ball Clean focusing on Upper Body through Balance training for circuit training.
+Circuit Training,Strength,Legs,Handstand Hold,Handstand Hold focusing on Legs through Strength training for circuit training.
+Circuit Training,Balance,Conditioning,Calf Raise,Calf Raise focusing on Conditioning through Balance training for circuit training.
+Circuit Training,Balance,Legs,Thruster,Thruster focusing on Legs through Balance training for circuit training.
+Circuit Training,Power,Explosiveness,Banded Row,Banded Row focusing on Explosiveness through Power training for circuit training.
+Circuit Training,Strength,Upper Body,Deadlift,Deadlift focusing on Upper Body through Strength training for circuit training.
+Circuit Training,Mobility,Explosiveness,Banded Row,Banded Row focusing on Explosiveness through Mobility training for circuit training.
+Circuit Training,Cardio,Full Body,Butt Kicks,Butt Kicks focusing on Full Body through Cardio training for circuit training.
+Circuit Training,Mobility,Legs,Triangle Pose,Triangle Pose focusing on Legs through Mobility training for circuit training.
+Circuit Training,Balance,Explosiveness,Tree Pose,Tree Pose focusing on Explosiveness through Balance training for circuit training.
+Circuit Training,Balance,Full Body,Cat Cow,Cat Cow focusing on Full Body through Balance training for circuit training.
+Circuit Training,Flexibility,Full Body,Jump Shrug,Jump Shrug focusing on Full Body through Flexibility training for circuit training.
+Circuit Training,Balance,Upper Body,Split Squat,Split Squat focusing on Upper Body through Balance training for circuit training.
+Circuit Training,Mobility,Core,Triangle Pose,Triangle Pose focusing on Core through Mobility training for circuit training.
+Circuit Training,Mobility,Stability,Crab Walk,Crab Walk focusing on Stability through Mobility training for circuit training.
+Circuit Training,Balance,Conditioning,Ring Dip,Ring Dip focusing on Conditioning through Balance training for circuit training.
+Circuit Training,Mobility,Conditioning,T-Spine Rotation,T-Spine Rotation focusing on Conditioning through Mobility training for circuit training.
+Circuit Training,Flexibility,Stability,Push Jerk,Push Jerk focusing on Stability through Flexibility training for circuit training.
+Circuit Training,Strength,Upper Body,Camel Pose,Camel Pose focusing on Upper Body through Strength training for circuit training.
+Crossfit,Endurance,Explosiveness,Z-Press,Z-Press focusing on Explosiveness through Endurance training for crossfit.
+Crossfit,Flexibility,Explosiveness,Clean and Jerk,Clean and Jerk focusing on Explosiveness through Flexibility training for crossfit.
+Crossfit,Power,Explosiveness,Ring Dip,Ring Dip focusing on Explosiveness through Power training for crossfit.
+Crossfit,Cardio,Conditioning,Bicycle Crunch,Bicycle Crunch focusing on Conditioning through Cardio training for crossfit.
+Crossfit,Mobility,Legs,Cobra Stretch,Cobra Stretch focusing on Legs through Mobility training for crossfit.
+Crossfit,Cardio,Conditioning,Plank,Plank focusing on Conditioning through Cardio training for crossfit.
+Crossfit,Strength,Upper Body,Jumping Jack,Jumping Jack focusing on Upper Body through Strength training for crossfit.
+Crossfit,Endurance,Explosiveness,Y-T-W Raises,Y-T-W Raises focusing on Explosiveness through Endurance training for crossfit.
+Crossfit,Endurance,Upper Body,Push-up,Push-up focusing on Upper Body through Endurance training for crossfit.
+Crossfit,Strength,Conditioning,Mountain Climber,Mountain Climber focusing on Conditioning through Strength training for crossfit.
+Crossfit,Flexibility,Legs,Arm Bar Stretch,Arm Bar Stretch focusing on Legs through Flexibility training for crossfit.
+Crossfit,Balance,Conditioning,Calf Raise,Calf Raise focusing on Conditioning through Balance training for crossfit.
+Crossfit,Balance,Stability,Decline Push-up,Decline Push-up focusing on Stability through Balance training for crossfit.
+Crossfit,Strength,Stability,Sled Push,Sled Push focusing on Stability through Strength training for crossfit.
+Crossfit,Endurance,Upper Body,Handstand Hold,Handstand Hold focusing on Upper Body through Endurance training for crossfit.
+Crossfit,Flexibility,Full Body,T-Spine Rotation,T-Spine Rotation focusing on Full Body through Flexibility training for crossfit.
+Crossfit,Mobility,Full Body,Snatch,Snatch focusing on Full Body through Mobility training for crossfit.
+Crossfit,Flexibility,Conditioning,Decline Push-up,Decline Push-up focusing on Conditioning through Flexibility training for crossfit.
+Crossfit,Flexibility,Stability,Toes to Bar,Toes to Bar focusing on Stability through Flexibility training for crossfit.
+Crossfit,Cardio,Conditioning,Pigeon Pose,Pigeon Pose focusing on Conditioning through Cardio training for crossfit.
+Crossfit,Balance,Upper Body,Sit-up,Sit-up focusing on Upper Body through Balance training for crossfit.
+Crossfit,Balance,Full Body,Suicide Drill,Suicide Drill focusing on Full Body through Balance training for crossfit.
+Crossfit,Power,Upper Body,Pigeon Pose,Pigeon Pose focusing on Upper Body through Power training for crossfit.
+Crossfit,Endurance,Full Body,Russian Twist,Russian Twist focusing on Full Body through Endurance training for crossfit.
+Crossfit,Endurance,Conditioning,Y-T-W Raises,Y-T-W Raises focusing on Conditioning through Endurance training for crossfit.
+Crossfit,Balance,Conditioning,Isometric Hold,Isometric Hold focusing on Conditioning through Balance training for crossfit.
+Crossfit,Flexibility,Stability,Pigeon Pose,Pigeon Pose focusing on Stability through Flexibility training for crossfit.
+Crossfit,Strength,Explosiveness,Arnold Press,Arnold Press focusing on Explosiveness through Strength training for crossfit.
+Crossfit,Mobility,Upper Body,Bear Crawl,Bear Crawl focusing on Upper Body through Mobility training for crossfit.
+Golf,Power,Stability,Cobra Stretch,Cobra Stretch focusing on Stability through Power training for golf.
+Golf,Endurance,Stability,Triangle Pose,Triangle Pose focusing on Stability through Endurance training for golf.
+Golf,Mobility,Stability,Battle Ropes,Battle Ropes focusing on Stability through Mobility training for golf.
+Golf,Power,Explosiveness,Single Arm Snatch,Single Arm Snatch focusing on Explosiveness through Power training for golf.
+Golf,Cardio,Full Body,Lunge,Lunge focusing on Full Body through Cardio training for golf.
+Golf,Cardio,Conditioning,Single Arm Snatch,Single Arm Snatch focusing on Conditioning through Cardio training for golf.
+Golf,Mobility,Conditioning,Battle Ropes,Battle Ropes focusing on Conditioning through Mobility training for golf.
+Golf,Flexibility,Explosiveness,Landmine Row,Landmine Row focusing on Explosiveness through Flexibility training for golf.
+Golf,Endurance,Full Body,Clean and Jerk,Clean and Jerk focusing on Full Body through Endurance training for golf.
+Golf,Mobility,Core,Child’s Pose,Child’s Pose focusing on Core through Mobility training for golf.
+Golf,Endurance,Explosiveness,Pigeon Pose,Pigeon Pose focusing on Explosiveness through Endurance training for golf.
+Golf,Endurance,Explosiveness,Burpee,Burpee focusing on Explosiveness through Endurance training for golf.
+Golf,Power,Explosiveness,Farmer Carry,Farmer Carry focusing on Explosiveness through Power training for golf.
+Golf,Balance,Legs,Hip Thrust,Hip Thrust focusing on Legs through Balance training for golf.
+Golf,Power,Full Body,Russian Twist,Russian Twist focusing on Full Body through Power training for golf.
+Golf,Endurance,Stability,Tree Pose,Tree Pose focusing on Stability through Endurance training for golf.
+Golf,Power,Core,Wall Walk,Wall Walk focusing on Core through Power training for golf.
+Golf,Cardio,Conditioning,Crab Walk,Crab Walk focusing on Conditioning through Cardio training for golf.
+Golf,Flexibility,Legs,Snatch,Snatch focusing on Legs through Flexibility training for golf.
+Golf,Mobility,Full Body,Deadlift,Deadlift focusing on Full Body through Mobility training for golf.
+Golf,Strength,Full Body,Calf Raise,Calf Raise focusing on Full Body through Strength training for golf.
+Golf,Strength,Stability,Clean and Jerk,Clean and Jerk focusing on Stability through Strength training for golf.
+Golf,Power,Legs,Decline Push-up,Decline Push-up focusing on Legs through Power training for golf.
+Golf,Balance,Core,Triangle Pose,Triangle Pose focusing on Core through Balance training for golf.
+Golf,Balance,Core,Sit-up,Sit-up focusing on Core through Balance training for golf.
+Golf,Strength,Stability,Scissor Kicks,Scissor Kicks focusing on Stability through Strength training for golf.
+Golf,Flexibility,Stability,Scapular Pull,Scapular Pull focusing on Stability through Flexibility training for golf.
+Golf,Cardio,Conditioning,Inchworm,Inchworm focusing on Conditioning through Cardio training for golf.
+Golf,Cardio,Conditioning,Russian Twist,Russian Twist focusing on Conditioning through Cardio training for golf.
+Golf,Mobility,Explosiveness,Scapular Pull,Scapular Pull focusing on Explosiveness through Mobility training for golf.
+Golf,Strength,Legs,Squat,Squat focusing on Legs through Strength training for golf.
+Golf,Cardio,Upper Body,Glute Bridge,Glute Bridge focusing on Upper Body through Cardio training for golf.
+Golf,Strength,Full Body,Arm Bar Stretch,Arm Bar Stretch focusing on Full Body through Strength training for golf.
+Golf,Balance,Conditioning,V-Up,V-Up focusing on Conditioning through Balance training for golf.
+Golf,Strength,Core,Tree Pose,Tree Pose focusing on Core through Strength training for golf.
+Golf,Balance,Conditioning,High Knees,High Knees focusing on Conditioning through Balance training for golf.
+Golf,Cardio,Conditioning,Farmer Carry,Farmer Carry focusing on Conditioning through Cardio training for golf.
+Golf,Power,Core,Russian Twist,Russian Twist focusing on Core through Power training for golf.
+HIIT,Strength,Core,Prone Cobra,Prone Cobra focusing on Core through Strength training for hiit.
+HIIT,Mobility,Conditioning,Jumping Jack,Jumping Jack focusing on Conditioning through Mobility training for hiit.
+HIIT,Strength,Conditioning,Wall Sit,Wall Sit focusing on Conditioning through Strength training for hiit.
+HIIT,Endurance,Explosiveness,Camel Pose,Camel Pose focusing on Explosiveness through Endurance training for hiit.
+HIIT,Balance,Upper Body,Y-T-W Raises,Y-T-W Raises focusing on Upper Body through Balance training for hiit.
+HIIT,Endurance,Stability,Ring Dip,Ring Dip focusing on Stability through Endurance training for hiit.
+HIIT,Strength,Stability,Isometric Hold,Isometric Hold focusing on Stability through Strength training for hiit.
+HIIT,Flexibility,Full Body,Turkish Get-Up,Turkish Get-Up focusing on Full Body through Flexibility training for hiit.
+HIIT,Mobility,Stability,Spiderman Crawl,Spiderman Crawl focusing on Stability through Mobility training for hiit.
+HIIT,Balance,Explosiveness,Banded Row,Banded Row focusing on Explosiveness through Balance training for hiit.
+HIIT,Strength,Upper Body,Landmine Press,Landmine Press focusing on Upper Body through Strength training for hiit.
+HIIT,Flexibility,Full Body,Speed Skaters,Speed Skaters focusing on Full Body through Flexibility training for hiit.
+HIIT,Strength,Upper Body,Sled Push,Sled Push focusing on Upper Body through Strength training for hiit.
+HIIT,Power,Stability,Hollow Rock,Hollow Rock focusing on Stability through Power training for hiit.
+HIIT,Mobility,Full Body,Clean and Jerk,Clean and Jerk focusing on Full Body through Mobility training for hiit.
+HIIT,Mobility,Conditioning,Hollow Hold,Hollow Hold focusing on Conditioning through Mobility training for hiit.
+HIIT,Endurance,Stability,Good Morning,Good Morning focusing on Stability through Endurance training for hiit.
+HIIT,Balance,Core,Russian Twist,Russian Twist focusing on Core through Balance training for hiit.
+HIIT,Balance,Explosiveness,Mountain Climber,Mountain Climber focusing on Explosiveness through Balance training for hiit.
+HIIT,Balance,Upper Body,Landmine Press,Landmine Press focusing on Upper Body through Balance training for hiit.
+HIIT,Endurance,Core,Warrior Pose,Warrior Pose focusing on Core through Endurance training for hiit.
+HIIT,Balance,Stability,Bird Dog,Bird Dog focusing on Stability through Balance training for hiit.
+HIIT,Endurance,Upper Body,Toes to Bar,Toes to Bar focusing on Upper Body through Endurance training for hiit.
+HIIT,Mobility,Upper Body,Triangle Pose,Triangle Pose focusing on Upper Body through Mobility training for hiit.
+HIIT,Mobility,Explosiveness,Overhead Press,Overhead Press focusing on Explosiveness through Mobility training for hiit.
+HIIT,Strength,Stability,Ring Dip,Ring Dip focusing on Stability through Strength training for hiit.
+HIIT,Mobility,Core,Decline Push-up,Decline Push-up focusing on Core through Mobility training for hiit.
+HIIT,Balance,Full Body,Leg Raises,Leg Raises focusing on Full Body through Balance training for hiit.
+HIIT,Power,Legs,Speed Skaters,Speed Skaters focusing on Legs through Power training for hiit.
+HIIT,Power,Full Body,Wall Walk,Wall Walk focusing on Full Body through Power training for hiit.
+HIIT,Power,Explosiveness,Clean and Jerk,Clean and Jerk focusing on Explosiveness through Power training for hiit.
+HIIT,Cardio,Upper Body,Plank,Plank focusing on Upper Body through Cardio training for hiit.
+HIIT,Strength,Legs,Snatch,Snatch focusing on Legs through Strength training for hiit.
+HIIT,Mobility,Legs,Mountain Climber,Mountain Climber focusing on Legs through Mobility training for hiit.
+HIIT,Cardio,Stability,Scissor Kicks,Scissor Kicks focusing on Stability through Cardio training for hiit.
+HIIT,Endurance,Core,Split Squat,Split Squat focusing on Core through Endurance training for hiit.
+Metcon,Endurance,Legs,Bird Dog,Bird Dog focusing on Legs through Endurance training for metcon.
+Metcon,Endurance,Legs,Row,Row focusing on Legs through Endurance training for metcon.
+Metcon,Cardio,Stability,Banded Walk,Banded Walk focusing on Stability through Cardio training for metcon.
+Metcon,Power,Explosiveness,Z-Press,Z-Press focusing on Explosiveness through Power training for metcon.
+Metcon,Mobility,Conditioning,Push-up,Push-up focusing on Conditioning through Mobility training for metcon.
+Metcon,Power,Explosiveness,Hollow Rock,Hollow Rock focusing on Explosiveness through Power training for metcon.
+Metcon,Strength,Conditioning,Broad Jump,Broad Jump focusing on Conditioning through Strength training for metcon.
+Metcon,Power,Legs,Shuttle Run,Shuttle Run focusing on Legs through Power training for metcon.
+Metcon,Endurance,Conditioning,Toes to Bar,Toes to Bar focusing on Conditioning through Endurance training for metcon.
+Metcon,Balance,Full Body,Glute Bridge,Glute Bridge focusing on Full Body through Balance training for metcon.
+Metcon,Cardio,Core,Wall Sit,Wall Sit focusing on Core through Cardio training for metcon.
+Metcon,Strength,Stability,Battle Ropes,Battle Ropes focusing on Stability through Strength training for metcon.
+Metcon,Endurance,Legs,Triangle Pose,Triangle Pose focusing on Legs through Endurance training for metcon.
+Metcon,Mobility,Conditioning,Side Plank,Side Plank focusing on Conditioning through Mobility training for metcon.
+Metcon,Mobility,Conditioning,Good Morning,Good Morning focusing on Conditioning through Mobility training for metcon.
+Metcon,Endurance,Stability,TRX Row,TRX Row focusing on Stability through Endurance training for metcon.
+Metcon,Cardio,Conditioning,Inchworm,Inchworm focusing on Conditioning through Cardio training for metcon.
+Metcon,Strength,Stability,Mountain Climber,Mountain Climber focusing on Stability through Strength training for metcon.
+Metcon,Flexibility,Explosiveness,Cat Cow,Cat Cow focusing on Explosiveness through Flexibility training for metcon.
+Metcon,Flexibility,Upper Body,90/90 Hip Switch,90/90 Hip Switch focusing on Upper Body through Flexibility training for metcon.
+Metcon,Flexibility,Legs,Mountain Climber,Mountain Climber focusing on Legs through Flexibility training for metcon.
+Metcon,Power,Upper Body,Pelvic Tilt,Pelvic Tilt focusing on Upper Body through Power training for metcon.
+Metcon,Endurance,Explosiveness,Chest to Bar,Chest to Bar focusing on Explosiveness through Endurance training for metcon.
+Metcon,Mobility,Upper Body,Glute Bridge,Glute Bridge focusing on Upper Body through Mobility training for metcon.
+Metcon,Endurance,Conditioning,Spiderman Crawl,Spiderman Crawl focusing on Conditioning through Endurance training for metcon.
+Metcon,Strength,Full Body,Landmine Row,Landmine Row focusing on Full Body through Strength training for metcon.
+Metcon,Mobility,Upper Body,High Knees,High Knees focusing on Upper Body through Mobility training for metcon.
+Metcon,Power,Explosiveness,Pelvic Tilt,Pelvic Tilt focusing on Explosiveness through Power training for metcon.
+Metcon,Flexibility,Conditioning,Toes to Bar,Toes to Bar focusing on Conditioning through Flexibility training for metcon.
+Metcon,Cardio,Core,Arm Bar Stretch,Arm Bar Stretch focusing on Core through Cardio training for metcon.
+Metcon,Cardio,Upper Body,Spiderman Crawl,Spiderman Crawl focusing on Upper Body through Cardio training for metcon.
+Metcon,Cardio,Core,Butt Kicks,Butt Kicks focusing on Core through Cardio training for metcon.
+Metcon,Balance,Stability,Clean and Jerk,Clean and Jerk focusing on Stability through Balance training for metcon.
+Metcon,Strength,Full Body,Medicine Ball Slam,Medicine Ball Slam focusing on Full Body through Strength training for metcon.
+Metcon,Endurance,Stability,Russian Twist,Russian Twist focusing on Stability through Endurance training for metcon.
+,,,,
+Yoga,Endurance,Core,Jumping Jack,Jumping Jack focusing on Core through Endurance training for yoga.
+Yoga,Power,Stability,Sled Push,Sled Push focusing on Stability through Power training for yoga.
+Yoga,Balance,Stability,Banded Row,Banded Row focusing on Stability through Balance training for yoga.
+Yoga,Strength,Conditioning,Bird Dog,Bird Dog focusing on Conditioning through Strength training for yoga.
+Yoga,Balance,Explosiveness,Wall Ball Clean,Wall Ball Clean focusing on Explosiveness through Balance training for yoga.
+Yoga,Balance,Core,Push Jerk,Push Jerk focusing on Core through Balance training for yoga.
+Yoga,Balance,Conditioning,Crab Walk,Crab Walk focusing on Conditioning through Balance training for yoga.
+Yoga,Mobility,Core,Cat Cow,Cat Cow focusing on Core through Mobility training for yoga.
+Yoga,Power,Stability,Dot Drill,Dot Drill focusing on Stability through Power training for yoga.
+Yoga,Mobility,Upper Body,Bird Dog,Bird Dog focusing on Upper Body through Mobility training for yoga.
+Yoga,Mobility,Stability,Pelvic Tilt,Pelvic Tilt focusing on Stability through Mobility training for yoga.
+Yoga,Cardio,Legs,Thruster,Thruster focusing on Legs through Cardio training for yoga.
+Yoga,Balance,Explosiveness,Broad Jump,Broad Jump focusing on Explosiveness through Balance training for yoga.
+Yoga,Mobility,Stability,Lunge,Lunge focusing on Stability through Mobility training for yoga.
+Yoga,Endurance,Upper Body,Agility Ladder Drill,Agility Ladder Drill focusing on Upper Body through Endurance training for yoga.
+Yoga,Balance,Explosiveness,Wall Ball,Wall Ball focusing on Explosiveness through Balance training for yoga.
+Yoga,Mobility,Full Body,Arnold Press,Arnold Press focusing on Full Body through Mobility training for yoga.
+Yoga,Flexibility,Conditioning,Speed Skaters,Speed Skaters focusing on Conditioning through Flexibility training for yoga.
+Yoga,Power,Core,Spiderman Crawl,Spiderman Crawl focusing on Core through Power training for yoga.
+Yoga,Mobility,Explosiveness,Jump Shrug,Jump Shrug focusing on Explosiveness through Mobility training for yoga.
+Yoga,Flexibility,Legs,Prone Cobra,Prone Cobra focusing on Legs through Flexibility training for yoga.
+Yoga,Mobility,Full Body,Child’s Pose,Child’s Pose focusing on Full Body through Mobility training for yoga.
+Yoga,Mobility,Explosiveness,Hip Thrust,Hip Thrust focusing on Explosiveness through Mobility training for yoga.
+Yoga,Endurance,Full Body,Wall Ball Clean,Wall Ball Clean focusing on Full Body through Endurance training for yoga.
+Yoga,Strength,Stability,Landmine Row,Landmine Row focusing on Stability through Strength training for yoga.
