@@ -6,9 +6,9 @@
   <title>Articles & News Hub – Defy Elite Athletics</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    body { background: #000; color: #fff; font-family: Arial, sans-serif; margin: 0; padding-bottom:50px; }
+    body { background: #000; color: #fff; font-family: Arial, sans-serif; margin: 0; padding-bottom: 50px; }
     header { background: #000; text-align: center; padding: 1rem; }
-    header img { max-width: 200px; }
+    header img { max-width: 200px; height: auto; }
     nav { background: #111; padding: 0.75rem; text-align: center; }
     nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: bold; }
     nav a.active, nav a:hover { color: #09f; }
@@ -24,7 +24,8 @@
 <body>
 
   <header>
-    <a href="index.html"><img src="assets/logo1.png" alt="Defy Elite Athletics Logo"></a>
+    <!-- Logo needs to be placed in the `assets/` folder and named `logo.png` -->
+    <a href="index.html"><img src="assets/logo.png" alt="Defy Elite Athletics Logo"></a>
   </header>
 
   <nav>
@@ -37,17 +38,14 @@
 
   <main>
     <h1>Articles & News Hub</h1>
-
-    <!-- All topic sections -->
     <div id="section-container"></div>
   </main>
 
-  <!-- JavaScript to load live RSS feeds -->
   <script>
     const CORS = "https://api.allorigins.win/raw?url=";
+    const ITEM_LIMIT = 10; // shows more articles
 
     const feeds = [
-      // Golf & Performance
       { id: "golf-performance", title: "Golf & Performance Training", url: "https://www.golf.com/feed/" },
       { id: "golf-industry", title: "Golf Industry News", url: "https://www.golfdigest.com/golf-news.rss" },
       { id: "pro-tour", title: "PGA/LPGA/Korn Ferry Coverage", url: "https://www.pgatour.com/rss/news.rss" },
@@ -55,31 +53,17 @@
       { id: "equipment-tech", title: "Equipment Reviews & Tech", url: "https://www.mygolfspy.com/feed/" },
       { id: "swing-tech", title: "Performance & Swing Technique", url: "https://www.golfdigest.com/how-to.rss" },
 
-      // Fitness & Strength
       { id: "fitness-strength", title: "Fitness & Strength Conditioning", url: "https://breakingmuscle.com/feed/" },
       { id: "mobility-injury", title: "Mobility & Injury Prevention", url: "https://www.precisionnutrition.com/rss" },
-      { id: "sports-science", title: "Sports Science Journals (ACSM/NSCA)", url: "https://www.acsm.org/about-us/rss" },
+      { id: "sports-science", title: "Sports Science Journals (ACSM/NSCA)", url: "https://www.acsm.org/rss/news" },
 
-      // Nutrition & Recovery
       { id: "nutrition-recovery", title: "Nutrition & Recovery", url: "https://www.precisionnutrition.com/rss" },
-
-      // Psychology & Concentration
       { id: "psychology", title: "Sports Psychology & Concentration", url: "https://sportpsychologytoday.com/feed/" },
-
-      // Medicine & Rehab
-      { id: "sports-medicine", title: "Clinical & Sports Medicine & Rehab", url: "https://sciencedaily.com/rss/health_sports_medicine.xml" },
-
-      // Tech & Equipment
+      { id: "sports-medicine", title: "Clinical & Sports Medicine & Rehab", url: "https://www.sciencedaily.com/rss/health_sports_medicine.xml" },
       { id: "tech-innovation", title: "Technology & Equipment Innovation", url: "https://www.wearable-technologies.com/feed/" },
-
-      // Pro Tour Updates
       { id: "pro-updates", title: "Pro Tour & Professional Updates", url: "https://www.pgatour.com/rss/news.rss" },
-
-      // Youth & Amateur Performance
       { id: "youth-performance", title: "Youth & Amateur Performance", url: "https://www.njga.org/rss/" },
-
-      // Education & Research
-      { id: "education-research", title: "Education, Certifications & Research", url: "https://www.acsm.org/about-us/rss" }
+      { id: "education-research", title: "Education, Certifications & Research", url: "https://www.acsm.org/rss/news" }
     ];
 
     const container = document.getElementById('section-container');
@@ -89,7 +73,7 @@
       section.className = 'section';
       section.innerHTML = `
         <h2>${feed.title}</h2>
-        <ul id="${feed.id}" class="feed-list"><li>Loading...</li></ul>`;
+        <ul id="${feed.id}" class="feed-list"><li>Loading…</li></ul>`;
       container.appendChild(section);
 
       fetch(CORS + encodeURIComponent(feed.url))
@@ -100,11 +84,11 @@
           const list = section.querySelector(`#${feed.id}`);
           list.innerHTML = "";
           items.forEach((itm, i) => {
-            if (i >= 5) return;
-            const title = itm.querySelector("title").textContent;
-            const link = itm.querySelector("link").textContent;
+            if (i >= ITEM_LIMIT) return;
+            const t = itm.querySelector("title")?.textContent;
+            const l = itm.querySelector("link")?.textContent;
             const li = document.createElement('li');
-            li.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+            li.innerHTML = `<a href="${l}" target="_blank">${t}</a>`;
             list.appendChild(li);
           });
         })
