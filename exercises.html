@@ -2,98 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Exercises – Defy Elite Athletics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercises</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
     body {
-      background: #111;
-      color: #eee;
+      background-color: #111;
+      color: #fff;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
     h1 {
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #09f;
-      margin: 2rem 0 1rem;
+      margin-top: 2rem;
     }
     .search-bar {
-      display: block;
-      margin: 1rem auto 2rem;
-      padding: 0.75rem;
       width: 80%;
       max-width: 600px;
+      margin: 1.5rem auto;
+      display: block;
+      padding: 10px 14px;
+      font-size: 1rem;
       border-radius: 6px;
       border: none;
-      background: #222;
-      color: #fff;
     }
     table {
       width: 90%;
-      margin: 0 auto 4rem;
+      margin: 0 auto 2rem auto;
       border-collapse: collapse;
-      text-align: left;
+      background: #1c1c1c;
+      border-radius: 10px;
+      overflow: hidden;
     }
     th, td {
       padding: 1rem;
+      text-align: left;
       border-bottom: 1px solid #333;
     }
     th {
-      background: #000;
+      background-color: #000;
       color: #09f;
+      font-weight: bold;
     }
     tr:hover {
-      background: #222;
+      background-color: #222;
+      cursor: pointer;
+    }
+    .description-row {
+      display: none;
+      background-color: #181818;
+    }
+    .description-row td {
+      color: #aaa;
+      font-size: 0.95rem;
+      padding: 1rem 1.5rem;
+    }
+    .visible {
+      display: table-row;
     }
   </style>
 </head>
-
-  <!-- NAVIGATION BAR -->
-<nav style="background-color: #111; padding: 0.75rem; text-align: center;">
-  <a href="index.html" style="color: #09f; margin: 0 1rem; text-decoration: none; font-weight: bold;">Home</a>
-  <a href="drills.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Drills</a>
-  <a href="exercises.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Exercises</a>
-  <a href="services.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Services</a>
-  <a href="contact.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Contact</a>
-  <a href="members/login.html" style="color: #fff; margin: 0 1rem; text-decoration: none;">Members</a>
-</nav>
-
 <body>
-  <header style="background: #000; text-align: center; padding: 1rem;">
-    <a href="../index.html"><img src="../assets/logo1.png" alt="Logo" style="max-width: 180px;" /></a>
-  </header>
-
   <h1>Exercises</h1>
-  <input type="text" id="searchInput" class="search-bar" placeholder="Search exercises..." />
+  <input type="text" id="searchInput" class="search-bar" placeholder="Search exercises..."/>
 
   <table id="exercisesTable">
     <thead>
       <tr>
-        <th>Exercise</th>
-        <th>Primary Focus</th>
+        <th>Exercise Name</th>
         <th>Category</th>
+        <th>Target Area</th>
+        <th>Equipment</th>
       </tr>
     </thead>
-    <tbody>
-      <tr><td>Deadlift</td><td>Lower Body</td><td>Strength</td></tr>
-      <tr><td>Plank</td><td>Core Stability</td><td>Endurance</td></tr>
-      <tr><td>Rotational Med Ball Toss</td><td>Power</td><td>Rotation</td></tr>
-      <tr><td>Goblet Squat</td><td>Lower Body</td><td>Mobility</td></tr>
-      <tr><td>Shoulder Taps</td><td>Stability</td><td>Core</td></tr>
-    </tbody>
+    <tbody></tbody>
   </table>
 
   <script>
-    const input = document.getElementById("searchInput");
-    const rows = document.querySelectorAll("#exercisesTable tbody tr");
+    async function loadExercises() {
+      const tbody = document.querySelector("#exercisesTable tbody");
 
-    input.addEventListener("input", function () {
-      const value = this.value.toLowerCase();
-      rows.forEach(row => {
-        const show = [...row.children].some(td => td.textContent.toLowerCase().includes(value));
-        row.style.display = show ? "" : "none";
-      });
-    });
+      try {
+        const res = await fetch("../members/data/exercises.csv"); // Adjust path if needed
+        if (!res.ok) throw new Error("CSV file not found");
+        const text = await res.text();
+        const lines = text.trim().split('\n');
+
+        lines.slice(1).forEach((row, i) => {
+          const cols = row.split(',');
+          if (cols.length < 5) return;
+
+          const tr = document.createElement("tr");
+          for (let j = 0; j < 4; j++) {
+            const td = document.createElement("td");
+            td.textContent = cols[j].trim();
+            tr.appendChild(td);
+          }
+
+          const descTr = document.createElement("tr");
+          descTr.className = "description-row";
+          const descTd = document.createElement("td");
+          descTd.colSpan = 4;
+          descTd.innerHTML = `<strong>Description:</strong> ${cols[4].trim()}`;
+          descTr.appendChild(descTd);
+
+          tr.addEventListener("click", () => {
+            descTr.classList.toggle("visible");
+          });
+
+          tbody.appendChild(tr);
+          tbody.appendChild(descTr);
+        });
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="4" style="color:red; text-align:center;">${err.message}</td></tr>`;
+      }
+    }
+
+    function filterExercises() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#exercisesTable tbody tr");
+      for (let i = 0; i < rows.length; i += 2) {
+        const mainRow = rows[i];
+        const descRow = rows[i + 1];
+        const match = Array.from(mainRow.children).some(td =>
+          td.textContent.toLowerCase().includes(input)
+        );
+        mainRow.style.display = match ? "" : "none";
+        descRow.style.display = match && descRow.classList.contains("visible") ? "" : "none";
+      }
+    }
+
+    document.getElementById("searchInput").addEventListener("input", filterExercises);
+    loadExercises();
   </script>
 </body>
 </html>
