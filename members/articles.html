@@ -6,25 +6,70 @@
   <title>Articles & News Hub</title>
   <link rel="stylesheet" href="../styles.css"/>
   <style>
-    body { background: #000; color: #fff; font-family: Arial, sans-serif; padding-bottom: 4rem; }
-    header, nav { background: #111; }
-    header img { background: none; }
-    nav a { color: #fff; text-decoration: none; margin: 0 1rem; }
-    nav a.active { color: #09f; }
-    h1, h2 { color: #09f; text-align: center; margin: 2rem 0 1rem; }
-    ul { list-style: none; padding: 0; margin: 1rem auto; max-width: 800px; }
-    li { margin: 0.5rem 0; }
-    a.feed-link { color: #0cf; text-decoration: none; }
-    .feed-section { border-top: 1px solid #222; padding: 2rem 0; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding-bottom: 4rem;
+    }
+    header, nav {
+      background: #000;
+    }
+    header img {
+      max-width: 150px;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+      background: transparent;
+    }
+    nav {
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+    nav a.active {
+      color: #09f;
+    }
+    h1, h2 {
+      color: #09f;
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem auto;
+      max-width: 800px;
+    }
+    li {
+      margin: 0.5rem 0;
+    }
+    a {
+      color: #0cf;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .feed-section {
+      border-top: 1px solid #222;
+      padding: 2rem 0;
+    }
   </style>
 </head>
 <body>
-  <header style="padding: 1rem; text-align: center;">
+
+  <header>
     <a href="../index.html">
       <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo"/>
     </a>
   </header>
-  <nav style="text-align:center; padding:1rem;">
+
+  <nav>
     <a href="../index.html">Home</a>
     <a href="articles.html" class="active">Articles</a>
     <a href="../services.html">Services</a>
@@ -34,9 +79,9 @@
 
   <h1>Articles & News Hub</h1>
 
-  <!-- Define all sections -->
+  <!-- Article Sections -->
   <div class="feed-section">
-    <h2>🏌️ Golf & Performance Training</h2>
+    <h2>Golf & Performance Training</h2>
     <ul id="golf-performance-list"><li>Loading…</li></ul>
   </div>
 
@@ -46,58 +91,43 @@
   </div>
 
   <div class="feed-section">
-    <h2>PGA / LPGA / Korn Ferry Tour</h2>
+    <h2>Pro Tour Coverage (PGA / LPGA / Korn Ferry)</h2>
     <ul id="pro-tour-list"><li>Loading…</li></ul>
   </div>
 
   <div class="feed-section">
-    <h2>Amateur & Junior Golf</h2>
-    <ul id="amateur-junior-list"><li>Loading…</li></ul>
-  </div>
-
-  <div class="feed-section">
-    <h2>Equipment Reviews & Launches</h2>
+    <h2>Equipment Reviews & Launch News</h2>
     <ul id="equipment-list"><li>Loading…</li></ul>
   </div>
 
   <div class="feed-section">
-    <h2>Performance Analysis & Swing Technique</h2>
-    <ul id="analysis-technique-list"><li>Loading…</li></ul>
-  </div>
-
-  <div class="feed-section">
-    <h2>💪 Fitness & Strength Conditioning</h2>
+    <h2>Fitness & Strength Conditioning</h2>
     <ul id="fitness-list"><li>Loading…</li></ul>
   </div>
 
   <div class="feed-section">
-    <h2>🍎 Nutrition & Recovery</h2>
+    <h2>Nutrition & Recovery</h2>
     <ul id="nutrition-list"><li>Loading…</li></ul>
   </div>
 
   <div class="feed-section">
-    <h2>🧠 Sports Psychology & Concentration</h2>
+    <h2>Sports Psychology & Mental Performance</h2>
     <ul id="psychology-list"><li>Loading…</li></ul>
   </div>
 
   <div class="feed-section">
-    <h2>🏥 Clinical Sports Medicine & Rehab</h2>
+    <h2>Sports Medicine & Rehabilitation</h2>
     <ul id="medicine-list"><li>Loading…</li></ul>
   </div>
 
   <div class="feed-section">
-    <h2>⌚ Technology & Equipment Innovation</h2>
+    <h2>Technology & Equipment Innovation</h2>
     <ul id="tech-list"><li>Loading…</li></ul>
   </div>
 
   <div class="feed-section">
-    <h2>🏆 Youth & Amateur Performance</h2>
+    <h2>Youth & Amateur Golf</h2>
     <ul id="youth-list"><li>Loading…</li></ul>
-  </div>
-
-  <div class="feed-section">
-    <h2>📚 Education, Certifications & Research</h2>
-    <ul id="education-list"><li>Loading…</li></ul>
   </div>
 
   <script>
@@ -109,42 +139,32 @@
         if (!res.ok) throw new Error(res.statusText);
         const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
         const items = xml.querySelectorAll('item, entry');
-        if(!items.length) throw new Error('No items');
+        if (!items.length) throw new Error('No items found');
         ul.innerHTML = '';
         items.forEach((el, i) => {
-          if(i >= 8) return;
+          if (i >= 6) return;
           const title = el.querySelector('title')?.textContent || 'No title';
-          const linkTag = el.querySelector('link');
-          const link = linkTag?.getAttribute('href') || linkTag?.textContent || '#';
+          const linkEl = el.querySelector('link');
+          const link = linkEl?.getAttribute('href') || linkEl?.textContent || '#';
           const li = document.createElement('li');
-          li.innerHTML = `<a href="${link}" target="_blank" rel="noopener noreferrer" class="feed-link">${title}</a>`;
+          li.innerHTML = `<a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>`;
           ul.appendChild(li);
         });
       } catch (e) {
-        ul.innerHTML = `<li style="color:red;">Error loading feed</li>`;
+        ul.innerHTML = `<li style="color:red;">Unable to load feed</li>`;
       }
     }
 
-    // Golf
-    loadFeed('https://api.allorigins.win/raw?url=https://golfdigest.com/feed/rss', 'golf-industry-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://www.golfdigest.com/feed/rss', 'golf-industry-list');
     loadFeed('https://api.allorigins.win/raw?url=https://golfweek.usatoday.com/feed/', 'golf-performance-list');
-    loadFeed('https://api.allorigins.win/raw?url=https://www.pgatour.com/rss.html', 'pro-tour-list');
-    loadFeed('https://api.allorigins.win/raw?url=https://example.com/amateur-junior-rss', 'amateur-junior-list');
+    loadFeed('https://api.allorigins.win/raw?url=https://www.pgatour.com/data/rdf/media/articles.rss', 'pro-tour-list');
     loadFeed('https://api.allorigins.win/raw?url=https://mygolfspy.com/feed/', 'equipment-list');
-    loadFeed('https://api.allorigins.win/raw?url=https://golf.com/feed', 'analysis-technique-list');
-
-    // Fitness & Nutrition
     loadFeed('https://api.allorigins.win/raw?url=https://breakingmuscle.com/feed/', 'fitness-list');
     loadFeed('https://api.allorigins.win/raw?url=https://www.precisionnutrition.com/feed', 'nutrition-list');
-
-    // Psychology & Medicine
     loadFeed('https://api.allorigins.win/raw?url=https://psychminded.org/feed/', 'psychology-list');
     loadFeed('https://api.allorigins.win/raw?url=https://www.acsm.org/newsroom-acsm-magazine/rss', 'medicine-list');
-
-    // Tech & Youth & Research
     loadFeed('https://api.allorigins.win/raw?url=https://golftechtoday.com/feed', 'tech-list');
     loadFeed('https://api.allorigins.win/raw?url=https://www.ajga.org/rss', 'youth-list');
-    loadFeed('https://api.allorigins.win/raw?url=https://pubmed.ncbi.nlm.nih.gov/rss/search/1', 'education-list');
   </script>
 </body>
 </html>
