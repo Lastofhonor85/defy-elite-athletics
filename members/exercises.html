@@ -49,6 +49,12 @@
     tr:hover {
       background-color: #222;
     }
+    .description-row td {
+      font-size: 0.95rem;
+      color: #aaa;
+      border-bottom: 1px solid #222;
+      background-color: #161616;
+    }
   </style>
 </head>
 <body>
@@ -61,6 +67,7 @@
         <th>Exercise Name</th>
         <th>Category</th>
         <th>Target Area</th>
+        <th>Equipment</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -71,35 +78,49 @@
       const tbody = document.querySelector("#exercisesTable tbody");
 
       try {
-        const response = await fetch("../members/data/exercises.csv"); // Adjust path as needed
-        if (!response.ok) throw new Error("File not found");
-        const text = await response.text();
-
+        const res = await fetch("../members/data/exercises.csv"); // adjust if needed
+        if (!res.ok) throw new Error("CSV file not found");
+        const text = await res.text();
         const lines = text.trim().split('\n');
+
         lines.slice(1).forEach(row => {
           const cols = row.split(',');
-          if (cols.length >= 3) {
-            const tr = document.createElement("tr");
-            cols.slice(0, 3).forEach(col => {
-              const td = document.createElement("td");
-              td.textContent = col.trim();
-              tr.appendChild(td);
-            });
-            tbody.appendChild(tr);
+          if (cols.length < 5) return;
+
+          // Main row
+          const tr = document.createElement("tr");
+          for (let i = 0; i < 4; i++) {
+            const td = document.createElement("td");
+            td.textContent = cols[i].trim();
+            tr.appendChild(td);
           }
+
+          // Description row
+          const descTr = document.createElement("tr");
+          descTr.className = "description-row";
+          const descTd = document.createElement("td");
+          descTd.colSpan = 4;
+          descTd.textContent = "Description: " + cols[4].trim();
+          descTr.appendChild(descTd);
+
+          tbody.appendChild(tr);
+          tbody.appendChild(descTr);
         });
       } catch (err) {
-        tbody.innerHTML = `<tr><td colspan="3" style="color:red; text-align:center;">Error loading CSV: ${err.message}</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="4" style="color:red; text-align:center;">${err.message}</td></tr>`;
       }
     }
 
     function filterExercises() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const rows = document.querySelectorAll("#exercisesTable tbody tr");
-      rows.forEach(row => {
-        const match = Array.from(row.children).some(td => td.textContent.toLowerCase().includes(input));
-        row.style.display = match ? "" : "none";
-      });
+      for (let i = 0; i < rows.length; i += 2) {
+        const visible = Array.from(rows[i].children).some(td =>
+          td.textContent.toLowerCase().includes(input)
+        );
+        rows[i].style.display = visible ? "" : "none";
+        rows[i + 1].style.display = visible ? "" : "none";
+      }
     }
 
     document.getElementById("searchInput").addEventListener("input", filterExercises);
@@ -107,3 +128,4 @@
   </script>
 </body>
 </html>
+
