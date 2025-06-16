@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services – Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Defy Elite Athletics</a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="drills.html">Drills</a></li>
+          <li><a href="exercises.html">Exercises</a></li>
+          <li><a href="members/signup.html">Members</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Callout -->
+    <section class="callout">
+      <h1>Exclusive Member Services</h1>
+      <p>Members receive a <strong>20% discount</strong> on all services!</p>
+    </section>
+
+    <!-- I. Member Benefits Overview -->
+    <section id="benefits-overview">
+      <h2>Member Benefits Overview</h2>
+      <ul>
+        <li>20% Discount on every service</li>
+        <li>Access to exclusive content, tools, and events</li>
+        <li>Priority scheduling and community support</li>
+      </ul>
+    </section>
+
+    <!-- II. Core Service Offerings -->
+    <section id="core-services">
+      <h2>Core Service Offerings</h2>
+      <p>All services listed below are 20% off for members.</p>
+      <ul>
+        <li><strong>Golf Coaching</strong>
+          <ul>
+            <li><a href="members/book-golf.html">Live, on-course sessions with Coach Steven</a></li>
+            <li><a href="members/video-analysis.html">Remote video analysis & feedback</a></li>
+          </ul>
+        </li>
+        <li><strong>Strength & Conditioning</strong>
+          <ul>
+            <li><a href="members/periodization.html">Custom periodization plans</a></li>
+            <li><a href="members/mobility-workouts.html">Golf-specific mobility & power workouts</a></li>
+          </ul>
+        </li>
+        <li><strong>Nutritional Counseling</strong>
+          <ul>
+            <li><a href="members/meal-plans.html">Personalized meal plans & supplement guidance</a></li>
+            <li><a href="members/nutrition-checkins.html">Ongoing nutrition check-ins</a></li>
+          </ul>
+        </li>
+        <li><strong>Personal Training (Live & Remote)</strong>
+          <ul>
+            <li><a href="members/book-training.html">One-on-one sessions (in-person or virtual)</a></li>
+            <li><a href="members/injury-prevention.html">Form checks, technique drills, injury-prevention routines</a></li>
+          </ul>
+        </li>
+        <li><strong>Teachable Resources</strong>
+          <ul>
+            <li><a href="members/drills.html">Full Drills Library</a> video walkthroughs</li>
+            <li><a href="members/exercises.html">Exercises Library</a> with step-by-step how-to instructions</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- III. Member-Exclusive Resources -->
+    <section id="exclusive-resources">
+      <h2>Member-Exclusive Resources</h2>
+      <ul>
+        <li><a href="members/drills.html">Expanded Drills & Exercise Vault</a> (new drills added monthly & advanced variations unlocked)</li>
+        <li><a href="members/workshop.html">Monthly Live Q&A / Workshop</a> (deep-dive into swing, fitness, nutrition)</li>
+        <li><a href="members/beta.html">Early Access & Beta Tests</a> (preview upcoming courses, e-books, apps)</li>
+        <li><a href="members/calendar.html">Interactive Calendar & Booking</a> (sync sessions with Google/Outlook)</a></li>
+      </ul>
+    </section>
+
+    <!-- IV. Community & Accountability -->
+    <section id="community-accountability">
+      <h2>Community & Accountability</h2>
+      <ul>
+        <li><a href="members/forum.html">Private Members Forum</a> for tips, progress sharing, quick questions</li>
+        <li><a href="members/pods.html">Peer Accountability Pods</a> (matched by goals & skill level)</li>
+        <li><a href="members/clinics.html">Monthly Group Clinics</a> (4–6 person live or virtual meetups)</li>
+      </ul>
+    </section>
+
+    <!-- V. Value-Add Perks & Partnerships -->
+    <section id="value-add-perks">
+      <h2>Value-Add Perks & Partnerships</h2>
+      <ul>
+        <li><a href="members/discounts.html">Equipment & Apparel Discounts</a> (partnered deals on clubs, gear)</li>
+        <li><a href="members/webinars.html">Guest Expert Webinars</a> (sports psychology, rehab specialists, TrackMan pros)</li>
+        <li><a href="members/dashboard.html">Progress-Tracking Dashboard</a> (log swings, workouts & nutrition)</li>
+        <li><a href="members/challenges.html">Seasonal Challenges & Prizes</a> (skill contests with giveaways)</li>
+        <li><a href="members/referral.html">Referral Rewards</a> (free session credit for new member referrals)</li>
+      </ul>
+    </section>
+
+    <!-- VI. How It Works & Next Steps -->
+    <section id="how-it-works">
+      <h2>How It Works & Next Steps</h2>
+      <ol>
+        <li><strong>Subscription Details</strong>: Monthly fee: ₱X00 /mo (cancel anytime). Discount applies automatically at checkout. <a href="members/signup.html">Join Now</a>.</li>
+        <li><strong>Getting Started</strong>: <a href="members/intake.html">Complete your Member Intake Form</a> & <a href="members/book-welcome.html">book your Welcome Call</a>.</li>
+        <li><strong>Support & Contact</strong>: Email <a href="mailto:defyeliteathletics@yahoo.com">defyeliteathletics@yahoo.com</a> or chat via <a href="members/dashboard.html">your dashboard</a>.</li>
+      </ol>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <a href="members/signup.html" class="btn">Join Now & Save 20%</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Defy Elite Athletics. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
