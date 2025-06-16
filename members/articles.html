@@ -7,46 +7,58 @@
   <link rel="stylesheet" href="../styles.css"/>
   <style>
     body {
-      background: #000;
-      color: #fff;
+      margin: 0;
+      background-color: #111;
       font-family: Arial, sans-serif;
-      padding-bottom: 4rem;
+      color: #fff;
     }
-    header, nav {
-      background: #000;
+    header {
+      background-color: #000;
+      text-align: center;
+      padding: 1.5rem 0 1rem;
     }
     header img {
       max-width: 150px;
       height: auto;
-      display: block;
-      margin: 1rem auto;
-      background: transparent;
     }
     nav {
-      text-align: center;
-      padding: 1rem;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
     }
     nav a {
       color: #fff;
       text-decoration: none;
-      margin: 0 1rem;
+      margin: 0 1.5rem;
+      font-weight: bold;
+      transition: color 0.3s;
     }
-    nav a.active {
+    nav a:hover, nav a.active {
       color: #09f;
     }
     h1, h2 {
-      color: #09f;
       text-align: center;
+      color: #09f;
       margin: 2rem 0 1rem;
+    }
+    .content {
+      background-color: #1a1a1a;
+      padding: 2rem 1rem 4rem;
+    }
+    .feed-section {
+      border-top: 1px solid #333;
+      padding: 2rem 0;
+      max-width: 900px;
+      margin: auto;
     }
     ul {
       list-style: none;
       padding: 0;
-      margin: 1rem auto;
-      max-width: 800px;
+      margin-top: 1rem;
     }
     li {
-      margin: 0.5rem 0;
+      margin-bottom: 0.75rem;
     }
     a {
       color: #0cf;
@@ -55,79 +67,78 @@
     a:hover {
       text-decoration: underline;
     }
-    .feed-section {
-      border-top: 1px solid #222;
-      padding: 2rem 0;
-    }
   </style>
 </head>
 <body>
 
   <header>
     <a href="../index.html">
-      <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo"/>
+      <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo">
     </a>
   </header>
 
   <nav>
-    <a href="../index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="drills.html">Drills</a>
+    <a href="exercises.html">Exercises</a>
     <a href="articles.html" class="active">Articles</a>
-    <a href="../services.html">Services</a>
-    <a href="../contact.html">Contact</a>
-    <a href="login.html">Members</a>
+    <a href="coaching.html">Coaching & Resources</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="logout.html">Logout</a>
   </nav>
 
-  <h1>Articles & News Hub</h1>
+  <div class="content">
+    <h1>Articles & News Hub</h1>
 
-  <!-- Article Sections -->
-  <div class="feed-section">
-    <h2>Golf & Performance Training</h2>
-    <ul id="golf-performance-list"><li>Loading…</li></ul>
-  </div>
+    <div class="feed-section">
+      <h2>Golf & Performance Training</h2>
+      <ul id="golf-performance-list"><li>Loading…</li></ul>
+    </div>
 
-  <div class="feed-section">
-    <h2>Golf Industry News</h2>
-    <ul id="golf-industry-list"><li>Loading…</li></ul>
-  </div>
+    <div class="feed-section">
+      <h2>Golf Industry News</h2>
+      <ul id="golf-industry-list"><li>Loading…</li></ul>
+    </div>
 
-  <div class="feed-section">
-    <h2>Pro Tour Coverage (PGA / LPGA / Korn Ferry)</h2>
-    <ul id="pro-tour-list"><li>Loading…</li></ul>
-  </div>
+    <div class="feed-section">
+      <h2>Pro Tour Coverage (PGA / LPGA / Korn Ferry)</h2>
+      <ul id="pro-tour-list"><li>Loading…</li></ul>
+    </div>
 
-  <div class="feed-section">
-    <h2>Equipment Reviews & Launch News</h2>
-    <ul id="equipment-list"><li>Loading…</li></ul>
-  </div>
+    <div class="feed-section">
+      <h2>Equipment Reviews & Launch News</h2>
+      <ul id="equipment-list"><li>Loading…</li></ul>
+    </div>
 
-  <div class="feed-section">
-    <h2>Fitness & Strength Conditioning</h2>
-    <ul id="fitness-list"><li>Loading…</li></ul>
-  </div>
+    <div class="feed-section">
+      <h2>Fitness & Strength Conditioning</h2>
+      <ul id="fitness-list"><li>Loading…</li></ul>
+    </div>
 
-  <div class="feed-section">
-    <h2>Nutrition & Recovery</h2>
-    <ul id="nutrition-list"><li>Loading…</li></ul>
-  </div>
+    <div class="feed-section">
+      <h2>Nutrition & Recovery</h2>
+      <ul id="nutrition-list"><li>Loading…</li></ul>
+    </div>
 
-  <div class="feed-section">
-    <h2>Sports Psychology & Mental Performance</h2>
-    <ul id="psychology-list"><li>Loading…</li></ul>
-  </div>
+    <div class="feed-section">
+      <h2>Sports Psychology & Mental Performance</h2>
+      <ul id="psychology-list"><li>Loading…</li></ul>
+    </div>
 
-  <div class="feed-section">
-    <h2>Sports Medicine & Rehabilitation</h2>
-    <ul id="medicine-list"><li>Loading…</li></ul>
-  </div>
+    <div class="feed-section">
+      <h2>Sports Medicine & Rehabilitation</h2>
+      <ul id="medicine-list"><li>Loading…</li></ul>
+    </div>
 
-  <div class="feed-section">
-    <h2>Technology & Equipment Innovation</h2>
-    <ul id="tech-list"><li>Loading…</li></ul>
-  </div>
+    <div class="feed-section">
+      <h2>Technology & Equipment Innovation</h2>
+      <ul id="tech-list"><li>Loading…</li></ul>
+    </div>
 
-  <div class="feed-section">
-    <h2>Youth & Amateur Golf</h2>
-    <ul id="youth-list"><li>Loading…</li></ul>
+    <div class="feed-section">
+      <h2>Youth & Amateur Golf</h2>
+      <ul id="youth-list"><li>Loading…</li></ul>
+    </div>
   </div>
 
   <script>
@@ -166,5 +177,6 @@
     loadFeed('https://api.allorigins.win/raw?url=https://golftechtoday.com/feed', 'tech-list');
     loadFeed('https://api.allorigins.win/raw?url=https://www.ajga.org/rss', 'youth-list');
   </script>
+
 </body>
 </html>
