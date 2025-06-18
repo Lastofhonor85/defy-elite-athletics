@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sports Analysis Checklist</title>
+  <style>
+    /* simple layout—feel free to replace with your CSS */
+    label { display:block; margin-top:1em; }
+    select, textarea { width:100%; padding:.5em; }
+  </style>
+</head>
+<body>
+  <h1>Sports Analysis Checklist</h1>
+
+  <label for="sport">Sport</label>
+  <select id="sport">
+    <option value="">— choose one —</option>
+  </select>
+
+  <label for="workToRest">Work-to-Rest Ratios</label>
+  <textarea id="workToRest" rows="2" readonly></textarea>
+
+  <label for="primaryEnergy">Primary Energy System</label>
+  <textarea id="primaryEnergy" rows="1" readonly></textarea>
+
+  <label for="secondaryEnergy">Secondary Energy System</label>
+  <textarea id="secondaryEnergy" rows="1" readonly></textarea>
+
+  <label for="movementPatterns">Key Movement Patterns</label>
+  <textarea id="movementPatterns" rows="2" readonly></textarea>
+
+  <label for="skillDemands">Technical & Skill Demands</label>
+  <textarea id="skillDemands" rows="2" readonly></textarea>
+
+  <label for="strengthQualities">Strength Qualities Required</label>
+  <textarea id="strengthQualities" rows="2" readonly></textarea>
+
+// 1. Paste the CSV URL you got from “Publish to the web”
+const sheetCsvUrl = https://docs.google.com/spreadsheets/d/e/2PACX-1vSm4EPTm0q9REfUABcQXvJlawc37laQBOffpSiySdOx8pLq3k5kF7RPnB1lxNkthnRQXXcDG14DMhfA/pub?output=csv;
+
+// 2. Fetch and parse the CSV into an array of objects
+async function fetchSportsData() {
+  const resp = await fetch(sheetCsvUrl);
+  const text = await resp.text();
+  const lines = text.trim().split('\n').map(r => r.split(','));
+  const headers = lines.shift();
+  return lines.map(cols => {
+    let obj = {};
+    headers.forEach((h,i) => obj[h.trim()] = cols[i]?.trim() || '');
+    return obj;
+  });
+}
+
+// 3. Populate the “Sport” dropdown
+function populateDropdown(data) {
+  const select = document.getElementById('sport');
+  data.forEach(row => {
+    const opt = document.createElement('option');
+    opt.value = row.Sport;
+    opt.textContent = row.Sport;
+    select.appendChild(opt);
+  });
+}
+
+// 4. On change, find the right row and fill the textareas
+function wireUpForm(data) {
+  const select = document.getElementById('sport');
+  select.addEventListener('change', () => {
+    const row = data.find(r => r.Sport === select.value);
+    if (!row) return;
+    document.getElementById('workToRest').value       = row.WorkToRest;
+    document.getElementById('primaryEnergy').value    = row.PrimaryEnergy;
+    document.getElementById('secondaryEnergy').value  = row.SecondaryEnergy;
+    document.getElementById('movementPatterns').value = row.MovementPatterns;
+    document.getElementById('skillDemands').value     = row.SkillDemands;
+    document.getElementById('strengthQualities').value= row.StrengthQualities;
+  });
+}
+
+// 5. Bootstrap everything
+(async function() {
+  const data = await fetchSportsData();
+  populateDropdown(data);
+  wireUpForm(data);
+})();
+
+</body>
+</html>
