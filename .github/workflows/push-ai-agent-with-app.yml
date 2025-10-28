@@ -1,0 +1,37 @@
+name: Push AI agent files using GitHub App
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  push-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (needed for Actions workspace)
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm ci || npm i @octokit/rest @octokit/auth-app
+
+      - name: Write app key file and run push script
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
+          APP_INSTALLATION_ID: ${{ secrets.APP_INSTALLATION_ID }}
+          TARGET_OWNER: Lastofhonor85
+          TARGET_REPO: defy-elite-athletics
+          TARGET_BASE: main
+        run: |
+          # Decode the base64 private key into a PEM file
+          node -e "const fs=require('fs'); fs.writeFileSync('app-key.pem', Buffer.from(process.env.APP_PRIVATE_KEY,'base64'))"
+          # Run the push script that uses the App installation token
+          node .github/scripts/push_with_app.js
