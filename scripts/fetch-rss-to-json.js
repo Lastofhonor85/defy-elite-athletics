@@ -1,120 +1,141 @@
-// scripts/fetch-rss-to-json.js
-// ------------------------------------------------------------
-// Run this script (manually or via GitHub Actions) to fetch six
-// public RSS/Atom feeds and write them out as JSON under members/data/.
-// ------------------------------------------------------------
+// Create branch ai-agent-integration, add starter ai-agent files, and open a PR.
+// Expects env vars: APP_ID, APP_PRIVATE_KEY (workflow decodes to app-key.pem),
+// optional APP_INSTALLATION_ID, TARGET_OWNER, TARGET_REPO, TARGET_BASE
 
-const fetch = require('node-fetch');    // version 2.x
-const xml2js = require('xml2js');        // xml2js parser
 const fs = require('fs');
-const path = require('path');
+const { createAppAuth } = require('@octokit/auth-app');
+const { Octokit } = require('@octokit/rest');
 
-// ─── 1. MAP EACH CATEGORY TO A FREELY-AVAILABLE, WORKING RSS URL ─────
-const FEEDS = {
-  // CATEGORY NAME JSON_FILENAME: RSS_URL
-  'golf-science.json':  'https://bjsm.bmj.com/rss/current.xml',
-  'strength.json':      'https://pubmed.ncbi.nlm.nih.gov/rss/journals/nsca/',
-  'nutrition.json':     'https://jissn.biomedcentral.com/articles.atom',
-  'psychology.json':    'https://www.frontiersin.org/journals/sports-and-active-living/articles.rss',
-  'news.json':          'http://www.espn.com/espn/rss/golf/news',
-  'industry.json':      'https://rss.golfdigest.com/rss/golf/play'
-};
-
-// ─── 2. PARSE A SINGLE RSS/ATOM URL INTO AN ARRAY OF {title,link,date,author,snippet} ─────
-async function parseRssToJson(rssUrl) {
-  const response = await fetch(rssUrl);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch ${rssUrl} (status ${response.status})`);
-  }
-  const xmlText = await response.text();
-
-  const parser = new xml2js.Parser({ explicitArray: true, mergeAttrs: true });
-  const result = await parser.parseStringPromise(xmlText);
-
-  const items = [];
-
-  // CASE A: RSS 2.0 (e.g. <rss><channel><item>…)
-  if (result.rss && result.rss.channel && result.rss.channel[0].item) {
-    const channelItems = result.rss.channel[0].item;
-    for (const item of channelItems) {
-      const title = item.title && item.title[0] ? item.title[0] : 'No title';
-      let link = '';
-      if (item.link && item.link[0]) {
-        link = (typeof item.link[0] === 'string') ? item.link[0] : item.link[0]._;
-      }
-      const date = item.pubDate && item.pubDate[0]
-        ? new Date(item.pubDate[0]).toISOString()
-        : new Date().toISOString();
-      const author = item.author && item.author[0] ? item.author[0] : '';
-      let snippet = '';
-      if (item.description && item.description[0]) {
-        snippet = item.description[0].replace(/<[^>]*>/g, '').slice(0, 160);
-      }
-
-      items.push({ title, link, date, author, snippet });
-    }
-  }
-  // CASE B: Atom (e.g. <feed><entry>…)
-  else if (result.feed && result.feed.entry) {
-    const feedEntries = result.feed.entry;
-    for (const entry of feedEntries) {
-      const title = (entry.title && entry.title[0] && (entry.title[0]._ || entry.title[0]))
-        ? (entry.title[0]._ || entry.title[0])
-        : 'No title';
-
-      let link = '';
-      if (entry.link && entry.link[0] && entry.link[0].$.href) {
-        link = entry.link[0].$.href;
-      }
-
-      const date = entry.updated && entry.updated[0]
-        ? new Date(entry.updated[0]).toISOString()
-        : (entry.published && entry.published[0]
-          ? new Date(entry.published[0]).toISOString()
-          : new Date().toISOString());
-
-      let author = '';
-      if (entry.author && entry.author[0] && entry.author[0].name && entry.author[0].name[0]) {
-        author = entry.author[0].name[0];
-      }
-
-      let snippet = '';
-      if (entry.summary && entry.summary[0]) {
-        snippet = (entry.summary[0]._ || entry.summary[0]).toString().slice(0, 160);
-      } else if (entry.content && entry.content[0]) {
-        snippet = (entry.content[0]._ || entry.content[0]).toString().slice(0, 160);
-      }
-
-      items.push({ title, link, date, author, snippet });
-    }
-  }
-
-  // Sort newest → oldest, then keep top 10
-  items.sort((a, b) => new Date(b.date) - new Date(a.date));
-  return items.slice(0, 10);
-}
-
-// ─── 3. ITERATE OVER EACH FEED, PARSE IT, AND WRITE JSON FILES ─────
-(async () => {
+async function main() {
   try {
-    // Ensure members/data/ exists
-    const outDir = path.join(__dirname, '../members/data');
-    if (!fs.existsSync(outDir)) {
-      fs.mkdirSync(outDir, { recursive: true });
+    const appId = process.env.APP_ID;
+    const installId = process.env.APP_INSTALLATION_ID ? Number(process.env.APP_INSTALLATION_ID) : null;
+
+    if (!appId) {
+      console.error('Missing APP_ID environment variable');
+      process.exit(1);
     }
 
-    for (const [filename, rssUrl] of Object.entries(FEEDS)) {
-      try {
-        const items = await parseRssToJson(rssUrl);
-        const outPath = path.join(outDir, filename);
-        fs.writeFileSync(outPath, JSON.stringify(items, null, 2), 'utf-8');
-        console.log(`✅ Wrote ${outPath} (${items.length} items)`);
-      } catch (err) {
-        console.error(`⚠️  Error processing ${rssUrl}:`, err.message);
+    // Ensure the decoded PEM file exists
+    if (!fs.existsSync('app-key.pem')) {
+      console.error('Missing app-key.pem (workflow should have decoded APP_PRIVATE_KEY to this file)');
+      process.exit(1);
+    }
+    const privateKey = fs.readFileSync('app-key.pem', 'utf8');
+
+    const targetOwner = process.env.TARGET_OWNER || 'Lastofhonor85';
+    const targetRepo = process.env.TARGET_REPO || 'defy-elite-athletics';
+    const targetBase = process.env.TARGET_BASE || 'main';
+    const newBranch = 'ai-agent-integration';
+
+    // Authenticate as GitHub App and get installation token
+    const auth = createAppAuth({ appId: Number(appId), privateKey });
+    let installationAuth;
+    if (installId) {
+      installationAuth = await auth({ type: 'installation', installationId: installId });
+    } else {
+      const appAuth = await auth({ type: 'app' });
+      const octoApp = new Octokit({ auth: appAuth.token });
+      const installs = await octoApp.request('GET /app/installations');
+      const inst = installs.data.find(i => i.account && (i.account.login.toLowerCase() === targetOwner.toLowerCase()));
+      if (!inst) {
+        console.error('No matching installation found for owner:', targetOwner);
+        process.exit(1);
       }
+      installationAuth = await auth({ type: 'installation', installationId: inst.id });
+    }
+
+    const octokit = new Octokit({ auth: installationAuth.token });
+
+    // Get base branch commit SHA
+    const baseBranch = await octokit.repos.getBranch({ owner: targetOwner, repo: targetRepo, branch: targetBase });
+    const baseSha = baseBranch.data.commit.sha;
+
+    // Create or update branch ref
+    const ref = `refs/heads/${newBranch}`;
+    try {
+      await octokit.git.createRef({ owner: targetOwner, repo: targetRepo, ref, sha: baseSha });
+      console.log('Created branch', newBranch);
+    } catch (err) {
+      if (err.status === 422) {
+        console.log('Branch already exists:', newBranch);
+      } else {
+        console.error('Error creating branch:', err);
+        process.exit(1);
+      }
+    }
+
+    // Files to create/update
+    const files = {
+      'ai-agent/README.md': `# AI Agent Integrator - Starter
+
+This folder contains a starter AI agent that accepts a task via POST /task, calls ChatGPT to get a unified diff, applies the patch, runs simple checks, and opens a PR.`,
+      'ai-agent/server.js': `// minimal server stub (expand as needed)\nconst express = require('express');\nconst app = express();\napp.get('/', (req, res) => res.send('AI Agent placeholder'));\napp.listen(8080, () => console.log('listening'));\n`,
+    };
+
+    // Create/update each file on the branch
+    for (const [filePath, content] of Object.entries(files)) {
+      const encoded = Buffer.from(content, 'utf8').toString('base64');
+      try {
+        const existing = await octokit.repos.getContent({ owner: targetOwner, repo: targetRepo, path: filePath, ref: newBranch });
+        await octokit.repos.createOrUpdateFileContents({
+          owner: targetOwner,
+          repo: targetRepo,
+          path: filePath,
+          message: `App: update ${filePath}`,
+          content: encoded,
+          branch: newBranch,
+          sha: existing.data.sha
+        });
+        console.log('Updated', filePath);
+      } catch (err) {
+        if (err.status === 404) {
+          await octokit.repos.createOrUpdateFileContents({
+            owner: targetOwner,
+            repo: targetRepo,
+            path: filePath,
+            message: `App: add ${filePath}`,
+            content: encoded,
+            branch: newBranch
+          });
+          console.log('Created', filePath);
+        } else {
+          console.error('Error creating/updating', filePath, err);
+          process.exit(1);
+        }
+      }
+    }
+
+    // Create PR if not exists
+    try {
+      const prTitle = 'AI Agent Integrator: Add starter and PR checks';
+      const existingPRs = await octokit.pulls.list({
+        owner: targetOwner,
+        repo: targetRepo,
+        head: `${targetOwner}:${newBranch}`,
+        state: 'open'
+      });
+      if (existingPRs.data.length === 0) {
+        const pr = await octokit.pulls.create({
+          owner: targetOwner,
+          repo: targetRepo,
+          title: prTitle,
+          head: newBranch,
+          base: targetBase,
+          body: 'Adds AI Agent Integrator starter files and PR check workflow.'
+        });
+        console.log('PR created:', pr.data.html_url);
+      } else {
+        console.log('PR already exists:', existingPRs.data[0].html_url);
+      }
+    } catch (err) {
+      console.error('Failed to create PR:', err);
+      process.exit(1);
     }
   } catch (err) {
-    console.error("❌ Fatal error:", err);
+    console.error('Unhandled error:', err);
     process.exit(1);
   }
-})();
+}
+
+main();
