@@ -158,3 +158,10 @@
   </style>
 </body>
 </html>
+
+<script>
+  if (localStorage.getItem('defy_terms_accepted') !== 'yes') {
+    window.location.href = "terms-gate.html";
+  }
+</script>
+
