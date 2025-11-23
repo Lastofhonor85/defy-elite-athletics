@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Defy Elite Athletics — Terms Agreement</title>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  body { background:#000; color:#eee; font-family: system-ui; margin:0; }
+  .container { max-width:800px; margin:2rem auto; padding:0 1rem; }
+  .card { background:#111; padding:1.5rem; border-radius:10px; border:1px solid #222; margin-bottom:1.5rem; }
+  h1,h2,h3 { color:#09f; }
+  button { background:#09f; color:#000; padding:12px 20px; font-size:1rem; font-weight:600; border:0; border-radius:6px; cursor:pointer; }
+  button:disabled { opacity:.5; cursor:not-allowed; }
+  a { color:#09f; }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER MATCHING ORIGINAL INDEX -->
+<header style="background:#000; text-align:center; padding:1rem;">
+  <img src="assets/logo1.png" alt="Defy Elite Athletics" style="max-width:200px;">
+</header>
+
+<nav style="background:#111; padding:0.75rem; text-align:center;">
+  <span style="color:#fff;">Terms of Service Agreement Required</span>
+</nav>
+
+<main class="container">
+
+  <div class="card">
+    <h1>Before Entering Defy Elite Athletics</h1>
+    <p>To proceed to the main site, please review and accept the Terms of Service.</p>
+  </div>
+
+  <div class="card">
+    <h2>Terms of Service (Summary)</h2>
+    <p>By continuing, you agree to all conditions, responsibilities, disclaimers, and legal protections contained in the Defy Elite Athletics Terms.</p>
+
+    <p>For full details, download the official Terms document:</p>
+
+    <p>
+      <a href="legal/Terms_and_Services_Complete.docx" download>📄 Download Full Terms of Service (DOCX)</a>
+    </p>
+
+    <label style="display:flex; gap:.5rem; margin-top:1rem;">
+      <input type="checkbox" id="agreeBox">
+      <span>I have read and agree to the Terms of Service</span>
+    </label>
+
+    <button id="enterBtn" disabled>Enter the Main Site</button>
+  </div>
+
+</main>
+
+<script>
+  const agreeBox = document.getElementById('agreeBox');
+  const enterBtn = document.getElementById('enterBtn');
+
+  agreeBox.addEventListener('change', () => {
+    enterBtn.disabled = !agreeBox.checked;
+  });
+
+  enterBtn.addEventListener('click', () => {
+    // store agreement
+    localStorage.setItem('defy_terms_accepted', 'yes');
+    // redirect
+    window.location.href = "index.html";
+  });
+</script>
+
+</body>
+</html>
