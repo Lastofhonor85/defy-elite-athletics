@@ -1,1 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Defy Elite Athletics — Terms Agreement</title>
+  <style>
+    :root{
+      --bg:#000;
+      --card:#0f1720;
+      --muted:#cbd5e1;
+      --accent:#09f;
+      --panel:#0b1220;
+      --radius:10px;
+      --maxw:980px;
+    }
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#fff}
+    .wrap{max-width:var(--maxw);margin:36px auto;padding:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));border-radius:var(--radius);padding:22px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+    header{display:flex;align-items:center;gap:18px}
+    header img{height:56px; width:auto; display:block}
+    h1{margin:0;color:var(--accent);font-size:20px}
+    p.lead{color:var(--muted);margin-top:6px}
+    .terms-box{background:var(--panel);border-radius:8px;padding:14px;height:320px;overflow:auto;border:1px solid rgba(255,255,255,0.03);line-height:1.5;color:#e6eef8}
+    .controls{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:12px;flex-wrap:wrap}
+    .left { display:flex; align-items:center; gap:12px; }
+    label.small{font-size:14px;color:var(--muted);display:flex;align-items:center;gap:8px}
+    button.enter{background:var(--accent);color:#002; border:0;padding:11px 16px;border-radius:8px;font-weight:700;cursor:pointer}
+    button.enter:disabled{opacity:.45;cursor:not-allowed}
+    a.download{color:var(--accent);text-decoration:none;font-weight:600}
+    footer.note{margin-top:18px;color:var(--muted);font-size:13px}
+    @media (max-width:640px){
+      header{flex-direction:column;align-items:flex-start}
+      .controls{flex-direction:column;align-items:stretch}
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card">
+    <header>
+      <!-- Default logo path: assets/logo1.png (update LOGO_URL below if different) -->
+      <img id="siteLogo" src="assets/logo1.png" alt="Defy Elite Athletics Logo" onerror="this.style.display='none'">
+      <div>
+        <h1>Defy Elite Athletics</h1>
+        <p class="lead">Please review and accept our Terms of Service before proceeding to the site.</p>
+      </div>
+    </header>
+
+    <hr style="border:none;height:12px;background:transparent">
+
+    <div>
+      <div class="terms-box" id="termsBox" aria-live="polite" tabindex="0">
+        <!-- Basic Terms snippet — replace or expand with your full Terms text or load via AJAX -->
+        <strong>Terms of Service — Summary</strong>
+        <p>
+          Welcome to Defy Elite Athletics. By accessing or using our Services you agree to be bound by our Terms of Service, Privacy Policy, and any additional rules that we publish. Participation in athletic activities involves inherent risks. You must complete a PAR-Q, obtain medical clearance when recommended, and comply with all safety instructions. All digital products are protected; redistribution is prohibited. Payments are processed via third-party processors (PayPal, Payoneer, card, bank transfers). Refunds and chargebacks are governed by our policies. Our liability is limited as specified in the Terms.
+        </p>
+
+        <p><strong>Eligibility:</strong> You must be 18+ or have a guardian consent and Owner approval for participation by minors.</p>
+
+        <p><strong>Customer responsibilities:</strong> Provide accurate info, follow instructions, do not share content, and seek medical advice before engaging in intensive programs.</p>
+
+        <p><strong>Payments & Refunds:</strong> Payments are final unless otherwise stated; chargebacks may lead to suspension and dispute actions.</p>
+
+        <p><strong>Privacy:</strong> We do not sell personal data. We use data for program delivery and anonymized R&D. See full Privacy Policy for details.</p>
+
+        <p><em>This is a summary. For the full, legally binding Terms, please download the official document and read it thoroughly before accepting.</em></p>
+      </div>
+
+      <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap">
+        <div class="left">
+          <label class="small">
+            <input id="acceptChk" type="checkbox" aria-label="I accept the Terms of Service"> I accept the Terms of Service
+          </label>
+          <a class="download" id="downloadLink" href="legal/Terms_and_Services_Complete.docx" download>Download full Terms (DOCX)</a>
+        </div>
+
+        <div>
+          <button class="enter" id="enterBtn" disabled>Accept & Enter Site</button>
+        </div>
+      </div>
+
+      <p class="note">By accepting you consent to the Terms. Your acceptance will be stored in your browser and (optionally) may be recorded server-side for audit purposes.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // --- CONFIG: update this if your logo is stored at another path ---
+  // Example uploaded local file path (for internal transformation): /mnt/data/469fc644-7c0e-4304-a251-fbc0be180d85.html
+  // NOTE: the above path is not an image file — replace LOGO_URL with the actual image path (e.g., '/assets/logo1.png' or '/assets/defy-logo.png').
+  const LOGO_URL = 'assets/logo1.png';
+  // If you need to use an uploaded file path from /mnt/data during your hosting deploy step,
+  // replace LOGO_URL with that public URL after you upload the image to the repo (e.g., 'legal/logo.png').
+
+  // Set logo src (keeps HTML editable)
+  document.getElementById('siteLogo').src = LOGO_URL;
+
+  // Redirect guard: if already accepted, go to index immediately
+  (function redirectIfAccepted(){
+    try {
+      if(localStorage.getItem('defy_terms_accepted') === 'yes'){
+        // User already accepted — go to main site
+        // Small delay to allow user to see acceptance state if they land here directly
+        setTimeout(()=>{ window.location.href = 'index.html'; }, 250);
+      }
+    } catch(e){}
+  })();
+
+  // Acceptance logic
+  const acceptChk = document.getElementById('acceptChk');
+  const enterBtn = document.getElementById('enterBtn');
+  const termsBox = document.getElementById('termsBox');
+
+  // Enable button when checked
+  acceptChk.addEventListener('change', () => {
+    enterBtn.disabled = !acceptChk.checked;
+  });
+
+  // On Enter, save to localStorage and redirect
+  enterBtn.addEventListener('click', () => {
+    try {
+      localStorage.setItem('defy_terms_accepted', 'yes');
+    } catch(e){}
+    // Optional: attempt to POST consent to server-side endpoint for audit
+    const payload = {
+      acceptedAt: new Date().toISOString(),
+      userAgent: navigator.userAgent,
+      // Add additional fields server-side (IP) when logging
+      sectionsAccepted: ['terms_of_service_summary']
+    };
+    // If you have a server endpoint at /api/consent, it will record the acceptance
+    fetch('/api/consent', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    }).catch(()=>{/* ignore if endpoint doesn't exist */})
+    // Redirect to main site
+    window.location.href = 'index.html';
+  });
+
+  // Accessibility: allow pressing space/enter when focused on terms box
+  termsBox.addEventListener('keydown', (e) => {
+    if((e.key === 'Enter' || e.key === ' ') && !acceptChk.checked){
+      acceptChk.checked = true;
+      acceptChk.dispatchEvent(new Event('change'));
+    }
+  });
+</script>
+
+</body>
+</html>
 
