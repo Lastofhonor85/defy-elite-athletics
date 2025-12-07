@@ -6,150 +6,146 @@
   <title>Terms Gate – Defy Elite Athletics</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+    /* (kept short for brevity — keep your existing styles) */
     body.dark {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 2rem;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:100vh;background:#000;color:#fff;font-family:Arial,sans-serif;margin:0;padding:2rem;
     }
-
-    .gate-box {
-      max-width: 850px;
-      background: #111;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
-      text-align: center;
-    }
-
-    header img {
-      max-width: 200px;
-      margin-bottom: 1.5rem;
-    }
-
-    h1 {
-      color: #00aaff;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      color: #ddd;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    a {
-      color: #00aaff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .agree-btn, .secondary-btn {
-      padding: 12px 28px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .agree-btn {
-      background: #00aaff;
-      color: #fff;
-    }
-
-    .agree-btn:hover {
-      background: #0077cc;
-    }
-
-    .secondary-btn {
-      background: #222;
-      color: #00aaff;
-      border: 1px solid #00aaff;
-    }
-
-    .secondary-btn:hover {
-      background: #00aaff;
-      color: #fff;
-    }
-
-    footer {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: #666;
-    }
-
-    footer a {
-      color: #888;
-    }
-
-    footer a:hover {
-      color: #00aaff;
-    }
+    .gate-box{max-width:850px;width:100%;background:#111;padding:2.5rem;border-radius:12px;box-shadow:0 0 25px rgba(0,0,0,.8);text-align:center}
+    .buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:1.5rem}
+    .agree-btn,.secondary-btn{padding:12px 28px;font-size:1rem;border:none;border-radius:6px;cursor:pointer}
+    .agree-btn{background:#00aaff;color:#fff}
+    .secondary-btn{background:#222;color:#00aaff;border:1px solid #00aaff}
   </style>
 </head>
 
 <body class="dark">
-  <div class="gate-box">
+  <div class="gate-box" role="main" aria-labelledby="terms-heading">
     <header>
-      <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" />
+      <img src="assets/logo1.png" alt="Defy Elite Athletics Logo" style="max-width:200px;margin-bottom:1.5rem;">
     </header>
 
     <main>
-      <h1>Terms & Conditions Agreement</h1>
-      <p>
-        Welcome to <strong>Defy Elite Athletics</strong>. Before entering our site, please review and agree to our Terms & Conditions.
-      </p>
-      <p>
-        All information provided through Defy Elite Athletics is for educational purposes only and not intended as medical advice. By proceeding, you acknowledge that you have read and agree to our
-        <a href="terms-and-conditions.html" target="_blank">Terms & Conditions</a>,
-        <a href="privacy-policy.html" target="_blank">Privacy Policy</a>, and
-        <a href="disclaimer.html" target="_blank">Disclaimer</a>.
-      </p>
-      <p>
-        If you do not agree to these terms, please exit the website.
-      </p>
+      <h1 id="terms-heading" style="color:#00aaff">Terms & Conditions Agreement</h1>
 
-      <div class="buttons">
-        <a href="terms-and-conditions.html" target="_blank">
-          <button class="secondary-btn">Read Terms</button>
+      <p>Welcome to <strong>Defy Elite Athletics</strong>. Before entering our site, please review and agree to our Terms & Conditions.</p>
+
+      <p>All information provided through Defy Elite Athletics is for educational purposes only and not intended as medical advice. By proceeding, you acknowledge that you have read and agree to our <a href="terms-and-conditions.html" target="_blank" rel="noopener">Terms & Conditions</a>.</p>
+
+      <div class="buttons" aria-label="Terms actions">
+        <a href="terms-and-conditions.html" target="_blank" rel="noopener" style="text-decoration:none;">
+          <button class="secondary-btn" type="button">Read Terms</button>
         </a>
-        <button class="agree-btn" onclick="acceptTerms()">I Agree & Enter Site</button>
+
+        <!-- Primary accept button (visible) -->
+        <button class="agree-btn" id="agreeBtn" type="button" aria-label="I Agree and Enter Site">I Agree & Enter Site</button>
+      </div>
+
+      <!-- Optional fallback accept/decline -->
+      <div style="text-align:center;margin-top:1.5rem;">
+        <button id="acceptTerms" style="background:#09f;color:#000;border:none;padding:10px 18px;border-radius:8px;font-weight:700;cursor:pointer;">Accept Terms & Continue</button>
+        <button id="declineTerms" style="margin-left:12px;background:#333;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;">Decline</button>
       </div>
     </main>
 
-    <footer>
-      © 2025 Defy Elite Athletics, LLC |
-      <a href="terms-and-conditions.html" target="_blank">Terms & Conditions</a> |
-      <a href="privacy-policy.html" target="_blank">Privacy Policy</a> |
-      <a href="disclaimer.html" target="_blank">Disclaimer</a>
+    <footer style="margin-top:2rem;font-size:0.85rem;color:#666">
+      © 2025 Defy Elite Athletics, LLC | <a href="privacy-policy.html" style="color:#888">Privacy Policy</a>
     </footer>
   </div>
 
-<script>
-  function acceptTerms() {
-    localStorage.setItem('defyAgreedToTerms', 'true');
-    window.location.href = 'index.html';
-  }
-</script>
+  <script>
+    (function () {
+      'use strict';
 
+      const STORAGE_KEY = 'defy_terms_accepted';
+      const REDIRECT_TARGET = 'index.html'; // site root
+      const COOKIE_NAME = STORAGE_KEY;
+
+      // Helpers
+      function setAccepted() {
+        try {
+          localStorage.setItem(STORAGE_KEY, 'yes');
+          console.info('Stored acceptance in localStorage');
+        } catch (e) {
+          // fallback cookie for private modes
+          try {
+            const maxAge = 60 * 60 * 24 * 365; // 1 year
+            document.cookie = `${COOKIE_NAME}=yes; path=/; max-age=${maxAge}`;
+            console.info('Stored acceptance in cookie fallback');
+          } catch (err) {
+            console.warn('Failed to persist acceptance', err);
+          }
+        }
+      }
+
+      function isAccepted() {
+        try {
+          if (localStorage.getItem(STORAGE_KEY) === 'yes') return true;
+        } catch (e) {
+          // ignore
+        }
+        try {
+          return document.cookie && document.cookie.indexOf(`${COOKIE_NAME}=yes`) !== -1;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function redirectToSite() {
+        // Use replace so accepting doesn't create an extra back history entry
+        window.location.replace(REDIRECT_TARGET);
+      }
+
+      function acceptHandler(ev) {
+        if (ev && typeof ev.preventDefault === 'function') ev.preventDefault();
+        setAccepted();
+        redirectToSite();
+      }
+
+      function declineHandler(ev) {
+        if (ev && typeof ev.preventDefault === 'function') ev.preventDefault();
+        alert('You must accept the Terms & Conditions to use Defy Elite Athletics. You will be returned to the homepage.');
+        window.location.href = REDIRECT_TARGET;
+      }
+
+      // Attach handlers after DOM ready
+      document.addEventListener('DOMContentLoaded', function () {
+        try {
+          // If already accepted, immediately go to site
+          if (isAccepted()) {
+            console.info('User already accepted terms; redirecting to site.');
+            redirectToSite();
+            return;
+          }
+
+          const agree = document.getElementById('agreeBtn');
+          const accept = document.getElementById('acceptTerms');
+          const decline = document.getElementById('declineTerms');
+
+          if (agree) {
+            agree.addEventListener('click', acceptHandler, { passive: false });
+            // for keyboard accessibility
+            agree.addEventListener('keydown', function (e) { if (e.key === 'Enter') acceptHandler(e); });
+          } else {
+            console.warn('Agree button not found: #agreeBtn');
+          }
+
+          if (accept) {
+            accept.addEventListener('click', acceptHandler, { passive: false });
+            accept.addEventListener('keydown', function (e) { if (e.key === 'Enter') acceptHandler(e); });
+          }
+
+          if (decline) {
+            decline.addEventListener('click', declineHandler, { passive: false });
+            decline.addEventListener('keydown', function (e) { if (e.key === 'Enter') declineHandler(e); });
+          }
+        } catch (err) {
+          console.error('Error initializing terms gate buttons', err);
+        }
+      });
+
+      // Defensive: expose function for debugging in console
+      window.__defy_acceptTerms = function () { setAccepted(); redirectToSite(); };
+    })();
+  </script>
 </body>
 </html>
