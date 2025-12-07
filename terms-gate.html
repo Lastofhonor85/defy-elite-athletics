@@ -119,8 +119,10 @@
         Welcome to <strong>Defy Elite Athletics</strong>. Before entering our site, please review and agree to our Terms & Conditions.
       </p>
       <p>
-        All information provided through Defy Elite Athletics is for educational purposes only and not intended as medical advice. By proceeding, you acknowledge that you have read and agree to our 
-        <a href="terms-and-conditions.html" target="_blank">Terms & Conditions</a>, including the release of liability.
+        All information provided through Defy Elite Athletics is for educational purposes only and not intended as medical advice. By proceeding, you acknowledge that you have read and agree to our
+        <a href="terms-and-conditions.html" target="_blank">Terms & Conditions</a>,
+        <a href="privacy-policy.html" target="_blank">Privacy Policy</a>, and
+        <a href="disclaimer.html" target="_blank">Disclaimer</a>.
       </p>
       <p>
         If you do not agree to these terms, please exit the website.
@@ -133,58 +135,26 @@
         <button class="agree-btn" onclick="acceptTerms()">I Agree & Enter Site</button>
       </div>
     </main>
-<!-- Add this near the bottom of your Terms page (above footer or end of container) -->
-<div style="text-align:center; margin-top: 2rem;">
-  <button id="acceptTerms" style="background:#09f;color:#000;border:none;padding:10px 18px;border-radius:8px;font-weight:700;cursor:pointer;">
-    Accept Terms & Continue
-  </button>
-  <button id="declineTerms" style="margin-left:12px;background:#333;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;">
-    Decline
-  </button>
-</div>
-
-<script>
-  // When user accepts, mark acceptance and go to the main page you want.
-  document.getElementById('acceptTerms').addEventListener('click', function(){
-    try {
-      localStorage.setItem('defy_terms_accepted', 'yes');
-    } catch(e) {
-      // localStorage may be unavailable in some contexts; you might want to fallback to cookies.
-      console.warn('Could not save acceptance to localStorage', e);
-    }
-    // Choose the page you want users to land on after accepting:
-    // window.location.href = 'index.html';
-    // or
-    window.location.href = 'home.html';
-  });
-
-  // If they decline, you can send them away or show a message
-  document.getElementById('declineTerms').addEventListener('click', function(){
-    alert('You must accept the Terms & Conditions to use Defy Elite Athletics. You will be returned to the homepage.');
-    window.location.href = 'index.html';
-  });
-</script>
 
     <footer>
-   <footer>
-  © 2025 Defy Elite Athletics, LLC |
-  <a href="terms-and-conditions.html" target="_blank">Terms & Conditions</a> |
-  <a href="privacy-policy.html" target="_blank">Privacy Policy</a> |
-  <a href="disclaimer.html" target="_blank">Disclaimer</a>
-</footer>
+      © 2025 Defy Elite Athletics, LLC |
+      <a href="terms-and-conditions.html" target="_blank">Terms & Conditions</a> |
+      <a href="privacy-policy.html" target="_blank">Privacy Policy</a> |
+      <a href="disclaimer.html" target="_blank">Disclaimer</a>
+    </footer>
+  </div>
 
+  <script>
+    // Function to handle agreement and redirect
+    function acceptTerms() {
+      localStorage.setItem('defyAgreedToTerms', 'true');
+      window.location.href = 'index.html'; // ✅ Fixed redirect (was home.html)
+    }
 
-<script>
-  function acceptTerms() {
-    localStorage.setItem('defyAgreedToTerms', 'true');
-    window.location.href = 'index.html'; // ✅ Fixed redirect
-  }
-
-  // Auto-redirect if user already agreed
-  if (localStorage.getItem('defyAgreedToTerms') === 'true') {
-    window.location.replace('index.html'); // ✅ Fixed redirect
-  }
-</script>
-
+    // Auto-redirect if user already agreed
+    if (localStorage.getItem('defyAgreedToTerms') === 'true') {
+      window.location.replace('index.html'); // ✅ Fixed redirect (was home.html)
+    }
+  </script>
 </body>
 </html>
