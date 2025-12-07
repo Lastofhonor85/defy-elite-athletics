@@ -88,4 +88,75 @@ jobs:
       <h2>2. Assumption of Risk</h2>
       <p>
         You understand that participation in physical activity involves inherent risks, including
-        serious
+        serious injury or death, and you voluntarily assume all such risks.
+      </p>
+
+      <h2>3. Release of Liability</h2>
+      <p>
+        You hereby release, discharge, and hold harmless Defy Elite Athletics, its owners, employees,
+        contractors, and affiliates from any and all claims, demands, or causes of action arising out
+        of your participation or reliance on site materials, to the fullest extent permitted by law.
+      </p>
+
+      <h2>4. No Warranty</h2>
+      <p>
+        The website and its materials are provided “as is” without warranties of any kind, express or
+        implied, including but not limited to fitness for a particular purpose or guaranteed results.
+      </p>
+
+      <h2>5. Governing Law</h2>
+      <p>
+        These Terms shall be governed by and construed in accordance with the laws of the State of
+        <strong>New Mexico, USA</strong>, without regard to its conflict-of-law principles. Any disputes
+        arising out of or relating to these Terms shall be brought exclusively in the state or federal
+        courts located in New Mexico, and you consent to the jurisdiction of those courts.
+      </p>
+
+      <h2>6. Acknowledgment of Agreement</h2>
+      <p>
+        By clicking “I Agree & Enter Site,” you affirm that you are of legal age and fully understand
+        and voluntarily accept these terms. This release is binding upon you and your heirs,
+        successors, and assigns.
+      </p>
+
+      <div style="text-align:center;">
+        <button class="agree-btn" onclick="acceptTerms()">I Agree & Enter Site</button>
+      </div>
+    </main>
+
+    <footer>© 2025 Defy Elite Athletics | All Rights Reserved</footer>
+  </div>
+
+  <script>
+    function acceptTerms(){
+      localStorage.setItem('defyAgreedToTerms','true');
+      window.location.href='home.html?v={{VERSION}}';
+    }
+    if(localStorage.getItem('defyAgreedToTerms')==='true'){
+      window.location.replace('home.html?v={{VERSION}}');
+    }
+  </script>
+</body>
+</html>
+EOF
+          else
+            echo "✅ terms-gate.html verified and present."
+          fi
+
+      - name: 🔄 Update Cache Version
+        run: |
+          VERSION=$(date +%s)
+          echo "Cache version: $VERSION" > cache-version.txt
+          # Replace {{VERSION}} placeholders in Terms Gate (for cache-busting)
+          sed -i "s/{{VERSION}}/$VERSION/g" terms-gate.html
+          echo "Cache version injected into HTML."
+
+      - name: Commit and Push Updates
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          git config user.name "Defy-AutoDeploy"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Auto-deploy with cache-busting version [skip ci]" || echo "No changes to commit"
+          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
