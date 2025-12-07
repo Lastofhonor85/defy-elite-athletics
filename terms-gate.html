@@ -66,14 +66,12 @@
         implied, including but not limited to fitness for a particular purpose or guaranteed results.
       </p>
 
-     <h2>5. Governing Law</h2>
-<p>
-  These Terms shall be governed by and construed in accordance with the laws of the State of
-  New Mexico, USA, without regard to its conflict of law principles. Any disputes arising out of or
-  relating to these Terms shall be brought exclusively in the state or federal courts located in
-  New Mexico, and you hereby consent to the personal jurisdiction of those courts.
-</p>
-
+      <h2>5. Governing Law</h2>
+      <p>
+        These Terms shall be governed by and construed in accordance with the laws of the State of
+        <strong>New Mexico, USA</strong>, without regard to its conflict-of-law principles. Any disputes
+        arising out of or relating to these Terms shall be brought exclusively in the state or federal
+        courts located in New Mexico, and you consent to the jurisdiction of those courts.
       </p>
 
       <h2>6. Acknowledgment of Agreement</h2>
@@ -94,11 +92,10 @@
   <script>
     function acceptTerms(){
       localStorage.setItem('defyAgreedToTerms','true');
-      window.location.href='index.html'; // redirect after agreeing
+      window.location.href='home.html'; // change to your real home page if different
     }
-    // auto-skip if already agreed
     if(localStorage.getItem('defyAgreedToTerms')==='true'){
-      window.location.replace('index.html');
+      window.location.replace('home.html');
     }
   </script>
 </body>
