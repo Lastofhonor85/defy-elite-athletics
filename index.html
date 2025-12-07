@@ -160,7 +160,9 @@
 </html>
 
 <script>
-  if (localStorage.getItem('defy_terms_accepted') !== 'yes') {
-    window.location.href = "terms-gate.html";
+  // Check if user has agreed to terms
+  if (!localStorage.getItem('defyAgreedToTerms')) {
+    window.location.href = 'terms-gate.html';
   }
 </script>
+
