@@ -76,6 +76,38 @@
     <footer>
       <p>© 2025 Defy Elite Athletics, LLC | Last Updated: December 7, 2025</p>
       <a href="index.html">Return to Home</a>
+      <!-- Add this near the bottom of your Terms page (above footer or end of container) -->
+<div style="text-align:center; margin-top: 2rem;">
+  <button id="acceptTerms" style="background:#09f;color:#000;border:none;padding:10px 18px;border-radius:8px;font-weight:700;cursor:pointer;">
+    Accept Terms & Continue
+  </button>
+  <button id="declineTerms" style="margin-left:12px;background:#333;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;">
+    Decline
+  </button>
+</div>
+
+<script>
+  // When user accepts, mark acceptance and go to the main page you want.
+  document.getElementById('acceptTerms').addEventListener('click', function(){
+    try {
+      localStorage.setItem('defy_terms_accepted', 'yes');
+    } catch(e) {
+      // localStorage may be unavailable in some contexts; you might want to fallback to cookies.
+      console.warn('Could not save acceptance to localStorage', e);
+    }
+    // Choose the page you want users to land on after accepting:
+    // window.location.href = 'index.html';
+    // or
+    window.location.href = 'home.html';
+  });
+
+  // If they decline, you can send them away or show a message
+  document.getElementById('declineTerms').addEventListener('click', function(){
+    alert('You must accept the Terms & Conditions to use Defy Elite Athletics. You will be returned to the homepage.');
+    window.location.href = 'index.html';
+  });
+</script>
+
     </footer>
   </div>
 </body>
