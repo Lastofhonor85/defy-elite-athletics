@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Auto Git Sync",
+      "type": "shell",
+      "command": "\"D:\\Git\\bin\\bash.exe\"",
+      "args": [
+        "${workspaceFolder}/.vscode/auto-sync.sh"
+      ],
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+  ]
+}
