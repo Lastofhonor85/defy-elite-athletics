@@ -6,116 +6,76 @@
   <title>Terms & Conditions – Defy Elite Athletics</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Centered layout for gate */
     body.dark {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      flex-direction: column;
-      background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      padding: 2rem;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      min-height:100vh; background:#000; color:#fff; font-family:Arial, sans-serif; padding:2rem;
     }
-    .gate-container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #111;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    .gate-box {
+      max-width:820px; background:#111; padding:2rem; border-radius:10px;
+      box-shadow:0 0 20px rgba(0,0,0,0.7);
     }
-    h1, h2 {
-      color: #09f;
+    h1,h2{color:#09f;}
+    p,li{color:#ddd; line-height:1.6;}
+    .agree-btn{
+      background:#09f; color:#fff; border:none; padding:12px 28px;
+      border-radius:6px; font-size:1rem; cursor:pointer; margin-top:1.5rem;
+      transition:background .3s;
     }
-    p, li {
-      color: #ddd;
-      line-height: 1.6;
-    }
-    button.agree-btn {
-      background: #09f;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 1.5rem;
-      transition: background 0.3s;
-    }
-    button.agree-btn:hover {
-      background: #0077cc;
-    }
-    footer {
-      text-align: center;
-      color: #666;
-      margin-top: 2rem;
-    }
+    .agree-btn:hover{background:#0077cc;}
+    footer{text-align:center;color:#666;margin-top:2rem;font-size:.9rem;}
   </style>
 </head>
 
 <body class="dark">
-  <div class="gate-container">
-    <header class="site-header" style="text-align:center; margin-bottom:1rem;">
-      <img src="assets/logo1.png" alt="Defy Elite Athletics" class="logo" style="max-width:200px;">
+  <div class="gate-box">
+    <header style="text-align:center;margin-bottom:1rem;">
+      <img src="assets/logo1.png" alt="Defy Elite Athletics" style="max-width:200px;">
     </header>
 
     <main>
       <h1>Terms & Conditions</h1>
       <p>
-        Welcome to <strong>Defy Elite Athletics</strong>. Please read these Terms and Conditions carefully before
-        accessing or using this website, training resources, or any associated digital materials.
+        Welcome to <strong>Defy Elite Athletics</strong>. Please read these Terms carefully before
+        using any materials or services provided. By clicking “I Agree,” you acknowledge that you have
+        read, understood, and accept these Terms and our Privacy Policy.
       </p>
 
-      <h2>1. Acceptance of Terms</h2>
+      <h2>1. Informational Purpose Only</h2>
       <p>
-        By clicking “I Agree” and entering this site, you acknowledge that you have read, understood, and consent to
-        these Terms and Conditions, our Privacy Policy, and any future updates we may post. If you do not agree, please
-        exit immediately.
+        All content—including exercise descriptions, videos, and nutrition guidance—is provided for
+        educational purposes only and does not constitute medical advice. Consult a qualified
+        healthcare professional before beginning any new exercise or nutrition program.
       </p>
 
-      <h2>2. Informational Purpose Only</h2>
+      <h2>2. Assumption of Risk</h2>
       <p>
-        All content, including but not limited to exercise descriptions, videos, nutrition guidance, and performance
-        programming, is provided for <strong>educational and informational purposes only</strong>. Nothing on this site
-        constitutes medical advice, diagnosis, or treatment. Always consult your physician or qualified health
-        professional before beginning any new exercise or nutrition program.
+        You understand that participation in physical activity involves inherent risks, including
+        serious injury or death, and you voluntarily assume all such risks.
       </p>
 
-      <h2>3. Assumption of Risk</h2>
+      <h2>3. Release of Liability</h2>
       <p>
-        By proceeding, you voluntarily assume all risks associated with physical training, including the risk of injury,
-        illness, or death. You acknowledge that participation in physical activity carries inherent risks and that
-        Defy Elite Athletics, its owner(s), affiliates, and representatives shall not be liable for any direct,
-        indirect, incidental, or consequential damages resulting from participation or reliance on site materials.
+        You hereby release, discharge, and hold harmless Defy Elite Athletics, its owners, employees,
+        contractors, and affiliates from any and all claims, demands, or causes of action arising out
+        of your participation or reliance on site materials, to the fullest extent permitted by law.
       </p>
 
-      <h2>4. Release of Liability</h2>
+      <h2>4. No Warranty</h2>
       <p>
-        You hereby release, discharge, and hold harmless Defy Elite Athletics, its officers, employees, contractors, and
-        affiliates from any and all claims, demands, damages, or causes of action arising out of your use of this site
-        or participation in any training program, whether supervised or unsupervised, to the fullest extent permitted by
-        law.
+        The website and its materials are provided “as is” without warranties of any kind, express or
+        implied, including but not limited to fitness for a particular purpose or guaranteed results.
       </p>
 
-      <h2>5. No Warranty</h2>
+      <h2>5. Governing Law</h2>
       <p>
-        This website and all materials are provided “as is” and without warranties of any kind, either express or
-        implied. Defy Elite Athletics makes no guarantees as to results, performance outcomes, or specific fitness
-        improvements.
+        These Terms are governed by the laws of the State of West Virginia, USA, without regard to
+        conflict-of-law provisions.
       </p>
 
-      <h2>6. Governing Law</h2>
+      <h2>6. Acknowledgment of Agreement</h2>
       <p>
-        These Terms shall be governed by and construed in accordance with the laws of the State of West Virginia, USA,
-        without regard to its conflict of law provisions.
-      </p>
-
-      <h2>7. Agreement to Proceed</h2>
-      <p>
-        By clicking “I Agree” below, you affirm that you are of legal age, have read and understood these terms, and
-        voluntarily accept them in full. You acknowledge that this release is binding upon you and your heirs,
+        By clicking “I Agree & Enter Site,” you affirm that you are of legal age and fully understand
+        and voluntarily accept these terms. This release is binding upon you and your heirs,
         successors, and assigns.
       </p>
 
@@ -124,25 +84,18 @@
       </div>
     </main>
 
-    <footer>
-      © 2025 Defy Elite Athletics | All Rights Reserved
-    </footer>
+    <footer>© 2025 Defy Elite Athletics | All Rights Reserved</footer>
   </div>
 
   <script>
-    function acceptTerms() {
-      // Store agreement in local storage to remember consent
-      localStorage.setItem('defyAgreedToTerms', 'true');
-      // Redirect to the homepage after agreement
-      window.location.href = 'index.html';
+    function acceptTerms(){
+      localStorage.setItem('defyAgreedToTerms','true');
+      window.location.href='index.html'; // redirect after agreeing
     }
-
-    // Optional: Redirect users who already agreed
-    window.addEventListener('DOMContentLoaded', () => {
-      if (localStorage.getItem('defyAgreedToTerms') === 'true') {
-        window.location.href = 'index.html';
-      }
-    });
+    // auto-skip if already agreed
+    if(localStorage.getItem('defyAgreedToTerms')==='true'){
+      window.location.replace('index.html');
+    }
   </script>
 </body>
 </html>
