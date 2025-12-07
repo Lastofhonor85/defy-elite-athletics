@@ -174,16 +174,17 @@
 </footer>
 
 
-  <script>
-    function acceptTerms() {
-      localStorage.setItem('defyAgreedToTerms', 'true');
-      window.location.href = 'home.html'; // change if your main page uses a different file name
-    }
+<script>
+  function acceptTerms() {
+    localStorage.setItem('defyAgreedToTerms', 'true');
+    window.location.href = 'index.html'; // ✅ Fixed redirect
+  }
 
-    // Auto-redirect if user already agreed
-    if (localStorage.getItem('defyAgreedToTerms') === 'true') {
-      window.location.replace('home.html');
-    }
-  </script>
+  // Auto-redirect if user already agreed
+  if (localStorage.getItem('defyAgreedToTerms') === 'true') {
+    window.location.replace('index.html'); // ✅ Fixed redirect
+  }
+</script>
+
 </body>
 </html>
