@@ -1,0 +1,44 @@
+name: Deploy Defy Elite Athletics Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies (if any)
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          fi
+
+      - name: Commit site updates
+        run: |
+          git config user.name "Defy-AutoDeploy"
+          git config user.email "actions@github.com"
+          echo "Last updated on $(date)" > last-updated.txt
+          git add .
+          git commit -m "Auto-deploy site updates [skip ci]" || echo "No changes to commit"
+
+      - name: Push updates to main branch
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
