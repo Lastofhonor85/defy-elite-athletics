@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Defy Elite Athletics</title>
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- ✅ Load only ONE Auth0 SDK (latest stable) -->
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+
   <style>
-    /* Add basic styles */
     body {
       background-color: #000;
       color: #fff;
@@ -45,56 +48,50 @@
     <p id="message" style="color:#f55;margin-top:1rem;"></p>
   </div>
 
-  <!-- Add Auth0 SDK -->
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.19/auth0-spa-js.min.js"></script>
-
   <script>
     let auth0 = null;
 
-    // Initialize Auth0
-    const initAuth0 = async () => {
-      auth0 = await createAuth0Client({
-        domain: defy.us.auth0.com,  // Replace with your Auth0 domain
-        client_id: uBHBUsNHNLmYEDgj6BaBQhS6Lpl3YCQm,  // Replace with your Auth0 client ID
-      });
-    };
+    async function initAuth() {
+      try {
+        auth0 = await createAuth0Client({
+          domain: "YOUR_AUTH0_DOMAIN",
+          client_id: "YOUR_AUTH0_CLIENT_ID",
+          cacheLocation: "localstorage",
+        });
 
-    // Function to login
-    const login = async () => {
+        const query = window.location.search;
+        if (query.includes("code=") && query.includes("state=")) {
+          await auth0.handleRedirectCallback();
+          window.history.replaceState({}, document.title, "/members/members-area.html");
+          return;
+        }
+
+        const isAuthenticated = await auth0.isAuthenticated();
+        if (isAuthenticated) {
+          window.location.href = "/members/members-area.html";
+        }
+      } catch (err) {
+        console.error("Auth0 Init Error:", err);
+        document.getElementById("message").innerText = "Login initialization failed.";
+      }
+    }
+
+    async function login() {
       try {
         await auth0.loginWithRedirect({
-          redirect_uri: window.location.href,  // Redirect back to current page
+          authorizationParams: {
+            redirect_uri: window.location.origin + "/members/login.html",
+          },
         });
-      } catch (error) {
-        console.error(error);
+      } catch (err) {
+        console.error("Login Error:", err);
+        document.getElementById("message").innerText = "Login failed.";
       }
-    };
+    }
 
-    // Check if user is authenticated
-    const handleRedirectCallback = async () => {
-      const result = await auth0.handleRedirectCallback();
-      const user = await auth0.getUser();
-      localStorage.setItem('defy_member_access', 'granted');
-      window.location.href = 'members-area.html'; // Redirect to the members area
-    };
-
-    // When the page loads
-    window.onload = async () => {
-      await initAuth0();
-
-      // Handle the redirect callback from Auth0
-      if (window.location.search.includes('code=')) {
-        await handleRedirectCallback();
-      }
-
-      // Check if user is already authenticated
-      const isAuthenticated = await auth0.isAuthenticated();
-      if (isAuthenticated) {
-        window.location.href = 'members-area.html';  // Auto-redirect to members area if already logged in
-      }
-
-      // Attach login function to button
-      document.getElementById('loginBtn').addEventListener('click', login);
+    window.onload = () => {
+      initAuth();
+      document.getElementById("loginBtn").addEventListener("click", login);
     };
   </script>
 </body>
