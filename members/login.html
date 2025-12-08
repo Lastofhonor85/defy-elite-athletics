@@ -6,9 +6,6 @@
   <title>Login | Defy Elite Athletics</title>
   <link rel="stylesheet" href="../styles.css" />
 
-  <!-- ✅ Load the latest stable Auth0 SPA SDK -->
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
-
   <style>
     body {
       background-color: #000;
@@ -39,10 +36,7 @@
       transition: background 0.2s ease;
     }
     button:hover { background: #0af; }
-    #message {
-      color: #f55;
-      margin-top: 1rem;
-    }
+    #message { color: #f55; margin-top: 1rem; }
   </style>
 </head>
 
@@ -54,19 +48,27 @@
     <p id="message"></p>
   </div>
 
+  <!-- ✅ Load the correct Auth0 SPA SDK (v2.1.0) -->
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+
   <script>
     let auth0 = null;
 
-    // Initialize Auth0 client
     async function initAuth() {
       try {
+        // ✅ Wait until Auth0 SDK is loaded
+        if (typeof createAuth0Client === "undefined") {
+          throw new Error("Auth0 SDK failed to load.");
+        }
+
+        // ✅ Initialize the Auth0 client
         auth0 = await createAuth0Client({
           domain: "defy.us.auth0.com",
           client_id: "uBHBUsNHNLmYEDgj6BaBQhS6Lpl3YCQm",
           cacheLocation: "localstorage",
         });
 
-        // Handle redirect callback from Auth0
+        // ✅ Handle redirect callback
         const query = window.location.search;
         if (query.includes("code=") && query.includes("state=")) {
           await auth0.handleRedirectCallback();
@@ -74,20 +76,24 @@
           return;
         }
 
-        // Check if user is already authenticated
+        // ✅ Check if already authenticated
         const isAuthenticated = await auth0.isAuthenticated();
         if (isAuthenticated) {
           window.location.href = "/members/members-area.html";
         }
       } catch (err) {
-        console.error("Auth0 Initialization Error:", err);
+        console.error("Auth0 Init Error:", err);
         document.getElementById("message").innerText = "Login initialization failed.";
       }
     }
 
-    // Trigger login flow
     async function login() {
       try {
+        if (!auth0) {
+          document.getElementById("message").innerText = "Auth0 client not initialized yet.";
+          return;
+        }
+
         await auth0.loginWithRedirect({
           authorizationParams: {
             redirect_uri: "https://defyeliteathletics.com/members/login.html",
@@ -99,7 +105,6 @@
       }
     }
 
-    // When page loads
     window.onload = () => {
       initAuth();
       document.getElementById("loginBtn").addEventListener("click", login);
