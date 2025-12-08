@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login | Defy Elite Athletics</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles.css" />
 
-  <!-- ✅ Load the Auth0 SDK -->
+  <!-- ✅ Load the latest stable Auth0 SPA SDK -->
   <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
 
   <style>
@@ -36,21 +36,28 @@
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
+      transition: background 0.2s ease;
     }
     button:hover { background: #0af; }
+    #message {
+      color: #f55;
+      margin-top: 1rem;
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Members Login</h1>
     <p>Login using your credentials:</p>
     <button id="loginBtn">Login with Auth0</button>
-    <p id="message" style="color:#f55;margin-top:1rem;"></p>
+    <p id="message"></p>
   </div>
 
   <script>
     let auth0 = null;
 
+    // Initialize Auth0 client
     async function initAuth() {
       try {
         auth0 = await createAuth0Client({
@@ -59,6 +66,7 @@
           cacheLocation: "localstorage",
         });
 
+        // Handle redirect callback from Auth0
         const query = window.location.search;
         if (query.includes("code=") && query.includes("state=")) {
           await auth0.handleRedirectCallback();
@@ -66,21 +74,23 @@
           return;
         }
 
+        // Check if user is already authenticated
         const isAuthenticated = await auth0.isAuthenticated();
         if (isAuthenticated) {
           window.location.href = "/members/members-area.html";
         }
       } catch (err) {
-        console.error("Auth0 Init Error:", err);
+        console.error("Auth0 Initialization Error:", err);
         document.getElementById("message").innerText = "Login initialization failed.";
       }
     }
 
+    // Trigger login flow
     async function login() {
       try {
         await auth0.loginWithRedirect({
           authorizationParams: {
-            redirect_uri: window.location.origin + "/members/login.html",
+            redirect_uri: "https://defyeliteathletics.com/members/login.html",
           },
         });
       } catch (err) {
@@ -89,6 +99,7 @@
       }
     }
 
+    // When page loads
     window.onload = () => {
       initAuth();
       document.getElementById("loginBtn").addEventListener("click", login);
