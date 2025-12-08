@@ -1,119 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Members Login – Defy Elite Athletics</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Defy Elite Athletics</title>
+  <link rel="stylesheet" href="../styles.css">
   <style>
-    /* Login box styling */
-    .login-container {
-      max-width: 350px;
-      margin: 90px auto 0;
-      background: #181818;
-      padding: 38px 26px 28px;
-      border-radius: 14px;
-      box-shadow: 0 6px 24px rgba(30, 144, 255, 0.12);
-    }
-    .login-container h1 {
+    /* Add basic styles */
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
       text-align: center;
-      color: #1e90ff;
-      margin-bottom: 1.2em;
+      margin: 0;
+      padding: 2rem;
     }
-    .login-container label {
-      color: #fff;
-      font-size: 1.13em;
+    .container {
+      background: #111;
+      max-width: 400px;
+      margin: 6rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(255,255,255,0.05);
     }
-    .login-container input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 7px;
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background: #09f;
+      color: #000;
       border: none;
-      margin: 12px 0 24px;
-      background: #292929;
-      color: #fff;
-      font-size: 1.1em;
-    }
-    .login-container button {
-      width: 100%;
-      padding: 12px;
-      border-radius: 7px;
-      border: none;
-      background: #1e90ff;
-      color: #fff;
-      font-size: 1.11em;
+      border-radius: 6px;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: bold;
     }
-    .login-container .error {
-      color: #ff4141;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    /* Footer styling, matching your other pages */
-    .login-footer {
-      text-align: center;
-      color: #666;
-      margin-top: 2rem;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-    }
-    .login-footer a {
-      color: #666;
-      text-decoration: none;
-    }
+    button:hover { background: #0af; }
   </style>
 </head>
-
-<body class="dark">
-  <!-- SITE HEADER (logo only) -->
-  <header class="site-header" style="background-color: #000; padding: 1rem; text-align: center;">
-    <a href="../index.html" style="text-decoration: none;">
-      <!-- Change to logo1.png to match your actual file -->
-      <img
-        src="../assets/logo1.png"
-        alt="Defy Elite Athletics Logo"
-        class="logo"
-        style="max-width: 200px;"
-        loading="lazy"
-      />
-    </a>
-  </header>
-
-  <!-- LOGIN BOX -->
-  <section class="login-container">
+<body>
+  <div class="container">
     <h1>Members Login</h1>
-    <div id="error" class="error"></div>
-    <form onsubmit="return checkPassword(event)">
-      <label for="password">Enter Membership Password:</label>
-      <input type="password" id="password" required autofocus />
-      <button type="submit">Login</button>
-    </form>
-  </section>
+    <p>Login using your credentials:</p>
+    <button id="loginBtn">Login with Auth0</button>
+    <p id="message" style="color:#f55;margin-top:1rem;"></p>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="login-footer">
-    &copy; 2025 Defy Elite Athletics | 
-    <a href="../privacy.html">Privacy Policy</a>
-  </footer>
+  <!-- Add Auth0 SDK -->
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.19/auth0-spa-js.min.js"></script>
 
   <script>
-    // Replace this with your actual member password
-    const MEMBER_PASSWORD = "defyelite2024";
+    let auth0 = null;
 
-    function checkPassword(e) {
-      e.preventDefault();
-      const pw = document.getElementById("password").value.trim();
-      if (pw === MEMBER_PASSWORD) {
-        // On success, redirect to dashboard.html (or whichever page you want)
-        window.location.href = "dashboard.html";
-      } else {
-        document.getElementById("error").innerText =
-          "Incorrect password. Please try again.";
+    // Initialize Auth0
+    const initAuth0 = async () => {
+      auth0 = await createAuth0Client({
+        domain: 'YOUR_AUTH0_DOMAIN',  // Replace with your Auth0 domain
+        client_id: 'YOUR_AUTH0_CLIENT_ID',  // Replace with your Auth0 client ID
+      });
+    };
+
+    // Function to login
+    const login = async () => {
+      try {
+        await auth0.loginWithRedirect({
+          redirect_uri: window.location.href,  // Redirect back to current page
+        });
+      } catch (error) {
+        console.error(error);
       }
-      return false;
-    }
+    };
+
+    // Check if user is authenticated
+    const handleRedirectCallback = async () => {
+      const result = await auth0.handleRedirectCallback();
+      const user = await auth0.getUser();
+      localStorage.setItem('defy_member_access', 'granted');
+      window.location.href = 'members-area.html'; // Redirect to the members area
+    };
+
+    // When the page loads
+    window.onload = async () => {
+      await initAuth0();
+
+      // Handle the redirect callback from Auth0
+      if (window.location.search.includes('code=')) {
+        await handleRedirectCallback();
+      }
+
+      // Check if user is already authenticated
+      const isAuthenticated = await auth0.isAuthenticated();
+      if (isAuthenticated) {
+        window.location.href = 'members-area.html';  // Auto-redirect to members area if already logged in
+      }
+
+      // Attach login function to button
+      document.getElementById('loginBtn').addEventListener('click', login);
+    };
   </script>
 </body>
 </html>
