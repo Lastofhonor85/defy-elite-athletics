@@ -6,7 +6,7 @@
   <title>Login | Defy Elite Athletics</title>
   <link rel="stylesheet" href="../styles.css">
 
-  <!-- ✅ Load only ONE Auth0 SDK (latest stable) -->
+  <!-- ✅ Load the Auth0 SDK -->
   <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
 
   <style>
@@ -54,8 +54,8 @@
     async function initAuth() {
       try {
         auth0 = await createAuth0Client({
-          domain: "YOUR_AUTH0_DOMAIN",
-          client_id: "YOUR_AUTH0_CLIENT_ID",
+          domain: "defy.us.auth0.com",
+          client_id: "uBHBUsNHNLmYEDgj6BaBQhS6Lpl3YCQm",
           cacheLocation: "localstorage",
         });
 
