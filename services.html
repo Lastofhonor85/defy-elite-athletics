@@ -1,209 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Services – Defy Elite Athletics</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      background-color: #000;
-      color: #eee;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: #000;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    header img {
-      max-width: 200px;
-    }
-
-    nav {
-      background: #111;
-      text-align: center;
-      padding: 0.75rem;
-    }
-
-    nav a {
-      color: #09f;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    .hero h1 {
-      color: #09f;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .service-card {
-      background: #111;
-      padding: 1rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
-    }
-
-    .service-card h2 {
-      margin-top: 0.75rem;
-      font-size: 1.1rem;
-      color: #09f;
-    }
-
-    .service-logo-btn {
-      border: none;
-      background: none;
-      cursor: pointer;
-      display: inline-block;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border-radius: 12px;
-      padding: 0.5rem;
-    }
-
-    .service-logo-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(0, 153, 255, 0.4);
-      background-color: #1a1a1a;
-    }
-
-    .service-logo {
-      width: 100px;
-      display: block;
-      margin: auto;
-    }
-
-    footer {
-      background: #000;
-      color: #666;
-      text-align: center;
-      padding: 2rem 0;
-      margin-top: 2rem;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css?v={{VERSION}}">
 </head>
-
 <body>
-  <header>
-    <img src="assets/logo.png" alt="Defy Elite Athletics Logo">
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="memberships.html">Memberships</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="drills.html">Drills Library</a>
-    <a href="exercises.html">Exercises Library</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-    <a href="members/login.html">Members</a>
-  </nav>
+  <main class="page">
+    <section class="hero">
+      <h1>Services & Programs</h1>
+      <p>Deep-dive services designed to build structure, clarity, and long-term performance.</p>
+    </section>
 
-  <section class="hero">
-    <h1>Our Services</h1>
-    <p>Select a service to continue to payment.</p>
-  </section>
+    <section class="cards-grid">
+      <!-- Swing Analysis -->
+      <article class="card">
+        <h2>Swing Analysis + Video</h2>
+        <p class="price">$60 (one-time)</p>
+        <p>Full breakdown of your golf swing with voice-over, visuals, and targeted drills.</p>
+        <ul>
+          <li>Upload face-on and down-the-line views</li>
+          <li>Faults identified and prioritized</li>
+          <li>Custom drill prescription and next steps</li>
+        </ul>
+        <button
+          onclick="window.location.href='https://checkout.stripe.com/swing_analysis_checkout_link_here'">
+          Purchase Swing Analysis
+        </button>
+      </article>
 
-  <section id="services-list" class="services-grid">
-    <!-- Repeatable service card blocks -->
-    <div class="service-card">
-      <a href="pay-live-golf.html" class="service-logo-btn" title="Pay for Live Golf Coaching">
-        <img src="assets/live-golf.png" alt="Live Golf Coaching" class="service-logo" />
-      </a>
-      <h2>Live Golf Coaching</h2>
-    </div>
+      <!-- Periodization plans -->
+      <article class="card">
+        <h2>3 Month Periodization Plan</h2>
+        <p class="price">$200 (one-time)</p>
+        <p>Short-term performance block focused on a clear objective.</p>
+        <button
+          onclick="window.location.href='https://checkout.stripe.com/plan_3m_checkout_link_here'">
+          Purchase 3 Month Plan
+        </button>
+      </article>
 
-    <div class="service-card">
-      <a href="pay-remote-golf.html" class="service-logo-btn" title="Pay for Remote Golf Coaching">
-        <img src="assets/remote-golf.png" alt="Remote Golf Coaching" class="service-logo" />
-      </a>
-      <h2>Remote Golf Coaching</h2>
-    </div>
+      <article class="card">
+        <h2>6 Month Periodization Plan</h2>
+        <p class="price">$375 (one-time)</p>
+        <p>Two-phase structure to build and express performance.</p>
+        <button
+          onclick="window.location.href='https://checkout.stripe.com/plan_6m_checkout_link_here'">
+          Purchase 6 Month Plan
+        </button>
+      </article>
 
-    <div class="service-card">
-      <a href="pay-live-pt.html" class="service-logo-btn" title="Pay for Live Personal Training">
-        <img src="assets/live-pt.png" alt="Live Personal Training" class="service-logo" />
-      </a>
-      <h2>Live Personal Training</h2>
-    </div>
+      <article class="card">
+        <h2>9 Month Periodization Plan</h2>
+        <p class="price">$550 (one-time)</p>
+        <p>Longer build with deload structure and progression.</p>
+        <button
+          onclick="window.location.href='https://checkout.stripe.com/plan_9m_checkout_link_here'">
+          Purchase 9 Month Plan
+        </button>
+      </article>
 
-    <div class="service-card">
-      <a href="pay-remote-pt.html" class="service-logo-btn" title="Pay for Remote Personal Training">
-        <img src="assets/remote-pt.png" alt="Remote Personal Training" class="service-logo" />
-      </a>
-      <h2>Remote Personal Training</h2>
-    </div>
+      <article class="card">
+        <h2>12 Month Periodization Plan</h2>
+        <p class="price">$725 (one-time)</p>
+        <p>Full-season design to manage fatigue and peak at the right time.</p>
+        <button
+          onclick="window.location.href='https://checkout.stripe.com/plan_12m_checkout_link_here'">
+          Purchase 12 Month Plan
+        </button>
+      </article>
+    </section>
+  </main>
 
-    <div class="service-card">
-      <a href="pay-nutrition.html" class="service-logo-btn" title="Pay for Nutritional Counseling">
-        <img src="assets/nutrition.png" alt="Nutritional Counseling" class="service-logo" />
-      </a>
-      <h2>Nutritional Counseling</h2>
-    </div>
-
-    <div class="service-card">
-      <a href="pay-3mo.html" class="service-logo-btn" title="Pay for 3-Month Plan">
-        <img src="assets/3mo.png" alt="3-Month Plan" class="service-logo" />
-      </a>
-      <h2>3-Month Periodization Plan</h2>
-    </div>
-
-    <div class="service-card">
-      <a href="pay-6mo.html" class="service-logo-btn" title="Pay for 6-Month Plan">
-        <img src="assets/6mo.png" alt="6-Month Plan" class="service-logo" />
-      </a>
-      <h2>6-Month Periodization Plan</h2>
-    </div>
-
-    <div class="service-card">
-      <a href="pay-9mo.html" class="service-logo-btn" title="Pay for 9-Month Plan">
-        <img src="assets/9mo.png" alt="9-Month Plan" class="service-logo" />
-      </a>
-      <h2>9-Month Periodization Plan</h2>
-    </div>
-
-    <div class="service-card">
-      <a href="pay-12mo.html" class="service-logo-btn" title="Pay for 12-Month Plan">
-        <img src="assets/12mo.png" alt="12-Month Plan" class="service-logo" />
-      </a>
-      <h2>12-Month Periodization Plan</h2>
-    </div>
-
-    <div class="service-card">
-      <a href="pay-subscription.html" class="service-logo-btn" title="Pay for Monthly Subscription">
-        <img src="assets/subscription.png" alt="Monthly Subscription" class="service-logo" />
-      </a>
-      <h2>Monthly Subscription</h2>
-    </div>
-
-    <div class="service-card">
-      <a href="pay-swing-analysis.html" class="service-logo-btn" title="Pay for Swing Analysis">
-        <img src="assets/swing-analysis.png" alt="Swing Analysis" class="service-logo" />
-      </a>
-      <h2>Swing Analysis + Video</h2>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Defy Elite Athletics
+  <footer class="site-footer">
+    <p>© Defy LLC – Defy Elite Athletics</p>
   </footer>
 </body>
 </html>
