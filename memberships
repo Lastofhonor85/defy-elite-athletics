@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memberships – Grind, Rise, Defy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css?v={{VERSION}}">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="services.html">Services</a>
+      <a href="memberships.html" class="active">Memberships</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <h1>Memberships</h1>
+      <p>Choose the level that matches your commitment, support needs, and performance goals.</p>
+    </section>
+
+    <section class="pricing-grid">
+      <!-- Grind -->
+      <article class="card tier">
+        <h2>Grind</h2>
+        <p class="price">$99 / year<br><small>~$9.99 per month</small></p>
+        <p class="tagline">Commit to the work. Build your foundation.</p>
+        <ul>
+          <li>Categorized Drill Library</li>
+          <li>Basic Custom Program Builder (4–6 weeks)</li>
+          <li>Forum & Community Challenges (basic)</li>
+          <li>Records Tracking</li>
+          <li>Supplement Library (read-only)</li>
+          <li>Basic Routine Builder</li>
+          <li>Gear Shop + EPUB Sales</li>
+        </ul>
+        <button
+          onclick="window.location.href='https://checkout.stripe.com/grind_membership_checkout_link_here'">
+          Join Grind
+        </button>
+      </article>
+
+      <!-- Rise -->
+      <article class="card tier tier-featured">
+        <h2>Rise</h2>
+        <p class="price">$299 / year<br><small>~$29.99 per month</small></p>
+        <p class="tagline">Level up. Develop your edge.</p>
+        <ul>
+          <li>Everything in Grind</li>
+          <li>Expanded Program Builder (up to 12 weeks)</li>
+          <li>Client Screening & AI-Assisted Plan</li>
+          <li>Scheduling & Lesson Booking Access</li>
+          <li>1 Swing Analysis per quarter</li>
+          <li>Nutrition Tracking (coach-monitored)</li>
+          <li>Full Supplement Builder (with reminders)</li>
+          <li>Advanced Community Challenges & Leaderboards</li>
+        </ul>
+        <button
+          onclick="window.location.href='https://checkout.stripe.com/rise_membership_checkout_link_here'">
+          Join Rise
+        </button>
+      </article>
+
+      <!-- Defy -->
+      <article class="card tier">
+        <h2>Defy</h2>
+        <p class="price">$349 / year<br><small>~$49.99 per month</small></p>
+        <p class="tagline">Break limits. Own your performance.</p>
+        <ul>
+          <li>Everything in Rise</li>
+          <li>4 Video Analyses per quarter</li>
+          <li>2 Remote 30-min Lessons per year</li>
+          <li>Quarterly Swing Analysis Reviews</li>
+          <li>Priority Scheduling</li>
+          <li>Seasonal Coach Reports</li>
+          <li>Early Access Features & Data Integrations</li>
+        </ul>
+        <button
+          onclick="window.location.href='https://checkout.stripe.com/defy_membership_checkout_link_here'">
+          Join Defy
+        </button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© Defy LLC – Defy Elite Athletics</p>
+  </footer>
+</body>
+</html>
