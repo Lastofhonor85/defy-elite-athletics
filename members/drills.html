@@ -5,98 +5,324 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drills</title>
   <link rel="stylesheet" href="../styles.css" />
+
   <style>
-    body {
-      background-color: #111;
-      color: #eee;
-      font-family: Helvetica, sans-serif;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    h1 {
-      color: #09f;
-      text-align: center;
-      font-size: 2.5rem;
-    }
+    body { background-color: #111; color: #eee; font-family: Helvetica, sans-serif; }
+    .container { max-width: 1000px; margin: 2rem auto; padding: 1rem; }
+    h1 { color: #09f; text-align: center; font-size: 2.5rem; }
+
+    .filters { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .filters input[type="text"] { flex: 1 1 250px; }
+
     input[type="text"] {
       width: 100%;
       padding: 0.75rem;
-      margin-bottom: 1rem;
       border: none;
       border-radius: 0.25rem;
       font-size: 1rem;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
+
+    select {
+      padding: 0.6rem;
+      border-radius: 0.25rem;
+      border: none;
+      font-size: 0.95rem;
       background-color: #222;
+      color: #eee;
     }
-    th, td {
-      border: 1px solid #444;
-      padding: 0.75rem;
-      text-align: left;
+    select:disabled { opacity: 0.5; }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #ccc;
+      white-space: nowrap;
     }
-    th {
-      background-color: #000;
-      color: #09f;
+
+    table { width: 100%; border-collapse: collapse; background-color: #222; }
+    th, td { border: 1px solid #444; padding: 0.75rem; text-align: left; }
+    th { background-color: #000; color: #09f; }
+    tr:nth-child(even) { background-color: #1c1c1c; }
+    tr:hover { background-color: #2a2a2a; }
+
+    button.view-btn {
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.25rem;
+      border: none;
+      background-color: #09f;
+      color: #000;
+      cursor: pointer;
+      font-size: 0.9rem;
     }
-    tr:nth-child(even) {
-      background-color: #1c1c1c;
-    }
-    tr:hover {
-      background-color: #2a2a2a;
-    }
+    button.view-btn:hover { background-color: #0cf; }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Drills</h1>
-    <input type="text" id="searchInput" placeholder="Search drills..." onkeyup="filterTable()" />
+
+    <div class="filters">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search drills..."
+        onkeyup="applyFilters()"
+      />
+
+      <label>
+        Fault Group:
+        <select id="groupFilter" onchange="onGroupChange()">
+          <option value="">All Fault Groups</option>
+        </select>
+      </label>
+
+      <label>
+        Specific Fault:
+        <select id="faultFilter" onchange="applyFilters()" disabled>
+          <option value="">All Faults</option>
+        </select>
+      </label>
+
+      <label>
+        Goal:
+        <select id="goalFilter" onchange="applyFilters()">
+          <option value="">All Goals</option>
+        </select>
+      </label>
+    </div>
+
     <table id="drillsTable">
       <thead>
         <tr>
-          <th>Swing Fault</th>
-          <th>Drill Category</th>
+          <th>Fault Group</th>
+          <th>Specific Fault</th>
+          <th>Goal</th>
           <th>Drill</th>
+          <th>Membership</th>
+          <th>View</th>
         </tr>
       </thead>
-      <tbody id="tableBody">
-        <!-- Populated by JavaScript -->
-      </tbody>
+      <tbody id="tableBody"></tbody>
     </table>
   </div>
+
   <script>
-    async function loadCSV() {
-      const response = await fetch('./data/drills.csv');
-      const data = await response.text();
-      const rows = data.trim().split('\n');
-      const tbody = document.getElementById('tableBody');
-      tbody.innerHTML = '';
-      rows.slice(1).forEach(row => {
-        const cells = row.split(',');
-        const tr = document.createElement('tr');
-        cells.forEach(cell => {
-          const td = document.createElement('td');
-          td.textContent = cell.trim();
-          tr.appendChild(td);
-        });
+    let allDrills = [];
+
+    function formatGoalTag(tag) {
+      const raw = tag.replace("goal:", "").replace(/_/g, " ");
+      return raw.charAt(0).toUpperCase() + raw.slice(1);
+    }
+
+    function flattenDrills(data) {
+      const drills = [];
+
+      data.categories.forEach(cat => {
+        if (cat.faultGroups) {
+          cat.faultGroups.forEach(group => {
+            group.faults.forEach(fault => {
+              fault.drills.forEach(drill => {
+                const tags = drill.tags || [];
+                const goalTags = tags.filter(t => t.startsWith("goal:"));
+                const goalText = goalTags.map(formatGoalTag).join(", ");
+
+                drills.push({
+                  faultGroup: group.label,
+                  fault: fault.label,
+                  drill: drill.name,
+                  membership: drill.membership || "All",
+                  tags,
+                  goals: goalTags,
+                  goalText,
+                  filePath: drill.filePath || "",
+                  linkUrl: drill.linkUrl || ""
+                });
+              });
+            });
+          });
+        }
+
+        if (cat.drills) {
+          cat.drills.forEach(drill => {
+            const tags = drill.tags || [];
+            const goalTags = tags.filter(t => t.startsWith("goal:"));
+            const goalText = goalTags.map(formatGoalTag).join(", ");
+
+            drills.push({
+              faultGroup: cat.label,
+              fault: "",
+              drill: drill.name,
+              membership: drill.membership || "All",
+              tags,
+              goals: goalTags,
+              goalText,
+              filePath: drill.filePath || "",
+              linkUrl: drill.linkUrl || ""
+            });
+          });
+        }
+      });
+
+      return drills;
+    }
+
+    function populateGroupFilter(drills) {
+      const select = document.getElementById("groupFilter");
+      const groups = new Set();
+
+      drills.forEach(d => { if (d.faultGroup) groups.add(d.faultGroup); });
+
+      while (select.options.length > 1) select.remove(1);
+
+      Array.from(groups).sort().forEach(groupName => {
+        const opt = document.createElement("option");
+        opt.value = groupName;
+        opt.textContent = groupName;
+        select.appendChild(opt);
+      });
+    }
+
+    function populateFaultFilter(selectedGroup) {
+      const select = document.getElementById("faultFilter");
+
+      select.innerHTML = "";
+      const defaultOpt = document.createElement("option");
+      defaultOpt.value = "";
+      defaultOpt.textContent = "All Faults";
+      select.appendChild(defaultOpt);
+
+      if (!selectedGroup) {
+        select.disabled = true;
+        return;
+      }
+
+      const faults = new Set();
+      allDrills.forEach(d => {
+        if (d.faultGroup === selectedGroup && d.fault) faults.add(d.fault);
+      });
+
+      Array.from(faults).sort().forEach(faultName => {
+        const opt = document.createElement("option");
+        opt.value = faultName;
+        opt.textContent = faultName;
+        select.appendChild(opt);
+      });
+
+      select.disabled = faults.size === 0;
+    }
+
+    function populateGoalFilter(drills) {
+      const select = document.getElementById("goalFilter");
+      const goals = new Set();
+
+      drills.forEach(d => (d.goals || []).forEach(g => goals.add(g)));
+
+      while (select.options.length > 1) select.remove(1);
+
+      Array.from(goals).sort().forEach(goalTag => {
+        const opt = document.createElement("option");
+        opt.value = goalTag;
+        opt.textContent = formatGoalTag(goalTag);
+        select.appendChild(opt);
+      });
+    }
+
+    function renderTable(drills) {
+      const tbody = document.getElementById("tableBody");
+      tbody.innerHTML = "";
+
+      if (drills.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6">No drills found. Try changing the filters.</td></tr>`;
+        return;
+      }
+
+      drills.forEach(d => {
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+          <td>${d.faultGroup}</td>
+          <td>${d.fault}</td>
+          <td>${d.goalText || ""}</td>
+          <td>${d.drill}</td>
+          <td>${d.membership}</td>
+        `;
+
+        const viewTd = document.createElement("td");
+        const btn = document.createElement("button");
+        btn.textContent = "View Drill";
+        btn.className = "view-btn";
+        btn.onclick = () => viewDrill(d);
+        viewTd.appendChild(btn);
+
+        tr.appendChild(viewTd);
         tbody.appendChild(tr);
       });
     }
 
-    function filterTable() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      const rows = document.querySelectorAll('#drillsTable tbody tr');
-      rows.forEach(row => {
-        const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(query) ? '' : 'none';
+    function applyFilters() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const selectedGroup = document.getElementById("groupFilter").value;
+      const selectedFault = document.getElementById("faultFilter").value;
+      const selectedGoal = document.getElementById("goalFilter").value;
+
+      const filtered = allDrills.filter(d => {
+        const textMatch =
+          d.faultGroup.toLowerCase().includes(query) ||
+          d.fault.toLowerCase().includes(query) ||
+          d.drill.toLowerCase().includes(query) ||
+          d.membership.toLowerCase().includes(query) ||
+          (d.goalText && d.goalText.toLowerCase().includes(query));
+
+        const groupMatch = !selectedGroup || d.faultGroup === selectedGroup;
+        const faultMatch = !selectedFault || d.fault === selectedFault;
+        const goalMatch = !selectedGoal || (d.goals && d.goals.includes(selectedGoal));
+
+        return textMatch && groupMatch && faultMatch && goalMatch;
       });
+
+      renderTable(filtered);
     }
 
-    loadCSV();
+    function onGroupChange() {
+      const selectedGroup = document.getElementById("groupFilter").value;
+      populateFaultFilter(selectedGroup);
+      applyFilters();
+    }
+
+    function viewDrill(drill) {
+      if (drill.linkUrl) {
+        window.open(drill.linkUrl, "_blank");
+        return;
+      }
+      if (drill.filePath) {
+        alert("Drill file path:\n\n" + drill.filePath);
+        return;
+      }
+      alert("No file or link is configured for this drill.");
+    }
+
+    async function loadDrills() {
+      try {
+        const response = await fetch("../data/golf-drills.json");
+        const data = await response.json();
+
+        allDrills = flattenDrills(data);
+
+        populateGroupFilter(allDrills);
+        populateFaultFilter("");
+        populateGoalFilter(allDrills);
+
+        renderTable(allDrills);
+      } catch (err) {
+        console.error("Error loading drill data:", err);
+        document.getElementById("tableBody").innerHTML =
+          `<tr><td colspan="6">Could not load drills. Check that ../data/golf-drills.json exists and is valid JSON.</td></tr>`;
+      }
+    }
+
+    loadDrills();
   </script>
 </body>
 </html>
