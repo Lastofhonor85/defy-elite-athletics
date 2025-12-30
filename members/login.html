@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+<script src="/defy-elite-athletics/members/auth0-config.js"></script>
+<script src="./auth0-config.js"></script>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,8 +48,9 @@
   <div class="container">
     <h1>Members Login</h1>
     <p>Login using your credentials:</p>
-    <button id="loginBtn">Login with Auth0</button>
-    <p id="message"></p>
+    <button id="auth0LoginBtn" disabled>Login with Auth0</button>
+<div id="auth0Status" style="color:#ff4d4d; margin-top:12px;"></div>
+
   </div>
 
   <!-- ✅ Load the correct Auth0 SPA SDK (v2.1.0) -->
@@ -110,5 +115,45 @@
       document.getElementById("loginBtn").addEventListener("click", login);
     };
   </script>
+  <script>
+  let auth0Client = null;
+
+  async function initAuth0() {
+    const statusEl = document.getElementById("auth0Status");
+    const btn = document.getElementById("auth0LoginBtn");
+
+    if (!window.AUTH0_CONFIG?.domain || !window.AUTH0_CONFIG?.clientId) {
+      throw new Error("Missing Auth0 config (domain/clientId).");
+    }
+
+    auth0Client = await auth0.createAuth0Client({
+      domain: window.AUTH0_CONFIG.domain,
+      clientId: window.AUTH0_CONFIG.clientId,
+      authorizationParams: {
+        redirect_uri: window.AUTH0_CONFIG.redirectUri
+      },
+      cacheLocation: "localstorage",
+      useRefreshTokens: true
+    });
+
+    btn.disabled = false;
+    statusEl.textContent = "";
+  }
+
+  async function login() {
+    if (!auth0Client) return;
+    await auth0Client.loginWithRedirect();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initAuth0().catch(err => {
+      document.getElementById("auth0Status").textContent = "Auth0 init failed: " + err.message;
+      console.error(err);
+    });
+
+    document.getElementById("auth0LoginBtn").addEventListener("click", login);
+  });
+</script>
+
 </body>
 </html>
