@@ -1,39 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Members Area | Defy Elite Athletics</title>
-  <link rel="stylesheet" href="../styles.css">
+
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header img {
+      max-width: 180px;
+    }
+    .card {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #111;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      box-shadow: 0 0 12px rgba(255,255,255,0.06);
+    }
+    .muted { color: #aaa; }
+    .links ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+    }
+    .links li {
+      margin: 0.65rem 0;
+    }
+    a {
+      color: #09f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover { text-decoration: underline; }
+    .actions {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    button {
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      background: #09f;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+    button:hover { background: #0af; }
+    #status {
+      text-align: center;
+      margin-top: 1rem;
+      color: #ff4d4d;
+    }
+    #userBox {
+      text-align: center;
+      margin-top: 0.75rem;
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+  </style>
+
+  <!-- Auth0 SDK + config -->
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+  <script src="./auth0-config.js"></script>
 </head>
+
 <body>
-  <header style="text-align:center;">
-    <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo" style="max-width:180px;">
+  <header>
+    <img src="../assets/logo1.png" alt="Defy Elite Athletics Logo" />
     <h1>Member Dashboard</h1>
-    <p>Welcome to the exclusive member resources area.</p>
+    <p class="muted">Welcome to the exclusive member resources area.</p>
+    <div id="userBox"></div>
   </header>
 
-  <section style="text-align:center;margin-top:2rem;">
-    <h2>Private Resources</h2>
-    <ul style="list-style:none;padding:0;color:#09f;">
-      <li><a href="../assets/member-guide.pdf" target="_blank">📘 Member Guide (PDF)</a></li>
-      <li><a href="../assets/performance-tracker.xlsx" target="_blank">📊 Performance Tracker</a></li>
-      <li><a href="../videos/training-tips.mp4" target="_blank">🎥 Training Video</a></li>
-    </ul>
+  <div class="card">
+    <section class="links">
+      <h2>Private Resources</h2>
+      <ul>
+        <li><a href="../assets/member-guide.pdf" target="_blank" rel="noopener">Member Guide (PDF)</a></li>
+        <li><a href="../assets/performance-tracker.xlsx" target="_blank" rel="noopener">Performance Tracker</a></li>
+        <li><a href="../videos/training-tips.mp4" target="_blank" rel="noopener">Training Video</a></li>
+      </ul>
+    </section>
 
-    <button onclick="logout()">Logout</button>
-  </section>
+    <div class="actions">
+      <button id="logoutBtn">Logout</button>
+      <div id="status"></div>
+    </div>
+  </div>
 
   <script>
-    // Check if user is authenticated
-    if (localStorage.getItem('defy_member_access') !== 'granted') {
-      window.location.href = 'login.html';  // If not authenticated, redirect to login
+    let auth0Client = null;
+
+    async function initMembersArea() {
+      const statusEl = document.getElementById("status");
+      statusEl.textContent = "";
+
+      if (!window.AUTH0_CONFIG?.domain || !window.AUTH0_CONFIG?.clientId) {
+        statusEl.textContent = "Missing Auth0 config (domain/clientId).";
+        return;
+      }
+
+      auth0Client = await auth0.createAuth0Client({
+        domain: window.AUTH0_CONFIG.domain,
+        clientId: window.AUTH0_CONFIG.clientId,
+        authorizationParams: {
+          redirect_uri: window.AUTH0_CONFIG.redirectUri
+        },
+        cacheLocation: "localstorage",
+        useRefreshTokens: true
+      });
+
+      // If Auth0 redirected back to this page with code/state, complete the login.
+      const query = window.location.search;
+      if (query.includes("code=") && query.includes("state=")) {
+        await auth0Client.handleRedirectCallback();
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+
+      const isAuthenticated = await auth0Client.isAuthenticated();
+      if (!isAuthenticated) {
+        // Not logged in → send to login page
+        window.location.href = "./login.html";
+        return;
+      }
+
+      // Optional: show basic user info
+      const user = await auth0Client.getUser();
+      const userBox = document.getElementById("userBox");
+      if (user) {
+        const label = user.name || user.email || "Authenticated";
+        userBox.textContent = `Signed in as: ${label}`;
+      }
     }
 
-    function logout() {
-      localStorage.removeItem('defy_member_access');
-      window.location.href = 'login.html';  // Redirect to login page on logout
+    async function logout() {
+      if (!auth0Client) return;
+
+      await auth0Client.logout({
+        logoutParams: {
+          returnTo: window.AUTH0_CONFIG.logoutReturnTo || window.location.origin + "/"
+        }
+      });
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initMembersArea().catch(err => {
+        console.error(err);
+        document.getElementById("status").textContent = "Members area init failed: " + err.message;
+      });
+
+      document.getElementById("logoutBtn").addEventListener("click", logout);
+    });
   </script>
 </body>
 </html>
