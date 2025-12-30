@@ -1,0 +1,1919 @@
+{
+  "version": "ct-priority-v1-full",
+  "generated": "2025-12-30",
+  "notes": [
+    "FULL scaffold generated from CT library. Edit values to reflect coach intent.",
+    "Drill names must match CT library drill strings exactly.",
+    "Fields:",
+    " - priority (1\u20135): recommendation importance for autosuggest",
+    " - difficulty_1_5 (1\u20135): execution complexity standard",
+    " - performance_1_5 (1\u20135): intended athlete standard / transfer demand",
+    " - tags: optional freeform labels"
+  ],
+  "drills": {
+    "Wall Drill for Posture Retention": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Depth & Posture Retention Drills",
+      "ct_fault": "Early Extension",
+      "tags": []
+    },
+    "Pump Drill for Lag Creation": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Lag & Downswing Sequencing Drills",
+      "ct_fault": "Casting / Early Release",
+      "tags": []
+    },
+    "Towel Under Arm Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Shallowing & Path Correction Drills",
+      "ct_fault": "Over-the-Top",
+      "tags": []
+    },
+    "Swing with Glove Under Lead Arm": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Arm Extension & Rotation Drills",
+      "ct_fault": "Chicken Wing / Loss of Extension",
+      "tags": []
+    },
+    "Step-Through Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Weight Transfer & Centered Pivot Drills",
+      "ct_fault": "Reverse Pivot / Swaying",
+      "tags": []
+    },
+    "Impact Bag Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Impact Position & Shaft Lean Drills",
+      "ct_fault": "Scooping / Flipping",
+      "tags": []
+    },
+    "Feet Together Swings": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Balance & Core Engagement Drills",
+      "ct_fault": "Loss of Balance / Stability",
+      "tags": []
+    },
+    "Tee Line Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Low Point Control Drills",
+      "ct_fault": "Inconsistent Low Point",
+      "tags": []
+    },
+    "Chair Drill for Hip Rotation": {
+      "priority": 3,
+      "difficulty_1_5": 1,
+      "performance_1_5": 3,
+      "ct_category": "Rotation Mechanics & Mobility Drills",
+      "ct_fault": "Poor Rotation (Upper/Lower)",
+      "tags": []
+    },
+    "L-to-L Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Hinge Timing Drills",
+      "ct_fault": "Lack of Wrist Set",
+      "tags": []
+    },
+    "Face Aim at Setup Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Clubface Awareness & Face Control Drills",
+      "ct_fault": "Open or Closed Clubface",
+      "tags": []
+    },
+    "Plane Board Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Plane Matching & Shaft Path Drills",
+      "ct_fault": "Flat or Upright Swing Plane",
+      "tags": []
+    },
+    "1-2-3 Swing Rhythm Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Timing & Tempo Synchronization Drills",
+      "ct_fault": "Lack of Tempo / Rhythm",
+      "tags": []
+    },
+    "50% Swing Tempo Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Controlled Acceleration & Feel Drills",
+      "ct_fault": "Swinging Too Hard",
+      "tags": []
+    },
+    "Right Elbow Wall Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Trail Arm Positioning Drills",
+      "ct_fault": "Flying Elbow (Right Elbow Out)",
+      "tags": []
+    },
+    "Impact Tape Contact Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Centered Striking & Sweet Spot Drills",
+      "ct_fault": "Heel or Toe Strikes",
+      "tags": []
+    },
+    "Tension Awareness Swings": {
+      "priority": 3,
+      "difficulty_1_5": 1,
+      "performance_1_5": 5,
+      "ct_category": "Grip Pressure Awareness Drills",
+      "ct_fault": "Gripping Too Tightly",
+      "tags": []
+    },
+    "Chair Behind Hips Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Posture Maintenance & Body Awareness Drills",
+      "ct_fault": "Standing Up / Losing Spine Angle",
+      "tags": []
+    },
+    "Split Grip Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Club Delivery & Exit Path Drills",
+      "ct_fault": "Club Getting Stuck Behind",
+      "tags": []
+    },
+    "Torso Tilt in Mirror Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Upper Body Positioning Drills",
+      "ct_fault": "Reverse Spine Tilt",
+      "tags": []
+    },
+    "Low and Slow Takeaway Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Takeaway Path Drills",
+      "ct_fault": "Too Inside or Too Outside Takeaway",
+      "tags": []
+    },
+    "Wall Sit Swing Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Depth & Posture Retention Drills",
+      "ct_fault": "Early Extension",
+      "tags": []
+    },
+    "Foam Roller Hip Depth Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Depth & Posture Retention Drills",
+      "ct_fault": "Early Extension",
+      "tags": []
+    },
+    "Basketball Against Butt Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Depth & Posture Retention Drills",
+      "ct_fault": "Early Extension",
+      "tags": []
+    },
+    "Butt-to-Wall Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Depth & Posture Retention Drills",
+      "ct_fault": "Early Extension",
+      "tags": []
+    },
+    "Pressure Plate Depth Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Depth & Posture Retention Drills",
+      "ct_fault": "Early Extension",
+      "tags": []
+    },
+    "Glute Activation Swing": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Depth & Posture Retention Drills",
+      "ct_fault": "Early Extension",
+      "tags": []
+    },
+    "Tall Spine Hip Hinge Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Depth & Posture Retention Drills",
+      "ct_fault": "Early Extension",
+      "tags": []
+    },
+    "Split-Hand Pump Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Lag & Downswing Sequencing Drills",
+      "ct_fault": "Casting / Early Release",
+      "tags": []
+    },
+    "Lag Stick Across Shaft Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Lag & Downswing Sequencing Drills",
+      "ct_fault": "Casting / Early Release",
+      "tags": []
+    },
+    "Sling Shot Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Lag & Downswing Sequencing Drills",
+      "ct_fault": "Casting / Early Release",
+      "tags": []
+    },
+    "One-Arm Trail Wrist Lag Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Lag & Downswing Sequencing Drills",
+      "ct_fault": "Casting / Early Release",
+      "tags": []
+    },
+    "Drag the Bag Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Lag & Downswing Sequencing Drills",
+      "ct_fault": "Casting / Early Release",
+      "tags": []
+    },
+    "Snap Release Impact Bag": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Lag & Downswing Sequencing Drills",
+      "ct_fault": "Casting / Early Release",
+      "tags": []
+    },
+    "Hinge-Hold-Release Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Lag & Downswing Sequencing Drills",
+      "ct_fault": "Casting / Early Release",
+      "tags": []
+    },
+    "Baseball Pump Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Lag & Downswing Sequencing Drills",
+      "ct_fault": "Casting / Early Release",
+      "tags": []
+    },
+    "Water Bottle Under Trail Arm": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Shallowing & Path Correction Drills",
+      "ct_fault": "Over-the-Top",
+      "tags": []
+    },
+    "Under-Over Stick Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Shallowing & Path Correction Drills",
+      "ct_fault": "Over-the-Top",
+      "tags": []
+    },
+    "Drop Slot Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Shallowing & Path Correction Drills",
+      "ct_fault": "Over-the-Top",
+      "tags": []
+    },
+    "Headcover Behind Ball Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Shallowing & Path Correction Drills",
+      "ct_fault": "Over-the-Top",
+      "tags": []
+    },
+    "Swing Under Rope Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Shallowing & Path Correction Drills",
+      "ct_fault": "Over-the-Top",
+      "tags": []
+    },
+    "Pause at Top Slot Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Shallowing & Path Correction Drills",
+      "ct_fault": "Over-the-Top",
+      "tags": []
+    },
+    "Basketball Under Trail Arm Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Shallowing & Path Correction Drills",
+      "ct_fault": "Over-the-Top",
+      "tags": []
+    },
+    "Noodle Under Plane Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Shallowing & Path Correction Drills",
+      "ct_fault": "Over-the-Top",
+      "tags": []
+    },
+    "Tee Under Arm Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Arm Extension & Rotation Drills",
+      "ct_fault": "Chicken Wing / Loss of Extension",
+      "tags": []
+    },
+    "Extension Rod Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Arm Extension & Rotation Drills",
+      "ct_fault": "Chicken Wing / Loss of Extension",
+      "tags": []
+    },
+    "Throw Club Down Fairway Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Arm Extension & Rotation Drills",
+      "ct_fault": "Chicken Wing / Loss of Extension",
+      "tags": []
+    },
+    "Hula Hoop Arm Extension Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Arm Extension & Rotation Drills",
+      "ct_fault": "Chicken Wing / Loss of Extension",
+      "tags": []
+    },
+    "Stick Across Forearms Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Arm Extension & Rotation Drills",
+      "ct_fault": "Chicken Wing / Loss of Extension",
+      "tags": []
+    },
+    "Backhand Release Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Arm Extension & Rotation Drills",
+      "ct_fault": "Chicken Wing / Loss of Extension",
+      "tags": []
+    },
+    "Push Release Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Arm Extension & Rotation Drills",
+      "ct_fault": "Chicken Wing / Loss of Extension",
+      "tags": []
+    },
+    "Straight Arm Impact Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Arm Extension & Rotation Drills",
+      "ct_fault": "Chicken Wing / Loss of Extension",
+      "tags": []
+    },
+    "Step-Change Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Weight Transfer & Centered Pivot Drills",
+      "ct_fault": "Reverse Pivot / Swaying",
+      "tags": []
+    },
+    "Feet Together Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Weight Transfer & Centered Pivot Drills",
+      "ct_fault": "Reverse Pivot / Swaying",
+      "tags": []
+    },
+    "Left Heel Lift Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Weight Transfer & Centered Pivot Drills",
+      "ct_fault": "Reverse Pivot / Swaying",
+      "tags": []
+    },
+    "Pressure Shift Pump Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Weight Transfer & Centered Pivot Drills",
+      "ct_fault": "Reverse Pivot / Swaying",
+      "tags": []
+    },
+    "Basketball Between Knees Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Weight Transfer & Centered Pivot Drills",
+      "ct_fault": "Reverse Pivot / Swaying",
+      "tags": []
+    },
+    "Slide Board Lateral Shift Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Weight Transfer & Centered Pivot Drills",
+      "ct_fault": "Reverse Pivot / Swaying",
+      "tags": []
+    },
+    "Dynamic Step Swing": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Weight Transfer & Centered Pivot Drills",
+      "ct_fault": "Reverse Pivot / Swaying",
+      "tags": []
+    },
+    "Cross-Step Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Weight Transfer & Centered Pivot Drills",
+      "ct_fault": "Reverse Pivot / Swaying",
+      "tags": []
+    },
+    "Gate Tee Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Takeaway Path & Clubface Control Drills",
+      "ct_fault": "Takeaway Too Inside / Outside",
+      "tags": []
+    },
+    "Low & Slow Takeaway Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Takeaway Path & Clubface Control Drills",
+      "ct_fault": "Takeaway Too Inside / Outside",
+      "tags": []
+    },
+    "Mirror Takeaway Check": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Takeaway Path & Clubface Control Drills",
+      "ct_fault": "Takeaway Too Inside / Outside",
+      "tags": []
+    },
+    "Alignment Stick Parallel Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Takeaway Path & Clubface Control Drills",
+      "ct_fault": "Takeaway Too Inside / Outside",
+      "tags": []
+    },
+    "Shoulder Rock One-Piece Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Takeaway Path & Clubface Control Drills",
+      "ct_fault": "Takeaway Too Inside / Outside",
+      "tags": []
+    },
+    "Wide Y Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Takeaway Path & Clubface Control Drills",
+      "ct_fault": "Takeaway Too Inside / Outside",
+      "tags": []
+    },
+    "Butt End Target Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Takeaway Path & Clubface Control Drills",
+      "ct_fault": "Takeaway Too Inside / Outside",
+      "tags": []
+    },
+    "Watch Face Check Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Takeaway Path & Clubface Control Drills",
+      "ct_fault": "Takeaway Too Inside / Outside",
+      "tags": []
+    },
+    "Thumb to Ear Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Hinge Timing Drills",
+      "ct_fault": "Insufficient Wrist Set",
+      "tags": []
+    },
+    "Hinge-Stop-Hit Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Hinge Timing Drills",
+      "ct_fault": "Insufficient Wrist Set",
+      "tags": []
+    },
+    "L-To-L Wrist Hinge Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Hinge Timing Drills",
+      "ct_fault": "Insufficient Wrist Set",
+      "tags": []
+    },
+    "90-Degree Wrist Set Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Hinge Timing Drills",
+      "ct_fault": "Insufficient Wrist Set",
+      "tags": []
+    },
+    "Half Swings Wrist Cock Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Hinge Timing Drills",
+      "ct_fault": "Insufficient Wrist Set",
+      "tags": []
+    },
+    "Tennis Ball Wrist Hinge Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Hinge Timing Drills",
+      "ct_fault": "Insufficient Wrist Set",
+      "tags": []
+    },
+    "Ear to Sky Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Hinge Timing Drills",
+      "ct_fault": "Insufficient Wrist Set",
+      "tags": []
+    },
+    "Lead Thumb Pressure Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wrist Hinge Timing Drills",
+      "ct_fault": "Insufficient Wrist Set",
+      "tags": []
+    },
+    "Step Through Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Rotation & Clearance Drills",
+      "ct_fault": "Hip Stall / Late Hip Turn",
+      "tags": []
+    },
+    "Belt Buckle to Target Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Rotation & Clearance Drills",
+      "ct_fault": "Hip Stall / Late Hip Turn",
+      "tags": []
+    },
+    "Hula Hoop Hip Turn Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Rotation & Clearance Drills",
+      "ct_fault": "Hip Stall / Late Hip Turn",
+      "tags": []
+    },
+    "Medicine Ball Rotational Throw": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Rotation & Clearance Drills",
+      "ct_fault": "Hip Stall / Late Hip Turn",
+      "tags": []
+    },
+    "Ground Force Plate Jump Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Rotation & Clearance Drills",
+      "ct_fault": "Hip Stall / Late Hip Turn",
+      "tags": []
+    },
+    "Feet Together Full Turn Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Rotation & Clearance Drills",
+      "ct_fault": "Hip Stall / Late Hip Turn",
+      "tags": []
+    },
+    "Pivot Around Lead Hip Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Rotation & Clearance Drills",
+      "ct_fault": "Hip Stall / Late Hip Turn",
+      "tags": []
+    },
+    "Open-Hips Impact Bag": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hip Rotation & Clearance Drills",
+      "ct_fault": "Hip Stall / Late Hip Turn",
+      "tags": []
+    },
+    "Lead Foot Down Early Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Pressure Shift & Left-Side Pivot Drills",
+      "ct_fault": "Hanging Back",
+      "tags": []
+    },
+    "Weight Left Impact Bag": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Pressure Shift & Left-Side Pivot Drills",
+      "ct_fault": "Hanging Back",
+      "tags": []
+    },
+    "Wall in Front Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Pressure Shift & Left-Side Pivot Drills",
+      "ct_fault": "Hanging Back",
+      "tags": []
+    },
+    "Left-Only Swings Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Pressure Shift & Left-Side Pivot Drills",
+      "ct_fault": "Hanging Back",
+      "tags": []
+    },
+    "Pressure Board Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Pressure Shift & Left-Side Pivot Drills",
+      "ct_fault": "Hanging Back",
+      "tags": []
+    },
+    "Feet Together to Step Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Pressure Shift & Left-Side Pivot Drills",
+      "ct_fault": "Hanging Back",
+      "tags": []
+    },
+    "Forward Press Pivot Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Pressure Shift & Left-Side Pivot Drills",
+      "ct_fault": "Hanging Back",
+      "tags": []
+    },
+    "Trail Heel Up Drill": {
+      "priority": 3,
+      "difficulty_1_5": 4,
+      "performance_1_5": 5,
+      "ct_category": "Pressure Shift & Left-Side Pivot Drills",
+      "ct_fault": "Hanging Back",
+      "tags": []
+    },
+    "Impact Bag Lean Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Forward Shaft Lean & Hands Ahead Drills",
+      "ct_fault": "Scooping / Flip",
+      "tags": []
+    },
+    "Knuckles Down Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Forward Shaft Lean & Hands Ahead Drills",
+      "ct_fault": "Scooping / Flip",
+      "tags": []
+    },
+    "Right Arm Only Punch Shot": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Forward Shaft Lean & Hands Ahead Drills",
+      "ct_fault": "Scooping / Flip",
+      "tags": []
+    },
+    "Forward Lean Tee Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Forward Shaft Lean & Hands Ahead Drills",
+      "ct_fault": "Scooping / Flip",
+      "tags": []
+    },
+    "Drag Headcover Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Forward Shaft Lean & Hands Ahead Drills",
+      "ct_fault": "Scooping / Flip",
+      "tags": []
+    },
+    "Hold Lag to Impact Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Forward Shaft Lean & Hands Ahead Drills",
+      "ct_fault": "Scooping / Flip",
+      "tags": []
+    },
+    "Left Wrist Flat Mirror": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Forward Shaft Lean & Hands Ahead Drills",
+      "ct_fault": "Scooping / Flip",
+      "tags": []
+    },
+    "Blade the Tee Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Forward Shaft Lean & Hands Ahead Drills",
+      "ct_fault": "Scooping / Flip",
+      "tags": []
+    },
+    "Toe Up Check Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Clubface Awareness Drills",
+      "ct_fault": "Poor Face Control",
+      "tags": []
+    },
+    "Leading Edge Mirror Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Clubface Awareness Drills",
+      "ct_fault": "Poor Face Control",
+      "tags": []
+    },
+    "9-to-3 Face Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Clubface Awareness Drills",
+      "ct_fault": "Poor Face Control",
+      "tags": []
+    },
+    "Quarter Turn Pause Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Clubface Awareness Drills",
+      "ct_fault": "Poor Face Control",
+      "tags": []
+    },
+    "Face Angle Stick Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Clubface Awareness Drills",
+      "ct_fault": "Poor Face Control",
+      "tags": []
+    },
+    "Anti-Roll Wedge Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Clubface Awareness Drills",
+      "ct_fault": "Poor Face Control",
+      "tags": []
+    },
+    "Door Knob Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Clubface Awareness Drills",
+      "ct_fault": "Poor Face Control",
+      "tags": []
+    },
+    "Grip Pressure Clock Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Clubface Awareness Drills",
+      "ct_fault": "Poor Face Control",
+      "tags": []
+    },
+    "Towel Behind Ball Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Low Point Control Drills",
+      "ct_fault": "Fat / Thin Strikes",
+      "tags": []
+    },
+    "Line in Sand Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Low Point Control Drills",
+      "ct_fault": "Fat / Thin Strikes",
+      "tags": []
+    },
+    "Coin Strike Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Low Point Control Drills",
+      "ct_fault": "Fat / Thin Strikes",
+      "tags": []
+    },
+    "Low Point Stick Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Low Point Control Drills",
+      "ct_fault": "Fat / Thin Strikes",
+      "tags": []
+    },
+    "Divot Board Feedback": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Low Point Control Drills",
+      "ct_fault": "Fat / Thin Strikes",
+      "tags": []
+    },
+    "Impact Tape Verification": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Low Point Control Drills",
+      "ct_fault": "Fat / Thin Strikes",
+      "tags": []
+    },
+    "Brush the Grass Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Low Point Control Drills",
+      "ct_fault": "Fat / Thin Strikes",
+      "tags": []
+    },
+    "Move Circle Forward Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Low Point Control Drills",
+      "ct_fault": "Fat / Thin Strikes",
+      "tags": []
+    },
+    "Strong Grip Change Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Face-to-Path & Release Drills",
+      "ct_fault": "Slice",
+      "tags": []
+    },
+    "Hover & Curl Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Face-to-Path & Release Drills",
+      "ct_fault": "Slice",
+      "tags": []
+    },
+    "Baseball Release Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Face-to-Path & Release Drills",
+      "ct_fault": "Slice",
+      "tags": []
+    },
+    "Close Clubface Early Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Face-to-Path & Release Drills",
+      "ct_fault": "Slice",
+      "tags": []
+    },
+    "Swing Under Stick Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Face-to-Path & Release Drills",
+      "ct_fault": "Slice",
+      "tags": []
+    },
+    "Roll the Toe Over Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Face-to-Path & Release Drills",
+      "ct_fault": "Slice",
+      "tags": []
+    },
+    "Toe Up to Toe Over Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Face-to-Path & Release Drills",
+      "ct_fault": "Slice",
+      "tags": []
+    },
+    "Water Bottle Release Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Face-to-Path & Release Drills",
+      "ct_fault": "Slice",
+      "tags": []
+    },
+    "Weak Grip Check": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Neutral Face & Path Drills",
+      "ct_fault": "Hook",
+      "tags": []
+    },
+    "Hold Off Finish Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Neutral Face & Path Drills",
+      "ct_fault": "Hook",
+      "tags": []
+    },
+    "Pump Cut Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Neutral Face & Path Drills",
+      "ct_fault": "Hook",
+      "tags": []
+    },
+    "Stinger Low Finish Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Neutral Face & Path Drills",
+      "ct_fault": "Hook",
+      "tags": []
+    },
+    "Lead Wrist Extension Backswing": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Neutral Face & Path Drills",
+      "ct_fault": "Hook",
+      "tags": []
+    },
+    "Cut Across Ball Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Neutral Face & Path Drills",
+      "ct_fault": "Hook",
+      "tags": []
+    },
+    "Open Clubface Alignment Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Neutral Face & Path Drills",
+      "ct_fault": "Hook",
+      "tags": []
+    },
+    "Forearm Fly-Off Slow": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Neutral Face & Path Drills",
+      "ct_fault": "Hook",
+      "tags": []
+    },
+    "Tour Tempo Metronome Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Tempo & Sequencing Drills",
+      "ct_fault": "Poor Tempo / Rhythm",
+      "tags": []
+    },
+    "1-2-3 Count Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Tempo & Sequencing Drills",
+      "ct_fault": "Poor Tempo / Rhythm",
+      "tags": []
+    },
+    "9 to 3 Half Swings": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Tempo & Sequencing Drills",
+      "ct_fault": "Poor Tempo / Rhythm",
+      "tags": []
+    },
+    "Eyes Closed Swing Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Tempo & Sequencing Drills",
+      "ct_fault": "Poor Tempo / Rhythm",
+      "tags": []
+    },
+    "Feet Together Tempo Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Tempo & Sequencing Drills",
+      "ct_fault": "Poor Tempo / Rhythm",
+      "tags": []
+    },
+    "Step Swing Rhythm": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Tempo & Sequencing Drills",
+      "ct_fault": "Poor Tempo / Rhythm",
+      "tags": []
+    },
+    "Slow Motion Full Swing": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Tempo & Sequencing Drills",
+      "ct_fault": "Poor Tempo / Rhythm",
+      "tags": []
+    },
+    "Pause at Top Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Tempo & Sequencing Drills",
+      "ct_fault": "Poor Tempo / Rhythm",
+      "tags": []
+    },
+    "Coin Chip Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Chipping Technique Drills",
+      "ct_fault": "Short Game - Chipping",
+      "tags": []
+    },
+    "One-Handed Chip": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Chipping Technique Drills",
+      "ct_fault": "Short Game - Chipping",
+      "tags": []
+    },
+    "Feet Together Chip": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Chipping Technique Drills",
+      "ct_fault": "Short Game - Chipping",
+      "tags": []
+    },
+    "Trail Hand Release Chip": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Chipping Technique Drills",
+      "ct_fault": "Short Game - Chipping",
+      "tags": []
+    },
+    "Towel Under Arms Chip": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Chipping Technique Drills",
+      "ct_fault": "Short Game - Chipping",
+      "tags": []
+    },
+    "Landing Spot Chip": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Chipping Technique Drills",
+      "ct_fault": "Short Game - Chipping",
+      "tags": []
+    },
+    "Hinge and Hold Chip": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Chipping Technique Drills",
+      "ct_fault": "Short Game - Chipping",
+      "tags": []
+    },
+    "Bump and Run Gate Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Chipping Technique Drills",
+      "ct_fault": "Short Game - Chipping",
+      "tags": []
+    },
+    "Clock Face Pitch": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pitching Distance Control Drills",
+      "ct_fault": "Short Game - Pitching",
+      "tags": []
+    },
+    "Ladder Pitch Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pitching Distance Control Drills",
+      "ct_fault": "Short Game - Pitching",
+      "tags": []
+    },
+    "Three Wedge System Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pitching Distance Control Drills",
+      "ct_fault": "Short Game - Pitching",
+      "tags": []
+    },
+    "Back Foot Open Pitch": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pitching Distance Control Drills",
+      "ct_fault": "Short Game - Pitching",
+      "tags": []
+    },
+    "Lead Wrist Firm Pitch": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pitching Distance Control Drills",
+      "ct_fault": "Short Game - Pitching",
+      "tags": []
+    },
+    "One-Hop Stop Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pitching Distance Control Drills",
+      "ct_fault": "Short Game - Pitching",
+      "tags": []
+    },
+    "Toe Down Pitch": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pitching Distance Control Drills",
+      "ct_fault": "Short Game - Pitching",
+      "tags": []
+    },
+    "Shaft Vertical Pitch": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pitching Distance Control Drills",
+      "ct_fault": "Short Game - Pitching",
+      "tags": []
+    },
+    "Line in Sand Splash": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sand Contact & Explosion Drills",
+      "ct_fault": "Bunker Play",
+      "tags": []
+    },
+    "Aim Point Dollar Bill Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sand Contact & Explosion Drills",
+      "ct_fault": "Bunker Play",
+      "tags": []
+    },
+    "One Foot In Bunker Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sand Contact & Explosion Drills",
+      "ct_fault": "Bunker Play",
+      "tags": []
+    },
+    "No Club Sand Splash": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sand Contact & Explosion Drills",
+      "ct_fault": "Bunker Play",
+      "tags": []
+    },
+    "Lead Hand Only Bunker": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sand Contact & Explosion Drills",
+      "ct_fault": "Bunker Play",
+      "tags": []
+    },
+    "Heavy Sand Explode Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sand Contact & Explosion Drills",
+      "ct_fault": "Bunker Play",
+      "tags": []
+    },
+    "Shaft Lean Bunker Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sand Contact & Explosion Drills",
+      "ct_fault": "Bunker Play",
+      "tags": []
+    },
+    "Open Face Wide Stance Splash": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sand Contact & Explosion Drills",
+      "ct_fault": "Bunker Play",
+      "tags": []
+    },
+    "Meter Stick Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Putting Tempo & Stroke Drills",
+      "ct_fault": "Putting - Distance Control",
+      "tags": []
+    },
+    "Clock Face Lag Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Putting Tempo & Stroke Drills",
+      "ct_fault": "Putting - Distance Control",
+      "tags": []
+    },
+    "Eyes Closed Lag": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Putting Tempo & Stroke Drills",
+      "ct_fault": "Putting - Distance Control",
+      "tags": []
+    },
+    "Fringe to Hole Ladder": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Putting Tempo & Stroke Drills",
+      "ct_fault": "Putting - Distance Control",
+      "tags": []
+    },
+    "3-6-9 Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Putting Tempo & Stroke Drills",
+      "ct_fault": "Putting - Distance Control",
+      "tags": []
+    },
+    "Leap Frog Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Putting Tempo & Stroke Drills",
+      "ct_fault": "Putting - Distance Control",
+      "tags": []
+    },
+    "Pace Putt Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Putting Tempo & Stroke Drills",
+      "ct_fault": "Putting - Distance Control",
+      "tags": []
+    },
+    "Right-Hand Low Tempo Drill": {
+      "priority": 3,
+      "difficulty_1_5": 2,
+      "performance_1_5": 3,
+      "ct_category": "Putting Tempo & Stroke Drills",
+      "ct_fault": "Putting - Distance Control",
+      "tags": []
+    },
+    "Gate Drill Putting": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Putting Face Control Drills",
+      "ct_fault": "Putting - Start Line",
+      "tags": []
+    },
+    "Chalk Line Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Putting Face Control Drills",
+      "ct_fault": "Putting - Start Line",
+      "tags": []
+    },
+    "Coin Gate Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Putting Face Control Drills",
+      "ct_fault": "Putting - Start Line",
+      "tags": []
+    },
+    "Laser Start Line Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Putting Face Control Drills",
+      "ct_fault": "Putting - Start Line",
+      "tags": []
+    },
+    "Mirror Gate Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Putting Face Control Drills",
+      "ct_fault": "Putting - Start Line",
+      "tags": []
+    },
+    "Two Tee Narrow Gate": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Putting Face Control Drills",
+      "ct_fault": "Putting - Start Line",
+      "tags": []
+    },
+    "Path Rail Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Putting Face Control Drills",
+      "ct_fault": "Putting - Start Line",
+      "tags": []
+    },
+    "String Over Ball Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Putting Face Control Drills",
+      "ct_fault": "Putting - Start Line",
+      "tags": []
+    },
+    "AimPoint Feet Feel": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Reading & Visualization Drills",
+      "ct_fault": "Putting - Green Reading",
+      "tags": []
+    },
+    "Around the Clock Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Reading & Visualization Drills",
+      "ct_fault": "Putting - Green Reading",
+      "tags": []
+    },
+    "Low Side Walk Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Reading & Visualization Drills",
+      "ct_fault": "Putting - Green Reading",
+      "tags": []
+    },
+    "Break Capture Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Reading & Visualization Drills",
+      "ct_fault": "Putting - Green Reading",
+      "tags": []
+    },
+    "Putt from Miss Spot": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Reading & Visualization Drills",
+      "ct_fault": "Putting - Green Reading",
+      "tags": []
+    },
+    "Circle the Hole Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Reading & Visualization Drills",
+      "ct_fault": "Putting - Green Reading",
+      "tags": []
+    },
+    "Plumb Bob Practice": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Reading & Visualization Drills",
+      "ct_fault": "Putting - Green Reading",
+      "tags": []
+    },
+    "Line on Ball Alignment": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Reading & Visualization Drills",
+      "ct_fault": "Putting - Green Reading",
+      "tags": []
+    },
+    "Railroad Track Alignment Drill": {
+      "priority": 4,
+      "difficulty_1_5": 1,
+      "performance_1_5": 2,
+      "ct_category": "Alignment & Setup Drills",
+      "ct_fault": "Alignment Issues",
+      "tags": []
+    },
+    "Mirror Alignment Stick Drill": {
+      "priority": 4,
+      "difficulty_1_5": 1,
+      "performance_1_5": 2,
+      "ct_category": "Alignment & Setup Drills",
+      "ct_fault": "Alignment Issues",
+      "tags": []
+    },
+    "String Line Alignment": {
+      "priority": 4,
+      "difficulty_1_5": 1,
+      "performance_1_5": 2,
+      "ct_category": "Alignment & Setup Drills",
+      "ct_fault": "Alignment Issues",
+      "tags": []
+    },
+    "Club Down Feet Drill": {
+      "priority": 4,
+      "difficulty_1_5": 1,
+      "performance_1_5": 2,
+      "ct_category": "Alignment & Setup Drills",
+      "ct_fault": "Alignment Issues",
+      "tags": []
+    },
+    "Thumbs Off Grip Drill": {
+      "priority": 3,
+      "difficulty_1_5": 1,
+      "performance_1_5": 5,
+      "ct_category": "Grip Pressure & Position Drills",
+      "ct_fault": "Grip Issues",
+      "tags": []
+    },
+    "Trail Hand Release Check": {
+      "priority": 3,
+      "difficulty_1_5": 1,
+      "performance_1_5": 5,
+      "ct_category": "Grip Pressure & Position Drills",
+      "ct_fault": "Grip Issues",
+      "tags": []
+    },
+    "Lead Hand Only Swings": {
+      "priority": 3,
+      "difficulty_1_5": 1,
+      "performance_1_5": 5,
+      "ct_category": "Grip Pressure & Position Drills",
+      "ct_fault": "Grip Issues",
+      "tags": []
+    },
+    "Grip Change Shadow Swings": {
+      "priority": 3,
+      "difficulty_1_5": 1,
+      "performance_1_5": 5,
+      "ct_category": "Grip Pressure & Position Drills",
+      "ct_fault": "Grip Issues",
+      "tags": []
+    },
+    "Single Leg Swing Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Stability & Core Control Drills",
+      "ct_fault": "Balance Issues",
+      "tags": []
+    },
+    "Balance Pad Swings": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Stability & Core Control Drills",
+      "ct_fault": "Balance Issues",
+      "tags": []
+    },
+    "Foam Roller Under Feet Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Stability & Core Control Drills",
+      "ct_fault": "Balance Issues",
+      "tags": []
+    },
+    "Three Breath Focus": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pre-Shot Routine Drills",
+      "ct_fault": "Mental Focus",
+      "tags": []
+    },
+    "Visualize Shot Routine": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pre-Shot Routine Drills",
+      "ct_fault": "Mental Focus",
+      "tags": []
+    },
+    "Target Line Pick Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pre-Shot Routine Drills",
+      "ct_fault": "Mental Focus",
+      "tags": []
+    },
+    "Commitment Line Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Pre-Shot Routine Drills",
+      "ct_fault": "Mental Focus",
+      "tags": []
+    },
+    "Torso Turn with Club Behind Back": {
+      "priority": 3,
+      "difficulty_1_5": 1,
+      "performance_1_5": 3,
+      "ct_category": "Warm-Up & Mobility Drills",
+      "ct_fault": "Flexibility / Mobility",
+      "tags": []
+    },
+    "Hip 90/90 Rotations": {
+      "priority": 3,
+      "difficulty_1_5": 1,
+      "performance_1_5": 3,
+      "ct_category": "Warm-Up & Mobility Drills",
+      "ct_fault": "Flexibility / Mobility",
+      "tags": []
+    },
+    "Cat Cow Spinal Warmup": {
+      "priority": 3,
+      "difficulty_1_5": 1,
+      "performance_1_5": 3,
+      "ct_category": "Warm-Up & Mobility Drills",
+      "ct_fault": "Flexibility / Mobility",
+      "tags": []
+    },
+    "Lunge with Rotation": {
+      "priority": 3,
+      "difficulty_1_5": 1,
+      "performance_1_5": 3,
+      "ct_category": "Warm-Up & Mobility Drills",
+      "ct_fault": "Flexibility / Mobility",
+      "tags": []
+    },
+    "SuperSpeed Stick Swings": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Speed & Power Drills",
+      "ct_fault": "Clubhead Speed",
+      "tags": []
+    },
+    "Step Jump Swing": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Speed & Power Drills",
+      "ct_fault": "Clubhead Speed",
+      "tags": []
+    },
+    "Whoosh Speed Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Speed & Power Drills",
+      "ct_fault": "Clubhead Speed",
+      "tags": []
+    },
+    "Tee Behind Ball Sweep Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sweeping Contact Drills",
+      "ct_fault": "Fairway Wood Sweeping",
+      "tags": []
+    },
+    "Low Point Brush Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sweeping Contact Drills",
+      "ct_fault": "Fairway Wood Sweeping",
+      "tags": []
+    },
+    "Ascending Strike Divot Board": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sweeping Contact Drills",
+      "ct_fault": "Fairway Wood Sweeping",
+      "tags": []
+    },
+    "Hover Drill": {
+      "priority": 4,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Sweeping Contact Drills",
+      "ct_fault": "Fairway Wood Sweeping",
+      "tags": []
+    },
+    "Ball-Fwd Brush Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hybrid Strike Drills",
+      "ct_fault": "Hybrid Hitting",
+      "tags": []
+    },
+    "Half Tee Hybrid Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hybrid Strike Drills",
+      "ct_fault": "Hybrid Hitting",
+      "tags": []
+    },
+    "Hybrid Punch Shot": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hybrid Strike Drills",
+      "ct_fault": "Hybrid Hitting",
+      "tags": []
+    },
+    "Weight Left Hybrid Strike": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Hybrid Strike Drills",
+      "ct_fault": "Hybrid Hitting",
+      "tags": []
+    },
+    "High Tee Low Tee Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Driver Launch Window Drills",
+      "ct_fault": "Driver Launch",
+      "tags": []
+    },
+    "Tee Height Experiment": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Driver Launch Window Drills",
+      "ct_fault": "Driver Launch",
+      "tags": []
+    },
+    "Positive AoA Tee Forward": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Driver Launch Window Drills",
+      "ct_fault": "Driver Launch",
+      "tags": []
+    },
+    "Lead Shoulder Up Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Driver Launch Window Drills",
+      "ct_fault": "Driver Launch",
+      "tags": []
+    },
+    "Clean Grooves Spin Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wedge Spin Creation Drills",
+      "ct_fault": "Wedge Spin",
+      "tags": []
+    },
+    "Bounce vs. Leading Edge Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wedge Spin Creation Drills",
+      "ct_fault": "Wedge Spin",
+      "tags": []
+    },
+    "Open Face Accelerate Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wedge Spin Creation Drills",
+      "ct_fault": "Wedge Spin",
+      "tags": []
+    },
+    "Stiff Wrist Nipper": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wedge Spin Creation Drills",
+      "ct_fault": "Wedge Spin",
+      "tags": []
+    },
+    "Open Stance Slide Under Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "High Loft Bunker & Flop Drills",
+      "ct_fault": "Flop Shot",
+      "tags": []
+    },
+    "Umbrella Under Arms Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "High Loft Bunker & Flop Drills",
+      "ct_fault": "Flop Shot",
+      "tags": []
+    },
+    "Skid and Slide Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "High Loft Bunker & Flop Drills",
+      "ct_fault": "Flop Shot",
+      "tags": []
+    },
+    "Face Open Swing Across": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "High Loft Bunker & Flop Drills",
+      "ct_fault": "Flop Shot",
+      "tags": []
+    },
+    "Fringe to Fringe Lag Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Long Putt Distance Drills",
+      "ct_fault": "Lag Putting",
+      "tags": []
+    },
+    "Eyes Closed Distance Feel": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Long Putt Distance Drills",
+      "ct_fault": "Lag Putting",
+      "tags": []
+    },
+    "Flagstick Putts": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Long Putt Distance Drills",
+      "ct_fault": "Lag Putting",
+      "tags": []
+    },
+    "Alternate Ball Lag": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Long Putt Distance Drills",
+      "ct_fault": "Lag Putting",
+      "tags": []
+    },
+    "Clock Face Wedge 9 to 3": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wedge Distance Control Drills",
+      "ct_fault": "Distance Wedges",
+      "tags": []
+    },
+    "Quarter Swing Chart": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wedge Distance Control Drills",
+      "ct_fault": "Distance Wedges",
+      "tags": []
+    },
+    "Pitch Matrix Drill": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wedge Distance Control Drills",
+      "ct_fault": "Distance Wedges",
+      "tags": []
+    },
+    "Ladder Wedge Targets": {
+      "priority": 3,
+      "difficulty_1_5": 3,
+      "performance_1_5": 3,
+      "ct_category": "Wedge Distance Control Drills",
+      "ct_fault": "Distance Wedges",
+      "tags": []
+    }
+  }
+}

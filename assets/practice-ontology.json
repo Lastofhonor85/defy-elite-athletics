@@ -1,0 +1,372 @@
+{
+  "Range Session": {
+    "Blocks": {
+      "Dynamic Warm-Up": [
+        {
+          "focus": "Warm-Up & Mobility",
+          "ctCategories": [
+            "Rotation Mechanics & Mobility Drills",
+            "Warm-Up & Mobility Drills"
+          ]
+        }
+      ],
+      "Technical Block": [
+        {
+          "focus": "Face Control",
+          "ctCategories": [
+            "Clubface Awareness & Face Control Drills",
+            "Clubface Awareness Drills",
+            "Face-to-Path & Release Drills",
+            "Putting Face Control Drills",
+            "Takeaway Path & Clubface Control Drills"
+          ]
+        },
+        {
+          "focus": "Path Control",
+          "ctCategories": [
+            "Club Delivery & Exit Path Drills",
+            "Takeaway Path & Clubface Control Drills",
+            "Takeaway Path Drills"
+          ]
+        },
+        {
+          "focus": "Low Point",
+          "ctCategories": [
+            "Forward Shaft Lean & Hands Ahead Drills",
+            "Low Point Control Drills",
+            "Sweeping Contact Drills"
+          ]
+        },
+        {
+          "focus": "Contact",
+          "ctCategories": [
+            "Centered Striking & Sweet Spot Drills",
+            "Sand Contact & Explosion Drills",
+            "Sweeping Contact Drills"
+          ]
+        },
+        {
+          "focus": "Rotation Sequencing",
+          "ctCategories": [
+            "Putting Tempo & Stroke Drills",
+            "Tempo & Sequencing Drills",
+            "Timing & Tempo Synchronization Drills",
+            "Wrist Hinge Timing Drills",
+            "Wrist Lag & Downswing Sequencing Drills"
+          ]
+        }
+      ],
+      "Skill Transfer Block": [
+        {
+          "focus": "Start Line",
+          "ctCategories": [
+            "Alignment & Setup Drills",
+            "Clubface Awareness & Face Control Drills",
+            "Clubface Awareness Drills",
+            "Putting Face Control Drills",
+            "Takeaway Path & Clubface Control Drills"
+          ]
+        },
+        {
+          "focus": "Trajectory",
+          "ctCategories": [
+            "Driver Launch Window Drills"
+          ]
+        },
+        {
+          "focus": "Distance Control",
+          "ctCategories": [
+            "Long Putt Distance Drills",
+            "Pitching Distance Control Drills",
+            "Wedge Distance Control Drills"
+          ]
+        }
+      ],
+      "Randomized Practice": [
+        {
+          "focus": "Shot Shaping",
+          "ctCategories": []
+        },
+        {
+          "focus": "Trajectory",
+          "ctCategories": [
+            "Driver Launch Window Drills"
+          ]
+        },
+        {
+          "focus": "Start Line",
+          "ctCategories": [
+            "Alignment & Setup Drills",
+            "Clubface Awareness & Face Control Drills",
+            "Clubface Awareness Drills",
+            "Putting Face Control Drills",
+            "Takeaway Path & Clubface Control Drills"
+          ]
+        }
+      ],
+      "Speed / Intent": [
+        {
+          "focus": "Speed",
+          "ctCategories": [
+            "Speed & Power Drills"
+          ]
+        },
+        {
+          "focus": "Contact",
+          "ctCategories": [
+            "Centered Striking & Sweet Spot Drills",
+            "Sand Contact & Explosion Drills",
+            "Sweeping Contact Drills"
+          ]
+        },
+        {
+          "focus": "Launch Window",
+          "ctCategories": [
+            "Driver Launch Window Drills"
+          ]
+        }
+      ],
+      "Cool Down": [
+        {
+          "focus": "Reflection / Notes",
+          "ctCategories": []
+        }
+      ]
+    }
+  },
+  "Short Game Session": {
+    "Blocks": {
+      "Wedge Distance Control": [
+        {
+          "focus": "Distance Control",
+          "ctCategories": [
+            "Long Putt Distance Drills",
+            "Pitching Distance Control Drills",
+            "Wedge Distance Control Drills"
+          ]
+        },
+        {
+          "focus": "Trajectory",
+          "ctCategories": [
+            "Driver Launch Window Drills"
+          ]
+        }
+      ],
+      "Trajectory Control": [
+        {
+          "focus": "Trajectory",
+          "ctCategories": [
+            "Driver Launch Window Drills"
+          ]
+        }
+      ],
+      "Bunker Play": [
+        {
+          "focus": "Bunker",
+          "ctCategories": [
+            "High Loft Bunker & Flop Drills"
+          ]
+        }
+      ],
+      "Up-and-Down Scenarios": [
+        {
+          "focus": "Chipping",
+          "ctCategories": [
+            "Chipping Technique Drills"
+          ]
+        }
+      ],
+      "Pressure Reps": [
+        {
+          "focus": "Routine / Mental",
+          "ctCategories": []
+        }
+      ]
+    }
+  },
+  "Putting Session": {
+    "Blocks": {
+      "Start Line": [
+        {
+          "focus": "Putting Face Control",
+          "ctCategories": [
+            "Putting Face Control Drills"
+          ]
+        }
+      ],
+      "Pace Control": [
+        {
+          "focus": "Long Putt Distance",
+          "ctCategories": [
+            "Long Putt Distance Drills",
+            "Pitching Distance Control Drills",
+            "Wedge Distance Control Drills"
+          ]
+        }
+      ],
+      "Green Reading": [
+        {
+          "focus": "Routine / Mental",
+          "ctCategories": []
+        }
+      ],
+      "Competitive Putting": [
+        {
+          "focus": "Routine / Mental",
+          "ctCategories": []
+        }
+      ],
+      "Routine / Mental": [
+        {
+          "focus": "Putting Tempo",
+          "ctCategories": [
+            "Putting Face Control Drills",
+            "Putting Tempo & Stroke Drills"
+          ]
+        }
+      ]
+    }
+  },
+  "On-Course Practice": {
+    "Blocks": {
+      "Tee Strategy": [
+        {
+          "focus": "Shot Shaping",
+          "ctCategories": []
+        }
+      ],
+      "Approach Strategy": [
+        {
+          "focus": "Distance Control",
+          "ctCategories": [
+            "Long Putt Distance Drills",
+            "Pitching Distance Control Drills",
+            "Wedge Distance Control Drills"
+          ]
+        }
+      ],
+      "Scoring Zone Execution": [
+        {
+          "focus": "Chipping",
+          "ctCategories": [
+            "Chipping Technique Drills"
+          ]
+        }
+      ],
+      "Recovery Shots": [
+        {
+          "focus": "Trajectory",
+          "ctCategories": [
+            "Driver Launch Window Drills"
+          ]
+        }
+      ],
+      "Decision-Making": [
+        {
+          "focus": "Routine / Mental",
+          "ctCategories": []
+        }
+      ]
+    }
+  },
+  "Competitive Simulation": {
+    "Blocks": {
+      "Warm-Up Protocol": [
+        {
+          "focus": "Warm-Up & Mobility",
+          "ctCategories": [
+            "Rotation Mechanics & Mobility Drills",
+            "Warm-Up & Mobility Drills"
+          ]
+        }
+      ],
+      "Constraint Practice": [
+        {
+          "focus": "Routine / Mental",
+          "ctCategories": []
+        }
+      ],
+      "Scoring Games": [
+        {
+          "focus": "Routine / Mental",
+          "ctCategories": []
+        }
+      ],
+      "Post-Round Review": [
+        {
+          "focus": "Reflection / Notes",
+          "ctCategories": []
+        }
+      ]
+    }
+  },
+  "Lesson / Coaching Session": {
+    "Blocks": {
+      "Coach-Led Technical": [
+        {
+          "focus": "Rotation Sequencing",
+          "ctCategories": [
+            "Putting Tempo & Stroke Drills",
+            "Tempo & Sequencing Drills",
+            "Timing & Tempo Synchronization Drills",
+            "Wrist Hinge Timing Drills",
+            "Wrist Lag & Downswing Sequencing Drills"
+          ]
+        }
+      ],
+      "Skill Transfer": [
+        {
+          "focus": "Start Line",
+          "ctCategories": [
+            "Alignment & Setup Drills",
+            "Clubface Awareness & Face Control Drills",
+            "Clubface Awareness Drills",
+            "Putting Face Control Drills",
+            "Takeaway Path & Clubface Control Drills"
+          ]
+        }
+      ],
+      "Homework Plan": [
+        {
+          "focus": "Reflection / Notes",
+          "ctCategories": []
+        }
+      ]
+    }
+  },
+  "Recovery / Technical Reset": {
+    "Blocks": {
+      "Mobility Prep": [
+        {
+          "focus": "Warm-Up & Mobility",
+          "ctCategories": [
+            "Rotation Mechanics & Mobility Drills",
+            "Warm-Up & Mobility Drills"
+          ]
+        }
+      ],
+      "Tempo Reset": [
+        {
+          "focus": "Rotation Sequencing",
+          "ctCategories": [
+            "Putting Tempo & Stroke Drills",
+            "Tempo & Sequencing Drills",
+            "Timing & Tempo Synchronization Drills",
+            "Wrist Hinge Timing Drills",
+            "Wrist Lag & Downswing Sequencing Drills"
+          ]
+        }
+      ],
+      "Contact Reset": [
+        {
+          "focus": "Contact",
+          "ctCategories": [
+            "Centered Striking & Sweet Spot Drills",
+            "Sand Contact & Explosion Drills",
+            "Sweeping Contact Drills"
+          ]
+        }
+      ]
+    }
+  }
+}

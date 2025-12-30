@@ -1,0 +1,1898 @@
+{
+  "version": "ct-drills-v1",
+  "generated": "2025-12-30",
+  "counts": {
+    "rows": 241,
+    "faults": 50,
+    "categories": 48
+  },
+  "byFault": {
+    "Early Extension": [
+      "Basketball Against Butt Drill",
+      "Butt-to-Wall Drill",
+      "Chair Behind Hips Drill",
+      "Foam Roller Hip Depth Drill",
+      "Glute Activation Swing",
+      "Pressure Plate Depth Drill",
+      "Tall Spine Hip Hinge Drill",
+      "Wall Drill for Posture Retention",
+      "Wall Sit Swing Drill"
+    ],
+    "Casting / Early Release": [
+      "Baseball Pump Drill",
+      "Drag the Bag Drill",
+      "Hinge-Hold-Release Drill",
+      "Lag Stick Across Shaft Drill",
+      "One-Arm Trail Wrist Lag Drill",
+      "Pump Drill for Lag Creation",
+      "Sling Shot Drill",
+      "Snap Release Impact Bag",
+      "Split-Hand Pump Drill"
+    ],
+    "Over-the-Top": [
+      "Basketball Under Trail Arm Drill",
+      "Drop Slot Drill",
+      "Headcover Behind Ball Drill",
+      "Noodle Under Plane Drill",
+      "Pause at Top Slot Drill",
+      "Swing Under Rope Drill",
+      "Towel Under Arm Drill",
+      "Under-Over Stick Drill",
+      "Water Bottle Under Trail Arm"
+    ],
+    "Chicken Wing / Loss of Extension": [
+      "Backhand Release Drill",
+      "Extension Rod Drill",
+      "Hula Hoop Arm Extension Drill",
+      "Push Release Drill",
+      "Stick Across Forearms Drill",
+      "Straight Arm Impact Drill",
+      "Swing with Glove Under Lead Arm",
+      "Tee Under Arm Drill",
+      "Throw Club Down Fairway Drill"
+    ],
+    "Reverse Pivot / Swaying": [
+      "Basketball Between Knees Drill",
+      "Cross-Step Drill",
+      "Dynamic Step Swing",
+      "Feet Together Drill",
+      "Left Heel Lift Drill",
+      "Pressure Shift Pump Drill",
+      "Slide Board Lateral Shift Drill",
+      "Step-Change Drill",
+      "Step-Through Drill"
+    ],
+    "Scooping / Flipping": [
+      "Impact Bag Drill"
+    ],
+    "Loss of Balance / Stability": [
+      "Feet Together Swings"
+    ],
+    "Inconsistent Low Point": [
+      "Tee Line Drill"
+    ],
+    "Poor Rotation (Upper/Lower)": [
+      "Chair Drill for Hip Rotation"
+    ],
+    "Lack of Wrist Set": [
+      "L-to-L Drill"
+    ],
+    "Open or Closed Clubface": [
+      "Face Aim at Setup Drill"
+    ],
+    "Flat or Upright Swing Plane": [
+      "Plane Board Drill"
+    ],
+    "Lack of Tempo / Rhythm": [
+      "1-2-3 Swing Rhythm Drill"
+    ],
+    "Swinging Too Hard": [
+      "50% Swing Tempo Drill"
+    ],
+    "Flying Elbow (Right Elbow Out)": [
+      "Right Elbow Wall Drill"
+    ],
+    "Heel or Toe Strikes": [
+      "Impact Tape Contact Drill"
+    ],
+    "Gripping Too Tightly": [
+      "Tension Awareness Swings"
+    ],
+    "Standing Up / Losing Spine Angle": [
+      "Chair Behind Hips Drill"
+    ],
+    "Club Getting Stuck Behind": [
+      "Split Grip Drill"
+    ],
+    "Reverse Spine Tilt": [
+      "Torso Tilt in Mirror Drill"
+    ],
+    "Too Inside or Too Outside Takeaway": [
+      "Low and Slow Takeaway Drill"
+    ],
+    "Takeaway Too Inside / Outside": [
+      "Alignment Stick Parallel Drill",
+      "Butt End Target Drill",
+      "Gate Tee Drill",
+      "Low & Slow Takeaway Drill",
+      "Mirror Takeaway Check",
+      "Shoulder Rock One-Piece Drill",
+      "Watch Face Check Drill",
+      "Wide Y Drill"
+    ],
+    "Insufficient Wrist Set": [
+      "90-Degree Wrist Set Drill",
+      "Ear to Sky Drill",
+      "Half Swings Wrist Cock Drill",
+      "Hinge-Stop-Hit Drill",
+      "L-To-L Wrist Hinge Drill",
+      "Lead Thumb Pressure Drill",
+      "Tennis Ball Wrist Hinge Drill",
+      "Thumb to Ear Drill"
+    ],
+    "Hip Stall / Late Hip Turn": [
+      "Belt Buckle to Target Drill",
+      "Feet Together Full Turn Drill",
+      "Ground Force Plate Jump Drill",
+      "Hula Hoop Hip Turn Drill",
+      "Medicine Ball Rotational Throw",
+      "Open-Hips Impact Bag",
+      "Pivot Around Lead Hip Drill",
+      "Step Through Drill"
+    ],
+    "Hanging Back": [
+      "Feet Together to Step Drill",
+      "Forward Press Pivot Drill",
+      "Lead Foot Down Early Drill",
+      "Left-Only Swings Drill",
+      "Pressure Board Drill",
+      "Trail Heel Up Drill",
+      "Wall in Front Drill",
+      "Weight Left Impact Bag"
+    ],
+    "Scooping / Flip": [
+      "Blade the Tee Drill",
+      "Drag Headcover Drill",
+      "Forward Lean Tee Drill",
+      "Hold Lag to Impact Drill",
+      "Impact Bag Lean Drill",
+      "Knuckles Down Drill",
+      "Left Wrist Flat Mirror",
+      "Right Arm Only Punch Shot"
+    ],
+    "Poor Face Control": [
+      "9-to-3 Face Drill",
+      "Anti-Roll Wedge Drill",
+      "Door Knob Drill",
+      "Face Angle Stick Drill",
+      "Grip Pressure Clock Drill",
+      "Leading Edge Mirror Drill",
+      "Quarter Turn Pause Drill",
+      "Toe Up Check Drill"
+    ],
+    "Fat / Thin Strikes": [
+      "Brush the Grass Drill",
+      "Coin Strike Drill",
+      "Divot Board Feedback",
+      "Impact Tape Verification",
+      "Line in Sand Drill",
+      "Low Point Stick Drill",
+      "Move Circle Forward Drill",
+      "Towel Behind Ball Drill"
+    ],
+    "Slice": [
+      "Baseball Release Drill",
+      "Close Clubface Early Drill",
+      "Hover & Curl Drill",
+      "Roll the Toe Over Drill",
+      "Strong Grip Change Drill",
+      "Swing Under Stick Drill",
+      "Toe Up to Toe Over Drill",
+      "Water Bottle Release Drill"
+    ],
+    "Hook": [
+      "Cut Across Ball Drill",
+      "Forearm Fly-Off Slow",
+      "Hold Off Finish Drill",
+      "Lead Wrist Extension Backswing",
+      "Open Clubface Alignment Drill",
+      "Pump Cut Drill",
+      "Stinger Low Finish Drill",
+      "Weak Grip Check"
+    ],
+    "Poor Tempo / Rhythm": [
+      "1-2-3 Count Drill",
+      "9 to 3 Half Swings",
+      "Eyes Closed Swing Drill",
+      "Feet Together Tempo Drill",
+      "Pause at Top Drill",
+      "Slow Motion Full Swing",
+      "Step Swing Rhythm",
+      "Tour Tempo Metronome Drill"
+    ],
+    "Short Game - Chipping": [
+      "Bump and Run Gate Drill",
+      "Coin Chip Drill",
+      "Feet Together Chip",
+      "Hinge and Hold Chip",
+      "Landing Spot Chip",
+      "One-Handed Chip",
+      "Towel Under Arms Chip",
+      "Trail Hand Release Chip"
+    ],
+    "Short Game - Pitching": [
+      "Back Foot Open Pitch",
+      "Clock Face Pitch",
+      "Ladder Pitch Drill",
+      "Lead Wrist Firm Pitch",
+      "One-Hop Stop Drill",
+      "Shaft Vertical Pitch",
+      "Three Wedge System Drill",
+      "Toe Down Pitch"
+    ],
+    "Bunker Play": [
+      "Aim Point Dollar Bill Drill",
+      "Heavy Sand Explode Drill",
+      "Lead Hand Only Bunker",
+      "Line in Sand Splash",
+      "No Club Sand Splash",
+      "One Foot In Bunker Drill",
+      "Open Face Wide Stance Splash",
+      "Shaft Lean Bunker Drill"
+    ],
+    "Putting - Distance Control": [
+      "3-6-9 Drill",
+      "Clock Face Lag Drill",
+      "Eyes Closed Lag",
+      "Fringe to Hole Ladder",
+      "Leap Frog Drill",
+      "Meter Stick Drill",
+      "Pace Putt Drill",
+      "Right-Hand Low Tempo Drill"
+    ],
+    "Putting - Start Line": [
+      "Chalk Line Drill",
+      "Coin Gate Drill",
+      "Gate Drill Putting",
+      "Laser Start Line Drill",
+      "Mirror Gate Drill",
+      "Path Rail Drill",
+      "String Over Ball Drill",
+      "Two Tee Narrow Gate"
+    ],
+    "Putting - Green Reading": [
+      "AimPoint Feet Feel",
+      "Around the Clock Drill",
+      "Break Capture Drill",
+      "Circle the Hole Drill",
+      "Line on Ball Alignment",
+      "Low Side Walk Drill",
+      "Plumb Bob Practice",
+      "Putt from Miss Spot"
+    ],
+    "Alignment Issues": [
+      "Club Down Feet Drill",
+      "Mirror Alignment Stick Drill",
+      "Railroad Track Alignment Drill",
+      "String Line Alignment"
+    ],
+    "Grip Issues": [
+      "Grip Change Shadow Swings",
+      "Lead Hand Only Swings",
+      "Thumbs Off Grip Drill",
+      "Trail Hand Release Check"
+    ],
+    "Balance Issues": [
+      "Balance Pad Swings",
+      "Feet Together Swings",
+      "Foam Roller Under Feet Drill",
+      "Single Leg Swing Drill"
+    ],
+    "Mental Focus": [
+      "Commitment Line Drill",
+      "Target Line Pick Drill",
+      "Three Breath Focus",
+      "Visualize Shot Routine"
+    ],
+    "Flexibility / Mobility": [
+      "Cat Cow Spinal Warmup",
+      "Hip 90/90 Rotations",
+      "Lunge with Rotation",
+      "Torso Turn with Club Behind Back"
+    ],
+    "Clubhead Speed": [
+      "Medicine Ball Rotational Throw",
+      "Step Jump Swing",
+      "SuperSpeed Stick Swings",
+      "Whoosh Speed Drill"
+    ],
+    "Fairway Wood Sweeping": [
+      "Ascending Strike Divot Board",
+      "Hover Drill",
+      "Low Point Brush Drill",
+      "Tee Behind Ball Sweep Drill"
+    ],
+    "Hybrid Hitting": [
+      "Ball-Fwd Brush Drill",
+      "Half Tee Hybrid Drill",
+      "Hybrid Punch Shot",
+      "Weight Left Hybrid Strike"
+    ],
+    "Driver Launch": [
+      "High Tee Low Tee Drill",
+      "Lead Shoulder Up Drill",
+      "Positive AoA Tee Forward",
+      "Tee Height Experiment"
+    ],
+    "Wedge Spin": [
+      "Bounce vs. Leading Edge Drill",
+      "Clean Grooves Spin Drill",
+      "Open Face Accelerate Drill",
+      "Stiff Wrist Nipper"
+    ],
+    "Flop Shot": [
+      "Face Open Swing Across",
+      "Open Stance Slide Under Drill",
+      "Skid and Slide Drill",
+      "Umbrella Under Arms Drill"
+    ],
+    "Lag Putting": [
+      "Alternate Ball Lag",
+      "Eyes Closed Distance Feel",
+      "Flagstick Putts",
+      "Fringe to Fringe Lag Drill"
+    ],
+    "Distance Wedges": [
+      "Clock Face Wedge 9 to 3",
+      "Ladder Wedge Targets",
+      "Pitch Matrix Drill",
+      "Quarter Swing Chart"
+    ]
+  },
+  "byCategory": {
+    "Hip Depth & Posture Retention Drills": [
+      "Basketball Against Butt Drill",
+      "Butt-to-Wall Drill",
+      "Chair Behind Hips Drill",
+      "Foam Roller Hip Depth Drill",
+      "Glute Activation Swing",
+      "Pressure Plate Depth Drill",
+      "Tall Spine Hip Hinge Drill",
+      "Wall Drill for Posture Retention",
+      "Wall Sit Swing Drill"
+    ],
+    "Wrist Lag & Downswing Sequencing Drills": [
+      "Baseball Pump Drill",
+      "Drag the Bag Drill",
+      "Hinge-Hold-Release Drill",
+      "Lag Stick Across Shaft Drill",
+      "One-Arm Trail Wrist Lag Drill",
+      "Pump Drill for Lag Creation",
+      "Sling Shot Drill",
+      "Snap Release Impact Bag",
+      "Split-Hand Pump Drill"
+    ],
+    "Shallowing & Path Correction Drills": [
+      "Basketball Under Trail Arm Drill",
+      "Drop Slot Drill",
+      "Headcover Behind Ball Drill",
+      "Noodle Under Plane Drill",
+      "Pause at Top Slot Drill",
+      "Swing Under Rope Drill",
+      "Towel Under Arm Drill",
+      "Under-Over Stick Drill",
+      "Water Bottle Under Trail Arm"
+    ],
+    "Arm Extension & Rotation Drills": [
+      "Backhand Release Drill",
+      "Extension Rod Drill",
+      "Hula Hoop Arm Extension Drill",
+      "Push Release Drill",
+      "Stick Across Forearms Drill",
+      "Straight Arm Impact Drill",
+      "Swing with Glove Under Lead Arm",
+      "Tee Under Arm Drill",
+      "Throw Club Down Fairway Drill"
+    ],
+    "Weight Transfer & Centered Pivot Drills": [
+      "Basketball Between Knees Drill",
+      "Cross-Step Drill",
+      "Dynamic Step Swing",
+      "Feet Together Drill",
+      "Left Heel Lift Drill",
+      "Pressure Shift Pump Drill",
+      "Slide Board Lateral Shift Drill",
+      "Step-Change Drill",
+      "Step-Through Drill"
+    ],
+    "Impact Position & Shaft Lean Drills": [
+      "Impact Bag Drill"
+    ],
+    "Balance & Core Engagement Drills": [
+      "Feet Together Swings"
+    ],
+    "Low Point Control Drills": [
+      "Brush the Grass Drill",
+      "Coin Strike Drill",
+      "Divot Board Feedback",
+      "Impact Tape Verification",
+      "Line in Sand Drill",
+      "Low Point Stick Drill",
+      "Move Circle Forward Drill",
+      "Tee Line Drill",
+      "Towel Behind Ball Drill"
+    ],
+    "Rotation Mechanics & Mobility Drills": [
+      "Chair Drill for Hip Rotation"
+    ],
+    "Wrist Hinge Timing Drills": [
+      "90-Degree Wrist Set Drill",
+      "Ear to Sky Drill",
+      "Half Swings Wrist Cock Drill",
+      "Hinge-Stop-Hit Drill",
+      "L-To-L Wrist Hinge Drill",
+      "L-to-L Drill",
+      "Lead Thumb Pressure Drill",
+      "Tennis Ball Wrist Hinge Drill",
+      "Thumb to Ear Drill"
+    ],
+    "Clubface Awareness & Face Control Drills": [
+      "Face Aim at Setup Drill"
+    ],
+    "Plane Matching & Shaft Path Drills": [
+      "Plane Board Drill"
+    ],
+    "Timing & Tempo Synchronization Drills": [
+      "1-2-3 Swing Rhythm Drill"
+    ],
+    "Controlled Acceleration & Feel Drills": [
+      "50% Swing Tempo Drill"
+    ],
+    "Trail Arm Positioning Drills": [
+      "Right Elbow Wall Drill"
+    ],
+    "Centered Striking & Sweet Spot Drills": [
+      "Impact Tape Contact Drill"
+    ],
+    "Grip Pressure Awareness Drills": [
+      "Tension Awareness Swings"
+    ],
+    "Posture Maintenance & Body Awareness Drills": [
+      "Chair Behind Hips Drill"
+    ],
+    "Club Delivery & Exit Path Drills": [
+      "Split Grip Drill"
+    ],
+    "Upper Body Positioning Drills": [
+      "Torso Tilt in Mirror Drill"
+    ],
+    "Takeaway Path Drills": [
+      "Low and Slow Takeaway Drill"
+    ],
+    "Takeaway Path & Clubface Control Drills": [
+      "Alignment Stick Parallel Drill",
+      "Butt End Target Drill",
+      "Gate Tee Drill",
+      "Low & Slow Takeaway Drill",
+      "Mirror Takeaway Check",
+      "Shoulder Rock One-Piece Drill",
+      "Watch Face Check Drill",
+      "Wide Y Drill"
+    ],
+    "Hip Rotation & Clearance Drills": [
+      "Belt Buckle to Target Drill",
+      "Feet Together Full Turn Drill",
+      "Ground Force Plate Jump Drill",
+      "Hula Hoop Hip Turn Drill",
+      "Medicine Ball Rotational Throw",
+      "Open-Hips Impact Bag",
+      "Pivot Around Lead Hip Drill",
+      "Step Through Drill"
+    ],
+    "Pressure Shift & Left-Side Pivot Drills": [
+      "Feet Together to Step Drill",
+      "Forward Press Pivot Drill",
+      "Lead Foot Down Early Drill",
+      "Left-Only Swings Drill",
+      "Pressure Board Drill",
+      "Trail Heel Up Drill",
+      "Wall in Front Drill",
+      "Weight Left Impact Bag"
+    ],
+    "Forward Shaft Lean & Hands Ahead Drills": [
+      "Blade the Tee Drill",
+      "Drag Headcover Drill",
+      "Forward Lean Tee Drill",
+      "Hold Lag to Impact Drill",
+      "Impact Bag Lean Drill",
+      "Knuckles Down Drill",
+      "Left Wrist Flat Mirror",
+      "Right Arm Only Punch Shot"
+    ],
+    "Clubface Awareness Drills": [
+      "9-to-3 Face Drill",
+      "Anti-Roll Wedge Drill",
+      "Door Knob Drill",
+      "Face Angle Stick Drill",
+      "Grip Pressure Clock Drill",
+      "Leading Edge Mirror Drill",
+      "Quarter Turn Pause Drill",
+      "Toe Up Check Drill"
+    ],
+    "Face-to-Path & Release Drills": [
+      "Baseball Release Drill",
+      "Close Clubface Early Drill",
+      "Hover & Curl Drill",
+      "Roll the Toe Over Drill",
+      "Strong Grip Change Drill",
+      "Swing Under Stick Drill",
+      "Toe Up to Toe Over Drill",
+      "Water Bottle Release Drill"
+    ],
+    "Neutral Face & Path Drills": [
+      "Cut Across Ball Drill",
+      "Forearm Fly-Off Slow",
+      "Hold Off Finish Drill",
+      "Lead Wrist Extension Backswing",
+      "Open Clubface Alignment Drill",
+      "Pump Cut Drill",
+      "Stinger Low Finish Drill",
+      "Weak Grip Check"
+    ],
+    "Tempo & Sequencing Drills": [
+      "1-2-3 Count Drill",
+      "9 to 3 Half Swings",
+      "Eyes Closed Swing Drill",
+      "Feet Together Tempo Drill",
+      "Pause at Top Drill",
+      "Slow Motion Full Swing",
+      "Step Swing Rhythm",
+      "Tour Tempo Metronome Drill"
+    ],
+    "Chipping Technique Drills": [
+      "Bump and Run Gate Drill",
+      "Coin Chip Drill",
+      "Feet Together Chip",
+      "Hinge and Hold Chip",
+      "Landing Spot Chip",
+      "One-Handed Chip",
+      "Towel Under Arms Chip",
+      "Trail Hand Release Chip"
+    ],
+    "Pitching Distance Control Drills": [
+      "Back Foot Open Pitch",
+      "Clock Face Pitch",
+      "Ladder Pitch Drill",
+      "Lead Wrist Firm Pitch",
+      "One-Hop Stop Drill",
+      "Shaft Vertical Pitch",
+      "Three Wedge System Drill",
+      "Toe Down Pitch"
+    ],
+    "Sand Contact & Explosion Drills": [
+      "Aim Point Dollar Bill Drill",
+      "Heavy Sand Explode Drill",
+      "Lead Hand Only Bunker",
+      "Line in Sand Splash",
+      "No Club Sand Splash",
+      "One Foot In Bunker Drill",
+      "Open Face Wide Stance Splash",
+      "Shaft Lean Bunker Drill"
+    ],
+    "Putting Tempo & Stroke Drills": [
+      "3-6-9 Drill",
+      "Clock Face Lag Drill",
+      "Eyes Closed Lag",
+      "Fringe to Hole Ladder",
+      "Leap Frog Drill",
+      "Meter Stick Drill",
+      "Pace Putt Drill",
+      "Right-Hand Low Tempo Drill"
+    ],
+    "Putting Face Control Drills": [
+      "Chalk Line Drill",
+      "Coin Gate Drill",
+      "Gate Drill Putting",
+      "Laser Start Line Drill",
+      "Mirror Gate Drill",
+      "Path Rail Drill",
+      "String Over Ball Drill",
+      "Two Tee Narrow Gate"
+    ],
+    "Reading & Visualization Drills": [
+      "AimPoint Feet Feel",
+      "Around the Clock Drill",
+      "Break Capture Drill",
+      "Circle the Hole Drill",
+      "Line on Ball Alignment",
+      "Low Side Walk Drill",
+      "Plumb Bob Practice",
+      "Putt from Miss Spot"
+    ],
+    "Alignment & Setup Drills": [
+      "Club Down Feet Drill",
+      "Mirror Alignment Stick Drill",
+      "Railroad Track Alignment Drill",
+      "String Line Alignment"
+    ],
+    "Grip Pressure & Position Drills": [
+      "Grip Change Shadow Swings",
+      "Lead Hand Only Swings",
+      "Thumbs Off Grip Drill",
+      "Trail Hand Release Check"
+    ],
+    "Stability & Core Control Drills": [
+      "Balance Pad Swings",
+      "Feet Together Swings",
+      "Foam Roller Under Feet Drill",
+      "Single Leg Swing Drill"
+    ],
+    "Pre-Shot Routine Drills": [
+      "Commitment Line Drill",
+      "Target Line Pick Drill",
+      "Three Breath Focus",
+      "Visualize Shot Routine"
+    ],
+    "Warm-Up & Mobility Drills": [
+      "Cat Cow Spinal Warmup",
+      "Hip 90/90 Rotations",
+      "Lunge with Rotation",
+      "Torso Turn with Club Behind Back"
+    ],
+    "Speed & Power Drills": [
+      "Medicine Ball Rotational Throw",
+      "Step Jump Swing",
+      "SuperSpeed Stick Swings",
+      "Whoosh Speed Drill"
+    ],
+    "Sweeping Contact Drills": [
+      "Ascending Strike Divot Board",
+      "Hover Drill",
+      "Low Point Brush Drill",
+      "Tee Behind Ball Sweep Drill"
+    ],
+    "Hybrid Strike Drills": [
+      "Ball-Fwd Brush Drill",
+      "Half Tee Hybrid Drill",
+      "Hybrid Punch Shot",
+      "Weight Left Hybrid Strike"
+    ],
+    "Driver Launch Window Drills": [
+      "High Tee Low Tee Drill",
+      "Lead Shoulder Up Drill",
+      "Positive AoA Tee Forward",
+      "Tee Height Experiment"
+    ],
+    "Wedge Spin Creation Drills": [
+      "Bounce vs. Leading Edge Drill",
+      "Clean Grooves Spin Drill",
+      "Open Face Accelerate Drill",
+      "Stiff Wrist Nipper"
+    ],
+    "High Loft Bunker & Flop Drills": [
+      "Face Open Swing Across",
+      "Open Stance Slide Under Drill",
+      "Skid and Slide Drill",
+      "Umbrella Under Arms Drill"
+    ],
+    "Long Putt Distance Drills": [
+      "Alternate Ball Lag",
+      "Eyes Closed Distance Feel",
+      "Flagstick Putts",
+      "Fringe to Fringe Lag Drill"
+    ],
+    "Wedge Distance Control Drills": [
+      "Clock Face Wedge 9 to 3",
+      "Ladder Wedge Targets",
+      "Pitch Matrix Drill",
+      "Quarter Swing Chart"
+    ]
+  },
+  "drills": [
+    {
+      "swingFault": "Early Extension",
+      "category": "Hip Depth & Posture Retention Drills",
+      "drill": "Wall Drill for Posture Retention"
+    },
+    {
+      "swingFault": "Casting / Early Release",
+      "category": "Wrist Lag & Downswing Sequencing Drills",
+      "drill": "Pump Drill for Lag Creation"
+    },
+    {
+      "swingFault": "Over-the-Top",
+      "category": "Shallowing & Path Correction Drills",
+      "drill": "Towel Under Arm Drill"
+    },
+    {
+      "swingFault": "Chicken Wing / Loss of Extension",
+      "category": "Arm Extension & Rotation Drills",
+      "drill": "Swing with Glove Under Lead Arm"
+    },
+    {
+      "swingFault": "Reverse Pivot / Swaying",
+      "category": "Weight Transfer & Centered Pivot Drills",
+      "drill": "Step-Through Drill"
+    },
+    {
+      "swingFault": "Scooping / Flipping",
+      "category": "Impact Position & Shaft Lean Drills",
+      "drill": "Impact Bag Drill"
+    },
+    {
+      "swingFault": "Loss of Balance / Stability",
+      "category": "Balance & Core Engagement Drills",
+      "drill": "Feet Together Swings"
+    },
+    {
+      "swingFault": "Inconsistent Low Point",
+      "category": "Low Point Control Drills",
+      "drill": "Tee Line Drill"
+    },
+    {
+      "swingFault": "Poor Rotation (Upper/Lower)",
+      "category": "Rotation Mechanics & Mobility Drills",
+      "drill": "Chair Drill for Hip Rotation"
+    },
+    {
+      "swingFault": "Lack of Wrist Set",
+      "category": "Wrist Hinge Timing Drills",
+      "drill": "L-to-L Drill"
+    },
+    {
+      "swingFault": "Open or Closed Clubface",
+      "category": "Clubface Awareness & Face Control Drills",
+      "drill": "Face Aim at Setup Drill"
+    },
+    {
+      "swingFault": "Flat or Upright Swing Plane",
+      "category": "Plane Matching & Shaft Path Drills",
+      "drill": "Plane Board Drill"
+    },
+    {
+      "swingFault": "Lack of Tempo / Rhythm",
+      "category": "Timing & Tempo Synchronization Drills",
+      "drill": "1-2-3 Swing Rhythm Drill"
+    },
+    {
+      "swingFault": "Swinging Too Hard",
+      "category": "Controlled Acceleration & Feel Drills",
+      "drill": "50% Swing Tempo Drill"
+    },
+    {
+      "swingFault": "Flying Elbow (Right Elbow Out)",
+      "category": "Trail Arm Positioning Drills",
+      "drill": "Right Elbow Wall Drill"
+    },
+    {
+      "swingFault": "Heel or Toe Strikes",
+      "category": "Centered Striking & Sweet Spot Drills",
+      "drill": "Impact Tape Contact Drill"
+    },
+    {
+      "swingFault": "Gripping Too Tightly",
+      "category": "Grip Pressure Awareness Drills",
+      "drill": "Tension Awareness Swings"
+    },
+    {
+      "swingFault": "Standing Up / Losing Spine Angle",
+      "category": "Posture Maintenance & Body Awareness Drills",
+      "drill": "Chair Behind Hips Drill"
+    },
+    {
+      "swingFault": "Club Getting Stuck Behind",
+      "category": "Club Delivery & Exit Path Drills",
+      "drill": "Split Grip Drill"
+    },
+    {
+      "swingFault": "Reverse Spine Tilt",
+      "category": "Upper Body Positioning Drills",
+      "drill": "Torso Tilt in Mirror Drill"
+    },
+    {
+      "swingFault": "Too Inside or Too Outside Takeaway",
+      "category": "Takeaway Path Drills",
+      "drill": "Low and Slow Takeaway Drill"
+    },
+    {
+      "swingFault": "Early Extension",
+      "category": "Hip Depth & Posture Retention Drills",
+      "drill": "Chair Behind Hips Drill"
+    },
+    {
+      "swingFault": "Early Extension",
+      "category": "Hip Depth & Posture Retention Drills",
+      "drill": "Wall Sit Swing Drill"
+    },
+    {
+      "swingFault": "Early Extension",
+      "category": "Hip Depth & Posture Retention Drills",
+      "drill": "Foam Roller Hip Depth Drill"
+    },
+    {
+      "swingFault": "Early Extension",
+      "category": "Hip Depth & Posture Retention Drills",
+      "drill": "Basketball Against Butt Drill"
+    },
+    {
+      "swingFault": "Early Extension",
+      "category": "Hip Depth & Posture Retention Drills",
+      "drill": "Butt-to-Wall Drill"
+    },
+    {
+      "swingFault": "Early Extension",
+      "category": "Hip Depth & Posture Retention Drills",
+      "drill": "Pressure Plate Depth Drill"
+    },
+    {
+      "swingFault": "Early Extension",
+      "category": "Hip Depth & Posture Retention Drills",
+      "drill": "Glute Activation Swing"
+    },
+    {
+      "swingFault": "Early Extension",
+      "category": "Hip Depth & Posture Retention Drills",
+      "drill": "Tall Spine Hip Hinge Drill"
+    },
+    {
+      "swingFault": "Casting / Early Release",
+      "category": "Wrist Lag & Downswing Sequencing Drills",
+      "drill": "Split-Hand Pump Drill"
+    },
+    {
+      "swingFault": "Casting / Early Release",
+      "category": "Wrist Lag & Downswing Sequencing Drills",
+      "drill": "Lag Stick Across Shaft Drill"
+    },
+    {
+      "swingFault": "Casting / Early Release",
+      "category": "Wrist Lag & Downswing Sequencing Drills",
+      "drill": "Sling Shot Drill"
+    },
+    {
+      "swingFault": "Casting / Early Release",
+      "category": "Wrist Lag & Downswing Sequencing Drills",
+      "drill": "One-Arm Trail Wrist Lag Drill"
+    },
+    {
+      "swingFault": "Casting / Early Release",
+      "category": "Wrist Lag & Downswing Sequencing Drills",
+      "drill": "Drag the Bag Drill"
+    },
+    {
+      "swingFault": "Casting / Early Release",
+      "category": "Wrist Lag & Downswing Sequencing Drills",
+      "drill": "Snap Release Impact Bag"
+    },
+    {
+      "swingFault": "Casting / Early Release",
+      "category": "Wrist Lag & Downswing Sequencing Drills",
+      "drill": "Hinge-Hold-Release Drill"
+    },
+    {
+      "swingFault": "Casting / Early Release",
+      "category": "Wrist Lag & Downswing Sequencing Drills",
+      "drill": "Baseball Pump Drill"
+    },
+    {
+      "swingFault": "Over-the-Top",
+      "category": "Shallowing & Path Correction Drills",
+      "drill": "Water Bottle Under Trail Arm"
+    },
+    {
+      "swingFault": "Over-the-Top",
+      "category": "Shallowing & Path Correction Drills",
+      "drill": "Under-Over Stick Drill"
+    },
+    {
+      "swingFault": "Over-the-Top",
+      "category": "Shallowing & Path Correction Drills",
+      "drill": "Drop Slot Drill"
+    },
+    {
+      "swingFault": "Over-the-Top",
+      "category": "Shallowing & Path Correction Drills",
+      "drill": "Headcover Behind Ball Drill"
+    },
+    {
+      "swingFault": "Over-the-Top",
+      "category": "Shallowing & Path Correction Drills",
+      "drill": "Swing Under Rope Drill"
+    },
+    {
+      "swingFault": "Over-the-Top",
+      "category": "Shallowing & Path Correction Drills",
+      "drill": "Pause at Top Slot Drill"
+    },
+    {
+      "swingFault": "Over-the-Top",
+      "category": "Shallowing & Path Correction Drills",
+      "drill": "Basketball Under Trail Arm Drill"
+    },
+    {
+      "swingFault": "Over-the-Top",
+      "category": "Shallowing & Path Correction Drills",
+      "drill": "Noodle Under Plane Drill"
+    },
+    {
+      "swingFault": "Chicken Wing / Loss of Extension",
+      "category": "Arm Extension & Rotation Drills",
+      "drill": "Tee Under Arm Drill"
+    },
+    {
+      "swingFault": "Chicken Wing / Loss of Extension",
+      "category": "Arm Extension & Rotation Drills",
+      "drill": "Extension Rod Drill"
+    },
+    {
+      "swingFault": "Chicken Wing / Loss of Extension",
+      "category": "Arm Extension & Rotation Drills",
+      "drill": "Throw Club Down Fairway Drill"
+    },
+    {
+      "swingFault": "Chicken Wing / Loss of Extension",
+      "category": "Arm Extension & Rotation Drills",
+      "drill": "Hula Hoop Arm Extension Drill"
+    },
+    {
+      "swingFault": "Chicken Wing / Loss of Extension",
+      "category": "Arm Extension & Rotation Drills",
+      "drill": "Stick Across Forearms Drill"
+    },
+    {
+      "swingFault": "Chicken Wing / Loss of Extension",
+      "category": "Arm Extension & Rotation Drills",
+      "drill": "Backhand Release Drill"
+    },
+    {
+      "swingFault": "Chicken Wing / Loss of Extension",
+      "category": "Arm Extension & Rotation Drills",
+      "drill": "Push Release Drill"
+    },
+    {
+      "swingFault": "Chicken Wing / Loss of Extension",
+      "category": "Arm Extension & Rotation Drills",
+      "drill": "Straight Arm Impact Drill"
+    },
+    {
+      "swingFault": "Reverse Pivot / Swaying",
+      "category": "Weight Transfer & Centered Pivot Drills",
+      "drill": "Step-Change Drill"
+    },
+    {
+      "swingFault": "Reverse Pivot / Swaying",
+      "category": "Weight Transfer & Centered Pivot Drills",
+      "drill": "Feet Together Drill"
+    },
+    {
+      "swingFault": "Reverse Pivot / Swaying",
+      "category": "Weight Transfer & Centered Pivot Drills",
+      "drill": "Left Heel Lift Drill"
+    },
+    {
+      "swingFault": "Reverse Pivot / Swaying",
+      "category": "Weight Transfer & Centered Pivot Drills",
+      "drill": "Pressure Shift Pump Drill"
+    },
+    {
+      "swingFault": "Reverse Pivot / Swaying",
+      "category": "Weight Transfer & Centered Pivot Drills",
+      "drill": "Basketball Between Knees Drill"
+    },
+    {
+      "swingFault": "Reverse Pivot / Swaying",
+      "category": "Weight Transfer & Centered Pivot Drills",
+      "drill": "Slide Board Lateral Shift Drill"
+    },
+    {
+      "swingFault": "Reverse Pivot / Swaying",
+      "category": "Weight Transfer & Centered Pivot Drills",
+      "drill": "Dynamic Step Swing"
+    },
+    {
+      "swingFault": "Reverse Pivot / Swaying",
+      "category": "Weight Transfer & Centered Pivot Drills",
+      "drill": "Cross-Step Drill"
+    },
+    {
+      "swingFault": "Takeaway Too Inside / Outside",
+      "category": "Takeaway Path & Clubface Control Drills",
+      "drill": "Gate Tee Drill"
+    },
+    {
+      "swingFault": "Takeaway Too Inside / Outside",
+      "category": "Takeaway Path & Clubface Control Drills",
+      "drill": "Low & Slow Takeaway Drill"
+    },
+    {
+      "swingFault": "Takeaway Too Inside / Outside",
+      "category": "Takeaway Path & Clubface Control Drills",
+      "drill": "Mirror Takeaway Check"
+    },
+    {
+      "swingFault": "Takeaway Too Inside / Outside",
+      "category": "Takeaway Path & Clubface Control Drills",
+      "drill": "Alignment Stick Parallel Drill"
+    },
+    {
+      "swingFault": "Takeaway Too Inside / Outside",
+      "category": "Takeaway Path & Clubface Control Drills",
+      "drill": "Shoulder Rock One-Piece Drill"
+    },
+    {
+      "swingFault": "Takeaway Too Inside / Outside",
+      "category": "Takeaway Path & Clubface Control Drills",
+      "drill": "Wide Y Drill"
+    },
+    {
+      "swingFault": "Takeaway Too Inside / Outside",
+      "category": "Takeaway Path & Clubface Control Drills",
+      "drill": "Butt End Target Drill"
+    },
+    {
+      "swingFault": "Takeaway Too Inside / Outside",
+      "category": "Takeaway Path & Clubface Control Drills",
+      "drill": "Watch Face Check Drill"
+    },
+    {
+      "swingFault": "Insufficient Wrist Set",
+      "category": "Wrist Hinge Timing Drills",
+      "drill": "Thumb to Ear Drill"
+    },
+    {
+      "swingFault": "Insufficient Wrist Set",
+      "category": "Wrist Hinge Timing Drills",
+      "drill": "Hinge-Stop-Hit Drill"
+    },
+    {
+      "swingFault": "Insufficient Wrist Set",
+      "category": "Wrist Hinge Timing Drills",
+      "drill": "L-To-L Wrist Hinge Drill"
+    },
+    {
+      "swingFault": "Insufficient Wrist Set",
+      "category": "Wrist Hinge Timing Drills",
+      "drill": "90-Degree Wrist Set Drill"
+    },
+    {
+      "swingFault": "Insufficient Wrist Set",
+      "category": "Wrist Hinge Timing Drills",
+      "drill": "Half Swings Wrist Cock Drill"
+    },
+    {
+      "swingFault": "Insufficient Wrist Set",
+      "category": "Wrist Hinge Timing Drills",
+      "drill": "Tennis Ball Wrist Hinge Drill"
+    },
+    {
+      "swingFault": "Insufficient Wrist Set",
+      "category": "Wrist Hinge Timing Drills",
+      "drill": "Ear to Sky Drill"
+    },
+    {
+      "swingFault": "Insufficient Wrist Set",
+      "category": "Wrist Hinge Timing Drills",
+      "drill": "Lead Thumb Pressure Drill"
+    },
+    {
+      "swingFault": "Hip Stall / Late Hip Turn",
+      "category": "Hip Rotation & Clearance Drills",
+      "drill": "Step Through Drill"
+    },
+    {
+      "swingFault": "Hip Stall / Late Hip Turn",
+      "category": "Hip Rotation & Clearance Drills",
+      "drill": "Belt Buckle to Target Drill"
+    },
+    {
+      "swingFault": "Hip Stall / Late Hip Turn",
+      "category": "Hip Rotation & Clearance Drills",
+      "drill": "Hula Hoop Hip Turn Drill"
+    },
+    {
+      "swingFault": "Hip Stall / Late Hip Turn",
+      "category": "Hip Rotation & Clearance Drills",
+      "drill": "Medicine Ball Rotational Throw"
+    },
+    {
+      "swingFault": "Hip Stall / Late Hip Turn",
+      "category": "Hip Rotation & Clearance Drills",
+      "drill": "Ground Force Plate Jump Drill"
+    },
+    {
+      "swingFault": "Hip Stall / Late Hip Turn",
+      "category": "Hip Rotation & Clearance Drills",
+      "drill": "Feet Together Full Turn Drill"
+    },
+    {
+      "swingFault": "Hip Stall / Late Hip Turn",
+      "category": "Hip Rotation & Clearance Drills",
+      "drill": "Pivot Around Lead Hip Drill"
+    },
+    {
+      "swingFault": "Hip Stall / Late Hip Turn",
+      "category": "Hip Rotation & Clearance Drills",
+      "drill": "Open-Hips Impact Bag"
+    },
+    {
+      "swingFault": "Hanging Back",
+      "category": "Pressure Shift & Left-Side Pivot Drills",
+      "drill": "Lead Foot Down Early Drill"
+    },
+    {
+      "swingFault": "Hanging Back",
+      "category": "Pressure Shift & Left-Side Pivot Drills",
+      "drill": "Weight Left Impact Bag"
+    },
+    {
+      "swingFault": "Hanging Back",
+      "category": "Pressure Shift & Left-Side Pivot Drills",
+      "drill": "Wall in Front Drill"
+    },
+    {
+      "swingFault": "Hanging Back",
+      "category": "Pressure Shift & Left-Side Pivot Drills",
+      "drill": "Left-Only Swings Drill"
+    },
+    {
+      "swingFault": "Hanging Back",
+      "category": "Pressure Shift & Left-Side Pivot Drills",
+      "drill": "Pressure Board Drill"
+    },
+    {
+      "swingFault": "Hanging Back",
+      "category": "Pressure Shift & Left-Side Pivot Drills",
+      "drill": "Feet Together to Step Drill"
+    },
+    {
+      "swingFault": "Hanging Back",
+      "category": "Pressure Shift & Left-Side Pivot Drills",
+      "drill": "Forward Press Pivot Drill"
+    },
+    {
+      "swingFault": "Hanging Back",
+      "category": "Pressure Shift & Left-Side Pivot Drills",
+      "drill": "Trail Heel Up Drill"
+    },
+    {
+      "swingFault": "Scooping / Flip",
+      "category": "Forward Shaft Lean & Hands Ahead Drills",
+      "drill": "Impact Bag Lean Drill"
+    },
+    {
+      "swingFault": "Scooping / Flip",
+      "category": "Forward Shaft Lean & Hands Ahead Drills",
+      "drill": "Knuckles Down Drill"
+    },
+    {
+      "swingFault": "Scooping / Flip",
+      "category": "Forward Shaft Lean & Hands Ahead Drills",
+      "drill": "Right Arm Only Punch Shot"
+    },
+    {
+      "swingFault": "Scooping / Flip",
+      "category": "Forward Shaft Lean & Hands Ahead Drills",
+      "drill": "Forward Lean Tee Drill"
+    },
+    {
+      "swingFault": "Scooping / Flip",
+      "category": "Forward Shaft Lean & Hands Ahead Drills",
+      "drill": "Drag Headcover Drill"
+    },
+    {
+      "swingFault": "Scooping / Flip",
+      "category": "Forward Shaft Lean & Hands Ahead Drills",
+      "drill": "Hold Lag to Impact Drill"
+    },
+    {
+      "swingFault": "Scooping / Flip",
+      "category": "Forward Shaft Lean & Hands Ahead Drills",
+      "drill": "Left Wrist Flat Mirror"
+    },
+    {
+      "swingFault": "Scooping / Flip",
+      "category": "Forward Shaft Lean & Hands Ahead Drills",
+      "drill": "Blade the Tee Drill"
+    },
+    {
+      "swingFault": "Poor Face Control",
+      "category": "Clubface Awareness Drills",
+      "drill": "Toe Up Check Drill"
+    },
+    {
+      "swingFault": "Poor Face Control",
+      "category": "Clubface Awareness Drills",
+      "drill": "Leading Edge Mirror Drill"
+    },
+    {
+      "swingFault": "Poor Face Control",
+      "category": "Clubface Awareness Drills",
+      "drill": "9-to-3 Face Drill"
+    },
+    {
+      "swingFault": "Poor Face Control",
+      "category": "Clubface Awareness Drills",
+      "drill": "Quarter Turn Pause Drill"
+    },
+    {
+      "swingFault": "Poor Face Control",
+      "category": "Clubface Awareness Drills",
+      "drill": "Face Angle Stick Drill"
+    },
+    {
+      "swingFault": "Poor Face Control",
+      "category": "Clubface Awareness Drills",
+      "drill": "Anti-Roll Wedge Drill"
+    },
+    {
+      "swingFault": "Poor Face Control",
+      "category": "Clubface Awareness Drills",
+      "drill": "Door Knob Drill"
+    },
+    {
+      "swingFault": "Poor Face Control",
+      "category": "Clubface Awareness Drills",
+      "drill": "Grip Pressure Clock Drill"
+    },
+    {
+      "swingFault": "Fat / Thin Strikes",
+      "category": "Low Point Control Drills",
+      "drill": "Towel Behind Ball Drill"
+    },
+    {
+      "swingFault": "Fat / Thin Strikes",
+      "category": "Low Point Control Drills",
+      "drill": "Line in Sand Drill"
+    },
+    {
+      "swingFault": "Fat / Thin Strikes",
+      "category": "Low Point Control Drills",
+      "drill": "Coin Strike Drill"
+    },
+    {
+      "swingFault": "Fat / Thin Strikes",
+      "category": "Low Point Control Drills",
+      "drill": "Low Point Stick Drill"
+    },
+    {
+      "swingFault": "Fat / Thin Strikes",
+      "category": "Low Point Control Drills",
+      "drill": "Divot Board Feedback"
+    },
+    {
+      "swingFault": "Fat / Thin Strikes",
+      "category": "Low Point Control Drills",
+      "drill": "Impact Tape Verification"
+    },
+    {
+      "swingFault": "Fat / Thin Strikes",
+      "category": "Low Point Control Drills",
+      "drill": "Brush the Grass Drill"
+    },
+    {
+      "swingFault": "Fat / Thin Strikes",
+      "category": "Low Point Control Drills",
+      "drill": "Move Circle Forward Drill"
+    },
+    {
+      "swingFault": "Slice",
+      "category": "Face-to-Path & Release Drills",
+      "drill": "Strong Grip Change Drill"
+    },
+    {
+      "swingFault": "Slice",
+      "category": "Face-to-Path & Release Drills",
+      "drill": "Hover & Curl Drill"
+    },
+    {
+      "swingFault": "Slice",
+      "category": "Face-to-Path & Release Drills",
+      "drill": "Baseball Release Drill"
+    },
+    {
+      "swingFault": "Slice",
+      "category": "Face-to-Path & Release Drills",
+      "drill": "Close Clubface Early Drill"
+    },
+    {
+      "swingFault": "Slice",
+      "category": "Face-to-Path & Release Drills",
+      "drill": "Swing Under Stick Drill"
+    },
+    {
+      "swingFault": "Slice",
+      "category": "Face-to-Path & Release Drills",
+      "drill": "Roll the Toe Over Drill"
+    },
+    {
+      "swingFault": "Slice",
+      "category": "Face-to-Path & Release Drills",
+      "drill": "Toe Up to Toe Over Drill"
+    },
+    {
+      "swingFault": "Slice",
+      "category": "Face-to-Path & Release Drills",
+      "drill": "Water Bottle Release Drill"
+    },
+    {
+      "swingFault": "Hook",
+      "category": "Neutral Face & Path Drills",
+      "drill": "Weak Grip Check"
+    },
+    {
+      "swingFault": "Hook",
+      "category": "Neutral Face & Path Drills",
+      "drill": "Hold Off Finish Drill"
+    },
+    {
+      "swingFault": "Hook",
+      "category": "Neutral Face & Path Drills",
+      "drill": "Pump Cut Drill"
+    },
+    {
+      "swingFault": "Hook",
+      "category": "Neutral Face & Path Drills",
+      "drill": "Stinger Low Finish Drill"
+    },
+    {
+      "swingFault": "Hook",
+      "category": "Neutral Face & Path Drills",
+      "drill": "Lead Wrist Extension Backswing"
+    },
+    {
+      "swingFault": "Hook",
+      "category": "Neutral Face & Path Drills",
+      "drill": "Cut Across Ball Drill"
+    },
+    {
+      "swingFault": "Hook",
+      "category": "Neutral Face & Path Drills",
+      "drill": "Open Clubface Alignment Drill"
+    },
+    {
+      "swingFault": "Hook",
+      "category": "Neutral Face & Path Drills",
+      "drill": "Forearm Fly-Off Slow"
+    },
+    {
+      "swingFault": "Poor Tempo / Rhythm",
+      "category": "Tempo & Sequencing Drills",
+      "drill": "Tour Tempo Metronome Drill"
+    },
+    {
+      "swingFault": "Poor Tempo / Rhythm",
+      "category": "Tempo & Sequencing Drills",
+      "drill": "1-2-3 Count Drill"
+    },
+    {
+      "swingFault": "Poor Tempo / Rhythm",
+      "category": "Tempo & Sequencing Drills",
+      "drill": "9 to 3 Half Swings"
+    },
+    {
+      "swingFault": "Poor Tempo / Rhythm",
+      "category": "Tempo & Sequencing Drills",
+      "drill": "Eyes Closed Swing Drill"
+    },
+    {
+      "swingFault": "Poor Tempo / Rhythm",
+      "category": "Tempo & Sequencing Drills",
+      "drill": "Feet Together Tempo Drill"
+    },
+    {
+      "swingFault": "Poor Tempo / Rhythm",
+      "category": "Tempo & Sequencing Drills",
+      "drill": "Step Swing Rhythm"
+    },
+    {
+      "swingFault": "Poor Tempo / Rhythm",
+      "category": "Tempo & Sequencing Drills",
+      "drill": "Slow Motion Full Swing"
+    },
+    {
+      "swingFault": "Poor Tempo / Rhythm",
+      "category": "Tempo & Sequencing Drills",
+      "drill": "Pause at Top Drill"
+    },
+    {
+      "swingFault": "Short Game - Chipping",
+      "category": "Chipping Technique Drills",
+      "drill": "Coin Chip Drill"
+    },
+    {
+      "swingFault": "Short Game - Chipping",
+      "category": "Chipping Technique Drills",
+      "drill": "One-Handed Chip"
+    },
+    {
+      "swingFault": "Short Game - Chipping",
+      "category": "Chipping Technique Drills",
+      "drill": "Feet Together Chip"
+    },
+    {
+      "swingFault": "Short Game - Chipping",
+      "category": "Chipping Technique Drills",
+      "drill": "Trail Hand Release Chip"
+    },
+    {
+      "swingFault": "Short Game - Chipping",
+      "category": "Chipping Technique Drills",
+      "drill": "Towel Under Arms Chip"
+    },
+    {
+      "swingFault": "Short Game - Chipping",
+      "category": "Chipping Technique Drills",
+      "drill": "Landing Spot Chip"
+    },
+    {
+      "swingFault": "Short Game - Chipping",
+      "category": "Chipping Technique Drills",
+      "drill": "Hinge and Hold Chip"
+    },
+    {
+      "swingFault": "Short Game - Chipping",
+      "category": "Chipping Technique Drills",
+      "drill": "Bump and Run Gate Drill"
+    },
+    {
+      "swingFault": "Short Game - Pitching",
+      "category": "Pitching Distance Control Drills",
+      "drill": "Clock Face Pitch"
+    },
+    {
+      "swingFault": "Short Game - Pitching",
+      "category": "Pitching Distance Control Drills",
+      "drill": "Ladder Pitch Drill"
+    },
+    {
+      "swingFault": "Short Game - Pitching",
+      "category": "Pitching Distance Control Drills",
+      "drill": "Three Wedge System Drill"
+    },
+    {
+      "swingFault": "Short Game - Pitching",
+      "category": "Pitching Distance Control Drills",
+      "drill": "Back Foot Open Pitch"
+    },
+    {
+      "swingFault": "Short Game - Pitching",
+      "category": "Pitching Distance Control Drills",
+      "drill": "Lead Wrist Firm Pitch"
+    },
+    {
+      "swingFault": "Short Game - Pitching",
+      "category": "Pitching Distance Control Drills",
+      "drill": "One-Hop Stop Drill"
+    },
+    {
+      "swingFault": "Short Game - Pitching",
+      "category": "Pitching Distance Control Drills",
+      "drill": "Toe Down Pitch"
+    },
+    {
+      "swingFault": "Short Game - Pitching",
+      "category": "Pitching Distance Control Drills",
+      "drill": "Shaft Vertical Pitch"
+    },
+    {
+      "swingFault": "Bunker Play",
+      "category": "Sand Contact & Explosion Drills",
+      "drill": "Line in Sand Splash"
+    },
+    {
+      "swingFault": "Bunker Play",
+      "category": "Sand Contact & Explosion Drills",
+      "drill": "Aim Point Dollar Bill Drill"
+    },
+    {
+      "swingFault": "Bunker Play",
+      "category": "Sand Contact & Explosion Drills",
+      "drill": "One Foot In Bunker Drill"
+    },
+    {
+      "swingFault": "Bunker Play",
+      "category": "Sand Contact & Explosion Drills",
+      "drill": "No Club Sand Splash"
+    },
+    {
+      "swingFault": "Bunker Play",
+      "category": "Sand Contact & Explosion Drills",
+      "drill": "Lead Hand Only Bunker"
+    },
+    {
+      "swingFault": "Bunker Play",
+      "category": "Sand Contact & Explosion Drills",
+      "drill": "Heavy Sand Explode Drill"
+    },
+    {
+      "swingFault": "Bunker Play",
+      "category": "Sand Contact & Explosion Drills",
+      "drill": "Shaft Lean Bunker Drill"
+    },
+    {
+      "swingFault": "Bunker Play",
+      "category": "Sand Contact & Explosion Drills",
+      "drill": "Open Face Wide Stance Splash"
+    },
+    {
+      "swingFault": "Putting - Distance Control",
+      "category": "Putting Tempo & Stroke Drills",
+      "drill": "Meter Stick Drill"
+    },
+    {
+      "swingFault": "Putting - Distance Control",
+      "category": "Putting Tempo & Stroke Drills",
+      "drill": "Clock Face Lag Drill"
+    },
+    {
+      "swingFault": "Putting - Distance Control",
+      "category": "Putting Tempo & Stroke Drills",
+      "drill": "Eyes Closed Lag"
+    },
+    {
+      "swingFault": "Putting - Distance Control",
+      "category": "Putting Tempo & Stroke Drills",
+      "drill": "Fringe to Hole Ladder"
+    },
+    {
+      "swingFault": "Putting - Distance Control",
+      "category": "Putting Tempo & Stroke Drills",
+      "drill": "3-6-9 Drill"
+    },
+    {
+      "swingFault": "Putting - Distance Control",
+      "category": "Putting Tempo & Stroke Drills",
+      "drill": "Leap Frog Drill"
+    },
+    {
+      "swingFault": "Putting - Distance Control",
+      "category": "Putting Tempo & Stroke Drills",
+      "drill": "Pace Putt Drill"
+    },
+    {
+      "swingFault": "Putting - Distance Control",
+      "category": "Putting Tempo & Stroke Drills",
+      "drill": "Right-Hand Low Tempo Drill"
+    },
+    {
+      "swingFault": "Putting - Start Line",
+      "category": "Putting Face Control Drills",
+      "drill": "Gate Drill Putting"
+    },
+    {
+      "swingFault": "Putting - Start Line",
+      "category": "Putting Face Control Drills",
+      "drill": "Chalk Line Drill"
+    },
+    {
+      "swingFault": "Putting - Start Line",
+      "category": "Putting Face Control Drills",
+      "drill": "Coin Gate Drill"
+    },
+    {
+      "swingFault": "Putting - Start Line",
+      "category": "Putting Face Control Drills",
+      "drill": "Laser Start Line Drill"
+    },
+    {
+      "swingFault": "Putting - Start Line",
+      "category": "Putting Face Control Drills",
+      "drill": "Mirror Gate Drill"
+    },
+    {
+      "swingFault": "Putting - Start Line",
+      "category": "Putting Face Control Drills",
+      "drill": "Two Tee Narrow Gate"
+    },
+    {
+      "swingFault": "Putting - Start Line",
+      "category": "Putting Face Control Drills",
+      "drill": "Path Rail Drill"
+    },
+    {
+      "swingFault": "Putting - Start Line",
+      "category": "Putting Face Control Drills",
+      "drill": "String Over Ball Drill"
+    },
+    {
+      "swingFault": "Putting - Green Reading",
+      "category": "Reading & Visualization Drills",
+      "drill": "AimPoint Feet Feel"
+    },
+    {
+      "swingFault": "Putting - Green Reading",
+      "category": "Reading & Visualization Drills",
+      "drill": "Around the Clock Drill"
+    },
+    {
+      "swingFault": "Putting - Green Reading",
+      "category": "Reading & Visualization Drills",
+      "drill": "Low Side Walk Drill"
+    },
+    {
+      "swingFault": "Putting - Green Reading",
+      "category": "Reading & Visualization Drills",
+      "drill": "Break Capture Drill"
+    },
+    {
+      "swingFault": "Putting - Green Reading",
+      "category": "Reading & Visualization Drills",
+      "drill": "Putt from Miss Spot"
+    },
+    {
+      "swingFault": "Putting - Green Reading",
+      "category": "Reading & Visualization Drills",
+      "drill": "Circle the Hole Drill"
+    },
+    {
+      "swingFault": "Putting - Green Reading",
+      "category": "Reading & Visualization Drills",
+      "drill": "Plumb Bob Practice"
+    },
+    {
+      "swingFault": "Putting - Green Reading",
+      "category": "Reading & Visualization Drills",
+      "drill": "Line on Ball Alignment"
+    },
+    {
+      "swingFault": "Alignment Issues",
+      "category": "Alignment & Setup Drills",
+      "drill": "Railroad Track Alignment Drill"
+    },
+    {
+      "swingFault": "Alignment Issues",
+      "category": "Alignment & Setup Drills",
+      "drill": "Mirror Alignment Stick Drill"
+    },
+    {
+      "swingFault": "Alignment Issues",
+      "category": "Alignment & Setup Drills",
+      "drill": "String Line Alignment"
+    },
+    {
+      "swingFault": "Alignment Issues",
+      "category": "Alignment & Setup Drills",
+      "drill": "Club Down Feet Drill"
+    },
+    {
+      "swingFault": "Grip Issues",
+      "category": "Grip Pressure & Position Drills",
+      "drill": "Thumbs Off Grip Drill"
+    },
+    {
+      "swingFault": "Grip Issues",
+      "category": "Grip Pressure & Position Drills",
+      "drill": "Trail Hand Release Check"
+    },
+    {
+      "swingFault": "Grip Issues",
+      "category": "Grip Pressure & Position Drills",
+      "drill": "Lead Hand Only Swings"
+    },
+    {
+      "swingFault": "Grip Issues",
+      "category": "Grip Pressure & Position Drills",
+      "drill": "Grip Change Shadow Swings"
+    },
+    {
+      "swingFault": "Balance Issues",
+      "category": "Stability & Core Control Drills",
+      "drill": "Feet Together Swings"
+    },
+    {
+      "swingFault": "Balance Issues",
+      "category": "Stability & Core Control Drills",
+      "drill": "Single Leg Swing Drill"
+    },
+    {
+      "swingFault": "Balance Issues",
+      "category": "Stability & Core Control Drills",
+      "drill": "Balance Pad Swings"
+    },
+    {
+      "swingFault": "Balance Issues",
+      "category": "Stability & Core Control Drills",
+      "drill": "Foam Roller Under Feet Drill"
+    },
+    {
+      "swingFault": "Mental Focus",
+      "category": "Pre-Shot Routine Drills",
+      "drill": "Three Breath Focus"
+    },
+    {
+      "swingFault": "Mental Focus",
+      "category": "Pre-Shot Routine Drills",
+      "drill": "Visualize Shot Routine"
+    },
+    {
+      "swingFault": "Mental Focus",
+      "category": "Pre-Shot Routine Drills",
+      "drill": "Target Line Pick Drill"
+    },
+    {
+      "swingFault": "Mental Focus",
+      "category": "Pre-Shot Routine Drills",
+      "drill": "Commitment Line Drill"
+    },
+    {
+      "swingFault": "Flexibility / Mobility",
+      "category": "Warm-Up & Mobility Drills",
+      "drill": "Torso Turn with Club Behind Back"
+    },
+    {
+      "swingFault": "Flexibility / Mobility",
+      "category": "Warm-Up & Mobility Drills",
+      "drill": "Hip 90/90 Rotations"
+    },
+    {
+      "swingFault": "Flexibility / Mobility",
+      "category": "Warm-Up & Mobility Drills",
+      "drill": "Cat Cow Spinal Warmup"
+    },
+    {
+      "swingFault": "Flexibility / Mobility",
+      "category": "Warm-Up & Mobility Drills",
+      "drill": "Lunge with Rotation"
+    },
+    {
+      "swingFault": "Clubhead Speed",
+      "category": "Speed & Power Drills",
+      "drill": "SuperSpeed Stick Swings"
+    },
+    {
+      "swingFault": "Clubhead Speed",
+      "category": "Speed & Power Drills",
+      "drill": "Step Jump Swing"
+    },
+    {
+      "swingFault": "Clubhead Speed",
+      "category": "Speed & Power Drills",
+      "drill": "Medicine Ball Rotational Throw"
+    },
+    {
+      "swingFault": "Clubhead Speed",
+      "category": "Speed & Power Drills",
+      "drill": "Whoosh Speed Drill"
+    },
+    {
+      "swingFault": "Fairway Wood Sweeping",
+      "category": "Sweeping Contact Drills",
+      "drill": "Tee Behind Ball Sweep Drill"
+    },
+    {
+      "swingFault": "Fairway Wood Sweeping",
+      "category": "Sweeping Contact Drills",
+      "drill": "Low Point Brush Drill"
+    },
+    {
+      "swingFault": "Fairway Wood Sweeping",
+      "category": "Sweeping Contact Drills",
+      "drill": "Ascending Strike Divot Board"
+    },
+    {
+      "swingFault": "Fairway Wood Sweeping",
+      "category": "Sweeping Contact Drills",
+      "drill": "Hover Drill"
+    },
+    {
+      "swingFault": "Hybrid Hitting",
+      "category": "Hybrid Strike Drills",
+      "drill": "Ball-Fwd Brush Drill"
+    },
+    {
+      "swingFault": "Hybrid Hitting",
+      "category": "Hybrid Strike Drills",
+      "drill": "Half Tee Hybrid Drill"
+    },
+    {
+      "swingFault": "Hybrid Hitting",
+      "category": "Hybrid Strike Drills",
+      "drill": "Hybrid Punch Shot"
+    },
+    {
+      "swingFault": "Hybrid Hitting",
+      "category": "Hybrid Strike Drills",
+      "drill": "Weight Left Hybrid Strike"
+    },
+    {
+      "swingFault": "Driver Launch",
+      "category": "Driver Launch Window Drills",
+      "drill": "High Tee Low Tee Drill"
+    },
+    {
+      "swingFault": "Driver Launch",
+      "category": "Driver Launch Window Drills",
+      "drill": "Tee Height Experiment"
+    },
+    {
+      "swingFault": "Driver Launch",
+      "category": "Driver Launch Window Drills",
+      "drill": "Positive AoA Tee Forward"
+    },
+    {
+      "swingFault": "Driver Launch",
+      "category": "Driver Launch Window Drills",
+      "drill": "Lead Shoulder Up Drill"
+    },
+    {
+      "swingFault": "Wedge Spin",
+      "category": "Wedge Spin Creation Drills",
+      "drill": "Clean Grooves Spin Drill"
+    },
+    {
+      "swingFault": "Wedge Spin",
+      "category": "Wedge Spin Creation Drills",
+      "drill": "Bounce vs. Leading Edge Drill"
+    },
+    {
+      "swingFault": "Wedge Spin",
+      "category": "Wedge Spin Creation Drills",
+      "drill": "Open Face Accelerate Drill"
+    },
+    {
+      "swingFault": "Wedge Spin",
+      "category": "Wedge Spin Creation Drills",
+      "drill": "Stiff Wrist Nipper"
+    },
+    {
+      "swingFault": "Flop Shot",
+      "category": "High Loft Bunker & Flop Drills",
+      "drill": "Open Stance Slide Under Drill"
+    },
+    {
+      "swingFault": "Flop Shot",
+      "category": "High Loft Bunker & Flop Drills",
+      "drill": "Umbrella Under Arms Drill"
+    },
+    {
+      "swingFault": "Flop Shot",
+      "category": "High Loft Bunker & Flop Drills",
+      "drill": "Skid and Slide Drill"
+    },
+    {
+      "swingFault": "Flop Shot",
+      "category": "High Loft Bunker & Flop Drills",
+      "drill": "Face Open Swing Across"
+    },
+    {
+      "swingFault": "Lag Putting",
+      "category": "Long Putt Distance Drills",
+      "drill": "Fringe to Fringe Lag Drill"
+    },
+    {
+      "swingFault": "Lag Putting",
+      "category": "Long Putt Distance Drills",
+      "drill": "Eyes Closed Distance Feel"
+    },
+    {
+      "swingFault": "Lag Putting",
+      "category": "Long Putt Distance Drills",
+      "drill": "Flagstick Putts"
+    },
+    {
+      "swingFault": "Lag Putting",
+      "category": "Long Putt Distance Drills",
+      "drill": "Alternate Ball Lag"
+    },
+    {
+      "swingFault": "Distance Wedges",
+      "category": "Wedge Distance Control Drills",
+      "drill": "Clock Face Wedge 9 to 3"
+    },
+    {
+      "swingFault": "Distance Wedges",
+      "category": "Wedge Distance Control Drills",
+      "drill": "Quarter Swing Chart"
+    },
+    {
+      "swingFault": "Distance Wedges",
+      "category": "Wedge Distance Control Drills",
+      "drill": "Pitch Matrix Drill"
+    },
+    {
+      "swingFault": "Distance Wedges",
+      "category": "Wedge Distance Control Drills",
+      "drill": "Ladder Wedge Targets"
+    }
+  ]
+}
