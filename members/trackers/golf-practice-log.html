@@ -560,6 +560,15 @@ function wirePerfCalculator(row){
       el.addEventListener('change', ()=>updatePerfCalculator(row));
     }
   });
+
+  const touchEls = ['[data-perf-a]','[data-perf-b]','[data-perf-c]','[data-perf-d]'];
+  touchEls.forEach(sel=>{
+    const el = row.querySelector(sel);
+    if(el){
+      el.addEventListener('change', ()=>row.setAttribute('data-perf-touched','1'));
+    }
+  });
+
   // initialize
   updatePerfCalculator(row);
 }
@@ -576,6 +585,7 @@ function wireRowAutoFill(row){
   selects.forEach(sel=>{
     sel.addEventListener('change', ()=>{
       const v = sel.value || "";
+      applyAutoADDefaults(row, v);
       applyAutoRatings(row, v);
     });
   });
