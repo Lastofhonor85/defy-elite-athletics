@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Readiness Survey | Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="readiness.js" defer></script>
+</head>
+<body class="dark">
+  <header class="site-header">
+    <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
+  </header>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="members/login.html">Members</a>
+  </nav>
+  <section class="form-section">
+    <h1>Daily Readiness Survey</h1>
+    <form id="readinessForm">
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="sleepHours">Hours of Sleep</label>
+      <input type="number" id="sleepHours" name="sleepHours" min="0" max="24" required>
+
+      <label for="sleepQuality">Sleep Quality</label>
+      <select id="sleepQuality" name="sleepQuality" required>
+        <option value="">Select</option>
+        <option value="1">Poor</option>
+        <option value="2">Fair</option>
+        <option value="3">Good</option>
+        <option value="4">Very Good</option>
+        <option value="5">Excellent</option>
+      </select>
+
+      <label for="fatigue">Fatigue Level (1‑5)</label>
+      <input type="range" id="fatigue" name="fatigue" min="1" max="5" step="1" value="3">
+
+      <label for="muscleSoreness">Muscle Soreness (1‑5)</label>
+      <input type="range" id="muscleSoreness" name="muscleSoreness" min="1" max="5" step="1" value="3">
+
+      <label for="hydration">Hydration (1‑5)</label>
+      <input type="range" id="hydration" name="hydration" min="1" max="5" step="1" value="3">
+
+      <label for="notes">Notes / Comments</label>
+      <textarea id="notes" name="notes" rows="3"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="formMessage" style="display:none; margin-top:1rem;">Thank you! Your readiness has been submitted.</p>
+  </section>
+  <footer class="site-footer">&copy; 2025 Defy Elite Athletics</footer>
+</body>
+</html>

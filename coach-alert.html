@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coach Alert View | Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Chart.js for rendering trends -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="coach-alert.js" defer></script>
+</head>
+<body class="dark">
+  <header class="site-header">
+    <img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo">
+  </header>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="members/login.html">Members</a>
+  </nav>
+  <section class="alert-section">
+    <h1>Coach Alert View</h1>
+    <!-- Container for red/yellow alerts -->
+    <div id="alertContainer" class="alert-list"></div>
+    <!-- Trend chart illustrating rolling averages -->
+    <div class="chart-container">
+      <canvas id="trendChart"></canvas>
+    </div>
+  </section>
+  <footer class="site-footer">&copy; 2025 Defy Elite Athletics</footer>
+</body>
+</html>

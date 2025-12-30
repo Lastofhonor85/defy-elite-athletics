@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Next Steps | Defy Elite Athletics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // When the page loads determine which post‑payment intake flow to send the user to.
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const service = params.get('service') || '';
+      const tier = params.get('tier') || '';
+      let redirectUrl;
+      switch (service) {
+        case 'periodization-3mo':
+          // After purchasing a 3‑month periodization plan the athlete needs to
+          // complete the coaching intake form.  This might be replaced in the
+          // future with a tier‑aware form but for now re‑use the existing JotForm.
+          redirectUrl = 'coaching/session-intake.html';
+          break;
+        case 'live-golf':
+          // Live golf coaching sessions should immediately open the scheduling page
+          // so athletes can choose their remote slot.
+          redirectUrl = 'schedule-remote.html';
+          break;
+        case 'swing-analysis':
+          // Swing analysis purchases also go through the scheduling page
+          redirectUrl = 'schedule-remote.html';
+          break;
+        default:
+          // Fallback: send to a generic thank‑you or next steps page
+          redirectUrl = 'thank-you-booking.html';
+      }
+      // Optionally you could apply tier logic here.  For example if a tier
+      // requires an additional readiness form you could append a further
+      // query parameter so the destination knows how to render itself.
+      window.location.replace(redirectUrl);
+    });
+  </script>
+</head>
+<body class="dark">
+  <header class="site-header"><img src="assets/logo.png" alt="Defy Elite Athletics Logo" class="logo"></header>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="members/login.html">Members</a>
+  </nav>
+  <section class="container">
+    <h1 class="section-title">Preparing your next steps…</h1>
+    <p class="text-lead">Please hold on for a moment while we prepare your personalised intake instructions.</p>
+  </section>
+  <footer class="site-footer">&copy; 2025 Defy Elite Athletics</footer>
+</body>
+</html>

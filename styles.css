@@ -1,3 +1,18 @@
+/*
+ * Consolidated stylesheet for Defy Elite Athletics
+ *
+ * This file is based off of the original "styles.css" from the
+ * defy‑elite‑athletics repository.  It centralises page level
+ * styling that was previously embedded directly in various HTML
+ * documents (e.g. schedule and payment pages) and adds new
+ * components to support the updated intake flow, readiness form,
+ * payment sections and coach alert view.  By keeping all
+ * presentation rules in one place we reduce duplication and make
+ * it easier to maintain a consistent look and feel across the
+ * site.  Existing selectors have been preserved verbatim and new
+ * classes have been appended near the end of the file.
+ */
+
 /* -----------------------
    Base & Utility Styles
    ----------------------- */
@@ -210,6 +225,7 @@ a:hover {
   text-align: center;
   padding: 2rem 0;
 }
+
 /* ─────────────────────────────────────────────────────────────────── */
 /* DARK THEME & ARTICLE-FEED STYLES (for /members/ pages)             */
 /* ─────────────────────────────────────────────────────────────────── */
@@ -314,4 +330,145 @@ body.dark {
   color: #666;
   background: transparent;
 }
-/* ─────────────────────────────────────────────────────────────────── */
+
+/* ------------------------------------------------------------------- */
+/* Custom component styles appended for the 2025 system refactor        */
+/* ------------------------------------------------------------------- */
+
+/* Schedule Section Styles (moved from inline styles in schedule-remote.html) */
+.schedule-section {
+  max-width: 600px;
+  margin: 60px auto 0;
+  background: #181818;
+  padding: 36px 24px 24px 24px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(30, 144, 255, 0.12);
+}
+.schedule-section h1 {
+  color: #1e90ff;
+  font-size: 2.15em;
+  margin-bottom: 0.5em;
+  letter-spacing: 1px;
+}
+.schedule-section p {
+  font-size: 1.16em;
+  color: #f3f3f3;
+  margin-bottom: 2em;
+  line-height: 1.5em;
+}
+.schedule-section iframe {
+  border-radius: 16px;
+  border: none;
+  width: 100%;
+  min-height: 700px;
+  margin-top: 15px;
+}
+.schedule-signature {
+  margin-top: 2em;
+  color: #aaa;
+  font-size: 1em;
+}
+
+/* Payment Section Styles (moved from inline styles in pay pages) */
+.pay-section {
+  max-width: 450px;
+  margin: 0 auto;
+  background: #181818;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(30, 144, 255, 0.10);
+  text-align: center;
+}
+.service-logo {
+  width: 120px;
+  margin: 24px auto 20px;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.15);
+}
+.currency-label {
+  font-weight: bold;
+  color: #1e90ff;
+  margin: 22px 0 6px;
+  font-size: 1.14em;
+}
+/* back-link is defined earlier; additional margin ensures spacing in pay pages */
+.pay-section .back-link {
+  display: inline-block;
+  margin: 20px 0 0;
+  text-decoration: underline;
+}
+
+/* Form Section Styles for readiness form */
+.form-section {
+  max-width: 480px;
+  margin: 40px auto;
+  background: #181818;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(30, 144, 255, 0.1);
+  color: #fff;
+}
+.form-section label {
+  display: block;
+  margin: 12px 0 6px;
+}
+.form-section input,
+.form-section select,
+.form-section textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.form-section button {
+  width: 100%;
+  padding: 12px;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.form-section button:hover {
+  background: #0074d9;
+}
+
+/* Alert Section Styles for coach alert view */
+.alert-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #181818;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(30, 144, 255, 0.1);
+  color: #fff;
+}
+.alert-section h1 {
+  font-size: 2rem;
+  color: #1e90ff;
+  margin-bottom: 1rem;
+}
+.alert-list {
+  margin-top: 1rem;
+}
+.alert-item {
+  border: 1px solid #333;
+  border-left-width: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+.alert-item.yellow {
+  border-left-color: #ffcc00;
+}
+.alert-item.red {
+  border-left-color: #ff4444;
+}
+.chart-container {
+  margin-top: 2rem;
+}

@@ -1,0 +1,31 @@
+{
+  "tiers": [
+    {
+      "name": "Bronze",
+      "label": "Bronze",
+      "description": "Entry level membership for athletes just starting out.",
+      "maxSessionsPerMonth": 2,
+      "accessResources": ["drills-basic", "articles"],
+      "coachContact": false,
+      "prioritySupport": false
+    },
+    {
+      "name": "Silver",
+      "label": "Silver",
+      "description": "Intermediate membership with additional benefits.",
+      "maxSessionsPerMonth": 4,
+      "accessResources": ["drills-basic", "articles", "nutrition-guides"],
+      "coachContact": true,
+      "prioritySupport": false
+    },
+    {
+      "name": "Gold",
+      "label": "Gold",
+      "description": "Elite membership unlocking full access to our platform.",
+      "maxSessionsPerMonth": 8,
+      "accessResources": ["drills-basic", "articles", "nutrition-guides", "exclusive-videos"],
+      "coachContact": true,
+      "prioritySupport": true
+    }
+  ]
+}
