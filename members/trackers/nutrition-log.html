@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DEA Nutrition Log</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+:root{
+  --bg:#070d18;
+  --card:#0f1729;
+  --card2:#101b33;
+  --muted:#c6d0e4;
+  --text:#f2f4f8;
+  --accent:#2b77ff;
+  --success:#19c37d;
+  --warn:#ffbf3c;
+  --danger:#ff4d4d;
+  --border:rgba(255,255,255,.14);
+  --focus:rgba(43,119,255,.55);
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  padding:0;
+  font-family:Inter, Calibri, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:linear-gradient(180deg,#050914,#070d18);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:var(--text);text-decoration:none}
+.container{max-width:860px;margin:0 auto;padding:18px}
+.header{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 16px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:rgba(15,23,41,.92);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+.brand img{
+  height:54px;
+  width:auto;
+  object-fit:contain;
+}
+@media(min-width:720px){
+  .brand img{height:64px}
+}
+.hgroup{display:flex;flex-direction:column;gap:4px;min-width:0}
+.hgroup h1{font-size:24px;margin:0;letter-spacing:.2px;font-weight:800;line-height:1.1}
+.hgroup p{margin:0;color:var(--muted);font-size:14px;line-height:1.35}
+.badges{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.badge{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  color:var(--muted);
+  background:rgba(255,255,255,.04);
+  white-space:nowrap;
+}
+.badge.req{color:#e7f0ff;border-color:rgba(43,119,255,.45);background:rgba(43,119,255,.14)}
+.badge.opt{color:#dfffee;border-color:rgba(25,195,125,.45);background:rgba(25,195,125,.14)}
+.badge.cond{color:#fff4dc;border-color:rgba(255,191,60,.45);background:rgba(255,191,60,.14)}
+.card{
+  margin-top:14px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:rgba(15,23,41,.92);
+  padding:16px;
+}
+.card h2{margin:0 0 10px 0;font-size:18px;font-weight:700}
+.card p{margin:6px 0;color:var(--muted);font-size:14px;line-height:1.5}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:720px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:1fr 1fr 1fr}}
+.field label{display:block;font-size:13px;color:var(--muted);margin:0 0 6px 0;font-weight:600}
+.field input,.field select,.field textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1.25px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.05);
+  color:var(--text);
+  outline:none;
+  font-size:15px;
+}
+.field textarea{min-height:102px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:rgba(198,208,228,.70)}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:rgba(43,119,255,.55);
+  box-shadow:0 0 0 3px rgba(43,119,255,.18);
+}
+.smallnote{font-size:13px;color:var(--muted)}
+hr.sep{border:none;border-top:1px solid rgba(255,255,255,.14);margin:14px 0}
+details{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:10px 12px;background:rgba(255,255,255,.03)}
+details summary{cursor:pointer;color:#e7f0ff;font-weight:800}
+.actions{
+  position:sticky;
+  bottom:0;
+  margin-top:14px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;
+  background:rgba(5,9,20,.92);
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+button{appearance:none;border:0;border-radius:14px;padding:12px 14px;font-weight:800;cursor:pointer;font-size:14px}
+.btn-primary{background:linear-gradient(180deg, rgba(43,119,255,1), rgba(28,98,220,1));color:white}
+.btn-secondary{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:var(--text)}
+.btn-danger{background:rgba(255,77,77,.16);border:1px solid rgba(255,77,77,.40);color:#ffe1e1}
+.footer{margin:14px 0 4px 0;color:var(--muted);font-size:12.5px;line-height:1.45}
+.kbd{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:12px;
+  padding:2px 6px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:8px;
+  background:rgba(255,255,255,.05);
+  color:#e7f0ff
+}
+
+
+
+.field input,
+.field select,
+.field textarea {
+  color: #000000; /* true black for maximum readability */
+  font-weight: 600;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #4a5568; /* dark gray, still secondary but readable */
+}
+
+
+/* === Readability Fix: Field Text Color (v1.1b) === */
+/* Uses Defy red for typed field text; preserves v1.1 visual system */
+
+.field input,
+.field select,
+.field textarea {
+  color: #c62828;
+  font-weight: 600;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #5a6478; /* neutral dark gray for guidance only */
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="brand">
+        <img src="../../assets/defy-header.png" alt="Defy Elite Athletics" />
+        <div class="hgroup">
+        <h1>Nutrition Self-Monitoring Log</h1>
+        <p>Use when nutrition coaching is active. Keep entries simple and consistent.</p>
+      </div>
+      </div>
+      <div class="badges"><span class="badge cond">Conditional</span><span class="badge opt">AthleteID-only</span><span class="badge cond">Coaching-driven</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Submission</h2>
+      
+      <p class="smallnote">
+        Form endpoint is currently a placeholder. Replace <span class="kbd">REPLACE ME</span> with your Formspree form ID.
+      </p>
+
+      <form action="https://formspree.io/f/REPLACE_ME" method="POST" accept-charset="utf-8">
+        <input type="hidden" name="tracker" value="nutrition_log" />
+        <div class="grid two">
+          <div class="field">
+            <label>AthleteID (required)</label>
+            <input name="athlete_id" inputmode="numeric" autocomplete="off" required />
+          </div>
+          <div class="field">
+            <label>Date (required)</label>
+            <input name="date" type="date" required />
+          </div>
+        </div>
+
+        <hr class="sep" />
+        <h2>Hydration</h2>
+        <div class="grid two">
+          <div class="field">
+            <label>Water intake (liters)</label>
+            <input name="water_liters" type="number" min="0" max="15" step="0.1" placeholder="e.g., 2.5" />
+          </div>
+          <div class="field">
+            <label>Alcohol (today)</label>
+            <select name="alcohol_today"><option value="">Select</option><option>NO</option><option>YES</option></select>
+          </div>
+        </div>
+
+        <hr class="sep" />
+        <h2>Meals (optional)</h2>
+        <p class="smallnote">Add only what is needed for coaching. Keep it fast.</p>
+
+        <div id="meals" class="grid" style="margin-top:10px"></div>
+
+        <template id="mealTemplate">
+          <div class="card" data-row style="padding:14px">
+            <div class="grid three">
+              <div class="field">
+                <label>Meal <span class="kbd" data-row-number>1</span></label>
+                <select name="meal_type[]">
+                  <option value="">Type</option>
+                  <option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snack</option><option>Pre-training</option><option>Post-training</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Approx time</label>
+                <input name="meal_time[]" type="time" />
+              </div>
+              <div class="field">
+                <label>Quality (1–5)</label>
+                <select name="meal_quality_1_5[]">
+                  <option value="">Select</option>
+                  <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid two" style="margin-top:10px">
+              <div class="field">
+                <label>What did you eat?</label>
+                <input name="meal_description[]" placeholder="Brief summary (no personal identifiers)" />
+              </div>
+              <div class="field" style="display:flex;align-items:flex-end;justify-content:flex-end">
+                <button type="button" class="btn-danger" onclick="removeRow(this)">Remove</button>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <div class="actions">
+          <button type="button" class="btn-secondary" onclick="addRow('meals','mealTemplate')">Add Meal</button>
+          <button class="btn-primary" type="submit">Submit</button>
+        </div>
+
+        <details style="margin-top:12px">
+          <summary>Optional notes</summary>
+          <div class="grid" style="margin-top:10px">
+            <div class="field">
+              <label>Notes (cravings, GI issues, appetite, travel)</label>
+              <textarea name="notes" placeholder="Keep it brief."></textarea>
+            </div>
+          </div>
+        </details>
+
+      </form>
+    </div>
+
+<script>
+function addRow(containerId, templateId){
+  const c = document.getElementById(containerId);
+  const t = document.getElementById(templateId);
+  const node = t.content.cloneNode(true);
+  c.appendChild(node);
+  renumber(containerId);
+}
+function removeRow(btn){
+  const row = btn.closest('[data-row]');
+  if(row){ row.remove(); }
+}
+function renumber(containerId){
+  const c = document.getElementById(containerId);
+  if(!c) return;
+  const rows = c.querySelectorAll('[data-row]');
+  rows.forEach((r, i) => {
+    const n = r.querySelector('[data-row-number]');
+    if(n) n.textContent = String(i+1);
+  });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  ['meals','exercises','drills','practiceBlocks'].forEach(id => renumber(id));
+});
+</script>
+
+    <div class="footer">
+      AthleteID-only system. Do not enter names, phone numbers, email addresses, or other personal identifiers.
+    </div>
+  </div>
+</body>
+</html>

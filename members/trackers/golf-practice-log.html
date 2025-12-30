@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DEA Golf Practice Log</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+:root{
+  --bg:#070d18;
+  --card:#0f1729;
+  --card2:#101b33;
+  --muted:#c6d0e4;
+  --text:#f2f4f8;
+  --accent:#2b77ff;
+  --success:#19c37d;
+  --warn:#ffbf3c;
+  --danger:#ff4d4d;
+  --border:rgba(255,255,255,.14);
+  --focus:rgba(43,119,255,.55);
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  padding:0;
+  font-family:Inter, Calibri, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:linear-gradient(180deg,#050914,#070d18);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:var(--text);text-decoration:none}
+.container{max-width:860px;margin:0 auto;padding:18px}
+.header{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 16px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:rgba(15,23,41,.92);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+.brand img{
+  height:54px;
+  width:auto;
+  object-fit:contain;
+}
+@media(min-width:720px){
+  .brand img{height:64px}
+}
+.hgroup{display:flex;flex-direction:column;gap:4px;min-width:0}
+.hgroup h1{font-size:24px;margin:0;letter-spacing:.2px;font-weight:800;line-height:1.1}
+.hgroup p{margin:0;color:var(--muted);font-size:14px;line-height:1.35}
+.badges{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.badge{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  color:var(--muted);
+  background:rgba(255,255,255,.04);
+  white-space:nowrap;
+}
+.badge.req{color:#e7f0ff;border-color:rgba(43,119,255,.45);background:rgba(43,119,255,.14)}
+.badge.opt{color:#dfffee;border-color:rgba(25,195,125,.45);background:rgba(25,195,125,.14)}
+.badge.cond{color:#fff4dc;border-color:rgba(255,191,60,.45);background:rgba(255,191,60,.14)}
+.card{
+  margin-top:14px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:rgba(15,23,41,.92);
+  padding:16px;
+}
+.card h2{margin:0 0 10px 0;font-size:18px;font-weight:700}
+.card p{margin:6px 0;color:var(--muted);font-size:14px;line-height:1.5}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:720px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:1fr 1fr 1fr}}
+.field label{display:block;font-size:13px;color:var(--muted);margin:0 0 6px 0;font-weight:600}
+.field input,.field select,.field textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1.25px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.05);
+  color:var(--text);
+  outline:none;
+  font-size:15px;
+}
+.field textarea{min-height:102px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:rgba(198,208,228,.70)}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:rgba(43,119,255,.55);
+  box-shadow:0 0 0 3px rgba(43,119,255,.18);
+}
+.smallnote{font-size:13px;color:var(--muted)}
+hr.sep{border:none;border-top:1px solid rgba(255,255,255,.14);margin:14px 0}
+details{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:10px 12px;background:rgba(255,255,255,.03)}
+details summary{cursor:pointer;color:#e7f0ff;font-weight:800}
+.actions{
+  position:sticky;
+  bottom:0;
+  margin-top:14px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;
+  background:rgba(5,9,20,.92);
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+button{appearance:none;border:0;border-radius:14px;padding:12px 14px;font-weight:800;cursor:pointer;font-size:14px}
+.btn-primary{background:linear-gradient(180deg, rgba(43,119,255,1), rgba(28,98,220,1));color:white}
+.btn-secondary{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:var(--text)}
+.btn-danger{background:rgba(255,77,77,.16);border:1px solid rgba(255,77,77,.40);color:#ffe1e1}
+.footer{margin:14px 0 4px 0;color:var(--muted);font-size:12.5px;line-height:1.45}
+.kbd{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:12px;
+  padding:2px 6px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:8px;
+  background:rgba(255,255,255,.05);
+  color:#e7f0ff
+}
+
+
+
+.field input,
+.field select,
+.field textarea {
+  color: #000000; /* true black for maximum readability */
+  font-weight: 600;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #4a5568; /* dark gray, still secondary but readable */
+}
+
+
+/* === Readability Fix: Field Text Color (v1.1b) === */
+/* Uses Defy red for typed field text; preserves v1.1 visual system */
+
+.field input,
+.field select,
+.field textarea {
+  color: #c62828;
+  font-weight: 600;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #5a6478; /* neutral dark gray for guidance only */
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="brand">
+        <img src="../../assets/defy-header.png" alt="Defy Elite Athletics" />
+        <div class="hgroup">
+        <h1>Golf Practice Log</h1>
+        <p>Elite+ weekly practice capture. Optional for Elite.</p>
+      </div>
+      </div>
+      <div class="badges"><span class="badge req">Elite+ Required Weekly</span><span class="badge opt">AthleteID-only</span><span class="badge cond">Drill-level detail</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Submission</h2>
+      
+      <p class="smallnote">
+        Form endpoint is currently a placeholder. Replace <span class="kbd">REPLACE ME</span> with your Formspree form ID.
+      </p>
+
+      <form action="https://formspree.io/f/REPLACE_ME" method="POST" accept-charset="utf-8">
+        <input type="hidden" name="tracker" value="golf_practice_log" />
+
+        <div class="grid two">
+          <div class="field">
+            <label>AthleteID (required)</label>
+            <input name="athlete_id" inputmode="numeric" autocomplete="off" required />
+          </div>
+          <div class="field">
+            <label>Date (required)</label>
+            <input name="date" type="date" required />
+          </div>
+        </div>
+
+        <hr class="sep" />
+        <h2>Session overview</h2>
+        <div class="grid two">
+          <div class="field">
+            <label>Practice type</label>
+            <select name="practice_type">
+              <option value="">Select</option>
+              <option>Range Session</option>
+              <option>Short Game</option>
+              <option>Putting</option>
+              <option>On-course Practice</option>
+              <option>Competitive Simulation</option>
+              <option>Lesson / Coaching Session</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Duration (minutes)</label>
+            <input name="duration_min" type="number" min="0" max="360" step="1" placeholder="e.g., 90" />
+          </div>
+          <div class="field">
+            <label>Primary focus</label>
+            <select name="primary_focus">
+              <option value="">Select</option>
+              <option>Technical</option>
+              <option>Shot shaping</option>
+              <option>Contact</option>
+              <option>Speed</option>
+              <option>Distance control</option>
+              <option>Trajectory</option>
+              <option>Short game</option>
+              <option>Putting</option>
+              <option>Mental / routine</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Quality (1–5)</label>
+            <select name="session_quality_1_5">
+              <option value="">Select</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="sep" />
+        <h2>Practice blocks</h2>
+        <p class="smallnote">Add blocks (e.g., Warm-up, Driver, Wedges, Putting). Add drills inside each block.</p>
+
+        <div id="practiceBlocks" class="grid" style="margin-top:10px"></div>
+
+        <template id="practiceBlockTemplate">
+          <div class="card" data-row style="padding:14px">
+            <div class="grid two">
+              <div class="field">
+                <label>Block <span class="kbd" data-row-number>1</span> name</label>
+                <input name="block_name[]" placeholder="e.g., Wedges 50–100y" />
+              </div>
+              <div class="field">
+                <label>Block duration (min)</label>
+                <input name="block_duration[]" type="number" min="0" max="240" step="1" placeholder="e.g., 25" />
+              </div>
+            </div>
+            <div class="grid two" style="margin-top:10px">
+              <div class="field">
+                <label>Block focus</label>
+                <input name="block_focus[]" placeholder="e.g., distance control, start line" />
+              </div>
+              <div class="field" style="display:flex;align-items:flex-end;justify-content:flex-end">
+                <button type="button" class="btn-danger" onclick="removeRow(this)">Remove block</button>
+              </div>
+            </div>
+
+            <details style="margin-top:12px">
+              <summary>Drills for this block (optional)</summary>
+              <div class="smallnote" style="margin:8px 0 10px 0">Add drills if you want drill-level detail. Otherwise skip.</div>
+
+              <div class="grid" data-drills-container></div>
+
+              <div style="margin-top:10px;display:flex;gap:10px;justify-content:flex-end">
+                <button type="button" class="btn-secondary" onclick="addRecommendedSet(this)">Add Recommended Set</button>
+                <button type="button" class="btn-secondary" onclick="addDrillToBlock(this)">Add Drill</button>
+              </div>
+            </details>
+          </div>
+        </template>
+
+        <template id="drillTemplate">
+          <div class="card" data-row style="padding:12px;margin-top:10px">
+            <div class="grid three">
+              <div class="field">
+                <label>Drill name</label>
+                <input name="drill_name[]" placeholder="e.g., Ladder start line" />
+              </div>
+              <div class="field">
+                <label>Volume</label>
+                <input name="drill_volume[]" placeholder="e.g., 30 balls" />
+              </div>
+              <div class="field">
+                <label>Quality (1–5)</label>
+                <select name="drill_quality_1_5[]">
+                  <option value="">Select</option>
+                  <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                </select>
+              </div>
+            
+              
+              <div class="field">
+                <label>Difficulty (1–5)</label>
+                <select name="drill_difficulty_1_5[]" data-difficulty>
+                  <option value="">Select</option>
+                  <option value="1">1 — Beginner</option>
+                  <option value="2">2 — Beginner+</option>
+                  <option value="3">3 — Intermediate</option>
+                  <option value="4">4 — Advanced</option>
+                  <option value="5">5 — Elite</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>Performance level (1–5)</label>
+                <select name="drill_performance_1_5[]" data-performance>
+                  <option value="">Select</option>
+                  <option value="1">1 — Development</option>
+                  <option value="2">2 — Competitive</option>
+                  <option value="3">3 — Elite</option>
+                  <option value="4">4 — Elite+</option>
+                  <option value="5">5 — Pro-ready / High-performance</option>
+                </select>
+              </div>
+
+              <div class="field" style="grid-column: 1 / -1;">
+                <label>Performance auto-calculator (A–D)</label>
+                <div class="smallnote" style="margin-top:-6px;margin-bottom:8px">
+                  Rate how the drill was performed today. This calculates Performance level (1–5) automatically.
+                </div>
+                <div class="grid three">
+                  <div class="field">
+                    <label>A) Randomization</label>
+                    <select data-perf-a>
+                      <option value="0">0 — Blocked</option>
+                      <option value="1">1 — Semi-random</option>
+                      <option value="2">2 — Fully random</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label>B) Consequence / Pressure</label>
+                    <select data-perf-b>
+                      <option value="0">0 — None</option>
+                      <option value="1">1 — Light</option>
+                      <option value="2">2 — Real</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label>C) Transfer fidelity</label>
+                    <select data-perf-c>
+                      <option value="0">0 — Isolated</option>
+                      <option value="1">1 — Semi-transfer</option>
+                      <option value="2">2 — True transfer</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="grid three">
+                  <div class="field">
+                    <label>D) Execution demand</label>
+                    <select data-perf-d>
+                      <option value="0">0 — Low</option>
+                      <option value="1">1 — Moderate</option>
+                      <option value="2">2 — High</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label>Calculated total (0–8)</label>
+                    <input type="text" data-perf-total readonly value="0"/>
+                  </div>
+
+                  <div class="field">
+                    <label>Calculated performance (1–5)</label>
+                    <input type="text" data-perf-level readonly value="1 — Development"/>
+                  </div>
+                </div>
+
+                <div class="field" style="margin-top:6px">
+                  <label class="smallnote" style="display:flex;gap:10px;align-items:center">
+                    <input type="checkbox" data-perf-override />
+                    Override auto performance (coach use only)
+                  </label>
+                </div>
+
+                <input type="hidden" name="perf_calc_total[]" data-perf-total-hidden value="0"/>
+                <input type="hidden" name="perf_calc_level[]" data-perf-level-hidden value="1"/>
+              </div>
+</div>
+            <div class="grid two" style="margin-top:10px">
+              <div class="field">
+                <label>Notes</label>
+                <input name="drill_notes[]" placeholder="Brief: feels, misses, constraints" />
+              </div>
+              <div class="field" style="display:flex;align-items:flex-end;justify-content:flex-end">
+                <button type="button" class="btn-danger" onclick="removeRow(this)">Remove drill</button>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <details style="margin-top:12px">
+          <summary>Optional session notes</summary>
+          <div class="grid" style="margin-top:10px">
+            <div class="field">
+              <label>Session notes (brief)</label>
+              <textarea name="session_notes" placeholder="No personal identifiers."></textarea>
+            </div>
+          </div>
+        </details>
+
+        <div class="actions">
+          <button type="button" class="btn-secondary" onclick="addRow('practiceBlocks','practiceBlockTemplate')">Add Practice Block</button>
+          <button class="btn-primary" type="submit">Submit</button>
+        </div>
+
+      </form>
+    </div>
+
+<script>
+
+function getRecommendedDrillsForBlock(block){
+  const practiceType = document.querySelector('select[name="practice_type"]')?.value || "";
+  const blockName = block.querySelector('[data-block-name]')?.value || "";
+  const mode = block.querySelector('[data-selection-mode]')?.value || "";
+
+  const focus = block.querySelector('[data-practice-focus]')?.value || "";
+  const fault = block.querySelector('[data-swing-fault]')?.value || "";
+  const seg = block.querySelector('[data-mobility-segment]')?.value || "";
+
+  let list = [];
+  if(mode==='practice'){
+    list = getPracticeDrills(practiceType, blockName, focus);
+  } else if(mode==='fault'){
+    list = getCtDrillsByFault(fault);
+  } else if(mode==='mobility'){
+    list = getMobDrillsBySegment(seg);
+  }
+  // deterministic top 3 (already sorted/uniq)
+  return (list || []).slice(0,3);
+}
+
+function setSelectValue(selectEl, value){
+  if(!selectEl) return;
+  // If option exists, set; else leave blank
+  const opts = Array.from(selectEl.options || []);
+  const ok = opts.some(o => o.value === value);
+  if(ok){ selectEl.value = value; }
+}
+
+function addRecommendedSet(btn){
+  const block = btn.closest('.card');
+  if(!block) return;
+
+  const container = block.querySelector('[data-drills-container]');
+  if(!container) return;
+
+  // Clear existing drills (elite default behavior: recommended set replaces clutter)
+  container.innerHTML = "";
+
+  // Ensure current drill dropdowns are hydrated
+  refreshDrills(block);
+    ensureRecommendedIfEmpty(block);
+
+  const rec = getRecommendedDrillsForBlock(block);
+
+  // If we don't have enough context (e.g., mode not selected), just add one drill row.
+  if(!rec.length){
+    addDrillToBlock(btn);
+    return;
+  }
+
+  // Add 3 drill rows and preselect drills
+  rec.forEach((drillName)=>{
+    const t = document.getElementById('drillTemplate');
+    const node = t.content.cloneNode(true);
+    container.appendChild(node);
+
+  // Wire auto-fill for difficulty/performance when a drill is selected
+  const rows = container.querySelectorAll('[data-row]');
+  const newestRow = rows[rows.length-1];
+  if(newestRow) wireRowAutoFill(newestRow);
+
+});
+
+  // Show the appropriate drill-mode selects and populate options
+  const mode = block.querySelector('[data-selection-mode]')?.value || "";
+  block.querySelectorAll('[data-row] [data-drill-mode]').forEach(x=>x.style.display='none');
+  if(mode){
+    block.querySelectorAll(`[data-drill-mode="${mode}"]`).forEach(x=>x.style.display='block');
+  }
+
+  // Populate selects after rows exist
+  refreshDrills(block);
+    ensureRecommendedIfEmpty(block);
+
+  // Apply selections
+  const rows = container.querySelectorAll('[data-row]');
+  rows.forEach((row, idx)=>{
+    const v = rec[idx] || "";
+    if(mode==='practice'){
+      setSelectValue(row.querySelector('[data-drill-practice]'), v);
+    } else if(mode==='fault'){
+      setSelectValue(row.querySelector('[data-drill-fault]'), v);
+    } else if(mode==='mobility'){
+      setSelectValue(row.querySelector('[data-drill-mobility]'), v);
+    }
+  });
+}
+
+
+
+function perfLevelFromTotal(total){
+  // total 0–8 mapping
+  if(total<=1) return {level:1, label:"1 — Development"};
+  if(total<=3) return {level:2, label:"2 — Competitive"};
+  if(total<=5) return {level:3, label:"3 — Elite"};
+  if(total<=7) return {level:4, label:"4 — Elite+"};
+  return {level:5, label:"5 — Pro-ready / High-performance"};
+}
+
+function updatePerfCalculator(row){
+  const a = parseInt(row.querySelector('[data-perf-a]')?.value || "0", 10);
+  const b = parseInt(row.querySelector('[data-perf-b]')?.value || "0", 10);
+  const c = parseInt(row.querySelector('[data-perf-c]')?.value || "0", 10);
+  const d = parseInt(row.querySelector('[data-perf-d]')?.value || "0", 10);
+  const total = a+b+c+d;
+  const out = perfLevelFromTotal(total);
+
+  const totalBox = row.querySelector('[data-perf-total]');
+  const levelBox = row.querySelector('[data-perf-level]');
+  const totalHidden = row.querySelector('[data-perf-total-hidden]');
+  const levelHidden = row.querySelector('[data-perf-level-hidden]');
+
+  if(totalBox) totalBox.value = String(total);
+  if(levelBox) levelBox.value = out.label;
+  if(totalHidden) totalHidden.value = String(total);
+  if(levelHidden) levelHidden.value = String(out.level);
+
+  const override = row.querySelector('[data-perf-override]')?.checked;
+  const perfSel = row.querySelector('[data-performance]');
+  if(perfSel){
+    if(override){
+      perfSel.disabled = false;
+    } else {
+      perfSel.value = String(out.level);
+      perfSel.disabled = true;
+    }
+  }
+}
+
+function wirePerfCalculator(row){
+  const fields = ['[data-perf-a]','[data-perf-b]','[data-perf-c]','[data-perf-d]','[data-perf-override]'];
+  fields.forEach(sel=>{
+    const el = row.querySelector(sel);
+    if(el){
+      el.addEventListener('change', ()=>updatePerfCalculator(row));
+    }
+  });
+  // initialize
+  updatePerfCalculator(row);
+}
+
+function wireRowAutoFill(row){
+  const selects = [
+    row.querySelector('[data-drill-practice]'),
+    row.querySelector('[data-drill-fault]'),
+    row.querySelector('[data-drill-mobility]')
+  ].filter(Boolean);
+
+  wirePerfCalculator(row);
+
+  selects.forEach(sel=>{
+    sel.addEventListener('change', ()=>{
+      const v = sel.value || "";
+      applyAutoRatings(row, v);
+    });
+  });
+}
+
+function addDrillToBlock(btn){
+  const block = btn.closest('.card');
+  const container = block.querySelector('[data-drills-container]');
+  const t = document.getElementById('drillTemplate');
+  const node = t.content.cloneNode(true);
+  container.appendChild(node);
+}
+</script>
+
+<script>
+function addRow(containerId, templateId){
+  const c = document.getElementById(containerId);
+  const t = document.getElementById(templateId);
+  const node = t.content.cloneNode(true);
+  c.appendChild(node);
+  renumber(containerId);
+}
+function removeRow(btn){
+  const row = btn.closest('[data-row]');
+  if(row){ row.remove(); }
+}
+function renumber(containerId){
+  const c = document.getElementById(containerId);
+  if(!c) return;
+  const rows = c.querySelectorAll('[data-row]');
+  rows.forEach((r, i) => {
+    const n = r.querySelector('[data-row-number]');
+    if(n) n.textContent = String(i+1);
+  });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  ['meals','exercises','drills','practiceBlocks'].forEach(id => renumber(id));
+});
+</script>
+
+    <div class="footer">
+      AthleteID-only system. Do not enter names, phone numbers, email addresses, or other personal identifiers.
+    </div>
+  </div>
+</body>
+</html>
