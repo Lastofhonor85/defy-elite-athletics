@@ -1,5 +1,5 @@
 window.AUTH0_CONFIG = {
   domain: "defy.us.auth0.com",
-  clientId: "PASTE_YOUR_CLIENT_ID_HERE",
+  clientId: kpDwkl80nI0qVbBmHf9ui2Tc2r1AjEVu,
   redirectUri: window.location.origin + "/defy-elite-athletics/members/members-area.html"
 };
