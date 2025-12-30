@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login | Defy Elite Athletics</title>
+
   <link rel="stylesheet" href="../styles.css" />
 
   <style>
@@ -33,13 +34,18 @@
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.2s ease;
     }
-    button:hover { background: #0af; }
-    #auth0Status { color: #f55; margin-top: 1rem; }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    #auth0Status {
+      color: #f55;
+      margin-top: 1rem;
+    }
   </style>
 
-  <!-- Load Auth0 SDK + config BEFORE your logic -->
+  <!-- Auth0 SDK + config (ONCE, in correct order) -->
   <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
   <script src="./auth0-config.js"></script>
 </head>
@@ -61,7 +67,7 @@
       const btn = document.getElementById("auth0LoginBtn");
 
       if (!window.AUTH0_CONFIG?.domain || !window.AUTH0_CONFIG?.clientId) {
-        throw new Error("Missing Auth0 config (domain/clientId).");
+        throw new Error("Missing Auth0 config.");
       }
 
       auth0Client = await auth0.createAuth0Client({
@@ -74,15 +80,15 @@
         useRefreshTokens: true
       });
 
-      // If Auth0 redirected back with code/state, complete login
+      // Handle Auth0 redirect return
       const query = window.location.search;
       if (query.includes("code=") && query.includes("state=")) {
         await auth0Client.handleRedirectCallback();
         window.history.replaceState({}, document.title, window.location.pathname);
       }
 
-      const isAuthenticated = await auth0Client.isAuthenticated();
-      if (isAuthenticated) {
+      // If already authenticated, go straight to members area
+      if (await auth0Client.isAuthenticated()) {
         window.location.href = "./members-area.html";
         return;
       }
@@ -98,11 +104,13 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       initAuth0().catch(err => {
-        document.getElementById("auth0Status").textContent = "Auth0 init failed: " + err.message;
+        document.getElementById("auth0Status").textContent =
+          "Auth0 initialization failed: " + err.message;
         console.error(err);
       });
 
-      document.getElementById("auth0LoginBtn").addEventListener("click", login);
+      document.getElementById("auth0LoginBtn")
+        .addEventListener("click", login);
     });
   </script>
 </body>
